@@ -6,11 +6,25 @@ import {AppRegistry} from 'react-native';
 import App from './App';
 import {name as appName} from './app.json';
 import {Provider as PaperProvider} from 'react-native-paper';
+import {Provider} from 'react-redux';
+import {persistStore} from 'redux-persist';
+import {PersistGate} from 'redux-persist/lib/integration/react';
+
+import {configureStore} from './redux/store';
+
+const store = configureStore();
+
+const persistor = persistStore(store);
+
 export default function Main() {
   return (
-    <PaperProvider>
-      <App />
-    </PaperProvider>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <PaperProvider>
+          <App />
+        </PaperProvider>
+      </PersistGate>
+    </Provider>
   );
 }
 
