@@ -2,7 +2,7 @@ import React from 'react';
 import {View} from 'react-native';
 import {Text} from 'react-native-paper';
 
-const Store = () => {
+const StoreScreen = () => {
   return (
     <View>
       <Text>Store screen</Text>
@@ -10,4 +10,4 @@ const Store = () => {
   );
 };
 
-export default Store;
+export default StoreScreen;
