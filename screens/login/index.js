@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
-import {Text, TouchableRipple} from 'react-native-paper';
+import {Text, TouchableRipple, Button} from 'react-native-paper';
 import useLogin from '../../hooks/useLogin';
 const Login = ({navigation}) => {
   const {handleSignupNavigation, handleForogotPasswordNavigation} =
@@ -9,6 +9,9 @@ const Login = ({navigation}) => {
   return (
     <View style={styles.login__container}>
       <Text>Login screen</Text>
+      <Button mode="contained" onPress={() => navigation.navigate('Main App')}>
+        Main App
+      </Button>
       <TouchableRipple
         onPress={handleForogotPasswordNavigation}
         rippleColor="rgba(0, 0, 0, .32)">
