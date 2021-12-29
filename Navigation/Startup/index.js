@@ -19,7 +19,11 @@ const Startup = () => {
         />
         <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen name="Forgot Password" component={ForgotPassword} />
-        <Stack.Screen name="Main App" component={MainApp} />
+        <Stack.Screen
+          name="Main App"
+          component={MainApp}
+          options={{headerShown: false}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
