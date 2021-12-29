@@ -9,13 +9,10 @@
 import React from 'react';
 
 import {StyleSheet, Text, View} from 'react-native';
+import Main from './Navigation/Main';
 
 const App = () => {
-  return (
-    <View>
-      <Text>Hello world</Text>
-    </View>
-  );
+  return <Main />;
 };
 
 const styles = StyleSheet.create({});
