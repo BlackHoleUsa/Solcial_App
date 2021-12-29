@@ -7,7 +7,7 @@ import Signup from '../../screens/Signup';
 import ForgotPassword from '../../screens/ForgotPasswrod';
 
 const Stack = createNativeStackNavigator();
-const Main = () => {
+const Startup = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login">
@@ -23,4 +23,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Startup;
