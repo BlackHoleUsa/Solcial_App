@@ -1,13 +1,10 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
 import {Text, TouchableRipple} from 'react-native-paper';
+import useLogin from '../../hooks/useLogin';
 const Login = ({navigation}) => {
-  const handleNavigation = () => {
-    navigation.navigate('Signup');
-  };
-  const handleForogotPasswordNavigation = () => {
-    navigation.navigate('Forgot Password');
-  };
+  const {handleSignupNavigation, handleForogotPasswordNavigation} =
+    useLogin(navigation);
   return (
     <View style={styles.login__container}>
       <Text>Login screen</Text>
@@ -17,7 +14,7 @@ const Login = ({navigation}) => {
         <Text>Forgot Password</Text>
       </TouchableRipple>
       <TouchableRipple
-        onPress={handleNavigation}
+        onPress={handleSignupNavigation}
         rippleColor="rgba(0, 0, 0, .32)">
         <Text>Sign up</Text>
       </TouchableRipple>
