@@ -1,13 +1,9 @@
 import React from 'react';
 import {View} from 'react-native';
 import {Text} from 'react-native-paper';
-
+import {SafeAreaView} from 'react-native-safe-area-context';
 const StoreScreen = () => {
-  return (
-    <View>
-      <Text>Store screen</Text>
-    </View>
-  );
+  return <Text>Store screen</Text>;
 };
 
 export default StoreScreen;

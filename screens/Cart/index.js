@@ -1,12 +1,12 @@
 import React from 'react';
 import {View} from 'react-native';
 import {Text} from 'react-native-paper';
-
+import {SafeAreaView} from 'react-native-safe-area-context';
 const Cart = () => {
   return (
-    <View>
+    <SafeAreaView>
       <Text>Cart screen</Text>
-    </View>
+    </SafeAreaView>
   );
 };
 

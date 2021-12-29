@@ -10,9 +10,21 @@ const Tab = createMaterialTopTabNavigator();
 const Products = () => {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Raffle" component={Raffle} />
-      <Tab.Screen name="Auction" component={Auction} />
-      <Tab.Screen name="Store" component={StoreScreen} />
+      <Tab.Screen
+        name="Raffle"
+        component={Raffle}
+        options={{headerShown: false}}
+      />
+      <Tab.Screen
+        name="Auction"
+        component={Auction}
+        options={{headerShown: false}}
+      />
+      <Tab.Screen
+        name="Store"
+        component={StoreScreen}
+        options={{headerShown: false}}
+      />
     </Tab.Navigator>
   );
 };
