@@ -2,6 +2,8 @@ package com.solcial;
 
 import com.facebook.react.ReactActivity;
 import android.os.Bundle;
+  // import com.facebook.react.bridge.JSIModulePackage; // <- add
+  // import com.swmansion.reanimated.ReanimatedJSIModulePackage; // <- add
 public class MainActivity extends ReactActivity {
 
   /**
@@ -16,4 +18,8 @@ public class MainActivity extends ReactActivity {
 protected void onCreate(Bundle savedInstanceState) {
   super.onCreate(null);
 }
+//  @Override
+//       protected JSIModulePackage getJSIModulePackage() {
+//         return new ReanimatedJSIModulePackage(); // <- add
+//       }
 }
