@@ -9,7 +9,15 @@ import StoreScreen from '../../screens/StoreScreen';
 const Tab = createMaterialTopTabNavigator();
 const Products = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      screenOptions={({route}) => ({
+        tabBarStyle: {
+          backgroundColor: 'black',
+        },
+        tabBarLabelStyle: {
+          color: 'white',
+        },
+      })}>
       <Tab.Screen
         name="Raffle"
         component={Raffle}
