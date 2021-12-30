@@ -12,6 +12,7 @@ import Notifications from '../../screens/Notifications';
 import Profile from '../../screens/Profile';
 import NftMarketplace from '../../screens/NftMarketplace';
 import {icons as customIcons} from '../../assets/icons/icons';
+import CustomStatusBar from '../../components/CustomStatusBar';
 
 const Tab = createBottomTabNavigator();
 
@@ -25,79 +26,82 @@ const CustomTabbarButtom = ({children, onPress}) => {
 
 const MainApp = () => {
   return (
-    <Tab.Navigator
-      screenOptions={({route}) => ({
-        tabBarStyle: {
-          paddingHorizontal: 5,
-          paddingVertical: 5,
-          paddingTop: 0,
-          backgroundColor: 'black',
-          justifyContent: 'center',
-          alignItems: 'center',
-          borderTopWidth: 0,
-        },
-        tabBarLabelStyle: {
-          color: 'white',
-        },
-        tabBarIcon: ({color, size}) => {
-          const icons = {
-            Home: 'ios-home-outline',
-            Cart: 'ios-cart-outline',
-            Notifications: 'ios-notifications-outline',
-            Profile: 'ios-person-outline',
-          };
+    <React.Fragment>
+      <CustomStatusBar backgroundColor="black" />
+      <Tab.Navigator
+        screenOptions={({route}) => ({
+          tabBarStyle: {
+            paddingHorizontal: 5,
+            paddingVertical: 5,
+            paddingTop: 0,
+            backgroundColor: 'black',
+            justifyContent: 'center',
+            alignItems: 'center',
+            borderTopWidth: 0,
+          },
+          tabBarLabelStyle: {
+            color: 'white',
+          },
+          tabBarIcon: ({color, size}) => {
+            const icons = {
+              Home: 'ios-home-outline',
+              Cart: 'ios-cart-outline',
+              Notifications: 'ios-notifications-outline',
+              Profile: 'ios-person-outline',
+            };
 
-          return <Icons name={icons[route.name]} color="white" size={25} />;
-        },
-      })}>
-      <Tab.Screen
-        name="Home"
-        component={Products}
-        options={{headerShown: false}}
-      />
+            return <Icons name={icons[route.name]} color="white" size={25} />;
+          },
+        })}>
+        <Tab.Screen
+          name="Home"
+          component={Products}
+          options={{headerShown: false}}
+        />
 
-      <Tab.Screen
-        name="Cart"
-        component={Cart}
-        options={{headerShown: false}}
-        style={{alignItems: 'center', justifyContent: 'center'}}
-      />
-      <Tab.Screen
-        name="NFT Market"
-        component={NftMarketplace}
-        options={{
-          headerShown: false,
-          tabBarIcon: ({focused}) => (
-            <View
-              style={{
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}>
-              <Image
-                source={customIcons.nftmaketplace}
-                resizeMode="contain"
+        <Tab.Screen
+          name="Cart"
+          component={Cart}
+          options={{headerShown: false}}
+          style={{alignItems: 'center', justifyContent: 'center'}}
+        />
+        <Tab.Screen
+          name="NFT Market"
+          component={NftMarketplace}
+          options={{
+            headerShown: false,
+            tabBarIcon: ({focused}) => (
+              <View
                 style={{
-                  width: 50,
-                  height: 50,
-                }}
-              />
-            </View>
-          ),
-          tabBarButton: props => <CustomTabbarButtom {...props} />,
-        }}
-      />
-      <Tab.Screen
-        name="Notifications"
-        component={Notifications}
-        options={{headerShown: false}}
-      />
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}>
+                <Image
+                  source={customIcons.nftmaketplace}
+                  resizeMode="contain"
+                  style={{
+                    width: 50,
+                    height: 50,
+                  }}
+                />
+              </View>
+            ),
+            tabBarButton: props => <CustomTabbarButtom {...props} />,
+          }}
+        />
+        <Tab.Screen
+          name="Notifications"
+          component={Notifications}
+          options={{headerShown: false}}
+        />
 
-      <Tab.Screen
-        name="Profile"
-        component={Profile}
-        options={{headerShown: false}}
-      />
-    </Tab.Navigator>
+        <Tab.Screen
+          name="Profile"
+          component={Profile}
+          options={{headerShown: false}}
+        />
+      </Tab.Navigator>
+    </React.Fragment>
   );
 };
 
