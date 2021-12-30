@@ -1,15 +1,16 @@
 import React from 'react';
-import {View} from 'react-native';
-import {Text} from 'react-native-paper';
+
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import Raffle from '../../screens/Raffle';
 import Auction from '../../screens/Auction';
 import StoreScreen from '../../screens/StoreScreen';
 
 const Tab = createMaterialTopTabNavigator();
 const Products = () => {
+  const insets = useSafeAreaInsets();
   return (
-    <Tab.Navigator>
+    <Tab.Navigator style={{paddingTop: insets.top}}>
       <Tab.Screen
         name="Raffle"
         component={Raffle}
