@@ -36,6 +36,9 @@ const MainApp = () => {
           alignItems: 'center',
           borderTopWidth: 0,
         },
+        tabBarLabelStyle: {
+          color: 'white',
+        },
         tabBarIcon: ({color, size}) => {
           const icons = {
             Home: 'ios-home-outline',
