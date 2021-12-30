@@ -7,6 +7,7 @@ import Signup from '../../screens/Signup';
 import ForgotPassword from '../../screens/ForgotPasswrod';
 import MainApp from '../MainApp';
 import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
+import CustomStatusBar from '../../components/CustomStatusBar';
 const Stack = createNativeStackNavigator();
 const Startup = () => {
   return (

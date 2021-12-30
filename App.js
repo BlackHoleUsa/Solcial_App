@@ -17,7 +17,6 @@ import {Text} from 'react-native-paper';
 const App = () => {
   return (
     <SafeAreaProvider>
-      <CustomStatusBar backgroundColor="yellow" barStyle="dark-content" />
       <Startup />
     </SafeAreaProvider>
   );
