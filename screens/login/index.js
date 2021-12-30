@@ -10,14 +10,14 @@ const Login = ({navigation}) => {
   return (
     <View style={styles.login__container}>
       <CustomStatusBar backgroundColor="yellow" barStyle="dark-content" />
-      <Text>Login screen</Text>
+      <Text style={styles.text}>Login screen</Text>
       <Button mode="contained" onPress={() => navigation.navigate('Main App')}>
         Main App
       </Button>
       <TouchableRipple
         onPress={handleForogotPasswordNavigation}
         rippleColor="rgba(0, 0, 0, .32)">
-        <Text>Forgot Password</Text>
+        <Text style={styles.text}>Forgot Password</Text>
       </TouchableRipple>
       <TouchableRipple
         onPress={handleSignupNavigation}
@@ -35,6 +35,9 @@ const styles = StyleSheet.create({
 
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  text: {
+    fontFamily: 'Poppins-Thin',
   },
 });
 
