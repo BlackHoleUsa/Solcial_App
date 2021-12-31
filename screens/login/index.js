@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, StyleSheet, Platform} from 'react-native';
 import {Text, TouchableRipple, Button} from 'react-native-paper';
+import BackgroundGradient from '../../components/BackgroundGradient';
 import CustomStatusBar from '../../components/CustomStatusBar';
 import useLogin from '../../hooks/useLogin';
 const Login = ({navigation}) => {
@@ -8,7 +9,7 @@ const Login = ({navigation}) => {
     useLogin(navigation);
 
   return (
-    <View style={styles.login__container}>
+    <BackgroundGradient>
       <CustomStatusBar backgroundColor="yellow" barStyle="dark-content" />
       <Text style={styles.text}>Login screen</Text>
       <Button mode="contained" onPress={() => navigation.navigate('Main App')}>
@@ -24,7 +25,7 @@ const Login = ({navigation}) => {
         rippleColor="rgba(0, 0, 0, .32)">
         <Text style={styles.text}>Sign up</Text>
       </TouchableRipple>
-    </View>
+    </BackgroundGradient>
   );
 };
 
