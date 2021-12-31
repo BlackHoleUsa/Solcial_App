@@ -17,8 +17,6 @@ const BackgroundGradient = ({children}) => {
 const styles = StyleSheet.create({
   linearGradient: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
 });
 

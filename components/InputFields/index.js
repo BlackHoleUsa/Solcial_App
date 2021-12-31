@@ -21,10 +21,10 @@ const InputField = props => {
 };
 const styles = StyleSheet.create({
   container__main: {
-    width: 300,
+    width: '100%',
+    marginBottom: 10,
   },
   container__input: {
-    width: 300,
     borderWidth: 1,
     borderColor: '#707070',
   },
