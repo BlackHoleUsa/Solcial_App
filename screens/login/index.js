@@ -17,10 +17,10 @@ const Login = ({navigation}) => {
       <CustomStatusBar backgroundColor="black" barStyle="light-content" />
       <View style={styles.login__container}>
         <View style={styles.secondary__container}>
-          <Image source={Images.websiteLogo} style={{marginTop: 100}} />
+          <Image source={Images.websiteLogo} style={{marginTop: 50}} />
 
-          <InputField label="Email" />
-          <InputField label="Password" />
+          <InputField label="Email" icon="ios-checkmark-circle-outline" />
+          <InputField label="Password" icon="eye" />
           <Button
             mode="contained"
             onPress={() => navigation.navigate('Main App')}

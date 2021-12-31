@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, TextInput, Text} from 'react-native';
 import {styles} from './Styles';
+import Icons from 'react-native-vector-icons/Ionicons';
 const InputField = props => {
   const [text, onChangeText] = React.useState('Solcial app');
   const [number, onChangeNumber] = React.useState(null);
@@ -15,6 +16,7 @@ const InputField = props => {
           selectionColor="white"
           placeholder="Email"
         />
+        <Icons name={props.icon} size={25} color="white" style={styles.icon} />
       </View>
     </View>
   );

@@ -5,7 +5,7 @@ const BackgroundGradient = ({children}) => {
   return (
     <LinearGradient
       start={{x: 0.0, y: 0.6}}
-      end={{x: 0, y: 1.5}}
+      end={{x: 0, y: 1}}
       locations={[0, 0.8]}
       colors={['black', '#45345E']}
       style={styles.linearGradient}>

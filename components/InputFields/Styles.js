@@ -3,12 +3,16 @@ import {StyleSheet, Platform} from 'react-native';
 export const styles = StyleSheet.create({
   container__main: {
     width: '100%',
-    marginBottom: 10,
+    marginBottom: 15,
   },
   container__input: {
     borderWidth: 1,
     borderColor: '#707070',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
+
   input: {
     height: 20,
     margin: 10,
@@ -23,5 +27,8 @@ export const styles = StyleSheet.create({
     fontFamily: 'Poppins-SemiBold',
     marginBottom: 5,
     fontWeight: Platform.OS === 'ios' ? '600' : 'normal',
+  },
+  icon: {
+    margin: 12,
   },
 });
