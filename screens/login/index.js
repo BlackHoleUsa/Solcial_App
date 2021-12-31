@@ -1,16 +1,18 @@
 import React from 'react';
-import {View, StyleSheet, Platform} from 'react-native';
+import {View, StyleSheet, Platform, Image} from 'react-native';
 import {Text, TouchableRipple, Button} from 'react-native-paper';
 import BackgroundGradient from '../../components/BackgroundGradient';
 import CustomStatusBar from '../../components/CustomStatusBar';
 import useLogin from '../../hooks/useLogin';
+import {Images} from '../../assets/images';
 const Login = ({navigation}) => {
   const {handleSignupNavigation, handleForogotPasswordNavigation} =
     useLogin(navigation);
 
   return (
     <BackgroundGradient>
-      <CustomStatusBar backgroundColor="yellow" barStyle="dark-content" />
+      <CustomStatusBar backgroundColor="black" barStyle="light-content" />
+      <Image source={Images.websiteLogo} />
       <Text style={styles.text}>Login screen</Text>
       <Button mode="contained" onPress={() => navigation.navigate('Main App')}>
         Main App
@@ -40,6 +42,7 @@ const styles = StyleSheet.create({
   text: {
     fontFamily: 'Poppins-ExtraBold',
     fontWeight: '600',
+    color: 'white',
   },
 });
 
