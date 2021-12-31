@@ -1,6 +1,6 @@
 import React from 'react';
-import {View, StyleSheet, TextInput, Text, Platform} from 'react-native';
-
+import {View, TextInput, Text} from 'react-native';
+import {styles} from './Styles';
 const InputField = props => {
   const [text, onChangeText] = React.useState('Solcial app');
   const [number, onChangeNumber] = React.useState(null);
@@ -19,29 +19,5 @@ const InputField = props => {
     </View>
   );
 };
-const styles = StyleSheet.create({
-  container__main: {
-    width: '100%',
-    marginBottom: 10,
-  },
-  container__input: {
-    borderWidth: 1,
-    borderColor: '#707070',
-  },
-  input: {
-    height: 20,
-    margin: 10,
 
-    color: 'white',
-    padding: 10,
-    paddingVertical: 0,
-    fontFamily: 'Poppins-Regular',
-  },
-  text__input: {
-    color: 'white',
-    fontFamily: 'Poppins-SemiBold',
-    marginBottom: 5,
-    fontWeight: Platform.OS === 'ios' ? '600' : 'normal',
-  },
-});
 export default InputField;
