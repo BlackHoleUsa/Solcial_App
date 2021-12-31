@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, Platform} from 'react-native';
 import {Text, TouchableRipple, Button} from 'react-native-paper';
 import CustomStatusBar from '../../components/CustomStatusBar';
 import useLogin from '../../hooks/useLogin';
@@ -22,7 +22,7 @@ const Login = ({navigation}) => {
       <TouchableRipple
         onPress={handleSignupNavigation}
         rippleColor="rgba(0, 0, 0, .32)">
-        <Text>Sign up</Text>
+        <Text style={styles.text}>Sign up</Text>
       </TouchableRipple>
     </View>
   );
@@ -37,7 +37,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text: {
-    fontFamily: 'Poppins-Thin',
+    fontFamily: 'Poppins-ExtraBold',
+    fontWeight: '600',
   },
 });
 
