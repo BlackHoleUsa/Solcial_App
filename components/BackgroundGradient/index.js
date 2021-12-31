@@ -4,7 +4,10 @@ import LinearGradient from 'react-native-linear-gradient';
 const BackgroundGradient = ({children}) => {
   return (
     <LinearGradient
-      colors={['#4c669f', '#3b5998', '#192f6a']}
+      start={{x: 0.0, y: 0.6}}
+      end={{x: 0, y: 1.5}}
+      locations={[0, 0.8]}
+      colors={['black', '#45345E']}
       style={styles.linearGradient}>
       {children}
     </LinearGradient>
