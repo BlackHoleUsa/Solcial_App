@@ -6,19 +6,37 @@ import Login from '../../screens/Login';
 import Signup from '../../screens/Signup';
 import ForgotPassword from '../../screens/ForgotPasswrod';
 import MainApp from '../MainApp';
-import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
-import CustomStatusBar from '../../components/CustomStatusBar';
+
 const Stack = createNativeStackNavigator();
 const Startup = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
+      <Stack.Navigator
+        initialRouteName="Login"
+        screenOptions={({route}) => ({
+          tabBarStyle: {
+            backgroundColor: 'black',
+          },
+          tabBarLabelStyle: {
+            color: 'white',
+          },
+          headerStyle: {
+            backgroundColor: 'black',
+          },
+          headerTintColor: 'white',
+        })}>
         <Stack.Screen
           name="Login"
           component={Login}
           options={{headerShown: false}}
         />
-        <Stack.Screen name="Signup" component={Signup} />
+        <Stack.Screen
+          name="Signup"
+          component={Signup}
+          options={{
+            title: ' ',
+          }}
+        />
         <Stack.Screen name="Forgot Password" component={ForgotPassword} />
         <Stack.Screen
           name="Main App"
