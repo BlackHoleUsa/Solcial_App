@@ -15,12 +15,20 @@ const useSignup = navigation => {
     activeOpacity: 0.7,
     itemHeight: 60,
   };
-
+  const onSelect = country => {
+    setCountryCode(country.cca2);
+    setCountry(country);
+  };
+  const moveToLoginScreen = () => {
+    navigation.navigate('Login');
+  };
   return {
     DEFAULT_THEME,
     countryCode,
     setCountryCode,
     setCountry,
+    onSelect,
+    moveToLoginScreen,
   };
 };
 

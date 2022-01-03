@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React from 'react';
 import {ScrollView, Text, View} from 'react-native';
 import {Button, TouchableRipple} from 'react-native-paper';
 import BackgroundGradient from '../../components/BackgroundGradient';
@@ -8,13 +8,14 @@ import {styles} from './Styles';
 import CountryPicker from 'react-native-country-picker-modal';
 import useSignup from '../../hooks/useSignup';
 const Signup = ({navigation}) => {
-  const {DEFAULT_THEME, countryCode, setCountryCode, setCountry} =
-    useSignup(navigation);
+  const {
+    DEFAULT_THEME,
+    countryCode,
 
-  const onSelect = country => {
-    setCountryCode(country.cca2);
-    setCountry(country);
-  };
+    onSelect,
+    moveToLoginScreen,
+  } = useSignup(navigation);
+
   return (
     <BackgroundGradient>
       <ScrollView style={styles.container__main}>
@@ -79,7 +80,9 @@ const Signup = ({navigation}) => {
         {/* already have an account */}
         <View style={styles.container__login}>
           <Text style={styles.text__login}>Already have an account?</Text>
-          <TouchableRipple onPress={() => {}} rippleColor="rgba(0, 0, 0, .32)">
+          <TouchableRipple
+            onPress={moveToLoginScreen}
+            rippleColor="rgba(0, 0, 0, .32)">
             <Text
               style={styles.text__login}
               style={{color: 'white', marginLeft: 5}}>
