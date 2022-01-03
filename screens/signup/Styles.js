@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 export const styles = StyleSheet.create({
-  container__main: {},
+  container__main: {width: '100%', paddingHorizontal: 20},
   text__welcome: {
     fontFamily: 'Poppins-SemiBold',
     color: 'white',

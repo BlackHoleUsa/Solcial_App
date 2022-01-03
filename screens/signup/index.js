@@ -7,7 +7,7 @@ import {styles} from './Styles';
 const Signup = ({navigation}) => {
   return (
     <BackgroundGradient>
-      <ScrollView>
+      <ScrollView style={styles.container__main}>
         <Text style={styles.text__welcome}>Welocome to SOLEcial app!</Text>
         <View style={styles.container__grid}>
           <View style={styles.container__child_1}>
