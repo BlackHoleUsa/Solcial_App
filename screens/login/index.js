@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {View, StyleSheet, Platform, Image} from 'react-native';
+import {View, Image} from 'react-native';
 import {Text, TouchableRipple, Button} from 'react-native-paper';
 import BackgroundGradient from '../../components/BackgroundGradient';
 import CustomStatusBar from '../../components/CustomStatusBar';

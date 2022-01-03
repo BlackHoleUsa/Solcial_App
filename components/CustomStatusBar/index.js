@@ -2,7 +2,7 @@ import React from 'react';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 import {View, StatusBar} from 'react-native';
-const CustomStatusBar = ({backgroundColor, barStyle = 'light-content'}) => {
+const CustomStatusBar = ({backgroundColor, barStyle}) => {
   const insets = useSafeAreaInsets();
 
   return (

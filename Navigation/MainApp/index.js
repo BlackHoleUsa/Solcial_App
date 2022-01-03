@@ -27,7 +27,6 @@ const CustomTabbarButtom = ({children, onPress}) => {
 const MainApp = () => {
   return (
     <React.Fragment>
-      <CustomStatusBar backgroundColor="black" barStyle="light-content" />
       <Tab.Navigator
         screenOptions={({route}) => ({
           tabBarStyle: {
