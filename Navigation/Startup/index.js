@@ -37,7 +37,11 @@ const Startup = () => {
             title: ' ',
           }}
         />
-        <Stack.Screen name="Forgot Password" component={ForgotPassword} />
+        <Stack.Screen
+          name="Forgot Password"
+          component={ForgotPassword}
+          options={{headerShown: false}}
+        />
         <Stack.Screen
           name="Main App"
           component={MainApp}
