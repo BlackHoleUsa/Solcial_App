@@ -1,6 +1,9 @@
-import React, {Platform} from 'react';
+import React, {useState} from 'react';
 
 const useSignup = navigation => {
+  const [countryCode, setCountryCode] = useState('FR');
+  const [country, setCountry] = useState(null);
+  // theme for mobile code picker
   const DEFAULT_THEME = {
     primaryColor: '#ccc',
     primaryColorVariant: '#eee',
@@ -15,6 +18,9 @@ const useSignup = navigation => {
 
   return {
     DEFAULT_THEME,
+    countryCode,
+    setCountryCode,
+    setCountry,
   };
 };
 

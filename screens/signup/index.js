@@ -8,16 +8,9 @@ import {styles} from './Styles';
 import CountryPicker from 'react-native-country-picker-modal';
 import useSignup from '../../hooks/useSignup';
 const Signup = ({navigation}) => {
-  const {DEFAULT_THEME} = useSignup(navigation);
-  const [countryCode, setCountryCode] = useState('FR');
-  const [country, setCountry] = useState(null);
-  const [withCountryNameButton, setWithCountryNameButton] = useState(false);
-  const [withFlag, setWithFlag] = useState(true);
-  const [withEmoji, setWithEmoji] = useState(true);
-  const [withFilter, setWithFilter] = useState(true);
-  const [withAlphaFilter, setWithAlphaFilter] = useState(false);
-  const [withCallingCode, setWithCallingCode] = useState(false);
-  // eslint-disable-next-line no-shadow
+  const {DEFAULT_THEME, countryCode, setCountryCode, setCountry} =
+    useSignup(navigation);
+
   const onSelect = country => {
     setCountryCode(country.cca2);
     setCountry(country);
@@ -67,17 +60,6 @@ const Signup = ({navigation}) => {
             containerButtonStyle={{}}
             theme={DEFAULT_THEME}
           />
-
-          {/* ...{
-              countryCode,
-              withFilter,
-              withFlag,
-              withCountryNameButton,
-              withAlphaFilter,
-              withCallingCode,
-              withEmoji,
-              onSelect,
-            } */}
         </View>
         <Button
           mode="contained"
