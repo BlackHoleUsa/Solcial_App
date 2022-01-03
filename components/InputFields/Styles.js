@@ -21,6 +21,7 @@ export const styles = StyleSheet.create({
     padding: 10,
     paddingVertical: 0,
     fontFamily: 'Poppins-Regular',
+    textAlign: 'left',
   },
   text__input: {
     color: 'white',
