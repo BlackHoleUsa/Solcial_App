@@ -49,4 +49,16 @@ export const styles = StyleSheet.create({
     fontWeight: Platform.OS === 'ios' ? '600' : 'normal',
     color: 'white',
   },
+  container__mobile: {
+    backgroundColor: 'transparent',
+    width: '100%',
+    borderColor: '#B7B7B7',
+    borderWidth: 1,
+    height: 70,
+    color: 'white',
+  },
+  text__containerStyle: {
+    backgroundColor: 'transparent',
+    color: 'white',
+  },
 });
