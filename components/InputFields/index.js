@@ -10,13 +10,20 @@ const InputField = props => {
       <Text style={styles.text__input}>{props.label}</Text>
       <View style={styles.container__input}>
         <TextInput
-          style={styles.input}
+          style={[styles.input, props.style]}
           onChangeText={onChangeText}
           value={text}
           selectionColor="white"
-          placeholder="Email"
+          placeholder={props.placeholder}
         />
-        <Icons name={props.icon} size={25} color="white" style={styles.icon} />
+        {props.icon ? (
+          <Icons
+            name={props.icon}
+            size={25}
+            color="white"
+            style={styles.icon}
+          />
+        ) : null}
       </View>
     </View>
   );
