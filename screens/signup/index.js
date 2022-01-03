@@ -58,7 +58,7 @@ const Signup = ({navigation}) => {
           <Text style={styles.text__login}>Already have an account?</Text>
           <TouchableRipple onPress={() => {}} rippleColor="rgba(0, 0, 0, .32)">
             <Text
-              style={styles.text__signup}
+              style={styles.text__login}
               style={{color: 'white', marginLeft: 5}}>
               Login
             </Text>

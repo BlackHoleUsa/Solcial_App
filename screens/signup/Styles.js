@@ -27,6 +27,10 @@ export const styles = StyleSheet.create({
   },
   container__login: {
     flexDirection: 'row',
+    width: '100%',
+    marginVertical: 40,
+    justifyContent: 'center',
+    alignItems: 'flex-start',
   },
   text__login: {
     fontFamily: 'Poppins-Regular',
