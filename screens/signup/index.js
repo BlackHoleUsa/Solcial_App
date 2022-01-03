@@ -51,15 +51,22 @@ const Signup = ({navigation}) => {
         {/* phone number */}
         <View style={styles.container__phoneNumber}>
           <Text style={styles.text_mobilePhone}>Mobile Phone</Text>
-          <CountryPicker
-            countryCode={countryCode}
-            withFlag
-            withCallingCode
-            withCallingCodeButton
-            onSelect={onSelect}
-            containerButtonStyle={{}}
-            theme={DEFAULT_THEME}
-          />
+          <View style={styles.container__countryPicker}>
+            <View style={styles.container__countryPicker__1}>
+              <CountryPicker
+                countryCode={countryCode}
+                withFlag
+                withCallingCode
+                withCallingCodeButton
+                onSelect={onSelect}
+                containerButtonStyle={{}}
+                theme={DEFAULT_THEME}
+              />
+            </View>
+            <View style={styles.container__countryPicker__2}>
+              <InputField />
+            </View>
+          </View>
         </View>
         <Button
           mode="contained"

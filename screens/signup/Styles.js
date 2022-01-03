@@ -49,16 +49,20 @@ export const styles = StyleSheet.create({
     fontWeight: Platform.OS === 'ios' ? '600' : 'normal',
     color: 'white',
   },
-  container__mobile: {
-    backgroundColor: 'transparent',
-    width: '100%',
-    borderColor: '#B7B7B7',
-    borderWidth: 1,
-    height: 70,
-    color: 'white',
+  container__countryPicker: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
-  text__containerStyle: {
-    backgroundColor: 'transparent',
-    color: 'white',
+  container__countryPicker__1: {
+    width: '30%',
+    borderWidth: 1,
+    borderColor: '#707070',
+    padding: 10,
+    height: 41,
+    marginTop: 8,
+  },
+  container__countryPicker__2: {
+    width: '65%',
   },
 });
