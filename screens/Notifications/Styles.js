@@ -6,11 +6,16 @@ export const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'center',
     backgroundColor: 'white',
+    width: '100%',
+    paddingHorizontal: 20,
   },
   heading__main: {
     marginTop: 20,
     fontFamily: 'Poppins-Medium',
     fontWeight: Platform.OS === 'ios' ? fontWeights.medium : 'normal',
     fontSize: 20,
+  },
+  container__notification: {
+    marginTop: 100,
   },
 });
