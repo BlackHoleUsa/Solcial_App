@@ -32,19 +32,22 @@ const Signup = ({navigation}) => {
         {/* country and zip code */}
         <View style={styles.container__grid}>
           <View style={styles.container__child_1}>
-            <InputField label="Counrty" />
+            <InputField label="Country" />
           </View>
           <View style={styles.container__child_2}>
             <InputField label="Zip Code" />
           </View>
         </View>
-        <View style={styles.container__grid}>
-          <Text>Mobile Phone</Text>
-          <View style={styles.container__child_1}>
-            <InputField />
-          </View>
-          <View style={styles.container__child_2}>
-            <InputField />
+        {/* phone number */}
+        <View style={styles.container__phoneNumber}>
+          <Text style={styles.text_mobilePhone}>Mobile Phone</Text>
+          <View style={[styles.container__grid, {marginTop: 0}]}>
+            <View style={{width: '25%'}}>
+              <InputField />
+            </View>
+            <View style={{width: '70%'}}>
+              <InputField />
+            </View>
           </View>
         </View>
         <Button
@@ -54,6 +57,7 @@ const Signup = ({navigation}) => {
           labelStyle={{color: 'black', fontFamily: 'Poppins-Regular'}}>
           Sign Up
         </Button>
+        {/* already have an account */}
         <View style={styles.container__login}>
           <Text style={styles.text__login}>Already have an account?</Text>
           <TouchableRipple onPress={() => {}} rippleColor="rgba(0, 0, 0, .32)">

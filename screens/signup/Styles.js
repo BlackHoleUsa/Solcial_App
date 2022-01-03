@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Platform} from 'react-native';
 export const styles = StyleSheet.create({
   container__main: {width: '100%', paddingHorizontal: 20},
   text__welcome: {
@@ -24,6 +24,7 @@ export const styles = StyleSheet.create({
     backgroundColor: 'white',
     color: 'white',
     textAlign: 'center',
+    borderRadius: 0,
   },
   container__login: {
     flexDirection: 'row',
@@ -36,5 +37,16 @@ export const styles = StyleSheet.create({
     fontFamily: 'Poppins-Regular',
     fontWeight: 'normal',
     color: '#B7B7B7',
+  },
+  container__phoneNumber: {
+    width: '100%',
+
+    justifyContent: 'space-between',
+    marginTop: 20,
+  },
+  text_mobilePhone: {
+    fontFamily: 'Poppins-SemiBold',
+    fontWeight: Platform.OS === 'ios' ? '600' : 'normal',
+    color: 'white',
   },
 });
