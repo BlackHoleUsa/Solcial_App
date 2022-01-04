@@ -11,8 +11,8 @@ export const styles = StyleSheet.create({
     height: '100%',
   },
   text__title: {
-    fontFamily: 'Poppins-Regular',
-    fontWeight: Platform.OS === 'ios' ? fontWeights.regular : 'normal',
+    fontFamily: 'Poppins-Light',
+    fontWeight: Platform.OS === 'ios' ? '300' : 'normal',
     color: 'black',
   },
   container__priceAndCart: {
@@ -23,8 +23,8 @@ export const styles = StyleSheet.create({
     marginTop: 5,
   },
   text__price: {
-    fontFamily: 'Poppins-Medium',
-    fontWeight: Platform.OS === 'ios' ? fontWeights.medium : 'normal',
+    fontFamily: 'Poppins-Regular',
+    fontWeight: Platform.OS === 'ios' ? fontWeights.regular : 'normal',
     color: 'black',
   },
 });

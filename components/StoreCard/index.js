@@ -16,7 +16,7 @@ const StoreCard = () => {
       <Text style={styles.text__title}>Football shirt</Text>
       <View style={styles.container__priceAndCart}>
         <Text style={styles.text__price}>$50</Text>
-        <Icons name="ios-cart-outline" size={25} color="black" />
+        <Icons name="ios-cart-outline" size={20} color="black" />
       </View>
     </View>
   );
