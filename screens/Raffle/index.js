@@ -2,15 +2,15 @@ import React from 'react';
 import {ScrollView, View} from 'react-native';
 import {Text} from 'react-native-paper';
 import {styles} from './Styles';
-import RaffleCard from './RaffleCard';
+import RaffleAuctionCard from '../../components/RaffleAuctionCard';
 const Raffle = () => {
   return (
     <ScrollView style={styles.container__main}>
-      <RaffleCard />
-      <RaffleCard />
-      <RaffleCard />
-      <RaffleCard />
-      <RaffleCard />
+      <RaffleAuctionCard />
+      <RaffleAuctionCard />
+      <RaffleAuctionCard />
+      <RaffleAuctionCard />
+      <RaffleAuctionCard />
     </ScrollView>
   );
 };

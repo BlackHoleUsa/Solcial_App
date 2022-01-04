@@ -1,10 +1,10 @@
 import React from 'react';
 import {Text, View, Image} from 'react-native';
 import {styles} from './Styles';
-import {Images} from '../../../assets/images';
+import {Images} from '../../assets/images';
 import {Button} from 'react-native-paper';
 import Icons from 'react-native-vector-icons/Ionicons';
-const RaffleCard = ({navigation}) => {
+const RaffleAuctionCard = ({navigation}) => {
   return (
     <View style={styles.container__main}>
       <View style={styles.icon}>
@@ -39,4 +39,4 @@ const RaffleCard = ({navigation}) => {
   );
 };
 
-export default RaffleCard;
+export default RaffleAuctionCard;
