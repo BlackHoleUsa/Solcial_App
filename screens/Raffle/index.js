@@ -1,11 +1,12 @@
 import React from 'react';
-import {View, StatusBar} from 'react-native';
+import {View} from 'react-native';
 import {Text} from 'react-native-paper';
-
+import {styles} from './Styles';
+import RaffleCard from './RaffleCard';
 const Raffle = () => {
   return (
-    <View>
-      <Text>Raffle screen</Text>
+    <View style={styles.container__main}>
+      <RaffleCard />
     </View>
   );
 };
