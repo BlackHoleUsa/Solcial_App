@@ -6,7 +6,12 @@ export const styles = StyleSheet.create({
     width: '100%',
     position: 'relative',
   },
-  container__image: {},
+  container__image: {
+    width: '100%',
+  },
+  image: {
+    width: '100%',
+  },
   container__content: {padding: 10},
   text__title: {
     fontFamily: 'Poppins-SemiBold',

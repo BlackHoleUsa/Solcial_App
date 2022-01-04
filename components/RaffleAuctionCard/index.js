@@ -15,7 +15,7 @@ const RaffleAuctionCard = ({navigation, buttonLabel}) => {
         />
       </View>
       <View style={styles.container__image}>
-        <Image source={Images.cardImage} />
+        <Image source={Images.cardImage} style={styles.image} />
       </View>
       <View style={styles.container__content}>
         <Text style={styles.text__title}>Soccer Jacket</Text>
