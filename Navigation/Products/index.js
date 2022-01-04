@@ -7,6 +7,8 @@ import Auction from '../../screens/Auction';
 import StoreScreen from '../../screens/StoreScreen';
 import CustomStatusBar from '../../components/CustomStatusBar';
 import {useIsFocused} from '@react-navigation/native';
+import {Platform} from 'react-native';
+import {fontWeights} from '../../assets/Data';
 const Tab = createMaterialTopTabNavigator();
 const Products = () => {
   const isFocused = useIsFocused();
@@ -22,6 +24,9 @@ const Products = () => {
           },
           tabBarLabelStyle: {
             color: 'white',
+            fontFamily: 'Poppins-Medium',
+            fontWeight: Platform.OS === 'ios' ? fontWeights.medium : 'normal',
+            fontSize: 16,
           },
         })}>
         <Tab.Screen
