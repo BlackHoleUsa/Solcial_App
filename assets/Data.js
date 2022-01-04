@@ -1,3 +1,5 @@
+import uuid from 'react-native-uuid';
+import {Images} from './images';
 export const fontWeights = {
   extrathin: '200',
   thin: '300',
@@ -7,3 +9,37 @@ export const fontWeights = {
   bold: '700',
   extrabold: '800',
 };
+export const storeScreen = [
+  {
+    id: uuid.v4(),
+    image: Images.cardImage,
+  },
+  {
+    id: uuid.v4(),
+    image: Images.cardImage,
+  },
+  {
+    id: uuid.v4(),
+    image: Images.cardImage,
+  },
+  {
+    id: uuid.v4(),
+    image: Images.cardImage,
+  },
+  {
+    id: uuid.v4(),
+    image: Images.cardImage,
+  },
+  {
+    id: uuid.v4(),
+    image: Images.cardImage,
+  },
+  {
+    id: uuid.v4(),
+    image: Images.cardImage,
+  },
+  {
+    id: uuid.v4(),
+    image: Images.cardImage,
+  },
+];

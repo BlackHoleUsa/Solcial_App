@@ -1,15 +1,29 @@
 import React from 'react';
-import {ScrollView, View} from 'react-native';
+import {ScrollView, View, FlatList} from 'react-native';
 import {Text} from 'react-native-paper';
 import {styles} from './Styles';
 import Search from '../../components/Search';
 import StoreCard from '../../components/StoreCard';
+import {storeScreen} from '../../assets/Data';
+
 const StoreScreen = () => {
   return (
-    <ScrollView style={styles.container__main}>
+    <View style={styles.container__main}>
       <Search />
-      <StoreCard />
-    </ScrollView>
+
+      <FlatList
+        data={storeScreen}
+        horizontal={false}
+        numColumns={2}
+        keyExtractor={item => item.id}
+        columnWrapperStyle={{justifyContent: 'space-around'}}
+        renderItem={({item}) => (
+          <View style={{width: '45%'}}>
+            <StoreCard />
+          </View>
+        )}
+      />
+    </View>
   );
 };
 

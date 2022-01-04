@@ -1,7 +1,7 @@
 import {Platform, StyleSheet} from 'react-native';
 import {fontWeights} from '../../assets/Data';
 export const styles = StyleSheet.create({
-  container__main: {marginBottom: 5, width: 120},
+  container__main: {marginBottom: 5, width: '100%'},
   container__image: {
     width: '100%',
     height: 200,
