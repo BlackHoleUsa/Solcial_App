@@ -8,9 +8,9 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text__title: {
-    fontFamily: 'Poppins-SemiBold',
+    fontFamily: 'Poppins-Medium',
     fontSize: 25,
-    fontWeight: fontWeights.semibold,
+    fontWeight: fontWeights.medium,
     marginTop: 20,
   },
 });

@@ -7,12 +7,12 @@ import CustomStatusBar from '../../components/CustomStatusBar';
 const Cart = () => {
   const isFocused = useIsFocused();
   return (
-    <ScrollView contentContainerStyle={styles.container__main}>
+    <View style={styles.container__main}>
       {isFocused && (
         <CustomStatusBar backgroundColor={'white'} barStyle={'dark-content'} />
       )}
       <Text style={styles.text__title}>Cart</Text>
-    </ScrollView>
+    </View>
   );
 };
 
