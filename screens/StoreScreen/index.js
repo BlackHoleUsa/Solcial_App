@@ -1,9 +1,14 @@
 import React from 'react';
-import {View} from 'react-native';
+import {ScrollView, View} from 'react-native';
 import {Text} from 'react-native-paper';
-
+import {styles} from './Styles';
+import Search from '../../components/Search';
 const StoreScreen = () => {
-  return <Text>Store screen</Text>;
+  return (
+    <ScrollView style={styles.container__main}>
+      <Search />
+    </ScrollView>
+  );
 };
 
 export default StoreScreen;
