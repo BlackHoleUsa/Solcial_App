@@ -4,6 +4,7 @@ import {fontWeights} from '../../../assets/Data';
 export const styles = StyleSheet.create({
   container__main: {
     width: '100%',
+    position: 'relative',
   },
   container__image: {},
   container__content: {padding: 10},
@@ -22,6 +23,8 @@ export const styles = StyleSheet.create({
   raffle__button: {
     borderRadius: 0,
     margin: 0,
+    width: '40%',
+    maxWidth: 150,
   },
   text__details: {
     color: 'black',
@@ -31,5 +34,11 @@ export const styles = StyleSheet.create({
   },
   text__details__container: {
     width: '55%',
+  },
+  icon: {
+    position: 'absolute',
+    right: 5,
+    top: 5,
+    zIndex: 2,
   },
 });

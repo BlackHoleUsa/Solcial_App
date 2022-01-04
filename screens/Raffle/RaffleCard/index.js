@@ -3,9 +3,17 @@ import {Text, View, Image} from 'react-native';
 import {styles} from './Styles';
 import {Images} from '../../../assets/images';
 import {Button} from 'react-native-paper';
+import Icons from 'react-native-vector-icons/Ionicons';
 const RaffleCard = ({navigation}) => {
   return (
     <View style={styles.container__main}>
+      <View style={styles.icon}>
+        <Icons
+          name="ios-information-circle-outline"
+          size={30}
+          color={'black'}
+        />
+      </View>
       <View style={styles.container__image}>
         <Image source={Images.cardImage} />
       </View>
