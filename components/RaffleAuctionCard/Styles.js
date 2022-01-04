@@ -23,8 +23,7 @@ export const styles = StyleSheet.create({
   raffle__button: {
     borderRadius: 0,
     margin: 0,
-    width: '40%',
-    maxWidth: 150,
+    padding: 0,
   },
   text__details: {
     color: 'black',

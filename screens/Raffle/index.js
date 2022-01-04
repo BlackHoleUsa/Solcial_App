@@ -6,11 +6,11 @@ import RaffleAuctionCard from '../../components/RaffleAuctionCard';
 const Raffle = () => {
   return (
     <ScrollView style={styles.container__main}>
-      <RaffleAuctionCard />
-      <RaffleAuctionCard />
-      <RaffleAuctionCard />
-      <RaffleAuctionCard />
-      <RaffleAuctionCard />
+      <RaffleAuctionCard buttonLabel="Enter Raffel" />
+      <RaffleAuctionCard buttonLabel="Enter Raffel" />
+      <RaffleAuctionCard buttonLabel="Enter Raffel" />
+      <RaffleAuctionCard buttonLabel="Enter Raffel" />
+      <RaffleAuctionCard buttonLabel="Enter Raffel" />
     </ScrollView>
   );
 };
