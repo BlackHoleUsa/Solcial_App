@@ -1,10 +1,35 @@
-import {StyleSheet} from 'react-native';
+import {Platform, StyleSheet} from 'react-native';
+import {fontWeights} from '../../../assets/Data';
+
 export const styles = StyleSheet.create({
-  container__main: {},
+  container__main: {
+    width: '100%',
+  },
   container__image: {},
-  container__content: {},
-  raffle__button: {},
-  text__title: {},
-  container__detail: {},
-  text__details: {},
+  container__content: {padding: 10},
+  text__title: {
+    fontFamily: 'Poppins-SemiBold',
+    color: 'black',
+    fontWeight: Platform.OS === 'ios' ? fontWeights.semibold : 'normal',
+    fontSize: 16,
+  },
+  container__detail: {
+    flexDirection: 'row',
+
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  raffle__button: {
+    borderRadius: 0,
+    margin: 0,
+  },
+  text__details: {
+    color: 'black',
+    textTransform: 'capitalize',
+    fontFamily: 'Poppins-Regular',
+    fontSize: 10,
+  },
+  text__details__container: {
+    width: '55%',
+  },
 });

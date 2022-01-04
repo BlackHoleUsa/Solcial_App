@@ -12,9 +12,12 @@ const RaffleCard = ({navigation}) => {
       <View style={styles.container__content}>
         <Text style={styles.text__title}>Soccer Jacket</Text>
         <View style={styles.container__detail}>
-          <Text style={styles.text__details}>
-            dummy text has no value only there as a placeholder
-          </Text>
+          <View style={styles.text__details__container}>
+            <Text style={styles.text__details}>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry.
+            </Text>
+          </View>
           <Button
             mode="outlined"
             onPress={() => navigation.navigate('Main App')}
