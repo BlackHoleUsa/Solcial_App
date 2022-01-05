@@ -2,14 +2,13 @@ import React from 'react';
 
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 
-import Raffle from '../../screens/Raffle';
-
 import CustomStatusBar from '../../components/CustomStatusBar';
 import {useIsFocused} from '@react-navigation/native';
 import {Platform} from 'react-native';
 import {fontWeights} from '../../assets/Data';
 import StoreNavigator from '../StoreNavigator';
 import AuctionNavigator from '../AuctionNavigator';
+import RaffleNavigator from '../RaffleNavigator';
 
 const Tab = createMaterialTopTabNavigator();
 const Products = () => {
@@ -33,7 +32,7 @@ const Products = () => {
         })}>
         <Tab.Screen
           name="Raffle"
-          component={Raffle}
+          component={RaffleNavigator}
           options={{headerShown: false}}
         />
         <Tab.Screen

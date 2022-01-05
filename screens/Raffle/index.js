@@ -4,15 +4,35 @@ import {Text} from 'react-native-paper';
 import {styles} from './Styles';
 import RaffleAuctionCard from '../../components/RaffleAuctionCard';
 import Search from '../../components/Search';
-const Raffle = () => {
+const Raffle = ({navigation}) => {
   return (
     <ScrollView style={styles.container__main}>
       <Search />
-      <RaffleAuctionCard buttonLabel="Enter Raffel" />
-      <RaffleAuctionCard buttonLabel="Enter Raffel" />
-      <RaffleAuctionCard buttonLabel="Enter Raffel" />
-      <RaffleAuctionCard buttonLabel="Enter Raffel" />
-      <RaffleAuctionCard buttonLabel="Enter Raffel" />
+      <RaffleAuctionCard
+        buttonLabel="Enter Raffel"
+        navigation={navigation}
+        itemRoute="Raffle Item"
+      />
+      <RaffleAuctionCard
+        buttonLabel="Enter Raffel"
+        navigation={navigation}
+        itemRoute="Raffle Item"
+      />
+      <RaffleAuctionCard
+        buttonLabel="Enter Raffel"
+        navigation={navigation}
+        itemRoute="Raffle Item"
+      />
+      <RaffleAuctionCard
+        buttonLabel="Enter Raffel"
+        navigation={navigation}
+        itemRoute="Raffle Item"
+      />
+      <RaffleAuctionCard
+        buttonLabel="Enter Raffel"
+        navigation={navigation}
+        itemRoute="Raffle Item"
+      />
     </ScrollView>
   );
 };
