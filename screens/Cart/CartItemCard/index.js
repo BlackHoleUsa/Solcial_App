@@ -12,8 +12,10 @@ const CartItemCard = ({navigation}) => {
           <Image source={Images.cardImage} style={styles.image} />
         </View>
         <View style={styles.container__content}>
-          <Text style={styles.text__itemTitle}>Women hoodie</Text>
-          <Text style={styles.text__size}>Size : L</Text>
+          <View>
+            <Text style={styles.text__itemTitle}>Women hoodie</Text>
+            <Text style={styles.text__size}>Size : L</Text>
+          </View>
           <View style={styles.container__priceAndButtons}>
             <Text style={styles.text__price}>$50</Text>
             <View style={styles.container__buttons}>

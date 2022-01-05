@@ -20,7 +20,11 @@ export const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
   },
-  container__content: {width: '50%'},
+  container__content: {
+    width: '50%',
+    justifyContent: 'space-between',
+    paddingVertical: 10,
+  },
   text__itemTitle: {
     fontFamily: 'Poppins-Light',
     fontWeight: fontWeights.regular,
