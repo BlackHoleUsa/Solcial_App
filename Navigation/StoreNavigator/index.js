@@ -5,7 +5,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import StoreScreen from '../../screens/StoreScreen';
 import StoreItemDetail from '../../screens/StoreItemDetail';
 const Stack = createNativeStackNavigator();
-const Startup = () => {
+const StoreNavigator = () => {
   return (
     <Stack.Navigator
       initialRouteName="Store Screen"
@@ -35,4 +35,4 @@ const Startup = () => {
   );
 };
 
-export default Startup;
+export default StoreNavigator;
