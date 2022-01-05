@@ -9,6 +9,7 @@ import CustomStatusBar from '../../components/CustomStatusBar';
 import {useIsFocused} from '@react-navigation/native';
 import {Platform} from 'react-native';
 import {fontWeights} from '../../assets/Data';
+import StoreNavigator from '../StoreNavigator';
 const Tab = createMaterialTopTabNavigator();
 const Products = () => {
   const isFocused = useIsFocused();
@@ -41,7 +42,7 @@ const Products = () => {
         />
         <Tab.Screen
           name="Store"
-          component={StoreScreen}
+          component={StoreNavigator}
           options={{headerShown: false}}
         />
       </Tab.Navigator>
