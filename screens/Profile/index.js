@@ -1,9 +1,21 @@
 import React from 'react';
 import {View} from 'react-native';
 import {Text} from 'react-native-paper';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import {useIsFocused} from '@react-navigation/native';
+import CustomStatusBar from '../../components/CustomStatusBar';
+import {styles} from './Styles';
 const Profile = () => {
-  return <Text>The profile screen</Text>;
+  const isFocused = useIsFocused();
+  return (
+    <View style={styles.container__main}>
+      {isFocused && (
+        <CustomStatusBar
+          backgroundColor={'#142A35'}
+          barStyle={'light-content'}
+        />
+      )}
+    </View>
+  );
 };
 
 export default Profile;
