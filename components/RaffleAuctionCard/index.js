@@ -1,10 +1,13 @@
 import React from 'react';
-import {Text, View, Image} from 'react-native';
+import {Text, View, Image, TouchableOpacity} from 'react-native';
 import {styles} from './Styles';
 import {Images} from '../../assets/images';
 import {Button} from 'react-native-paper';
 import Icons from 'react-native-vector-icons/Ionicons';
-const RaffleAuctionCard = ({navigation, buttonLabel}) => {
+const RaffleAuctionCard = ({navigation, buttonLabel, itemRoute}) => {
+  const handleNavigation = () => {
+    navigation.navigate(itemRoute);
+  };
   return (
     <View style={styles.container__main}>
       <View style={styles.icon}>
@@ -14,9 +17,11 @@ const RaffleAuctionCard = ({navigation, buttonLabel}) => {
           color={'black'}
         />
       </View>
-      <View style={styles.container__image}>
+      <TouchableOpacity
+        onPress={handleNavigation}
+        style={styles.container__image}>
         <Image source={Images.cardImage} style={styles.image} />
-      </View>
+      </TouchableOpacity>
       <View style={styles.container__content}>
         <Text style={styles.text__title}>Soccer Jacket</Text>
         <View style={styles.container__detail}>

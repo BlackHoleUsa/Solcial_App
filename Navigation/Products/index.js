@@ -3,13 +3,14 @@ import React from 'react';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 
 import Raffle from '../../screens/Raffle';
-import Auction from '../../screens/Auction';
-import StoreScreen from '../../screens/StoreScreen';
+
 import CustomStatusBar from '../../components/CustomStatusBar';
 import {useIsFocused} from '@react-navigation/native';
 import {Platform} from 'react-native';
 import {fontWeights} from '../../assets/Data';
 import StoreNavigator from '../StoreNavigator';
+import AuctionNavigator from '../AuctionNavigator';
+
 const Tab = createMaterialTopTabNavigator();
 const Products = () => {
   const isFocused = useIsFocused();
@@ -37,7 +38,7 @@ const Products = () => {
         />
         <Tab.Screen
           name="Auction"
-          component={Auction}
+          component={AuctionNavigator}
           options={{headerShown: false}}
         />
         <Tab.Screen

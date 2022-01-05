@@ -2,13 +2,14 @@ import React from 'react';
 
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import StoreScreen from '../../screens/StoreScreen';
-import StoreItemDetail from '../../screens/StoreScreen/StoreItemDetail';
+import Auction from '../../screens/Auction';
+
+import AuctionItemDetail from '../../screens/Auction/AuctionItemDetail';
 const Stack = createNativeStackNavigator();
-const StoreNavigator = () => {
+const AuctionNavigator = () => {
   return (
     <Stack.Navigator
-      initialRouteName="Store Screen"
+      initialRouteName="Auction Screen"
       screenOptions={({route}) => ({
         tabBarStyle: {
           backgroundColor: 'black',
@@ -22,17 +23,17 @@ const StoreNavigator = () => {
         headerTintColor: 'white',
       })}>
       <Stack.Screen
-        name="Store Screen"
-        component={StoreScreen}
+        name="Auction Screen"
+        component={Auction}
         options={{headerShown: false}}
       />
       <Stack.Screen
-        name="Store Item"
-        component={StoreItemDetail}
+        name="Auction Item"
+        component={AuctionItemDetail}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
   );
 };
 
-export default StoreNavigator;
+export default AuctionNavigator;
