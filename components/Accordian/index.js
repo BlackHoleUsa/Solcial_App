@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import {View, Text} from 'react-native';
-import {List} from 'react-native-paper';
-import {styles} from '../../screens/Profile/Styles';
+import {View, Text, TouchableOpacity} from 'react-native';
+import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
+import {styles} from './Styles';
 const Accordian = () => {
   const [expanded, setExpanded] = useState(true);
   const [icon, setIcon] = useState('chevron-right');
@@ -10,16 +10,12 @@ const Accordian = () => {
     expanded ? setIcon('chevron-right') : setIcon('chevron-down');
   };
   return (
-    <List.Section style={styles.container__accordian}>
-      <List.Accordion
-        title="Uncontrolled Accordion"
-        right={props => <List.Icon {...props} icon={icon} />}
-        expanded={expanded}
-        onPress={handlePress}>
-        <List.Item title="First item" />
-        <List.Item title="Second item" />
-      </List.Accordion>
-    </List.Section>
+    <View style={styles.container__main}>
+      <TouchableOpacity style={styles.button} onPress={handlePress}>
+        <Text style={styles.text__title}>Press Here</Text>
+        <Icons name={icon} size={30} color={'black'} />
+      </TouchableOpacity>
+    </View>
   );
 };
 

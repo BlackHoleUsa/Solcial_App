@@ -4,10 +4,6 @@ export const styles = StyleSheet.create({
   container__main: {
     backgroundColor: 'white',
     flex: 1,
-  },
-  container__accordian: {
-    backgroundColor: 'white',
-    borderBottom: 1,
-    borderBottomColor: 'black',
+    padding: 10,
   },
 });
