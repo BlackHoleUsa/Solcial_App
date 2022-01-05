@@ -3,16 +3,17 @@ import {fontWeights} from '../../assets/Data';
 export const styles = StyleSheet.create({
   container__main: {
     width: '100%',
-    borderBottomWidth: 1,
-    borderBottomColor: 'black',
 
     paddingVerticle: 40,
+    marginBottom: 10,
   },
   button: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     elevation: 0,
+    borderBottomWidth: 1,
+    borderBottomColor: 'black',
   },
   container__accordian: {
     backgroundColor: 'white',
@@ -21,8 +22,8 @@ export const styles = StyleSheet.create({
   },
   text__title: {
     color: 'black',
-    fontFamily: 'Poppins-Medium',
-    fontWeight: fontWeights.medium,
+    fontFamily: 'Poppins-Regular',
+    fontWeight: fontWeights.regular,
     fontSize: 15,
   },
 });

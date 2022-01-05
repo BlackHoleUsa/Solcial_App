@@ -17,7 +17,12 @@ const Profile = () => {
           barStyle={'light-content'}
         />
       )}
-      <Accordian />
+      <View style={styles.container__accordian}>
+        <Accordian title="Edit Profile" />
+        <Accordian title="Auction History" />
+        <Accordian title="Raffle History" />
+        <Accordian title="Store History" />
+      </View>
     </View>
   );
 };

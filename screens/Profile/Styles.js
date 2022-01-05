@@ -4,6 +4,11 @@ export const styles = StyleSheet.create({
   container__main: {
     backgroundColor: 'white',
     flex: 1,
-    padding: 10,
+  },
+  container__accordian: {
+    paddingHorizontal: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
   },
 });
