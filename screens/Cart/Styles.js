@@ -38,7 +38,8 @@ export const styles = StyleSheet.create({
   checkout__button: {
     backgroundColor: 'black',
     borderRadius: 0,
-    marginVertical: 20,
+    marginTop: 10,
+    marginBottom: 30,
     width: '100%',
   },
 });
