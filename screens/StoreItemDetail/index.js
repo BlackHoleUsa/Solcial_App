@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, View} from 'react-native';
 
-const StoreItem = () => {
+const StoreItemDetail = () => {
   return (
     <View>
       <Text>Store item list</Text>
@@ -9,4 +9,4 @@ const StoreItem = () => {
   );
 };
 
-export default StoreItem;
+export default StoreItemDetail;

@@ -3,7 +3,7 @@ import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import StoreScreen from '../../screens/StoreScreen';
-import StoreItem from '../../screens/StoreItem';
+import StoreItemDetail from '../../screens/StoreItemDetail';
 const Stack = createNativeStackNavigator();
 const Startup = () => {
   return (
@@ -28,7 +28,7 @@ const Startup = () => {
       />
       <Stack.Screen
         name="Store Item"
-        component={StoreItem}
+        component={StoreItemDetail}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

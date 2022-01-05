@@ -6,7 +6,7 @@ import Search from '../../components/Search';
 import StoreCard from '../../components/StoreCard';
 import {storeScreen} from '../../assets/Data';
 
-const StoreScreen = () => {
+const StoreScreen = ({navigation}) => {
   return (
     <View style={styles.container__main}>
       <Search />
@@ -19,7 +19,7 @@ const StoreScreen = () => {
         columnWrapperStyle={{justifyContent: 'space-around'}}
         renderItem={({item}) => (
           <View style={{width: '45%'}}>
-            <StoreCard />
+            <StoreCard navigation={navigation} />
           </View>
         )}
       />
