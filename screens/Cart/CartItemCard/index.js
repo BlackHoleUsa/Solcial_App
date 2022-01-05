@@ -35,13 +35,9 @@ const CartItemCard = ({navigation}) => {
         </View>
       </View>
       <View style={styles.container__removeButton}>
-        <Button
-          mode="contained"
-          onPress={() => navigation.navigate('Main App')}
-          style={styles.remove__button}
-          labelStyle={{color: 'black', fontFamily: 'Poppins-Light'}}>
-          Remove
-        </Button>
+        <TouchableOpacity style={styles.remove__button} onPress={() => {}}>
+          <Text style={styles.text__remove__button}>Remove</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );

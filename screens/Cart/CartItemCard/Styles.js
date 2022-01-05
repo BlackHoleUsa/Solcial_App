@@ -3,7 +3,7 @@ import {fontWeights} from '../../../assets/Data';
 export const styles = StyleSheet.create({
   container__main: {
     width: '100%',
-    paddingVertical: 20,
+    paddingVertical: 10,
     paddingHorizontal: 10,
 
     borderBottomWidth: 1,
@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
   container__imageAndContent: {
     width: '100%',
     flexDirection: 'row',
-    height: 150,
+    height: 125,
     justifyContent: 'space-between',
   },
   container__image: {width: '40%'},
@@ -30,14 +30,21 @@ export const styles = StyleSheet.create({
     fontWeight: fontWeights.regular,
     color: 'black',
   },
-  text__size: {color: '#9D9EA3'},
+  text__size: {
+    color: '#9D9EA3',
+    marginTop: 10,
+  },
   container__priceAndButtons: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
   },
 
-  text__price: {},
+  text__price: {
+    fontFamily: 'Poppins-Medium',
+    fontWeight: fontWeights.medium,
+    color: 'black',
+  },
   container__buttons: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -46,13 +53,27 @@ export const styles = StyleSheet.create({
     width: 100,
     borderColor: 'black',
     paddingHorizontal: 10,
+    paddingVertical: 3,
   },
   quantity__button: {
-    padding: 5,
+    padding: 2,
     margin: 0,
     textAlign: 'center',
   },
-  text__quantity: {},
-  container__removeButton: {},
+  text__quantity: {
+    fontFamily: 'Poppins-Medium',
+    fontWeight: fontWeights.medium,
+    color: 'black',
+  },
+  container__removeButton: {
+    width: '100%',
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
+  },
   remove__button: {},
+  text__remove__button: {
+    fontFamily: 'Poppins-Medium',
+    fontWeight: fontWeights.medium,
+    color: 'black',
+  },
 });
