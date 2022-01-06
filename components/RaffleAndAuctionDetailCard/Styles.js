@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 50,
+    marginBottom: 40,
     position: 'relative',
   },
   container__card: {
