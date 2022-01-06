@@ -1,8 +1,8 @@
 import React, {useRef, useState} from 'react';
-import {Animated, Dimensions, Image, StyleSheet, View} from 'react-native';
+import {Animated, Image, StyleSheet, View} from 'react-native';
 import useInterval from '../../../../hooks/useInterval';
 
-const MAX_WIDTH = Dimensions.get('window').width;
+import {MAX_WIDTH, styles} from './Styles';
 
 // indicators
 // automatic shuffling of images
@@ -62,39 +62,5 @@ const Carousel = ({images}) => {
     </React.Fragment>
   );
 };
-
-const styles = StyleSheet.create({
-  image: {
-    width: '100%',
-    height: '100%',
-    borderWidth: 2,
-    borderColor: 'black',
-  },
-  container__image: {width: MAX_WIDTH, height: 250},
-  container: {
-    flexDirection: 'row',
-  },
-  indicatorContainer: {
-    position: 'absolute',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: MAX_WIDTH,
-    bottom: 10,
-    zIndex: 2,
-  },
-  indicator: {
-    width: 15,
-    height: 15,
-    borderRadius: 7.5,
-    borderColor: 'white',
-    borderWidth: 1,
-    marginHorizontal: 10,
-    marginBottom: 10,
-  },
-  activeIndicator: {
-    backgroundColor: 'black',
-  },
-});
 
 export default Carousel;
