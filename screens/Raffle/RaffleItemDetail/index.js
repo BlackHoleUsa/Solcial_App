@@ -1,12 +1,9 @@
 import React from 'react';
 import {Text, View} from 'react-native';
+import BackgroundVideo from '../../BackgroundVideo';
 
 const RaffleItemDetail = () => {
-  return (
-    <View>
-      <Text>Raffle Item Details</Text>
-    </View>
-  );
+  return <BackgroundVideo />;
 };
 
 export default RaffleItemDetail;
