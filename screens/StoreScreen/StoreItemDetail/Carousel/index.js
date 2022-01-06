@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React from 'react';
 import {Animated, Image, TouchableOpacity, View} from 'react-native';
 
 import Icons from 'react-native-vector-icons/Ionicons';
