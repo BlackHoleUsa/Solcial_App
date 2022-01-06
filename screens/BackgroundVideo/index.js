@@ -14,6 +14,7 @@ const BackgroundVideo = ({children}) => {
         ignoreSilentSwitch={'obey'}
         style={styles.container__video}
       />
+      {children}
     </View>
   );
 };
