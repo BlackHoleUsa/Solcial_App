@@ -1,10 +1,11 @@
-import {Platform, StyleSheet, Dimensions} from 'react-native';
-import {fontWeights} from '../../../assets/Data';
+import {StyleSheet, Dimensions} from 'react-native';
+
 export const MAX_WIDTH = Dimensions.get('window').width;
 export const styles = StyleSheet.create({
   image: {
     width: '100%',
     height: '100%',
+    position: 'relative',
   },
   container__image: {width: MAX_WIDTH, height: 250},
   container: {
@@ -20,15 +21,23 @@ export const styles = StyleSheet.create({
     zIndex: 2,
   },
   indicator: {
-    width: 15,
-    height: 15,
-    borderRadius: 7.5,
-    borderColor: 'white',
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+    borderColor: '#ADADAD',
     borderWidth: 1,
-    marginHorizontal: 10,
+    marginHorizontal: 5,
     marginBottom: 10,
   },
   activeIndicator: {
     backgroundColor: 'black',
+  },
+  container_icons: {
+    width: '100%',
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    position: 'absolute',
+    top: '50%',
+    zIndex: 2,
   },
 });

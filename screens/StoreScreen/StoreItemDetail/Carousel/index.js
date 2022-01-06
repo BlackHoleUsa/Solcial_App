@@ -1,34 +1,27 @@
 import React, {useRef, useState} from 'react';
-import {Animated, Image, StyleSheet, View} from 'react-native';
-import useInterval from '../../../../hooks/useInterval';
+import {Animated, Image, TouchableOpacity, View} from 'react-native';
 
-import {MAX_WIDTH, styles} from './Styles';
+import Icons from 'react-native-vector-icons/Ionicons';
+import useCarousel from '../../../../hooks/useCarousel';
+import {styles} from './Styles';
 
 // indicators
 // automatic shuffling of images
 
 const Carousel = ({images}) => {
-  const animation = useRef(new Animated.Value(0));
-  const [currentImage, setCurrentImage] = useState(0);
-  useInterval(() => handleAnimation(), 5000);
+  const {currentImage, animation, moveBack, moveForward} = useCarousel(images);
 
-  const handleAnimation = () => {
-    let newCurrentImage = currentImage + 1;
-
-    if (newCurrentImage >= images.length) {
-      newCurrentImage = 0;
-    }
-
-    Animated.spring(animation.current, {
-      toValue: -(MAX_WIDTH * newCurrentImage),
-      useNativeDriver: true,
-    }).start();
-
-    setCurrentImage(newCurrentImage);
-  };
   return (
     <React.Fragment>
       <View>
+        <View style={styles.container_icons}>
+          <TouchableOpacity onPress={moveBack}>
+            <Icons name="chevron-back" size={25} color={'black'} />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={moveForward}>
+            <Icons name="chevron-forward" size={25} color={'black'} />
+          </TouchableOpacity>
+        </View>
         <Animated.View
           style={[
             styles.container,
