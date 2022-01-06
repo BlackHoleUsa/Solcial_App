@@ -5,8 +5,6 @@ export const styles = StyleSheet.create({
   image: {
     width: '100%',
     height: '100%',
-    borderWidth: 2,
-    borderColor: 'black',
   },
   container__image: {width: MAX_WIDTH, height: 250},
   container: {
