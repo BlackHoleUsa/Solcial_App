@@ -4,10 +4,10 @@ import RaffleAuctionImage from '../../../components/RaffleAuctionImage';
 import AuctionTime from './AuctionTime';
 import {styles} from './Styles';
 
-const EnterAuction = () => {
+const EnterAuction = ({navigation}) => {
   return (
     <ScrollView contentContainerStyle={styles.container__main}>
-      <RaffleAuctionImage />
+      <RaffleAuctionImage navigation={navigation} />
       <View style={styles.container__content}>
         <Text style={styles.text__title}>Soccer Jacket</Text>
         <Text style={styles.text__description}>
