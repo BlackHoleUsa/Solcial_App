@@ -12,6 +12,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     borderWidth: 1,
     borderColor: 'black',
+    paddingVertical: 10,
   },
   text__title: {
     fontFamily: 'Poppins-Medium',

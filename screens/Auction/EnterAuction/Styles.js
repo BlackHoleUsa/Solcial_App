@@ -39,7 +39,7 @@ export const styles = StyleSheet.create({
   },
   text___highest_bid: {
     fontFamily: 'Poppins-SemiBold',
-    fontWeight: fontWeights.semibold,
+    fontWeight: fontWeights.medium,
     color: 'black',
   },
   button: {
