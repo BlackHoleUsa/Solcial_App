@@ -2,11 +2,11 @@ import React from 'react';
 import {View} from 'react-native';
 import {Text} from 'react-native-paper';
 import {useIsFocused} from '@react-navigation/native';
-import Icons from 'react-native-vector-icons/Ionicons';
+
 import CustomStatusBar from '../../components/CustomStatusBar';
 
 import {styles} from './Styles';
-import Accordian from '../../components/Accordian';
+
 import ProfileLinks from './ProfileLinks';
 const Profile = ({navigation}) => {
   const isFocused = useIsFocused();

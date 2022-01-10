@@ -7,7 +7,7 @@ const InputField = props => {
   const [number, onChangeNumber] = React.useState(null);
   return (
     <View style={[styles.container__main, props.style]}>
-      <Text style={styles.text__input}>{props.label}</Text>
+      <Text style={[styles.text__input, props.textStyle]}>{props.label}</Text>
       <View style={styles.container__input}>
         <TextInput
           style={[styles.input, props.style]}
