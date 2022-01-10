@@ -7,7 +7,8 @@ import CustomStatusBar from '../../components/CustomStatusBar';
 
 import {styles} from './Styles';
 import Accordian from '../../components/Accordian';
-const Profile = () => {
+import ProfileLinks from './ProfileLinks';
+const Profile = ({navigation}) => {
   const isFocused = useIsFocused();
   return (
     <View style={styles.container__main}>
@@ -25,10 +26,10 @@ const Profile = () => {
         <Text style={styles.text__email}>azm@gmail.com</Text>
       </View>
       <View style={styles.container__accordian}>
-        <Accordian title="Edit Profile" />
-        <Accordian title="Auction History" />
-        <Accordian title="Raffle History" />
-        <Accordian title="Store History" />
+        <ProfileLinks navigation={navigation} title="Edit Profile" />
+        <ProfileLinks navigation={navigation} title="Bid History" />
+        <ProfileLinks navigation={navigation} title="Auction History" />
+        <ProfileLinks navigation={navigation} title="Auction History" />
       </View>
     </View>
   );
