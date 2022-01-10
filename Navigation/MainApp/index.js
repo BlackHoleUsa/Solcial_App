@@ -5,14 +5,14 @@ import Products from '../Products';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-import {View, Image, TouchableOpacity, StyleSheet, Text} from 'react-native';
+import {View, Image, TouchableOpacity, StyleSheet} from 'react-native';
 import Icons from 'react-native-vector-icons/Ionicons';
 import Cart from '../../screens/Cart';
 import Notifications from '../../screens/Notifications';
 import Profile from '../../screens/Profile';
 import NftMarketplace from '../../screens/NftMarketplace';
 import {icons as customIcons} from '../../assets/icons/icons';
-import CustomStatusBar from '../../components/CustomStatusBar';
+import ProfileNavigator from '../ProfileNavigator';
 
 const Tab = createBottomTabNavigator();
 
@@ -96,8 +96,8 @@ const MainApp = () => {
 
         <Tab.Screen
           name="Profile"
-          component={Profile}
-          options={{headerShown: false}}
+          component={ProfileNavigator}
+          options={{headerShown: false, title: 'Profile'}}
         />
       </Tab.Navigator>
     </React.Fragment>
