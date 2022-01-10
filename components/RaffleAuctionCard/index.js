@@ -33,7 +33,7 @@ const RaffleAuctionCard = ({navigation, buttonLabel, itemRoute}) => {
           </View>
           <Button
             mode="outlined"
-            onPress={() => navigation.navigate('Main App')}
+            onPress={() => navigation.navigate('Enter Raffle')}
             style={styles.raffle__button}
             // eslint-disable-next-line react-native/no-inline-styles
             labelStyle={{color: 'black', fontFamily: 'Poppins-Regular'}}>
