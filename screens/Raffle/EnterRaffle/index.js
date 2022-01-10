@@ -1,16 +1,15 @@
 import React from 'react';
-import {Image, Text, View} from 'react-native';
+import {ScrollView, Text, View} from 'react-native';
+import RaffleAuctionImage from '../../../components/RaffleAuctionImage';
 import {styles} from './Styles';
 const EnterRaffle = () => {
   return (
-    <View style={styles.container__main}>
-      <View style={styles.container__image}>
-        <Image style={styles.image} />
-      </View>
+    <ScrollView style={styles.container__main}>
+      <RaffleAuctionImage />
       <View style={styles.container__content}>
         <Text style={styles.text__title}>Soccer Jacket</Text>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
