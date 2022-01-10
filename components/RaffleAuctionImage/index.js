@@ -8,8 +8,8 @@ const RaffleAuctionImage = () => {
     <View style={styles.container__main}>
       <Image
         style={styles.image}
-        source={Images.cardImage}
-        resizeMode="cover"
+        source={Images.showImage}
+        resizeMode="contain"
       />
       <TouchableOpacity onPress={() => {}} style={styles.container__icon}>
         <Icons name="arrowleft" size={25} color={'black'} />
