@@ -12,6 +12,7 @@ const Auction = ({navigation}) => {
         buttonLabel="Enter Auction"
         navigation={navigation}
         itemRoute="Auction Item"
+        enteringAuctionOrRaffle="Enter Auction"
       />
       <RaffleAuctionCard
         buttonLabel="Enter Auction"

@@ -12,11 +12,13 @@ const Raffle = ({navigation}) => {
         buttonLabel="Enter Raffel"
         navigation={navigation}
         itemRoute="Raffle Item"
+        enteringAuctionOrRaffle="Enter Raffle"
       />
       <RaffleAuctionCard
         buttonLabel="Enter Raffel"
         navigation={navigation}
         itemRoute="Raffle Item"
+        enteringAuctionOrRaffle="Enter Raffle"
       />
       <RaffleAuctionCard
         buttonLabel="Enter Raffel"

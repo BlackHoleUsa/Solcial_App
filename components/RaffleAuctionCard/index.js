@@ -4,7 +4,12 @@ import {styles} from './Styles';
 import {Images} from '../../assets/images';
 import {Button} from 'react-native-paper';
 import Icons from 'react-native-vector-icons/Ionicons';
-const RaffleAuctionCard = ({navigation, buttonLabel, itemRoute}) => {
+const RaffleAuctionCard = ({
+  navigation,
+  buttonLabel,
+  itemRoute,
+  enteringAuctionOrRaffle,
+}) => {
   const handleNavigation = () => {
     navigation.navigate(itemRoute);
   };
@@ -33,7 +38,7 @@ const RaffleAuctionCard = ({navigation, buttonLabel, itemRoute}) => {
           </View>
           <Button
             mode="outlined"
-            onPress={() => navigation.navigate('Enter Raffle')}
+            onPress={() => navigation.navigate(enteringAuctionOrRaffle)}
             style={styles.raffle__button}
             // eslint-disable-next-line react-native/no-inline-styles
             labelStyle={{color: 'black', fontFamily: 'Poppins-Regular'}}>
