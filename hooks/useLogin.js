@@ -1,5 +1,5 @@
 import {useState, useRef} from 'react';
-
+import * as yup from 'yup';
 const useLogin = navigation => {
   const [passwordIcon, setPasswordIcon] = useState('eye-off');
   const passwordIconRef = useRef(false);
@@ -15,8 +15,22 @@ const useLogin = navigation => {
       ? setPasswordIcon('eye-off')
       : setPasswordIcon('eye');
   };
+
+  // validation schema for login form
+  const loginValidationSchema = yup.object().shape({
+    email: yup
+      .string()
+      .email('Please enter valid email')
+      .required('Email Address is Required'),
+    password: yup
+      .string()
+      .min(8, ({min}) => `Password must be at least ${min} characters`)
+      .required('Password is required'),
+  });
+
   return {
     passwordIcon,
+    loginValidationSchema,
     changePasswordInputIcon,
     handleSignupNavigation,
     handleForogotPasswordNavigation,

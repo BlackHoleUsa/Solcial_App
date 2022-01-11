@@ -3,7 +3,7 @@ export const styles = StyleSheet.create({
   login__container: {
     flex: 1,
 
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     alignItems: 'center',
   },
   text: {
@@ -18,9 +18,15 @@ export const styles = StyleSheet.create({
     backgroundColor: 'white',
     color: 'white',
     textAlign: 'center',
+    borderRadius: 0,
   },
   container__signup: {
     flexDirection: 'row',
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+
+    flexGrow: 2,
   },
   text__signup: {
     fontFamily: 'Poppins-Regular',
