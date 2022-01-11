@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {View, Image} from 'react-native';
+import {View, Image, KeyboardAvoidingView} from 'react-native';
 import {Text, TouchableRipple, Button} from 'react-native-paper';
 import BackgroundGradient from '../../components/BackgroundGradient';
 import CustomStatusBar from '../../components/CustomStatusBar';
@@ -8,6 +8,7 @@ import useLogin from '../../hooks/useLogin';
 import {Images} from '../../assets/images';
 import InputField from '../../components/InputFields';
 import {styles} from './Styles';
+import {Formik} from 'formik';
 const Login = ({navigation}) => {
   const {handleSignupNavigation, handleForogotPasswordNavigation} =
     useLogin(navigation);
@@ -15,11 +16,45 @@ const Login = ({navigation}) => {
   return (
     <BackgroundGradient>
       <CustomStatusBar backgroundColor="black" barStyle="light-content" />
-      <View style={styles.login__container}>
+      <KeyboardAvoidingView style={styles.login__container}>
         <View style={styles.secondary__container}>
           <Image source={Images.websiteLogo} style={{marginTop: 50}} />
 
-          <InputField label="Email" icon="ios-checkmark-circle-outline" />
+          <Formik
+            initialValues={{email: '', password: ''}}
+            onSubmit={values => console.log(values)}>
+            {({handleChange, handleBlur, handleSubmit, values}) => (
+              <>
+                <InputField
+                  label="Email"
+                  onChangeText={handleChange('email')}
+                  onBlur={handleBlur('email')}
+                  value={values.email}
+                  keyboardType="email-address"
+                  icon="ios-checkmark-circle-outline"
+                  placeholder="example@email.com      "
+                />
+                <InputField
+                  label="Password"
+                  onChangeText={handleChange('password')}
+                  onBlur={handleBlur('password')}
+                  value={values.password}
+                  placeholder="******       "
+                  secureTextEntry
+                  icon="eye"
+                />
+                <Button
+                  mode="contained"
+                  onPress={handleSubmit}
+                  style={styles.login__button}
+                  labelStyle={{color: 'black', fontFamily: 'Poppins-Regular'}}>
+                  Login
+                </Button>
+              </>
+            )}
+          </Formik>
+
+          {/* <InputField label="Email" icon="ios-checkmark-circle-outline" />
           <InputField label="Password" icon="eye" />
           <Button
             mode="contained"
@@ -27,7 +62,7 @@ const Login = ({navigation}) => {
             style={styles.login__button}
             labelStyle={{color: 'black', fontFamily: 'Poppins-Regular'}}>
             Login
-          </Button>
+          </Button> */}
           <TouchableRipple
             onPress={handleForogotPasswordNavigation}
             rippleColor="rgba(0, 0, 0, .32)">
@@ -46,7 +81,7 @@ const Login = ({navigation}) => {
             </Text>
           </TouchableRipple>
         </View>
-      </View>
+      </KeyboardAvoidingView>
     </BackgroundGradient>
   );
 };

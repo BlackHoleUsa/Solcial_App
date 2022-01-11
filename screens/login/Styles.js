@@ -3,7 +3,7 @@ export const styles = StyleSheet.create({
   login__container: {
     flex: 1,
 
-    justifyContent: 'flex-start',
+    justifyContent: 'space-around',
     alignItems: 'center',
   },
   text: {
@@ -21,8 +21,6 @@ export const styles = StyleSheet.create({
   },
   container__signup: {
     flexDirection: 'row',
-    position: 'absolute',
-    bottom: 80,
   },
   text__signup: {
     fontFamily: 'Poppins-Regular',

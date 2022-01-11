@@ -7,6 +7,7 @@ const useLogin = navigation => {
   const handleForogotPasswordNavigation = () => {
     navigation.navigate('Forgot Password');
   };
+  console.log('hello world');
   return {
     handleSignupNavigation,
     handleForogotPasswordNavigation,
