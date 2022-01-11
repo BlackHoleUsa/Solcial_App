@@ -25,7 +25,7 @@ const EditProfile = ({navigation}) => {
   } = useEditProfile(navigation);
 
   return (
-    <View style={styles.container__main}>
+    <ScrollView style={styles.container__main}>
       {isFocused && (
         <CustomStatusBar backgroundColor={'white'} barStyle={'dark-content'} />
       )}
@@ -193,7 +193,7 @@ const EditProfile = ({navigation}) => {
           </Formik>
         </ScrollView>
       </KeyboardAvoidingView>
-    </View>
+    </ScrollView>
   );
 };
 

@@ -36,7 +36,8 @@ export const styles = StyleSheet.create({
     color: 'white',
     textAlign: 'center',
     borderRadius: 0,
-    marginVertical: 20,
+
+    flexGrow: 2,
   },
 
   container__phoneNumber: {
@@ -53,15 +54,15 @@ export const styles = StyleSheet.create({
   container__countryPicker: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center',
+    alignItems: 'flex-start',
   },
   container__countryPicker__1: {
     width: '35%',
     borderWidth: 1,
     borderColor: '#707070',
     padding: 0,
-    height: 44,
-    marginTop: 4,
+    height: 41,
+    marginTop: Platform.OS === 'ios' ? 30 : 34,
     justifyContent: 'center',
     alignItems: 'center',
   },

@@ -42,7 +42,6 @@ export const styles = StyleSheet.create({
     width: '100%',
 
     justifyContent: 'space-between',
-    marginTop: 20,
   },
   text_mobilePhone: {
     fontFamily: 'Poppins-SemiBold',
@@ -52,15 +51,17 @@ export const styles = StyleSheet.create({
   container__countryPicker: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center',
+    alignItems: 'flex-start',
   },
   container__countryPicker__1: {
     width: '30%',
     borderWidth: 1,
     borderColor: '#707070',
-    padding: 10,
+    padding: 5,
     height: 41,
-    marginTop: 8,
+    marginTop: Platform.OS === 'ios' ? 30 : 34,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   container__countryPicker__2: {
     width: '65%',

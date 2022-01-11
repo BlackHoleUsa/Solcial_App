@@ -122,6 +122,7 @@ const Signup = ({navigation}) => {
                     onBlur={handleBlur('zipCode')}
                     value={values.zipCode}
                     errors={errors.zipCode}
+                    keyboardType="numeric"
                   />
                 </View>
               </View>
@@ -146,6 +147,7 @@ const Signup = ({navigation}) => {
                       onBlur={handleBlur('mobileNumber')}
                       value={values.mobileNumber}
                       errors={errors.mobileNumber}
+                      keyboardType="numeric"
                     />
                   </View>
                 </View>

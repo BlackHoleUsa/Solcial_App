@@ -26,9 +26,11 @@ const InputField = props => {
           />
         ) : null}
       </View>
-      {props.errors ? (
-        <Text style={styles.text__errors}>{props.errors}</Text>
-      ) : null}
+      <View style={{height: 15}}>
+        {props.errors ? (
+          <Text style={styles.text__errors}>{props.errors}</Text>
+        ) : null}
+      </View>
     </View>
   );
 };

@@ -32,7 +32,7 @@ const ForgotPassword = ({navigation}) => {
             isValid,
           }) => (
             <KeyboardAvoidingView
-              behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+              behavior={Platform.OS === 'ios' ? null : 'height'}
               style={{
                 width: '100%',
                 justifyContent: 'center',
@@ -58,6 +58,7 @@ const ForgotPassword = ({navigation}) => {
                     onBlur={handleBlur('otp1')}
                     value={values.otp1}
                     errors={errors.otp1}
+                    keyboardType="numeric"
                   />
                 </View>
                 <View style={styles.input}>
@@ -67,6 +68,7 @@ const ForgotPassword = ({navigation}) => {
                     onBlur={handleBlur('otp2')}
                     value={values.otp2}
                     errors={errors.otp2}
+                    keyboardType="numeric"
                   />
                 </View>
                 <View style={styles.input}>
@@ -76,6 +78,7 @@ const ForgotPassword = ({navigation}) => {
                     onBlur={handleBlur('otp3')}
                     value={values.otp3}
                     errors={errors.otp3}
+                    keyboardType="numeric"
                   />
                 </View>
                 <View style={styles.input}>
@@ -85,6 +88,7 @@ const ForgotPassword = ({navigation}) => {
                     onBlur={handleBlur('otp4')}
                     value={values.otp4}
                     errors={errors.otp4}
+                    keyboardType="numeric"
                   />
                 </View>
               </View>
