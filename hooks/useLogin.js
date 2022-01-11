@@ -27,6 +27,12 @@ const useLogin = navigation => {
       .min(8, ({min}) => `Password must be at least ${min} characters`)
       .required('Password is required'),
   });
+  // login form submission
+
+  const handleLogin = values => {
+    console.log(values);
+    navigation.navigate('Main App');
+  };
 
   return {
     passwordIcon,
@@ -34,6 +40,7 @@ const useLogin = navigation => {
     changePasswordInputIcon,
     handleSignupNavigation,
     handleForogotPasswordNavigation,
+    handleLogin,
   };
 };
 

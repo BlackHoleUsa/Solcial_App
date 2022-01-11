@@ -16,6 +16,7 @@ const Login = ({navigation}) => {
     changePasswordInputIcon,
     handleSignupNavigation,
     handleForogotPasswordNavigation,
+    handleLogin,
   } = useLogin(navigation);
 
   return (
@@ -29,7 +30,7 @@ const Login = ({navigation}) => {
             <Formik
               validationSchema={loginValidationSchema}
               initialValues={{email: '', password: ''}}
-              onSubmit={values => console.log(values)}>
+              onSubmit={values => handleLogin(values)}>
               {({
                 handleChange,
                 handleBlur,
