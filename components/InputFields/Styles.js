@@ -4,6 +4,7 @@ export const styles = StyleSheet.create({
   container__main: {
     width: '100%',
     marginBottom: 15,
+    paddingVertical: 12,
   },
   container__input: {
     borderWidth: 1,
@@ -11,6 +12,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    width: '100%',
   },
 
   input: {
@@ -22,6 +24,7 @@ export const styles = StyleSheet.create({
     paddingVertical: 0,
     fontFamily: 'Poppins-Regular',
     textAlign: 'left',
+    width: '80%',
   },
   text__input: {
     color: 'white',
@@ -30,6 +33,12 @@ export const styles = StyleSheet.create({
     fontWeight: Platform.OS === 'ios' ? '600' : 'normal',
   },
   icon: {
-    margin: 12,
+    marginHorizontal: 5,
+    width: '10%',
+  },
+  text__errors: {
+    fontSize: 12,
+    fontFamily: 'Poppins-Regular',
+    color: '#ff002d',
   },
 });

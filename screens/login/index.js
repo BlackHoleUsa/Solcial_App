@@ -46,12 +46,9 @@ const Login = ({navigation}) => {
                     value={values.email}
                     keyboardType="email-address"
                     placeholder="example@email.com      "
+                    errors={errors.email}
                   />
-                  {errors.email && (
-                    <Text style={{fontSize: 10, color: '#ff002d'}}>
-                      {errors.email}
-                    </Text>
-                  )}
+
                   <InputField
                     label="Password"
                     onChangeText={handleChange('password')}
@@ -61,12 +58,9 @@ const Login = ({navigation}) => {
                     secureTextEntry={passwordIcon === 'eye' ? false : true}
                     icon={passwordIcon}
                     iconChange={changePasswordInputIcon}
+                    errors={errors.password}
                   />
-                  {errors.password && (
-                    <Text style={{fontSize: 10, color: '#ff002d'}}>
-                      {errors.password}
-                    </Text>
-                  )}
+
                   <Button
                     mode="contained"
                     onPress={handleSubmit}
