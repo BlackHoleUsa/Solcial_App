@@ -9,6 +9,7 @@ import CountryPicker from 'react-native-country-picker-modal';
 import useSignup from '../../hooks/useSignup';
 const Signup = ({navigation}) => {
   const {
+    passwordIcon,
     signupValidationSchema,
     DEFAULT_THEME,
     countryCode,
@@ -16,6 +17,7 @@ const Signup = ({navigation}) => {
     onSelect,
     moveToLoginScreen,
     handleSignup,
+    changePasswordInputIcon,
   } = useSignup(navigation);
 
   return (
@@ -38,31 +40,89 @@ const Signup = ({navigation}) => {
             <>
               <View style={styles.container__grid}>
                 <View style={styles.container__child_1}>
-                  <InputField label="First Name" />
+                  <InputField
+                    label="First Name"
+                    onChangeText={handleChange('firstName')}
+                    onBlur={handleBlur('firstName')}
+                    value={values.firstName}
+                    errors={errors.firstName}
+                  />
                 </View>
                 <View style={styles.container__child_2}>
-                  <InputField label="Last Name" />
+                  <InputField
+                    label="Last Name"
+                    onChangeText={handleChange('lastName')}
+                    onBlur={handleBlur('lastName')}
+                    value={values.lastName}
+                    errors={errors.lastName}
+                  />
                 </View>
               </View>
-              <InputField label="Email" />
-              <InputField label="Password" icon="eye" />
-              <InputField label="Address" />
+              <InputField
+                label="Email"
+                onChangeText={handleChange('email')}
+                onBlur={handleBlur('email')}
+                value={values.email}
+                errors={errors.email}
+                keyboardType="email-address"
+              />
+              <InputField
+                label="Password"
+                onChangeText={handleChange('password')}
+                onBlur={handleBlur('password')}
+                value={values.password}
+                secureTextEntry={passwordIcon === 'eye' ? false : true}
+                icon={passwordIcon}
+                iconChange={changePasswordInputIcon}
+                errors={errors.password}
+              />
+              <InputField
+                label="Address"
+                onChangeText={handleChange('address')}
+                onBlur={handleBlur('address')}
+                value={values.address}
+                errors={errors.address}
+              />
               {/* state and city */}
               <View style={styles.container__grid}>
                 <View style={styles.container__child_1}>
-                  <InputField label="City" />
+                  <InputField
+                    label="City"
+                    onChangeText={handleChange('city')}
+                    onBlur={handleBlur('city')}
+                    value={values.city}
+                    errors={errors.city}
+                  />
                 </View>
                 <View style={styles.container__child_2}>
-                  <InputField label="State" />
+                  <InputField
+                    label="State"
+                    onChangeText={handleChange('state')}
+                    onBlur={handleBlur('state')}
+                    value={values.state}
+                    errors={errors.state}
+                  />
                 </View>
               </View>
               {/* country and zip code */}
               <View style={styles.container__grid}>
                 <View style={styles.container__child_1}>
-                  <InputField label="Country" />
+                  <InputField
+                    label="Country"
+                    onChangeText={handleChange('country')}
+                    onBlur={handleBlur('country')}
+                    value={values.country}
+                    errors={errors.country}
+                  />
                 </View>
                 <View style={styles.container__child_2}>
-                  <InputField label="Zip Code" />
+                  <InputField
+                    label="Zip Code"
+                    onChangeText={handleChange('zipCode')}
+                    onBlur={handleBlur('zipCode')}
+                    value={values.zipCode}
+                    errors={errors.zipCode}
+                  />
                 </View>
               </View>
               {/* phone number */}
@@ -81,13 +141,18 @@ const Signup = ({navigation}) => {
                     />
                   </View>
                   <View style={styles.container__countryPicker__2}>
-                    <InputField />
+                    <InputField
+                      onChangeText={handleChange('mobileNumber')}
+                      onBlur={handleBlur('mobileNumber')}
+                      value={values.mobileNumber}
+                      errors={errors.mobileNumber}
+                    />
                   </View>
                 </View>
               </View>
               <Button
                 mode="contained"
-                onPress={() => navigation.navigate('Main App')}
+                onPress={handleSubmit}
                 style={styles.signup__button}
                 // eslint-disable-next-line react-native/no-inline-styles
                 labelStyle={{color: 'black', fontFamily: 'Poppins-Regular'}}>

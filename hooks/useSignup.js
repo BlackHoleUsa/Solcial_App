@@ -1,8 +1,18 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import * as yup from 'yup';
 const useSignup = navigation => {
   const [countryCode, setCountryCode] = useState('FR');
   const [country, setCountry] = useState(null);
+  const [passwordIcon, setPasswordIcon] = useState('eye-off');
+  const passwordIconRef = useRef(false);
+
+  const changePasswordInputIcon = () => {
+    passwordIconRef.current = passwordIcon;
+    passwordIconRef.current === 'eye'
+      ? setPasswordIcon('eye-off')
+      : setPasswordIcon('eye');
+  };
+
   // theme for mobile code picker
   const DEFAULT_THEME = {
     primaryColor: '#ccc',
@@ -24,6 +34,8 @@ const useSignup = navigation => {
   };
 
   const signupValidationSchema = yup.object().shape({
+    firstName: yup.string().required('Required'),
+    lastName: yup.string().required('Required'),
     email: yup
       .string()
       .email('Please enter valid email')
@@ -31,7 +43,13 @@ const useSignup = navigation => {
     password: yup
       .string()
       .min(8, ({min}) => `Password must be at least ${min} characters`)
-      .required('Password is required'),
+      .required('Required'),
+    address: yup.string().required('Required'),
+    city: yup.string().required('Required'),
+    state: yup.string().required('Required'),
+    country: yup.string().required('Required'),
+    zipCode: yup.number().required('Required'),
+    mobileNumber: yup.number().required('Required'),
   });
   // login form submission
 
@@ -41,11 +59,11 @@ const useSignup = navigation => {
   };
 
   const initialValues = {
-    fistName: '',
+    firstName: '',
     lastName: '',
     email: '',
     password: '',
-    Address: '',
+    address: '',
     city: '',
     state: '',
     country: '',
@@ -54,6 +72,7 @@ const useSignup = navigation => {
   };
 
   return {
+    passwordIcon,
     signupValidationSchema,
     DEFAULT_THEME,
     countryCode,
@@ -61,6 +80,7 @@ const useSignup = navigation => {
     onSelect,
     moveToLoginScreen,
     handleSignup,
+    changePasswordInputIcon,
   };
 };
 
