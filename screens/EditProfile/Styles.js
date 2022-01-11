@@ -28,8 +28,9 @@ export const styles = StyleSheet.create({
   container__child_2: {
     width: '47%',
   },
-  signup__button: {
+  button__editProfile: {
     marginTop: 10,
+    marginBottom: 80,
     width: '100%',
     backgroundColor: 'black',
     color: 'white',
@@ -58,9 +59,11 @@ export const styles = StyleSheet.create({
     width: '35%',
     borderWidth: 1,
     borderColor: '#707070',
-    padding: 5,
-    height: 42,
+    padding: 0,
+    height: 44,
     marginTop: 4,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   container__countryPicker__2: {
     width: '60%',
@@ -68,4 +71,9 @@ export const styles = StyleSheet.create({
   field: {
     color: 'black',
   },
+  inputFields: {
+    color: 'black',
+    width: '100%',
+  },
+  textStyle: {color: 'black'},
 });

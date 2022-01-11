@@ -8,7 +8,7 @@ const InputField = props => {
       <Text style={[styles.text__input, props.textStyle]}>{props.label}</Text>
       <View style={styles.container__input}>
         <TextInput
-          style={[styles.input, props.style]}
+          style={[styles.input, props.inputstyle]}
           selectionColor="white"
           placeholder={props.placeholder}
           placeholderTextColor="white"
