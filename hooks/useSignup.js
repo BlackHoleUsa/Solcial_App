@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-
+import * as yup from 'yup';
 const useSignup = navigation => {
   const [countryCode, setCountryCode] = useState('FR');
   const [country, setCountry] = useState(null);
@@ -22,13 +22,45 @@ const useSignup = navigation => {
   const moveToLoginScreen = () => {
     navigation.navigate('Login');
   };
+
+  const signupValidationSchema = yup.object().shape({
+    email: yup
+      .string()
+      .email('Please enter valid email')
+      .required('Email Address is Required'),
+    password: yup
+      .string()
+      .min(8, ({min}) => `Password must be at least ${min} characters`)
+      .required('Password is required'),
+  });
+  // login form submission
+
+  const handleSignup = values => {
+    console.log(values);
+    navigation.navigate('Main App');
+  };
+
+  const initialValues = {
+    fistName: '',
+    lastName: '',
+    email: '',
+    password: '',
+    Address: '',
+    city: '',
+    state: '',
+    country: '',
+    zipCode: '',
+    mobileNumber: '',
+  };
+
   return {
+    signupValidationSchema,
     DEFAULT_THEME,
     countryCode,
-    setCountryCode,
-    setCountry,
+    initialValues,
     onSelect,
     moveToLoginScreen,
+    handleSignup,
   };
 };
 
