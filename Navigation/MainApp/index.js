@@ -41,6 +41,7 @@ const MainApp = () => {
           tabBarLabelStyle: {
             color: 'white',
           },
+          tabBarHideOnKeyboard: true,
           tabBarIcon: ({color, size}) => {
             const icons = {
               Home: 'ios-home-outline',
@@ -69,6 +70,7 @@ const MainApp = () => {
           component={NftMarketplace}
           options={{
             headerShown: false,
+            tabBarHideOnKeyboard: true,
             tabBarIcon: ({focused}) => (
               <View
                 style={{

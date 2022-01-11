@@ -23,78 +23,76 @@ const Login = ({navigation}) => {
     <BackgroundGradient>
       <CustomStatusBar backgroundColor="black" barStyle="light-content" />
       <ScrollView contentContainerStyle={styles.login__container}>
-        <KeyboardAvoidingView>
-          <View style={styles.secondary__container}>
-            <Image source={Images.websiteLogo} style={{marginTop: 50}} />
+        <View style={styles.secondary__container}>
+          <Image source={Images.websiteLogo} style={{marginTop: 50}} />
 
-            <Formik
-              validationSchema={loginValidationSchema}
-              initialValues={{email: '', password: ''}}
-              onSubmit={values => handleLogin(values)}>
-              {({
-                handleChange,
-                handleBlur,
-                handleSubmit,
-                values,
-                errors,
-                isValid,
-              }) => (
-                <>
-                  <InputField
-                    label="Email"
-                    onChangeText={handleChange('email')}
-                    onBlur={handleBlur('email')}
-                    value={values.email}
-                    keyboardType="email-address"
-                    placeholder="example@email.com      "
-                    errors={errors.email}
-                  />
+          <Formik
+            validationSchema={loginValidationSchema}
+            initialValues={{email: '', password: ''}}
+            onSubmit={values => handleLogin(values)}>
+            {({
+              handleChange,
+              handleBlur,
+              handleSubmit,
+              values,
+              errors,
+              isValid,
+            }) => (
+              <>
+                <InputField
+                  label="Email"
+                  onChangeText={handleChange('email')}
+                  onBlur={handleBlur('email')}
+                  value={values.email}
+                  keyboardType="email-address"
+                  placeholder="example@email.com      "
+                  errors={errors.email}
+                />
 
-                  <InputField
-                    label="Password"
-                    onChangeText={handleChange('password')}
-                    onBlur={handleBlur('password')}
-                    value={values.password}
-                    placeholder="******       "
-                    secureTextEntry={passwordIcon === 'eye' ? false : true}
-                    icon={passwordIcon}
-                    iconChange={changePasswordInputIcon}
-                    errors={errors.password}
-                  />
+                <InputField
+                  label="Password"
+                  onChangeText={handleChange('password')}
+                  onBlur={handleBlur('password')}
+                  value={values.password}
+                  placeholder="******       "
+                  secureTextEntry={passwordIcon === 'eye' ? false : true}
+                  icon={passwordIcon}
+                  iconChange={changePasswordInputIcon}
+                  errors={errors.password}
+                />
 
-                  <Button
-                    mode="contained"
-                    onPress={handleSubmit}
-                    style={styles.login__button}
-                    labelStyle={{
-                      color: 'black',
-                      fontFamily: 'Poppins-Regular',
-                    }}>
-                    Login
-                  </Button>
-                </>
-              )}
-            </Formik>
+                <Button
+                  mode="contained"
+                  onPress={handleSubmit}
+                  style={styles.login__button}
+                  labelStyle={{
+                    color: 'black',
+                    fontFamily: 'Poppins-Regular',
+                  }}>
+                  Login
+                </Button>
+              </>
+            )}
+          </Formik>
 
-            <TouchableRipple
-              onPress={handleForogotPasswordNavigation}
-              rippleColor="rgba(0, 0, 0, .32)">
-              <Text style={styles.forgotpassword__text}>Forgot Password?</Text>
-            </TouchableRipple>
-          </View>
-          <View style={styles.container__signup}>
-            <Text style={styles.text__signup}>Don't have an account?</Text>
-            <TouchableRipple
-              onPress={handleSignupNavigation}
-              rippleColor="rgba(0, 0, 0, .32)">
-              <Text
-                style={styles.text__signup}
-                style={{color: 'white', marginLeft: 5}}>
-                Sign up
-              </Text>
-            </TouchableRipple>
-          </View>
-        </KeyboardAvoidingView>
+          <TouchableRipple
+            onPress={handleForogotPasswordNavigation}
+            rippleColor="rgba(0, 0, 0, .32)">
+            <Text style={styles.forgotpassword__text}>Forgot Password?</Text>
+          </TouchableRipple>
+        </View>
+        <View style={styles.container__signup}>
+          <Text style={styles.text__signup}>Don't have an account?</Text>
+          <TouchableRipple
+            onPress={handleSignupNavigation}
+            rippleColor="rgba(0, 0, 0, .32)">
+            <Text
+              style={styles.text__signup}
+              style={{color: 'white', marginLeft: 5}}>
+              Sign up
+            </Text>
+          </TouchableRipple>
+        </View>
       </ScrollView>
     </BackgroundGradient>
   );
