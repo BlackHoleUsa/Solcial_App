@@ -88,10 +88,11 @@ const EditProfile = ({navigation}) => {
                   value={values.password}
                   secureTextEntry={passwordIcon === 'eye' ? false : true}
                   icon={passwordIcon}
+                  iconColorBlack
                   iconChange={changePasswordInputIcon}
                   errors={errors.password}
-                  inputstyle={styles.inputFields}
                   textStyle={styles.textStyle}
+                  inputstyle={{color: 'black'}}
                 />
                 <InputField
                   label="Address"

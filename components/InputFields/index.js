@@ -20,7 +20,7 @@ const InputField = props => {
           <Icons
             name={props.icon}
             size={25}
-            color="white"
+            color={props.iconColorBlack ? 'black' : 'white'}
             style={styles.icon}
             onPress={props.iconChange}
           />
