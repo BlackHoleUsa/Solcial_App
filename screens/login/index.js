@@ -35,7 +35,6 @@ const Login = ({navigation}) => {
                   onBlur={handleBlur('email')}
                   value={values.email}
                   keyboardType="email-address"
-                  icon="ios-checkmark-circle-outline"
                   placeholder="example@email.com      "
                 />
                 <InputField
@@ -44,7 +43,7 @@ const Login = ({navigation}) => {
                   onBlur={handleBlur('password')}
                   value={values.password}
                   placeholder="******       "
-                  secureTextEntry
+                  secureTextEntry={passwordIcon === 'eye' ? false : true}
                   icon={passwordIcon}
                   iconChange={changePasswordInputIcon}
                 />

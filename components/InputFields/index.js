@@ -13,6 +13,7 @@ const InputField = props => {
           placeholder={props.placeholder}
           placeholderTextColor="white"
           textBreakStrategy="highQuality"
+          secureTextEntry={props.secureTextEntry}
           {...props}
         />
         {props.icon ? (

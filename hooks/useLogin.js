@@ -1,7 +1,7 @@
 import {useState, useRef} from 'react';
 
 const useLogin = navigation => {
-  const [passwordIcon, setPasswordIcon] = useState('eye');
+  const [passwordIcon, setPasswordIcon] = useState('eye-off');
   const passwordIconRef = useRef(false);
   const handleSignupNavigation = () => {
     navigation.navigate('Signup');
@@ -11,9 +11,9 @@ const useLogin = navigation => {
   };
   const changePasswordInputIcon = () => {
     passwordIconRef.current = passwordIcon;
-    passwordIconRef.current === 'eye-off'
-      ? setPasswordIcon('eye')
-      : setPasswordIcon('eye-off');
+    passwordIconRef.current === 'eye'
+      ? setPasswordIcon('eye-off')
+      : setPasswordIcon('eye');
   };
   return {
     passwordIcon,
