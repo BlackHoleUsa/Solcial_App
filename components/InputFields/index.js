@@ -21,6 +21,7 @@ const InputField = props => {
             size={25}
             color="white"
             style={styles.icon}
+            onPress={props.iconChange}
           />
         ) : null}
       </View>

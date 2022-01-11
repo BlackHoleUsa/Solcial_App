@@ -10,8 +10,12 @@ import InputField from '../../components/InputFields';
 import {styles} from './Styles';
 import {Formik} from 'formik';
 const Login = ({navigation}) => {
-  const {handleSignupNavigation, handleForogotPasswordNavigation} =
-    useLogin(navigation);
+  const {
+    passwordIcon,
+    changePasswordInputIcon,
+    handleSignupNavigation,
+    handleForogotPasswordNavigation,
+  } = useLogin(navigation);
 
   return (
     <BackgroundGradient>
@@ -41,7 +45,8 @@ const Login = ({navigation}) => {
                   value={values.password}
                   placeholder="******       "
                   secureTextEntry
-                  icon="eye"
+                  icon={passwordIcon}
+                  iconChange={changePasswordInputIcon}
                 />
                 <Button
                   mode="contained"
@@ -54,15 +59,6 @@ const Login = ({navigation}) => {
             )}
           </Formik>
 
-          {/* <InputField label="Email" icon="ios-checkmark-circle-outline" />
-          <InputField label="Password" icon="eye" />
-          <Button
-            mode="contained"
-            onPress={() => navigation.navigate('Main App')}
-            style={styles.login__button}
-            labelStyle={{color: 'black', fontFamily: 'Poppins-Regular'}}>
-            Login
-          </Button> */}
           <TouchableRipple
             onPress={handleForogotPasswordNavigation}
             rippleColor="rgba(0, 0, 0, .32)">
