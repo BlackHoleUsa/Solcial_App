@@ -1,10 +1,10 @@
 import {initialState} from './state';
-import {SIGNUP} from '../types/types';
+import {AUTH} from '../types/types';
 export const reducer = (state = initialState, action) => {
   const {type, payload} = action;
 
   switch (type) {
-    case SIGNUP:
+    case AUTH:
       return {
         ...state,
         userInfo: {

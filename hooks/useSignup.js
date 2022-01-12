@@ -5,7 +5,7 @@ import {apiRoutes} from '../utilities/apiRoutes';
 import axios from 'axios';
 import {Alert} from 'react-native';
 import {useDispatch} from 'react-redux';
-import {setSignup} from '../redux/actions/actions';
+import {setAuth} from '../redux/actions/actions';
 const useSignup = navigation => {
   const [countryCode, setCountryCode] = useState('US');
   const [country, setCountry] = useState({
@@ -90,7 +90,7 @@ const useSignup = navigation => {
       if (response.status === 200) {
         setIsLoading(false);
         dispatch(
-          setSignup({
+          setAuth({
             authToken: response.data.tokens,
             firstName: response.data.user.firstname,
             lastName: response.data.user.lastname,
