@@ -1,6 +1,11 @@
-import React, {useState, useRef} from 'react';
+import {useState, useRef} from 'react';
 import * as yup from 'yup';
-import {BASE_URL} from '@env';
+import {API_URL} from '@env';
+import {apiRoutes} from '../utilities/apiRoutes';
+import axios from 'axios';
+import {Alert} from 'react-native';
+import {useDispatch} from 'react-redux';
+import {setSignup} from '../redux/actions/actions';
 const useSignup = navigation => {
   const [countryCode, setCountryCode] = useState('US');
   const [country, setCountry] = useState({
@@ -11,8 +16,9 @@ const useSignup = navigation => {
     subregion: 'North America',
   });
   const [passwordIcon, setPasswordIcon] = useState('eye-off');
+  const [isLoading, setIsLoading] = useState(false);
   const passwordIconRef = useRef(false);
-
+  const dispatch = useDispatch();
   const changePasswordInputIcon = () => {
     passwordIconRef.current = passwordIcon;
     passwordIconRef.current === 'eye'
@@ -58,14 +64,60 @@ const useSignup = navigation => {
     zipCode: yup.number().required('Required'),
     mobileNumber: yup.number().required('Required'),
   });
-  // login form submission
+  // signup form submission
 
   const handleSignup = async values => {
     let newValues = {
-      ...values,
-      mobileNumber: `+${country.callingCode[0]}${values.mobileNumber}`,
+      firstname: values.firstName,
+      lastname: values.lastName,
+      mobilephone: `+${country.callingCode[0]}${values.mobileNumber}`,
+      email: values.email,
+      password: values.password,
+      address: values.address,
+      city: values.city,
+      state: values.state,
+      country: values.country,
+      zipcode: values.zipCode,
+      role: 'user',
     };
-    console.log(newValues);
+
+    try {
+      setIsLoading(true);
+      const response = await axios.post(
+        `${API_URL}${apiRoutes.signup}`,
+        newValues,
+      );
+      if (response.status === 200) {
+        setIsLoading(false);
+        dispatch(
+          setSignup({
+            authToken: response.data.tokens,
+            firstName: response.data.user.firstname,
+            lastName: response.data.user.lastname,
+            email: response.data.user.email,
+            id: response.data.user._id,
+          }),
+        );
+      }
+    } catch (error) {
+      setIsLoading(false);
+      if (error) {
+        Alert.alert(
+          'Error',
+          `${error.response.data.message}`,
+          [
+            {
+              text: 'Cancel',
+
+              style: 'cancel',
+            },
+          ],
+          {
+            cancelable: true,
+          },
+        );
+      }
+    }
   };
 
   const initialValues = {
@@ -87,6 +139,7 @@ const useSignup = navigation => {
     DEFAULT_THEME,
     countryCode,
     initialValues,
+    isLoading,
     onSelect,
     moveToLoginScreen,
     handleSignup,

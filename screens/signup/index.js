@@ -14,6 +14,7 @@ const Signup = ({navigation}) => {
     DEFAULT_THEME,
     countryCode,
     initialValues,
+    isLoading,
     onSelect,
     moveToLoginScreen,
     handleSignup,
@@ -163,6 +164,7 @@ const Signup = ({navigation}) => {
               </View>
               <Button
                 mode="contained"
+                loading={isLoading}
                 onPress={handleSubmit}
                 style={styles.signup__button}
                 // eslint-disable-next-line react-native/no-inline-styles
