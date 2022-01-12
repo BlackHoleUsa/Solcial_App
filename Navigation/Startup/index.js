@@ -6,9 +6,12 @@ import Login from '../../screens/Login';
 import Signup from '../../screens/Signup';
 import ForgotPassword from '../../screens/ForgotPasswrod';
 import MainApp from '../MainApp';
-
+import {useSelector} from 'react-redux';
 const Stack = createNativeStackNavigator();
 const Startup = () => {
+  const authToken = useSelector(state => state.userInfo.authToken);
+  console.log('hello world');
+  console.log('auth token', authToken);
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -25,28 +28,33 @@ const Startup = () => {
           },
           headerTintColor: 'white',
         })}>
-        <Stack.Screen
-          name="Login"
-          component={Login}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="Signup"
-          component={Signup}
-          options={{
-            title: ' ',
-          }}
-        />
-        <Stack.Screen
-          name="Forgot Password"
-          component={ForgotPassword}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="Main App"
-          component={MainApp}
-          options={{headerShown: false}}
-        />
+        {authToken ? (
+          <Stack.Screen
+            name="Main App"
+            component={MainApp}
+            options={{headerShown: false}}
+          />
+        ) : (
+          <>
+            <Stack.Screen
+              name="Login"
+              component={Login}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="Signup"
+              component={Signup}
+              options={{
+                title: ' ',
+              }}
+            />
+            <Stack.Screen
+              name="Forgot Password"
+              component={ForgotPassword}
+              options={{headerShown: false}}
+            />
+          </>
+        )}
       </Stack.Navigator>
     </NavigationContainer>
   );
