@@ -2,11 +2,17 @@ import React, {useState, useRef} from 'react';
 import * as yup from 'yup';
 import {BASE_URL} from '@env';
 const useSignup = navigation => {
-  const [countryCode, setCountryCode] = useState('FR');
-  const [country, setCountry] = useState(null);
+  const [countryCode, setCountryCode] = useState('US');
+  const [country, setCountry] = useState({
+    cca2: 'US',
+    currency: ['USD'],
+    callingCode: ['1'],
+    region: 'Americas',
+    subregion: 'North America',
+  });
   const [passwordIcon, setPasswordIcon] = useState('eye-off');
   const passwordIconRef = useRef(false);
-  console.log(BASE_URL);
+
   const changePasswordInputIcon = () => {
     passwordIconRef.current = passwordIcon;
     passwordIconRef.current === 'eye'
@@ -29,6 +35,7 @@ const useSignup = navigation => {
   const onSelect = country => {
     setCountryCode(country.cca2);
     setCountry(country);
+    console.log(country);
   };
   const moveToLoginScreen = () => {
     navigation.navigate('Login');
@@ -55,8 +62,11 @@ const useSignup = navigation => {
   // login form submission
 
   const handleSignup = async values => {
-    console.log(values);
-    navigation.navigate('Main App');
+    let newValues = {
+      ...values,
+      mobileNumber: `+${country.callingCode[0]}${values.mobileNumber}`,
+    };
+    console.log(newValues);
   };
 
   const initialValues = {
