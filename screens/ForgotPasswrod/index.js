@@ -9,6 +9,7 @@ import {Formik} from 'formik';
 import useForgotPassword from '../../hooks/useForgotPassword';
 const ForgotPassword = ({navigation}) => {
   const {
+    isLoading,
     resetPassword,
     passwordIcon,
     forgotPasswordValidationSchema,
@@ -45,6 +46,7 @@ const ForgotPassword = ({navigation}) => {
                 />
                 <Button
                   mode="contained"
+                  loading={isLoading}
                   onPress={handleSubmit}
                   style={styles.resetpassword__button}
                   labelStyle={{color: 'black', fontFamily: 'Poppins-SemiBold'}}>
@@ -141,6 +143,7 @@ const ForgotPassword = ({navigation}) => {
                 <Button
                   mode="contained"
                   onPress={handleSubmit}
+                  loading={isLoading}
                   style={styles.resetpassword__button}
                   labelStyle={{color: 'black', fontFamily: 'Poppins-SemiBold'}}>
                   Reset Password

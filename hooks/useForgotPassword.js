@@ -3,7 +3,9 @@ import * as yup from 'yup';
 import axios from 'axios';
 import {apiRoutes} from '../utilities/apiRoutes';
 import {API_URL} from '@env';
+import {Alert} from 'react-native';
 const useForgotPassword = navigation => {
+  const [isLoading, setIsLoading] = useState(false);
   const [passwordIcon, setPasswordIcon] = useState('eye-off');
   const passwordIconRef = useRef(false);
   const [resetPassword, setResetPassword] = useState(true);
@@ -47,10 +49,44 @@ const useForgotPassword = navigation => {
   };
 
   // handle user request for forgot pasword
-  const handleUserForgotPasswordRequest = values => {
+  const handleUserForgotPasswordRequest = async values => {
     console.log(values);
     const code = Math.floor(1000 + Math.random() * 9000);
     console.log(code);
+    try {
+      setIsLoading(true);
+      const response = await axios.post(
+        `${API_URL}${apiRoutes.requestResetPassword}`,
+        {
+          email: values.user_email,
+          code: code.toString(),
+        },
+      );
+      if (response.status === 200) {
+        console.log(response);
+        setResetPassword(false);
+        setIsLoading(false);
+      }
+    } catch (error) {
+      setIsLoading(false);
+      console.log(error.response);
+      if (error) {
+        Alert.alert(
+          'Error',
+          `${error.response.data.message}`,
+          [
+            {
+              text: 'Cancel',
+
+              style: 'cancel',
+            },
+          ],
+          {
+            cancelable: true,
+          },
+        );
+      }
+    }
   };
 
   // handle rest password
@@ -61,6 +97,7 @@ const useForgotPassword = navigation => {
   };
 
   return {
+    isLoading,
     resetPassword,
     passwordIcon,
     forgotPasswordValidationSchema,
