@@ -1,11 +1,12 @@
 import React, {useState, useRef} from 'react';
 import * as yup from 'yup';
+import {BASE_URL} from '@env';
 const useSignup = navigation => {
   const [countryCode, setCountryCode] = useState('FR');
   const [country, setCountry] = useState(null);
   const [passwordIcon, setPasswordIcon] = useState('eye-off');
   const passwordIconRef = useRef(false);
-
+  console.log(BASE_URL);
   const changePasswordInputIcon = () => {
     passwordIconRef.current = passwordIcon;
     passwordIconRef.current === 'eye'
