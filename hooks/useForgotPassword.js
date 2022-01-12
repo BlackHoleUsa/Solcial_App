@@ -50,9 +50,8 @@ const useForgotPassword = navigation => {
 
   // handle user request for forgot pasword
   const handleUserForgotPasswordRequest = async values => {
-    console.log(values);
     const code = Math.floor(1000 + Math.random() * 9000);
-    console.log(code);
+
     try {
       setIsLoading(true);
       const response = await axios.post(
@@ -63,13 +62,12 @@ const useForgotPassword = navigation => {
         },
       );
       if (response.status === 200) {
-        console.log(response);
         setResetPassword(false);
         setIsLoading(false);
       }
     } catch (error) {
       setIsLoading(false);
-      console.log(error.response);
+
       if (error) {
         Alert.alert(
           'Error',
@@ -91,9 +89,46 @@ const useForgotPassword = navigation => {
 
   // handle rest password
 
-  const handleForgotPassword = values => {
-    console.log(values);
-    navigation.navigate('Main App');
+  const handleForgotPassword = async values => {
+    try {
+      setIsLoading(true);
+      const response = await axios.post(`${API_URL}${apiRoutes.verifyCode}`, {
+        email: values.user_email,
+        code: `${values.otp1}${values.otp2}${values.otp3}${values.otp4}`,
+        newPassword: values.password,
+      });
+      if (response.status === 200) {
+        setResetPassword(false);
+        setIsLoading(false);
+        Alert.alert(
+          'Success',
+          `${response.data.message}`,
+          [{text: 'OK', onPress: () => navigation.navigate('Login')}],
+          {
+            cancelable: true,
+          },
+        );
+      }
+    } catch (error) {
+      setIsLoading(false);
+
+      if (error) {
+        Alert.alert(
+          'Error',
+          `${error.response.data.message}`,
+          [
+            {
+              text: 'Cancel',
+
+              style: 'cancel',
+            },
+          ],
+          {
+            cancelable: true,
+          },
+        );
+      }
+    }
   };
 
   return {
