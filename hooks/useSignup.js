@@ -35,7 +35,6 @@ const useSignup = navigation => {
   const onSelect = country => {
     setCountryCode(country.cca2);
     setCountry(country);
-    console.log(country);
   };
   const moveToLoginScreen = () => {
     navigation.navigate('Login');
