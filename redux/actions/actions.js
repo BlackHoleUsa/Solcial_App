@@ -1,5 +1,5 @@
-import {SET_NAME} from '../types/types';
-export const setName = data => ({
-  type: SET_NAME,
+import {SIGNUP} from '../types/types';
+export const setSignup = data => ({
+  type: SIGNUP,
   payload: data,
 });

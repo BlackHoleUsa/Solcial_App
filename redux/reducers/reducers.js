@@ -1,13 +1,20 @@
 import {initialState} from './state';
-import {SET_NAME} from '../types/types';
+import {SIGNUP} from '../types/types';
 export const reducer = (state = initialState, action) => {
   const {type, payload} = action;
 
   switch (type) {
-    case SET_NAME:
+    case SIGNUP:
       return {
         ...state,
-        name: payload,
+        userInfo: {
+          ...state.userInfo,
+          firstName: payload.firstName,
+          lastName: payload.lastName,
+          email: payload.email,
+          id: payload.id,
+          authToken: payload.authToken,
+        },
       };
     default:
       return state;

@@ -1,3 +1,9 @@
 export const initialState = {
-  name: 'ali raza',
+  userInfo: {
+    firstName: '',
+    lastName: '',
+    email: '',
+    id: '',
+    authToken: '',
+  },
 };
