@@ -66,4 +66,7 @@ export const styles = StyleSheet.create({
   container__countryPicker__2: {
     width: '65%',
   },
+  inputFields: {
+    width: '100%',
+  },
 });

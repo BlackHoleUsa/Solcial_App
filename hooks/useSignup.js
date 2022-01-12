@@ -54,7 +54,7 @@ const useSignup = navigation => {
   });
   // login form submission
 
-  const handleSignup = values => {
+  const handleSignup = async values => {
     console.log(values);
     navigation.navigate('Main App');
   };

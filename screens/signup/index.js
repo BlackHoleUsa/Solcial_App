@@ -46,6 +46,7 @@ const Signup = ({navigation}) => {
                     onBlur={handleBlur('firstName')}
                     value={values.firstName}
                     errors={errors.firstName}
+                    inputstyle={styles.inputFields}
                   />
                 </View>
                 <View style={styles.container__child_2}>
@@ -55,6 +56,7 @@ const Signup = ({navigation}) => {
                     onBlur={handleBlur('lastName')}
                     value={values.lastName}
                     errors={errors.lastName}
+                    inputstyle={styles.inputFields}
                   />
                 </View>
               </View>
@@ -65,6 +67,7 @@ const Signup = ({navigation}) => {
                 value={values.email}
                 errors={errors.email}
                 keyboardType="email-address"
+                inputstyle={styles.inputFields}
               />
               <InputField
                 label="Password"
@@ -82,6 +85,7 @@ const Signup = ({navigation}) => {
                 onBlur={handleBlur('address')}
                 value={values.address}
                 errors={errors.address}
+                inputstyle={styles.inputFields}
               />
               {/* state and city */}
               <View style={styles.container__grid}>
@@ -92,6 +96,7 @@ const Signup = ({navigation}) => {
                     onBlur={handleBlur('city')}
                     value={values.city}
                     errors={errors.city}
+                    inputstyle={styles.inputFields}
                   />
                 </View>
                 <View style={styles.container__child_2}>
@@ -101,6 +106,7 @@ const Signup = ({navigation}) => {
                     onBlur={handleBlur('state')}
                     value={values.state}
                     errors={errors.state}
+                    inputstyle={styles.inputFields}
                   />
                 </View>
               </View>
@@ -113,6 +119,7 @@ const Signup = ({navigation}) => {
                     onBlur={handleBlur('country')}
                     value={values.country}
                     errors={errors.country}
+                    inputstyle={styles.inputFields}
                   />
                 </View>
                 <View style={styles.container__child_2}>
@@ -123,6 +130,7 @@ const Signup = ({navigation}) => {
                     value={values.zipCode}
                     errors={errors.zipCode}
                     keyboardType="numeric"
+                    inputstyle={styles.inputFields}
                   />
                 </View>
               </View>
@@ -148,6 +156,7 @@ const Signup = ({navigation}) => {
                       value={values.mobileNumber}
                       errors={errors.mobileNumber}
                       keyboardType="numeric"
+                      inputstyle={styles.inputFields}
                     />
                   </View>
                 </View>
