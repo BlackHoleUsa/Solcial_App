@@ -11,6 +11,7 @@ import {styles} from './Styles';
 import {Formik} from 'formik';
 const Login = ({navigation}) => {
   const {
+    isLoading,
     passwordIcon,
     loginValidationSchema,
     changePasswordInputIcon,
@@ -63,6 +64,7 @@ const Login = ({navigation}) => {
 
                 <Button
                   mode="contained"
+                  loading={isLoading}
                   onPress={handleSubmit}
                   style={styles.login__button}
                   labelStyle={{
