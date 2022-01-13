@@ -2,7 +2,7 @@ import {useState, useRef} from 'react';
 import * as yup from 'yup';
 import axios from 'axios';
 import {apiRoutes} from '../utilities/apiRoutes';
-import {API_URL} from '@env';
+import {API_URL} from '../utilities/apiRoutes';
 import {Alert} from 'react-native';
 const useForgotPassword = navigation => {
   const [isLoading, setIsLoading] = useState(false);

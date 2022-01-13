@@ -4,7 +4,7 @@ import {setAuth} from '../redux/actions/actions';
 import {useDispatch} from 'react-redux';
 import axios from 'axios';
 import {apiRoutes} from '../utilities/apiRoutes';
-import {API_URL} from '@env';
+import {API_URL} from '../utilities/apiRoutes';
 import {Alert} from 'react-native';
 const useLogin = navigation => {
   const [passwordIcon, setPasswordIcon] = useState('eye-off');

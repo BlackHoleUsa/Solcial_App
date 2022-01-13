@@ -1,6 +1,6 @@
 import {useState, useRef} from 'react';
 import * as yup from 'yup';
-import {API_URL} from '@env';
+import {API_URL} from '../utilities/apiRoutes';
 import {apiRoutes} from '../utilities/apiRoutes';
 import axios from 'axios';
 import {Alert} from 'react-native';

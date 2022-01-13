@@ -1,3 +1,5 @@
+export const API_URL = 'https://solecial-app.herokuapp.com/v1/';
+
 export const apiRoutes = {
   login: 'auth/login',
   signup: 'auth/register',
