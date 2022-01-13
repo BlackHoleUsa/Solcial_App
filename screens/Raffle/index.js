@@ -5,7 +5,9 @@ import {styles} from './Styles';
 import RaffleAuctionCard from '../../components/RaffleAuctionCard';
 import Search from '../../components/Search';
 import {storeScreen} from '../../assets/Data';
+import useRaffle from '../../hooks/useRaffle';
 const Raffle = ({navigation}) => {
+  const {isLoading} = useRaffle(navigation);
   return (
     <View style={styles.container__main}>
       <Search />

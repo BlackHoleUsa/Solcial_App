@@ -10,8 +10,7 @@ import {useSelector} from 'react-redux';
 const Stack = createNativeStackNavigator();
 const Startup = () => {
   const authToken = useSelector(state => state.userInfo.authToken);
-  console.log('hello world');
-  console.log('auth token', authToken);
+
   return (
     <NavigationContainer>
       <Stack.Navigator
