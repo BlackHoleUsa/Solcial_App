@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import {apiRoutes} from '../utilities/apiRoutes';
 import {API_URL} from '../utilities/apiRoutes';
-import axios, {Axios} from 'axios';
+import axios from 'axios';
 import {Alert} from 'react-native';
 
 const useRaffle = navigation => {

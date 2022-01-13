@@ -16,6 +16,7 @@ export const styles = StyleSheet.create({
     flex: 1,
   },
   text__title: {
+    marginTop: 20,
     fontFamily: 'Poppins-Medium',
     fontWeight: fontWeights.medium,
 
@@ -31,6 +32,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+    flexWrap: 'wrap',
 
     marginVertical: 10,
   },

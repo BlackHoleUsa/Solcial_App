@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, Image, TouchableOpacity} from 'react-native';
+import {Text, View, Image, TouchableOpacity, ScrollView} from 'react-native';
 import {styles} from './Styles';
 
 import {Button} from 'react-native-paper';
@@ -17,7 +17,7 @@ const RaffleAuctionCard = ({
   };
 
   return (
-    <View style={styles.container__main}>
+    <ScrollView contentContainerStyle={styles.container__main}>
       <View style={styles.icon}>
         <Icons
           name="ios-information-circle-outline"
@@ -44,7 +44,16 @@ const RaffleAuctionCard = ({
           </View>
           <Button
             mode="outlined"
-            onPress={() => navigation.navigate(enteringAuctionOrRaffle)}
+            onPress={() =>
+              navigation.navigate(enteringAuctionOrRaffle, {
+                id: item._id,
+                title: item.name,
+                description: item.description,
+                image: item.product_url[1],
+                endTime: new Date(item.endTime),
+                price: item.ticketPrice,
+              })
+            }
             style={styles.raffle__button}
             // eslint-disable-next-line react-native/no-inline-styles
             labelStyle={{color: 'black', fontFamily: 'Poppins-Regular'}}>
@@ -52,7 +61,7 @@ const RaffleAuctionCard = ({
           </Button>
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
