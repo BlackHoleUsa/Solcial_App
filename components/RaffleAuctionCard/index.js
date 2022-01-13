@@ -13,7 +13,13 @@ const RaffleAuctionCard = ({
   item,
 }) => {
   const handleNavigation = () => {
-    navigation.navigate(itemRoute);
+    navigation.navigate(itemRoute, {
+      id: item._id,
+      title: item.name,
+      image: item.product_url[1],
+      video: item.product_url[0],
+      description: item.description,
+    });
   };
 
   return (

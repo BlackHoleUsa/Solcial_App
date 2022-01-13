@@ -2,11 +2,11 @@ import React from 'react';
 import {View} from 'react-native';
 import Video from 'react-native-video';
 import {styles} from './Styles';
-const BackgroundVideo = ({children}) => {
+const BackgroundVideo = ({children, video}) => {
   return (
     <View style={styles.container__main}>
       <Video
-        source={require('../../assets/videos/stock.mp4')}
+        source={{uri: video}}
         muted={true}
         repeat={true}
         resizeMode={'cover'}

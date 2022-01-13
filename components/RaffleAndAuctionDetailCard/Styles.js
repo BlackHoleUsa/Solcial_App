@@ -12,6 +12,7 @@ export const styles = StyleSheet.create({
   },
   container__card: {
     width: '80%',
+
     backgroundColor: '#E6E6E6',
     flexDirection: 'row',
     justifyContent: 'flex-start',
@@ -37,10 +38,13 @@ export const styles = StyleSheet.create({
   image__card: {
     width: '100%',
     height: '100%',
+    resizeMode: 'contain',
   },
   container__content: {
     width: '60%',
     paddingHorizontal: 10,
+    justifyContent: 'space-between',
+    alignItems: 'stretch',
   },
   text__title: {
     fontFamily: 'Poppins-Medium',
@@ -60,9 +64,10 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 5,
-    marginVertical: 10,
+    marginBottom: 10,
   },
   text__button: {
     color: 'white',
   },
+  container__text: {flex: 1},
 });

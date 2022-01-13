@@ -4,7 +4,7 @@ import {styles} from './Styles';
 import {Images} from '../../assets/images';
 import Icons from 'react-native-vector-icons/Ionicons';
 
-const RaffleAndAuctionDetailCard = () => {
+const RaffleAndAuctionDetailCard = ({title, image, description}) => {
   return (
     <View style={styles.container__main}>
       <View style={styles.container__card}>
@@ -18,14 +18,13 @@ const RaffleAndAuctionDetailCard = () => {
           />
         </View>
         <View style={styles.container__image}>
-          <Image source={Images.cardImage} style={styles.image__card} />
+          <Image source={{uri: image}} style={styles.image__card} />
         </View>
         <View style={styles.container__content}>
-          <Text style={styles.text__title}>Soccer Jacket</Text>
-          <Text style={styles.text__description}>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-          </Text>
+          <View style={styles.container__text}>
+            <Text style={styles.text__title}>{title}</Text>
+            <Text style={styles.text__description}>{description}</Text>
+          </View>
           <TouchableOpacity onPress={() => {}} style={styles.button}>
             <Text style={styles.text__button}>Enter Raffle</Text>
           </TouchableOpacity>
