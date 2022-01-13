@@ -37,7 +37,7 @@ const RaffleAuctionCard = ({
         <Image
           style={styles.image}
           source={{
-            uri: 'https://digidrip-dev.s3.us-west-1.amazonaws.com/1641987468590-image.png',
+            uri: item?.product_url[1],
           }}
           resizeMode="contain"
         />
