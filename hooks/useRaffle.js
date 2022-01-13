@@ -14,6 +14,7 @@ const useRaffle = navigation => {
       const response = await axios(`${API_URL}${apiRoutes.getAllRaffles}`);
       if (response.status === 200) {
         setIsLoading(false);
+        console.log('the item', response.data.allRaffles);
         setItem(response.data.allRaffles);
         console.log(item);
       }

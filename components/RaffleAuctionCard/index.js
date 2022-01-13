@@ -21,7 +21,7 @@ const RaffleAuctionCard = ({
       description: item.description,
     });
   };
-
+  console.log(item?.product_url[1]);
   return (
     <ScrollView contentContainerStyle={styles.container__main}>
       <View style={styles.icon}>
@@ -37,7 +37,7 @@ const RaffleAuctionCard = ({
         <Image
           style={styles.image}
           source={{
-            uri: `${item?.product_url[1]}`,
+            uri: 'https://digidrip-dev.s3.us-west-1.amazonaws.com/1641987468590-image.png',
           }}
           resizeMode="contain"
         />
