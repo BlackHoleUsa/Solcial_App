@@ -1,41 +1,28 @@
 import React from 'react';
-import {ScrollView, View} from 'react-native';
+import {FlatList, ScrollView, View} from 'react-native';
 import {Text} from 'react-native-paper';
 import {styles} from './Styles';
 import RaffleAuctionCard from '../../components/RaffleAuctionCard';
 import Search from '../../components/Search';
+import {storeScreen} from '../../assets/Data';
 const Raffle = ({navigation}) => {
   return (
-    <ScrollView style={styles.container__main}>
+    <View style={styles.container__main}>
       <Search />
-      <RaffleAuctionCard
-        buttonLabel="Enter Raffel"
-        navigation={navigation}
-        itemRoute="Raffle Item"
-        enteringAuctionOrRaffle="Enter Raffle"
+      <FlatList
+        data={storeScreen}
+        horizontal={false}
+        keyExtractor={item => item.id}
+        renderItem={({item}) => (
+          <RaffleAuctionCard
+            buttonLabel="Enter Raffel"
+            navigation={navigation}
+            itemRoute="Raffle Item"
+            enteringAuctionOrRaffle="Enter Raffle"
+          />
+        )}
       />
-      <RaffleAuctionCard
-        buttonLabel="Enter Raffel"
-        navigation={navigation}
-        itemRoute="Raffle Item"
-        enteringAuctionOrRaffle="Enter Raffle"
-      />
-      <RaffleAuctionCard
-        buttonLabel="Enter Raffel"
-        navigation={navigation}
-        itemRoute="Raffle Item"
-      />
-      <RaffleAuctionCard
-        buttonLabel="Enter Raffel"
-        navigation={navigation}
-        itemRoute="Raffle Item"
-      />
-      <RaffleAuctionCard
-        buttonLabel="Enter Raffel"
-        navigation={navigation}
-        itemRoute="Raffle Item"
-      />
-    </ScrollView>
+    </View>
   );
 };
 
