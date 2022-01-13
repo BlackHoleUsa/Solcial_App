@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, View, Image, TouchableOpacity} from 'react-native';
 import {styles} from './Styles';
-import {Images} from '../../assets/images';
+
 import {Button} from 'react-native-paper';
 import Icons from 'react-native-vector-icons/Ionicons';
 const RaffleAuctionCard = ({
@@ -9,10 +9,13 @@ const RaffleAuctionCard = ({
   buttonLabel,
   itemRoute,
   enteringAuctionOrRaffle,
+
+  item,
 }) => {
   const handleNavigation = () => {
     navigation.navigate(itemRoute);
   };
+
   return (
     <View style={styles.container__main}>
       <View style={styles.icon}>
@@ -25,16 +28,19 @@ const RaffleAuctionCard = ({
       <TouchableOpacity
         onPress={handleNavigation}
         style={styles.container__image}>
-        <Image source={Images.cardImage} style={styles.image} />
+        <Image
+          style={styles.image}
+          source={{
+            uri: `${item?.product_url[1]}`,
+          }}
+          resizeMode="contain"
+        />
       </TouchableOpacity>
       <View style={styles.container__content}>
-        <Text style={styles.text__title}>Soccer Jacket</Text>
+        <Text style={styles.text__title}>{item?.name}</Text>
         <View style={styles.container__detail}>
           <View style={styles.text__details__container}>
-            <Text style={styles.text__details}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.
-            </Text>
+            <Text style={styles.text__details}>{item?.description}</Text>
           </View>
           <Button
             mode="outlined"

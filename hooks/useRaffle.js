@@ -9,9 +9,11 @@ const useRaffle = navigation => {
   const [item, setItem] = useState();
 
   const getAllRaffleItems = async () => {
+    setIsLoading(true);
     try {
       const response = await axios(`${API_URL}${apiRoutes.getAllRaffles}`);
       if (response.status === 200) {
+        setIsLoading(false);
         setItem(response.data.allRaffles);
         console.log(item);
       }
@@ -41,7 +43,7 @@ const useRaffle = navigation => {
 
   return {
     isLoading,
-    item,
+    data: item,
   };
 };
 

@@ -11,6 +11,8 @@ export const styles = StyleSheet.create({
   },
   image: {
     width: '100%',
+    height: 200,
+    resizeMode: 'contain',
   },
   container__content: {padding: 10},
   text__title: {
