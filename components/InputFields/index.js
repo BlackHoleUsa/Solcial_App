@@ -11,7 +11,9 @@ const InputField = props => {
           style={[styles.input, props.inputstyle]}
           selectionColor="white"
           placeholder={props.placeholder}
-          placeholderTextColor="white"
+          placeholderTextColor={
+            props.placeholderColor ? props.placeholderColor : 'white'
+          }
           textBreakStrategy="highQuality"
           secureTextEntry={props.secureTextEntry}
           {...props}
