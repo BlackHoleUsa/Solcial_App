@@ -5,7 +5,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import RaffleItemDetail from '../../screens/Raffle/RaffleItemDetail';
 import Raffle from '../../screens/Raffle';
 import EnterRaffle from '../../screens/Raffle/EnterRaffle';
-import PaymentGateway from '../../screens/PaymentGateway';
+
 const Stack = createNativeStackNavigator();
 const RaffleNavigator = () => {
   return (
@@ -36,11 +36,6 @@ const RaffleNavigator = () => {
       <Stack.Screen
         name="Enter Raffle"
         component={EnterRaffle}
-        options={{headerShown: false}}
-      />
-      <Stack.Screen
-        name="Raffle Payment"
-        component={PaymentGateway}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

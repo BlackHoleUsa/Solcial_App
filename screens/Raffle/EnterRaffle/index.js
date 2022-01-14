@@ -1,38 +1,18 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import RaffleAuctionImage from '../../../components/RaffleAuctionImage';
 import RaffleAmount from './RaffleAmount';
 import {styles} from './Styles';
-import {useSelector} from 'react-redux';
+
+import useEnterRaffle from '../../../hooks/useEnterRaffle';
 const EnterRaffle = ({navigation}) => {
-  const selectedRaffleAuctionItem = useSelector(
-    state => state.selectedRaffleAuctionItem,
-  );
-  const [noOfTickets, setNoOfTickets] = useState(0);
-  const handleMinusTicket = () => {
-    if (noOfTickets < 1) {
-      setNoOfTickets(0);
-    } else {
-      setNoOfTickets(noOfTickets - 1);
-    }
-  };
-  const handlePlusTicket = () => {
-    setNoOfTickets(noOfTickets + 1);
-  };
-  const monthNames = [
-    'Jan',
-    'Feb',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'Aug',
-    'Sept',
-    'Oct',
-    'Nov',
-    'Dec',
-  ];
+  const {
+    monthNames,
+    noOfTickets,
+    selectedRaffleAuctionItem,
+    handleMinusTicket,
+    handlePlusTicket,
+  } = useEnterRaffle();
   return (
     <ScrollView contentContainerStyle={styles.container__main}>
       <RaffleAuctionImage
