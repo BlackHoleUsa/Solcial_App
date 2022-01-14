@@ -71,4 +71,9 @@ export const styles = StyleSheet.create({
     backgroundColor: 'black',
     borderRadius: 0,
   },
+  text__errors: {
+    fontSize: 12,
+    fontFamily: 'Poppins-Regular',
+    color: '#ff002d',
+  },
 });
