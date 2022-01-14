@@ -4,6 +4,8 @@ import {styles} from './Styles';
 
 import {Button} from 'react-native-paper';
 import Icons from 'react-native-vector-icons/Ionicons';
+import {useDispatch, useSelector} from 'react-redux';
+import {setSelectedAuctionRaffleItem} from '../../redux/actions/actions';
 const RaffleAuctionCard = ({
   navigation,
   buttonLabel,
@@ -12,6 +14,8 @@ const RaffleAuctionCard = ({
 
   item,
 }) => {
+  const dispatch = useDispatch();
+
   const handleNavigation = () => {
     navigation.navigate(itemRoute, {
       id: item._id,
@@ -20,8 +24,21 @@ const RaffleAuctionCard = ({
       video: item.product_url[0],
       description: item.description,
     });
+    dispatch(setSelectedAuctionRaffleItem(item));
   };
-  console.log(item?.product_url[1]);
+
+  const handleEnterRaffle = () => {
+    dispatch(setSelectedAuctionRaffleItem(item));
+    navigation.navigate(enteringAuctionOrRaffle, {
+      id: item._id,
+      title: item.name,
+      description: item.description,
+      image: item.product_url[1],
+      endTime: new Date(item.endTime),
+      price: item.ticketPrice,
+    });
+  };
+
   return (
     <ScrollView contentContainerStyle={styles.container__main}>
       <View style={styles.icon}>
@@ -50,16 +67,7 @@ const RaffleAuctionCard = ({
           </View>
           <Button
             mode="outlined"
-            onPress={() =>
-              navigation.navigate(enteringAuctionOrRaffle, {
-                id: item._id,
-                title: item.name,
-                description: item.description,
-                image: item.product_url[1],
-                endTime: new Date(item.endTime),
-                price: item.ticketPrice,
-              })
-            }
+            onPress={handleEnterRaffle}
             style={styles.raffle__button}
             // eslint-disable-next-line react-native/no-inline-styles
             labelStyle={{color: 'black', fontFamily: 'Poppins-Regular'}}>

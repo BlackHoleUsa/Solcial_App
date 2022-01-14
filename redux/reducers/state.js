@@ -6,4 +6,5 @@ export const initialState = {
     id: '',
     authToken: '',
   },
+  selectedRaffleAuctionItem: {},
 };
