@@ -29,14 +29,7 @@ const RaffleAuctionCard = ({
 
   const handleEnterRaffle = () => {
     dispatch(setSelectedAuctionRaffleItem(item));
-    navigation.navigate(enteringAuctionOrRaffle, {
-      id: item._id,
-      title: item.name,
-      description: item.description,
-      image: item.product_url[1],
-      endTime: new Date(item.endTime),
-      price: item.ticketPrice,
-    });
+    navigation.navigate(enteringAuctionOrRaffle);
   };
 
   return (

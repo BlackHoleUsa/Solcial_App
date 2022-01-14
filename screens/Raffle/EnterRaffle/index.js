@@ -3,8 +3,12 @@ import {ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import RaffleAuctionImage from '../../../components/RaffleAuctionImage';
 import RaffleAmount from './RaffleAmount';
 import {styles} from './Styles';
-const EnterRaffle = ({route, navigation}) => {
-  const {id, title, description, image, endTime, price} = route.params;
+import {useSelector} from 'react-redux';
+const EnterRaffle = ({navigation}) => {
+  const selectedRaffleAuctionItem = useSelector(
+    state => state.selectedRaffleAuctionItem,
+  );
+
   const monthNames = [
     'Jan',
     'Feb',
@@ -21,20 +25,35 @@ const EnterRaffle = ({route, navigation}) => {
   ];
   return (
     <ScrollView contentContainerStyle={styles.container__main}>
-      <RaffleAuctionImage image={image} navigation={navigation} />
+      <RaffleAuctionImage
+        image={selectedRaffleAuctionItem.product_url[1]}
+        navigation={navigation}
+      />
       <View style={styles.container__content}>
-        <Text style={styles.text__title}>{title}</Text>
-        <Text style={styles.text__description}>{description}</Text>
+        <Text style={styles.text__title}>{selectedRaffleAuctionItem.name}</Text>
+        <Text style={styles.text__description}>
+          {selectedRaffleAuctionItem.description}
+        </Text>
         <View style={styles.container__raffle_close_time}>
           <Text style={styles.text__raffle_close_on}>Raffle Close on: </Text>
           <Text style={styles.text__raffle_close_time}>
-            {endTime.getDate()} {monthNames[endTime.getMonth()]} at{' '}
-            {endTime.toLocaleString('en-US', {hour: 'numeric', hour12: true})}
+            {new Date(selectedRaffleAuctionItem.endTime).getDate()}{' '}
+            {monthNames[new Date(selectedRaffleAuctionItem.endTime).getMonth()]}{' '}
+            at{' '}
+            {new Date(selectedRaffleAuctionItem.endTime).toLocaleString(
+              'en-US',
+              {
+                hour: 'numeric',
+                hour12: true,
+              },
+            )}
           </Text>
         </View>
         <RaffleAmount />
         <View style={styles.container__price_per_ticket}>
-          <Text style={styles.text__price}>${price} </Text>
+          <Text style={styles.text__price}>
+            ${selectedRaffleAuctionItem.ticketPrice}{' '}
+          </Text>
           <Text style={styles.text__price_per_ticket}>per ticket</Text>
         </View>
 
