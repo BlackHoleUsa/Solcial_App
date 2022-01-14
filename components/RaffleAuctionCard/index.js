@@ -17,13 +17,7 @@ const RaffleAuctionCard = ({
   const dispatch = useDispatch();
 
   const handleNavigation = () => {
-    navigation.navigate(itemRoute, {
-      id: item._id,
-      title: item.name,
-      image: item.product_url[1],
-      video: item.product_url[0],
-      description: item.description,
-    });
+    navigation.navigate(itemRoute);
     dispatch(setSelectedAuctionRaffleItem(item));
   };
 
