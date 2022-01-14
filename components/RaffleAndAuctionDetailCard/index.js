@@ -4,7 +4,12 @@ import {styles} from './Styles';
 import {Images} from '../../assets/images';
 import Icons from 'react-native-vector-icons/Ionicons';
 
-const RaffleAndAuctionDetailCard = ({title, image, description}) => {
+const RaffleAndAuctionDetailCard = ({
+  title,
+  image,
+  description,
+  navigation,
+}) => {
   const [showCard, setShowCard] = useState(true);
 
   const handleShowCard = () => {
@@ -39,7 +44,11 @@ const RaffleAndAuctionDetailCard = ({title, image, description}) => {
                 <Text style={styles.text__title}>{title}</Text>
                 <Text style={styles.text__description}>{description}</Text>
               </View>
-              <TouchableOpacity onPress={() => {}} style={styles.button}>
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.navigate('Enter Raffle');
+                }}
+                style={styles.button}>
                 <Text style={styles.text__button}>Enter Raffle</Text>
               </TouchableOpacity>
             </View>

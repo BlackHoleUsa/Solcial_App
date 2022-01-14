@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import RaffleAuctionImage from '../../../components/RaffleAuctionImage';
 import RaffleAmount from './RaffleAmount';
@@ -8,7 +8,17 @@ const EnterRaffle = ({navigation}) => {
   const selectedRaffleAuctionItem = useSelector(
     state => state.selectedRaffleAuctionItem,
   );
-
+  const [noOfTickets, setNoOfTickets] = useState(0);
+  const handleMinusTicket = () => {
+    if (noOfTickets < 1) {
+      setNoOfTickets(0);
+    } else {
+      setNoOfTickets(noOfTickets - 1);
+    }
+  };
+  const handlePlusTicket = () => {
+    setNoOfTickets(noOfTickets + 1);
+  };
   const monthNames = [
     'Jan',
     'Feb',
@@ -49,7 +59,11 @@ const EnterRaffle = ({navigation}) => {
             )}
           </Text>
         </View>
-        <RaffleAmount />
+        <RaffleAmount
+          handleMinusTicket={handleMinusTicket}
+          handlePlusTicket={handlePlusTicket}
+          noOfTickets={noOfTickets}
+        />
         <View style={styles.container__price_per_ticket}>
           <Text style={styles.text__price}>
             ${selectedRaffleAuctionItem.ticketPrice}{' '}
