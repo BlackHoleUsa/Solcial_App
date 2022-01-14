@@ -5,6 +5,12 @@ export const styles = StyleSheet.create({
     backgroundColor: 'white',
     padding: 20,
     width: '100%',
+    position: 'relative',
+  },
+  container__cross: {
+    position: 'absolute',
+    top: 2,
+    right: 2,
   },
   text__card: {
     color: 'black',

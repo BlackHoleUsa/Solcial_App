@@ -1,5 +1,11 @@
 import React from 'react';
-import {View, Text, KeyboardAvoidingView, TextInput} from 'react-native';
+import {
+  View,
+  Text,
+  KeyboardAvoidingView,
+  TextInput,
+  TouchableOpacity,
+} from 'react-native';
 import {styles} from './Styles';
 import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Button} from 'react-native-paper';
@@ -14,6 +20,11 @@ export default function PaymentGateway({visible, hideModal, amount}) {
     <CustomModal visible={visible} hideModal={hideModal}>
       <KeyboardAvoidingView>
         <View style={styles.container__main}>
+          <TouchableOpacity
+            style={styles.container__cross}
+            onPress={() => hideModal()}>
+            <Icons name="close" color={'black'} size={25} />
+          </TouchableOpacity>
           <View style={styles.container__title}>
             <Text style={styles.text__title}>Raffle Payment</Text>
           </View>
