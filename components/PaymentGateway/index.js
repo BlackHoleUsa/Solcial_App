@@ -1,21 +1,24 @@
 import React from 'react';
-import {View, Text, ScrollView} from 'react-native';
+import {Modal, View, Text, ScrollView, Alert} from 'react-native';
 import {styles} from './Styles';
 import InputFields from '../InputFields';
-import {Portal, Modal, Button} from 'react-native-paper';
-export default function PaymentGateway({visible, hideModal, showModal}) {
+import {Button} from 'react-native-paper';
+import CustomModal from '../CustomModal';
+export default function PaymentGateway({visible, hideModal}) {
   return (
-    <Portal contentContainerStyle={styles.container__main}>
-      <Modal
-        visible={visible}
-        onDismiss={hideModal}
-        contentContainerStyle={styles.container__main}>
+    <CustomModal visible={visible} hideModal={hideModal}>
+      <View style={styles.container__main}>
         <Text>Payment Gateway</Text>
-        <InputFields label="Card" icon="ios-card-outline" iconColorBlack />
-        <Button style={{marginTop: 30}} onPress={showModal}>
+        <InputFields
+          label="Card"
+          icon="ios-card-outline"
+          iconColorBlack
+          textStyle={styles.text__title}
+        />
+        <Button style={{marginTop: 30}} onPress={() => hideModal()}>
           Show
         </Button>
-      </Modal>
-    </Portal>
+      </View>
+    </CustomModal>
   );
 }

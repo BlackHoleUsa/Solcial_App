@@ -5,6 +5,8 @@ import RaffleAmount from './RaffleAmount';
 import {styles} from './Styles';
 
 import useEnterRaffle from '../../../hooks/useEnterRaffle';
+import useModal from '../../../hooks/useModal';
+import PaymentGateway from '../../../components/PaymentGateway';
 const EnterRaffle = ({navigation}) => {
   const {
     monthNames,
@@ -13,6 +15,7 @@ const EnterRaffle = ({navigation}) => {
     handleMinusTicket,
     handlePlusTicket,
   } = useEnterRaffle();
+  const {visible, showModal, hideModal} = useModal();
   return (
     <ScrollView contentContainerStyle={styles.container__main}>
       <RaffleAuctionImage
@@ -51,13 +54,10 @@ const EnterRaffle = ({navigation}) => {
           <Text style={styles.text__price_per_ticket}>per ticket</Text>
         </View>
 
-        <TouchableOpacity
-          onPress={() => {
-            navigation.navigate('Raffle Payment');
-          }}
-          style={styles.button}>
+        <TouchableOpacity onPress={() => showModal()} style={styles.button}>
           <Text style={styles.text__button}>Enter Raffle</Text>
         </TouchableOpacity>
+        <PaymentGateway visible={visible} hideModal={hideModal} />
       </View>
     </ScrollView>
   );
