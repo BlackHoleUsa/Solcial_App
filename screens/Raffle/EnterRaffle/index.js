@@ -57,7 +57,11 @@ const EnterRaffle = ({navigation}) => {
         <TouchableOpacity onPress={() => showModal()} style={styles.button}>
           <Text style={styles.text__button}>Enter Raffle</Text>
         </TouchableOpacity>
-        <PaymentGateway visible={visible} hideModal={hideModal} />
+        <PaymentGateway
+          visible={visible}
+          hideModal={hideModal}
+          amount={selectedRaffleAuctionItem.ticketPrice * noOfTickets}
+        />
       </View>
     </ScrollView>
   );

@@ -6,4 +6,5 @@ export const apiRoutes = {
   requestResetPassword: 'auth/forgot-password',
   verifyCode: 'auth/verify-code',
   getAllRaffles: 'raffle',
+  rafflePayment: 'raffle/addUserInRaffle',
 };

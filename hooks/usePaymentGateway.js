@@ -4,9 +4,14 @@ import {API_URL} from '../utilities/apiRoutes';
 import {apiRoutes} from '../utilities/apiRoutes';
 import axios from 'axios';
 import {Alert} from 'react-native';
-import {useDispatch} from 'react-redux';
+import {useSelector} from 'react-redux';
 
-const usePaymentGateway = navigation => {
+const usePaymentGateway = amount => {
+  const selectedRaffleAuctionItem = useSelector(
+    state => state.selectedRaffleAuctionItem,
+  );
+
+  const userId = useSelector(state => state.userInfo.id);
   const [isLoading, setIsLoading] = useState(false);
   const cardValidationSchema = yup.object().shape({
     cardNumber: yup.string().required('Required'),
@@ -18,15 +23,20 @@ const usePaymentGateway = navigation => {
   // signup form submission
 
   const handlePayment = async values => {
-    let newValues = {};
+    let newValues = {
+      ...values,
+      userId,
+      amount,
+    };
     try {
       setIsLoading(true);
       const response = await axios.post(
-        `${API_URL}${apiRoutes.signup}`,
+        `${API_URL}${apiRoutes.rafflePayment}?raffleId=${selectedRaffleAuctionItem._id}`,
         newValues,
       );
       if (response.status === 200) {
         setIsLoading(false);
+        console.log(response);
       }
     } catch (error) {
       setIsLoading(false);

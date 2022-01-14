@@ -7,9 +7,9 @@ import CustomModal from '../CustomModal';
 import InputField from '../InputFields';
 import usePaymentGateway from '../../hooks/usePaymentGateway';
 import {Formik} from 'formik';
-export default function PaymentGateway({visible, hideModal}) {
+export default function PaymentGateway({visible, hideModal, amount}) {
   const {cardValidationSchema, initialValues, isLoading, handlePayment} =
-    usePaymentGateway();
+    usePaymentGateway(amount);
   return (
     <CustomModal visible={visible} hideModal={hideModal}>
       <KeyboardAvoidingView>
@@ -108,14 +108,15 @@ export default function PaymentGateway({visible, hideModal}) {
                   </View>
                 </View>
                 <Button
+                  loading={isLoading}
                   mode="contained"
                   style={styles.button__payment}
                   labelStyle={{
                     color: 'white',
                     fontFamily: 'Poppins-Regular',
                   }}
-                  onPress={() => hideModal()}>
-                  Pay
+                  onPress={handleSubmit}>
+                  Pay ${amount}
                 </Button>
               </>
             )}
