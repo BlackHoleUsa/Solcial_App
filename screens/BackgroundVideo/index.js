@@ -14,7 +14,6 @@ const BackgroundVideo = ({children, video}) => {
         resizeMode={'contain'}
         rate={1.0}
         ignoreSilentSwitch={'obey'}
-        fullscreen
         style={styles.container__video}
       />
       {children}

@@ -71,7 +71,11 @@ const EnterRaffle = ({navigation}) => {
           <Text style={styles.text__price_per_ticket}>per ticket</Text>
         </View>
 
-        <TouchableOpacity onPress={() => {}} style={styles.button}>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate('Raffle Payment');
+          }}
+          style={styles.button}>
           <Text style={styles.text__button}>Enter Raffle</Text>
         </TouchableOpacity>
       </View>
