@@ -21,6 +21,8 @@ const Raffle = ({navigation}) => {
           data={data}
           horizontal={false}
           keyExtractor={item => item._id}
+          ListFooterComponent={<View></View>}
+          ListFooterComponentStyle={{marginVertical: 50}}
           renderItem={({item}) => (
             <RaffleAuctionCard
               buttonLabel="Enter Raffel"
