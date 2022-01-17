@@ -6,7 +6,7 @@ import Search from '../../components/Search';
 import useAuction from '../../hooks/useAuction';
 import {styles} from './Styles';
 const Auction = ({navigation}) => {
-  const {isLoading, data} = useAuction(navigation);
+  const {isLoading, data, listRefresh, setListRefresh} = useAuction(navigation);
   return (
     <View style={styles.container__main}>
       <Search />
@@ -16,6 +16,8 @@ const Auction = ({navigation}) => {
         </View>
       ) : (
         <FlatList
+          onRefresh={() => setListRefresh(true)}
+          refreshing={listRefresh}
           data={data}
           horizontal={false}
           keyExtractor={item => item._id}

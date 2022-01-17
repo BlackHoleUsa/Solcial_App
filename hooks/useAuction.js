@@ -7,7 +7,7 @@ import {Alert} from 'react-native';
 const useAuction = navigation => {
   const [isLoading, setIsLoading] = useState(false);
   const [item, setItem] = useState();
-
+  const [listRefresh, setListRefresh] = useState(false);
   const getAllAuctions = async () => {
     setIsLoading(true);
     try {
@@ -16,12 +16,12 @@ const useAuction = navigation => {
       );
       if (response.status === 200) {
         setIsLoading(false);
-        console.log('the item', response.data);
+        setListRefresh(false);
         setItem(response.data.data);
-        console.log('state', item);
       }
     } catch (error) {
       if (error) {
+        setListRefresh(false);
         Alert.alert(
           'Error',
           `${error.response.data.message}`,
@@ -42,11 +42,13 @@ const useAuction = navigation => {
 
   useEffect(() => {
     getAllAuctions();
-  }, []);
+  }, [listRefresh]);
 
   return {
     isLoading,
     data: item,
+    listRefresh,
+    setListRefresh,
   };
 };
 
