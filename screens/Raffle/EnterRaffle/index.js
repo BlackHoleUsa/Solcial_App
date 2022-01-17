@@ -6,7 +6,7 @@ import {styles} from './Styles';
 
 import useEnterRaffle from '../../../hooks/useEnterRaffle';
 import useModal from '../../../hooks/useModal';
-import PaymentGateway from '../../../components/PaymentGateway';
+import RafflePayment from '../../../components/RafflePayment';
 const EnterRaffle = ({navigation}) => {
   const {
     monthNames,
@@ -57,7 +57,7 @@ const EnterRaffle = ({navigation}) => {
         <TouchableOpacity onPress={() => showModal()} style={styles.button}>
           <Text style={styles.text__button}>Enter Raffle</Text>
         </TouchableOpacity>
-        <PaymentGateway
+        <RafflePayment
           visible={visible}
           hideModal={hideModal}
           amount={selectedRaffleAuctionItem.ticketPrice * noOfTickets}

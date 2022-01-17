@@ -67,6 +67,7 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'black',
     textAlign: 'center',
+    flexGrow: 1,
   },
   input__style: {
     width: '100%',

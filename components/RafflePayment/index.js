@@ -13,7 +13,7 @@ import CustomModal from '../CustomModal';
 import InputField from '../InputFields';
 import usePaymentGateway from '../../hooks/usePaymentGateway';
 import {Formik} from 'formik';
-export default function PaymentGateway({visible, hideModal, amount}) {
+export default function RafflePayment({visible, hideModal, amount}) {
   const {cardValidationSchema, initialValues, isLoading, handlePayment} =
     usePaymentGateway(amount);
   return (
@@ -106,7 +106,7 @@ export default function PaymentGateway({visible, hideModal, amount}) {
                       selectionColor="white"
                       placeholderTextColor="gray"
                       textBreakStrategy="highQuality"
-                      placeholder="22"
+                      placeholder="123"
                       style={styles.input__cvc}
                       keyboardType="number-pad"
                       onChangeText={handleChange('cardCVC')}
