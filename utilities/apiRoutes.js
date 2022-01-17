@@ -7,4 +7,5 @@ export const apiRoutes = {
   verifyCode: 'auth/verify-code',
   getAllRaffles: 'raffle',
   rafflePayment: 'raffle/addUserInRaffle',
+  getAllAuctionListing: 'auction/getAuctionListing',
 };
