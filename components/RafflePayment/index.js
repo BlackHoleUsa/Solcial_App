@@ -11,11 +11,16 @@ import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Button} from 'react-native-paper';
 import CustomModal from '../CustomModal';
 import InputField from '../InputFields';
-import usePaymentGateway from '../../hooks/usePaymentGateway';
+import useRafflePaymentGateway from '../../hooks/useRafflePaymentGateway';
 import {Formik} from 'formik';
-export default function RafflePayment({visible, hideModal, amount}) {
+export default function RafflePayment({
+  visible,
+  hideModal,
+  amount,
+  noOfTickets,
+}) {
   const {cardValidationSchema, initialValues, isLoading, handlePayment} =
-    usePaymentGateway(amount);
+    useRafflePaymentGateway(amount, noOfTickets);
   return (
     <CustomModal visible={visible} hideModal={hideModal}>
       <KeyboardAvoidingView>

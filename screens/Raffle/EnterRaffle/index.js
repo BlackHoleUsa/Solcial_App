@@ -61,6 +61,7 @@ const EnterRaffle = ({navigation}) => {
           visible={visible}
           hideModal={hideModal}
           amount={selectedRaffleAuctionItem.ticketPrice * noOfTickets}
+          noOfTickets={noOfTickets}
         />
       </View>
     </ScrollView>

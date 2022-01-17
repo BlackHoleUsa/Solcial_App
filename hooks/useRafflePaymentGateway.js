@@ -6,7 +6,7 @@ import axios from 'axios';
 import {Alert} from 'react-native';
 import {useSelector} from 'react-redux';
 
-const usePaymentGateway = amount => {
+const useRafflePaymentGateway = (amount, noOfTickets) => {
   const selectedRaffleAuctionItem = useSelector(
     state => state.selectedRaffleAuctionItem,
   );
@@ -27,6 +27,7 @@ const usePaymentGateway = amount => {
       ...values,
       userId,
       amount,
+      noOfTickets,
     };
     try {
       setIsLoading(true);
@@ -76,4 +77,4 @@ const usePaymentGateway = amount => {
   };
 };
 
-export default usePaymentGateway;
+export default useRafflePaymentGateway;
