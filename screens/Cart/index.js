@@ -6,6 +6,8 @@ import {styles} from './Styles';
 import CustomStatusBar from '../../components/CustomStatusBar';
 import CartItemCard from './CartItemCard';
 import uuid from 'react-native-uuid';
+import StorePayment from '../../components/StorePayment';
+import useModal from '../../hooks/useModal';
 
 const cartScreen = [
   {
@@ -30,6 +32,7 @@ const cartScreen = [
 
 const Cart = () => {
   const isFocused = useIsFocused();
+  const {visible, hideModal, showModal} = useModal(0);
   return (
     <View style={styles.container__main}>
       {isFocused && (
@@ -51,11 +54,14 @@ const Cart = () => {
       </View>
       <Button
         mode="contained"
-        onPress={() => {}}
+        onPress={() => {
+          showModal();
+        }}
         style={styles.checkout__button}
         labelStyle={{color: 'white', fontFamily: 'Poppins-Regular'}}>
         Checkout
       </Button>
+      <StorePayment visible={visible} hideModal={hideModal} amount={20} />
     </View>
   );
 };
