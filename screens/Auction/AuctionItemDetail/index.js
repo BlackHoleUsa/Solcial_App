@@ -4,15 +4,31 @@ import BackgroundVideo from '../../BackgroundVideo';
 import {styles} from './Styles';
 import Icons from 'react-native-vector-icons/Ionicons';
 import RaffleAndAuctionDetailCard from '../../../components/RaffleAndAuctionDetailCard';
-const AuctionItemDetail = () => {
+import {useSelector} from 'react-redux';
+const AuctionItemDetail = ({navigation}) => {
+  const selectedRaffleAuctionItem = useSelector(
+    state => state.selectedRaffleAuctionItem,
+  );
   return (
-    <BackgroundVideo>
+    <BackgroundVideo video={selectedRaffleAuctionItem.product_url[0]}>
       <View style={styles.container__main}>
         <View style={styles.container__icon}>
-          <Icons name="arrow-back-circle" size={40} color={'white'} />
+          <Icons
+            name="arrow-back-circle"
+            size={40}
+            color={'white'}
+            onPress={() => navigation.goBack()}
+          />
           <Icons name="information-circle-outline" size={40} color={'white'} />
         </View>
-        <RaffleAndAuctionDetailCard />
+        <RaffleAndAuctionDetailCard
+          navigation={navigation}
+          title={selectedRaffleAuctionItem.name}
+          description={selectedRaffleAuctionItem.description}
+          image={selectedRaffleAuctionItem.product_url[1]}
+          enterRoute="Enter Auction"
+          label="Auction"
+        />
       </View>
     </BackgroundVideo>
   );

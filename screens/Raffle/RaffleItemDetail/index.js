@@ -27,6 +27,8 @@ const RaffleItemDetail = ({navigation}) => {
           image={selectedRaffleAuctionItem.product_url[1]}
           description={selectedRaffleAuctionItem.description}
           navigation={navigation}
+          enterRoute="Enter Raffle"
+          label="Raffle"
         />
       </View>
     </BackgroundVideo>

@@ -9,6 +9,8 @@ const RaffleAndAuctionDetailCard = ({
   image,
   description,
   navigation,
+  label,
+  enterRoute,
 }) => {
   const [showCard, setShowCard] = useState(true);
 
@@ -46,10 +48,10 @@ const RaffleAndAuctionDetailCard = ({
               </View>
               <TouchableOpacity
                 onPress={() => {
-                  navigation.navigate('Enter Raffle');
+                  navigation.navigate(enterRoute);
                 }}
                 style={styles.button}>
-                <Text style={styles.text__button}>Enter Raffle</Text>
+                <Text style={styles.text__button}>Enter {label}</Text>
               </TouchableOpacity>
             </View>
           </>
