@@ -3,12 +3,13 @@ import {ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import RaffleAuctionImage from '../../../components/RaffleAuctionImage';
 import AuctionTime from './AuctionTime';
 import {styles} from './Styles';
-
+import useModal from '../../../hooks/useModal';
 import useEnterAuction from '../../../hooks/useEnterAuction';
+import AuctionBid from '../AuctionBid';
 const EnterAuction = ({navigation}) => {
   const {image, title, description, highestBid, endTime} =
     useEnterAuction(navigation);
-
+  const {visible, showModal, hideModal} = useModal();
   return (
     <ScrollView contentContainerStyle={styles.container__main}>
       <RaffleAuctionImage navigation={navigation} image={image} />
@@ -21,10 +22,11 @@ const EnterAuction = ({navigation}) => {
           <Text style={styles.text___highest_bid}>${highestBid}</Text>
         </View>
         <AuctionTime endTime={endTime} />
-        <TouchableOpacity onPress={() => {}} style={styles.button}>
+        <TouchableOpacity onPress={() => showModal()} style={styles.button}>
           <Text style={styles.text__button}>Enter Auction</Text>
         </TouchableOpacity>
       </View>
+      {visible ? <AuctionBid visible={visible} hideModal={hideModal} /> : null}
     </ScrollView>
   );
 };
