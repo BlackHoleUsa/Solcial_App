@@ -8,4 +8,5 @@ export const apiRoutes = {
   getAllRaffles: 'raffle',
   rafflePayment: 'raffle/addUserInRaffle',
   getAllAuctionListing: 'auction/getAuctionListing',
+  placeBid: 'auction/placeBid',
 };

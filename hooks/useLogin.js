@@ -38,8 +38,6 @@ const useLogin = navigation => {
   // login form submission
 
   const handleLogin = async values => {
-    console.log(values);
-
     try {
       setIsLoading(true);
       const response = await axios.post(`${API_URL}${apiRoutes.login}`, values);

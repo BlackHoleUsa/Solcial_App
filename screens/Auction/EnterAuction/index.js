@@ -40,6 +40,7 @@ const EnterAuction = ({navigation}) => {
           visible={visible}
           hideModal={hideModal}
           highestBid={highestBid}
+          navigation={navigation}
         />
       ) : null}
     </ScrollView>

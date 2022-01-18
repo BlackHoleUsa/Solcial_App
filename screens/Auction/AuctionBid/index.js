@@ -7,9 +7,16 @@ import InputField from '../../../components/InputFields';
 import {Button} from 'react-native-paper';
 import useAuctionBid from '../../../hooks/useAuctionBid';
 import {Formik} from 'formik';
-export default function AuctionBid({visible, hideModal, highestBid}) {
-  const {isLoading, bidValidationSchema, handleAuctionBid} =
-    useAuctionBid(highestBid);
+export default function AuctionBid({
+  visible,
+  hideModal,
+  highestBid,
+  navigation,
+}) {
+  const {isLoading, bidValidationSchema, handleAuctionBid} = useAuctionBid(
+    highestBid,
+    navigation,
+  );
   return (
     <CustomModal visible={visible} hideModal={hideModal}>
       <View style={styles.container__main}>
