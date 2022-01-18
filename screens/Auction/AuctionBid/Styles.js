@@ -12,4 +12,17 @@ export const styles = StyleSheet.create({
     top: 2,
     right: 2,
   },
+  text__lableStyle: {
+    color: 'black',
+  },
+  text__title: {
+    color: 'black',
+  },
+  button__auction: {
+    backgroundColor: 'black',
+    borderRadius: 0,
+  },
+  input__style: {
+    color: 'black',
+  },
 });

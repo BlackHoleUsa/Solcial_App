@@ -26,7 +26,13 @@ const EnterAuction = ({navigation}) => {
           <Text style={styles.text__button}>Enter Auction</Text>
         </TouchableOpacity>
       </View>
-      {visible ? <AuctionBid visible={visible} hideModal={hideModal} /> : null}
+      {visible ? (
+        <AuctionBid
+          visible={visible}
+          hideModal={hideModal}
+          highestBid={highestBid}
+        />
+      ) : null}
     </ScrollView>
   );
 };
