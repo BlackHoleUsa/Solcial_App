@@ -9,4 +9,5 @@ export const apiRoutes = {
   rafflePayment: 'raffle/addUserInRaffle',
   getAllAuctionListing: 'auction/getAuctionListing',
   placeBid: 'auction/placeBid',
+  getAllStoreItems: 'store/getProductType?product_type=All&page=0&perPage=10',
 };
