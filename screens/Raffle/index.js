@@ -7,7 +7,7 @@ import Search from '../../components/Search';
 import {storeScreen} from '../../assets/Data';
 import useRaffle from '../../hooks/useRaffle';
 const Raffle = ({navigation}) => {
-  const {isLoading, data} = useRaffle(navigation);
+  const {isLoading, listRefresh, data, setListRefresh} = useRaffle(navigation);
 
   return (
     <View style={styles.container__main}>
@@ -18,6 +18,8 @@ const Raffle = ({navigation}) => {
         </View>
       ) : (
         <FlatList
+          onRefresh={() => setListRefresh(true)}
+          refreshing={listRefresh}
           data={data}
           horizontal={false}
           keyExtractor={item => item._id}

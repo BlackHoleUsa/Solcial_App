@@ -7,19 +7,20 @@ import {Alert} from 'react-native';
 const useRaffle = navigation => {
   const [isLoading, setIsLoading] = useState(false);
   const [item, setItem] = useState();
-
+  const [listRefresh, setListRefresh] = useState(false);
   const getAllRaffleItems = async () => {
     setIsLoading(true);
     try {
       const response = await axios(`${API_URL}${apiRoutes.getAllRaffles}`);
       if (response.status === 200) {
         setIsLoading(false);
-        console.log('the item', response.data.allRaffles);
+
         setItem(response.data.allRaffles);
-        console.log(item);
+        setListRefresh(false);
       }
     } catch (error) {
       if (error) {
+        setListRefresh(false);
         Alert.alert(
           'Error',
           `${error.response.data.message}`,
@@ -40,11 +41,13 @@ const useRaffle = navigation => {
 
   useEffect(() => {
     getAllRaffleItems();
-  }, []);
+  }, [listRefresh]);
 
   return {
     isLoading,
     data: item,
+    listRefresh,
+    setListRefresh,
   };
 };
 
