@@ -2,8 +2,13 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import {styles} from './Styles';
 import useAuctionTime from '../../../../hooks/useAuctionTime';
-const AuctionTime = ({endTime}) => {
-  const {day, hour, min} = useAuctionTime(endTime);
+const AuctionTime = ({endTime, setEndAuction}) => {
+  const {day, hour, min, sec} = useAuctionTime(endTime);
+  if (day < 0 || hour < 0 || min < 0) {
+    setEndAuction(true);
+  } else {
+    setEndAuction(false);
+  }
   return (
     <View style={styles.container__main}>
       <View style={styles.container__content}>

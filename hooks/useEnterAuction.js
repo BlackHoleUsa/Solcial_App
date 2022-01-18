@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {useSelector} from 'react-redux';
 const useEnterAuction = () => {
   const [highestBid, setHighestBid] = useState();
+  const [endAuction, setEndAuction] = useState(false);
   const selectedRaffleAuctionItem = useSelector(
     state => state.selectedRaffleAuctionItem,
   );
@@ -28,6 +29,8 @@ const useEnterAuction = () => {
     description: selectedRaffleAuctionItem.description,
     highestBid,
     endTime: selectedRaffleAuctionItem.endTime,
+    endAuction,
+    setEndAuction,
   };
 };
 

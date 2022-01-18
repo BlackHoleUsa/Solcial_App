@@ -7,8 +7,15 @@ import useModal from '../../../hooks/useModal';
 import useEnterAuction from '../../../hooks/useEnterAuction';
 import AuctionBid from '../AuctionBid';
 const EnterAuction = ({navigation}) => {
-  const {image, title, description, highestBid, endTime} =
-    useEnterAuction(navigation);
+  const {
+    image,
+    title,
+    description,
+    highestBid,
+    endTime,
+    endAuction,
+    setEndAuction,
+  } = useEnterAuction(navigation);
   const {visible, showModal, hideModal} = useModal();
   return (
     <ScrollView contentContainerStyle={styles.container__main}>
@@ -21,8 +28,10 @@ const EnterAuction = ({navigation}) => {
           <Text style={styles.text__auction}>Current Highest Bid: </Text>
           <Text style={styles.text___highest_bid}>${highestBid}</Text>
         </View>
-        <AuctionTime endTime={endTime} />
-        <TouchableOpacity onPress={() => showModal()} style={styles.button}>
+        <AuctionTime endTime={endTime} setEndAuction={setEndAuction} />
+        <TouchableOpacity
+          onPress={() => (endAuction ? null : showModal())}
+          style={styles.button}>
           <Text style={styles.text__button}>Enter Auction</Text>
         </TouchableOpacity>
       </View>
