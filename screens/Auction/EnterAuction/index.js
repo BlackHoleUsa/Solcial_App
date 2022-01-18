@@ -6,7 +6,8 @@ import {styles} from './Styles';
 
 import useEnterAuction from '../../../hooks/useEnterAuction';
 const EnterAuction = ({navigation}) => {
-  const {image, title, description, highestBid} = useEnterAuction(navigation);
+  const {image, title, description, highestBid, endTime} =
+    useEnterAuction(navigation);
 
   return (
     <ScrollView contentContainerStyle={styles.container__main}>
@@ -19,7 +20,7 @@ const EnterAuction = ({navigation}) => {
           <Text style={styles.text__auction}>Current Highest Bid: </Text>
           <Text style={styles.text___highest_bid}>${highestBid}</Text>
         </View>
-        <AuctionTime />
+        <AuctionTime endTime={endTime} />
         <TouchableOpacity onPress={() => {}} style={styles.button}>
           <Text style={styles.text__button}>Enter Auction</Text>
         </TouchableOpacity>

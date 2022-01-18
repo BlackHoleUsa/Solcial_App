@@ -27,6 +27,7 @@ const useEnterAuction = () => {
     title: selectedRaffleAuctionItem.name,
     description: selectedRaffleAuctionItem.description,
     highestBid,
+    endTime: selectedRaffleAuctionItem.endTime,
   };
 };
 
