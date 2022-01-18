@@ -3,11 +3,12 @@ import {apiRoutes} from '../utilities/apiRoutes';
 import {API_URL} from '../utilities/apiRoutes';
 import axios from 'axios';
 import {Alert} from 'react-native';
-
+import {useIsFocused} from '@react-navigation/native';
 const useAuction = navigation => {
   const [isLoading, setIsLoading] = useState(false);
   const [item, setItem] = useState();
   const [listRefresh, setListRefresh] = useState(false);
+  const isFocused = useIsFocused();
   const getAllAuctions = async () => {
     setIsLoading(true);
     try {
@@ -42,7 +43,7 @@ const useAuction = navigation => {
 
   useEffect(() => {
     getAllAuctions();
-  }, [listRefresh]);
+  }, [listRefresh, isFocused]);
 
   return {
     isLoading,
