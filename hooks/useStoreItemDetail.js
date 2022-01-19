@@ -12,13 +12,6 @@ const useStoreItemDetail = navigation => {
   ];
 
   const addToCart = () => {
-    // cart.some(item => {
-    //   if (item._id === selectedStoreItem._id) {
-    //     return console.log('already present in the item');
-    //   } else {
-    //     dispatch(setCartItem(selectedStoreItem));
-    //   }
-    // });
     let obj = cart.find(o => o._id === selectedStoreItem._id);
     if (obj) {
       console.log('already present');

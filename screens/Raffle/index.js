@@ -1,10 +1,10 @@
 import React from 'react';
-import {FlatList, ScrollView, View, ActivityIndicator} from 'react-native';
-import {Text} from 'react-native-paper';
+import {FlatList, View, ActivityIndicator} from 'react-native';
+
 import {styles} from './Styles';
 import RaffleAuctionCard from '../../components/RaffleAuctionCard';
 import Search from '../../components/Search';
-import {storeScreen} from '../../assets/Data';
+
 import useRaffle from '../../hooks/useRaffle';
 const Raffle = ({navigation}) => {
   const {isLoading, listRefresh, data, setListRefresh} = useRaffle(navigation);

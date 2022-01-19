@@ -2,9 +2,9 @@ import React from 'react';
 import {Text, View, Image, TouchableOpacity} from 'react-native';
 import {styles} from './Styles';
 import {Images} from '../../../assets/images';
-import {Button} from 'react-native-paper';
+
 import Icons from 'react-native-vector-icons/AntDesign';
-const CartItemCard = ({navigation}) => {
+const CartItemCard = ({navigation, item}) => {
   return (
     <View style={styles.container__main}>
       <View style={styles.container__imageAndContent}>

@@ -1,38 +1,19 @@
 import React from 'react';
-import {FlatList, ScrollView, View} from 'react-native';
+import {FlatList, View} from 'react-native';
 import {Button, Text} from 'react-native-paper';
 import {useIsFocused} from '@react-navigation/native';
 import {styles} from './Styles';
 import CustomStatusBar from '../../components/CustomStatusBar';
 import CartItemCard from './CartItemCard';
-import uuid from 'react-native-uuid';
+
 import StorePayment from '../../components/StorePayment';
 import useModal from '../../hooks/useModal';
-
-const cartScreen = [
-  {
-    id: uuid.v4(),
-  },
-  {
-    id: uuid.v4(),
-  },
-  {
-    id: uuid.v4(),
-  },
-  {
-    id: uuid.v4(),
-  },
-  {
-    id: uuid.v4(),
-  },
-  {
-    id: uuid.v4(),
-  },
-];
+import useCart from '../../hooks/useCart';
 
 const Cart = () => {
   const isFocused = useIsFocused();
-  const {visible, hideModal, showModal} = useModal(0);
+  const {visible, hideModal, showModal} = useModal();
+  const {cart} = useCart();
   return (
     <View style={styles.container__main}>
       {isFocused && (
@@ -42,10 +23,12 @@ const Cart = () => {
 
       <View style={styles.container__flatList}>
         <FlatList
-          data={cartScreen}
+          data={cart}
           horizontal={false}
-          keyExtractor={item => item.id}
-          renderItem={({item}) => <CartItemCard />}
+          ListFooterComponent={<View></View>}
+          ListFooterComponentStyle={{marginVertical: 50}}
+          keyExtractor={item => item._id}
+          renderItem={({item}) => <CartItemCard item={item} />}
         />
       </View>
       <View style={styles.container__totalAmount}>
