@@ -5,6 +5,7 @@ import {
   SELECTED_STORE_ITEM,
   SELECTED_RAFFLE_ITEM,
   ADD_CART_ITEM,
+  REMOVE_CART_ITEM,
 } from '../types/types';
 export const reducer = (state = initialState, action) => {
   const {type, payload} = action;
@@ -41,6 +42,11 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         cart: [...state.cart, payload],
+      };
+    case REMOVE_CART_ITEM:
+      return {
+        ...state,
+        cart: state.cart.filter(todo => todo._id !== action.payload._id),
       };
     default:
       return state;
