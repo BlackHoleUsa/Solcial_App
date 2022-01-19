@@ -3,19 +3,17 @@ import {useSelector} from 'react-redux';
 const useEnterAuction = () => {
   const [highestBid, setHighestBid] = useState();
   const [endAuction, setEndAuction] = useState(false);
-  const selectedRaffleAuctionItem = useSelector(
-    state => state.selectedRaffleAuctionItem,
-  );
+  const selectedAuctionItem = useSelector(state => state.selectedAuctionItem);
 
   const getHighestBid = () => {
-    if (selectedRaffleAuctionItem.bids.length > 0) {
-      let amount = selectedRaffleAuctionItem.bids.reduce((prev, current) =>
+    if (selectedAuctionItem.bids.length > 0) {
+      let amount = selectedAuctionItem.bids.reduce((prev, current) =>
         prev.bid_amount > current.bid_amount ? prev : current,
       );
 
       setHighestBid(amount?.bid_amount);
     } else {
-      setHighestBid(selectedRaffleAuctionItem.initialPrice);
+      setHighestBid(selectedAuctionItem.initialPrice);
     }
   };
 
@@ -24,11 +22,11 @@ const useEnterAuction = () => {
   }, []);
 
   return {
-    image: selectedRaffleAuctionItem.product_url[1],
-    title: selectedRaffleAuctionItem.name,
-    description: selectedRaffleAuctionItem.description,
+    image: selectedAuctionItem.product_url[1],
+    title: selectedAuctionItem.name,
+    description: selectedAuctionItem.description,
     highestBid,
-    endTime: selectedRaffleAuctionItem.endTime,
+    endTime: selectedAuctionItem.endTime,
     endAuction,
     setEndAuction,
   };

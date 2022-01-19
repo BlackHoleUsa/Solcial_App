@@ -7,7 +7,7 @@ import Icons from 'react-native-vector-icons/Ionicons';
 import {useDispatch, useSelector} from 'react-redux';
 
 import {
-  setSelectedAuctionRaffleItem,
+  setSelectedAuctionItem,
   setSelectedRaffleItem,
 } from '../../redux/actions/actions';
 const RaffleAuctionCard = ({
@@ -25,7 +25,7 @@ const RaffleAuctionCard = ({
     if (itemRoute === 'Raffle Item') {
       dispatch(setSelectedRaffleItem(item));
     } else {
-      dispatch(setSelectedAuctionRaffleItem(item));
+      dispatch(setSelectedAuctionItem(item));
     }
   };
 
@@ -34,7 +34,7 @@ const RaffleAuctionCard = ({
     if (itemRoute === 'Raffle Item') {
       dispatch(setSelectedRaffleItem(item));
     } else {
-      dispatch(setSelectedAuctionRaffleItem(item));
+      dispatch(setSelectedAuctionItem(item));
     }
   };
 
