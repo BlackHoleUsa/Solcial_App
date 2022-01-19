@@ -18,18 +18,18 @@ const StoreScreen = ({navigation}) => {
         </View>
       ) : (
         <FlatList
-          data={storeScreen}
+          data={data}
           onRefresh={() => setListRefresh(true)}
           refreshing={listRefresh}
           horizontal={false}
           numColumns={2}
-          keyExtractor={item => item.id}
+          keyExtractor={item => item._id}
           ListFooterComponent={<View></View>}
           ListFooterComponentStyle={{marginVertical: 50}}
           columnWrapperStyle={{justifyContent: 'space-around'}}
           renderItem={({item}) => (
             <View style={{width: '45%'}}>
-              <StoreCard navigation={navigation} />
+              <StoreCard navigation={navigation} item={item} />
             </View>
           )}
         />
