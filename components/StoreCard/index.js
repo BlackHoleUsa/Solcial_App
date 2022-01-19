@@ -3,10 +3,15 @@ import {Text, View, Image, TouchableOpacity} from 'react-native';
 import {styles} from './Styles';
 import {Images} from '../../assets/images';
 import Icons from 'react-native-vector-icons/Ionicons';
+import {useDispatch} from 'react-redux';
+import {setSelectedStoreItem} from '../../redux/actions/actions';
 const StoreCard = ({navigation, item}) => {
+  const dispatch = useDispatch();
   const handleNavigation = () => {
+    dispatch(setSelectedStoreItem(item));
     navigation.navigate('Store Item');
   };
+
   return (
     <View style={styles.container__main}>
       <TouchableOpacity

@@ -1,5 +1,9 @@
 import {initialState} from './state';
-import {AUTH, SELECTED_AUCTION_RAFFLE_ITEM} from '../types/types';
+import {
+  AUTH,
+  SELECTED_AUCTION_RAFFLE_ITEM,
+  SELECTED_STORE_ITEM,
+} from '../types/types';
 export const reducer = (state = initialState, action) => {
   const {type, payload} = action;
 
@@ -20,6 +24,11 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         selectedRaffleAuctionItem: payload,
+      };
+    case SELECTED_STORE_ITEM:
+      return {
+        ...state,
+        selectedStoreItem: payload,
       };
     default:
       return state;
