@@ -16,7 +16,8 @@ const useStoreCard = (navigation, item) => {
     let obj = cart.find(o => o._id === item._id);
     setCartIcon('cart');
     if (!obj) {
-      dispatch(setCartItem(item));
+      let modifiedItem = Object.assign(item, {qty: 1});
+      dispatch(setCartItem(modifiedItem));
     }
   };
 
