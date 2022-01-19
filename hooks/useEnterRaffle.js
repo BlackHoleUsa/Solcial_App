@@ -1,9 +1,7 @@
 import React, {useState} from 'react';
 import {useSelector} from 'react-redux';
 const useEnterRaffle = () => {
-  const selectedRaffleAuctionItem = useSelector(
-    state => state.selectedRaffleAuctionItem,
-  );
+  const selectedRaffleItem = useSelector(state => state.selectedRaffleItem);
   const [noOfTickets, setNoOfTickets] = useState(0);
   const handleMinusTicket = () => {
     if (noOfTickets < 1) {
@@ -33,7 +31,7 @@ const useEnterRaffle = () => {
   return {
     monthNames,
     noOfTickets,
-    selectedRaffleAuctionItem,
+    selectedRaffleItem,
     handleMinusTicket,
     handlePlusTicket,
   };

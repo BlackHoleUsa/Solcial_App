@@ -6,12 +6,10 @@ import {styles} from './Styles';
 import Icons from 'react-native-vector-icons/Ionicons';
 import {useSelector} from 'react-redux';
 const RaffleItemDetail = ({navigation}) => {
-  const selectedRaffleAuctionItem = useSelector(
-    state => state.selectedRaffleAuctionItem,
-  );
+  const selectedRaffleItem = useSelector(state => state.selectedRaffleItem);
 
   return (
-    <BackgroundVideo video={selectedRaffleAuctionItem.product_url[0]}>
+    <BackgroundVideo video={selectedRaffleItem.product_url[0]}>
       <View style={styles.container__main}>
         <View style={styles.container__icon}>
           <Icons
@@ -23,9 +21,9 @@ const RaffleItemDetail = ({navigation}) => {
           <Icons name="information-circle-outline" size={40} color={'white'} />
         </View>
         <RaffleAndAuctionDetailCard
-          title={selectedRaffleAuctionItem.name}
-          image={selectedRaffleAuctionItem.product_url[1]}
-          description={selectedRaffleAuctionItem.description}
+          title={selectedRaffleItem.name}
+          image={selectedRaffleItem.product_url[1]}
+          description={selectedRaffleItem.description}
           navigation={navigation}
           enterRoute="Enter Raffle"
           label="Raffle"

@@ -11,7 +11,7 @@ const EnterRaffle = ({navigation}) => {
   const {
     monthNames,
     noOfTickets,
-    selectedRaffleAuctionItem,
+    selectedRaffleItem,
     handleMinusTicket,
     handlePlusTicket,
   } = useEnterRaffle();
@@ -19,27 +19,23 @@ const EnterRaffle = ({navigation}) => {
   return (
     <ScrollView contentContainerStyle={styles.container__main}>
       <RaffleAuctionImage
-        image={selectedRaffleAuctionItem.product_url[1]}
+        image={selectedRaffleItem.product_url[1]}
         navigation={navigation}
       />
       <View style={styles.container__content}>
-        <Text style={styles.text__title}>{selectedRaffleAuctionItem.name}</Text>
+        <Text style={styles.text__title}>{selectedRaffleItem.name}</Text>
         <Text style={styles.text__description}>
-          {selectedRaffleAuctionItem.description}
+          {selectedRaffleItem.description}
         </Text>
         <View style={styles.container__raffle_close_time}>
           <Text style={styles.text__raffle_close_on}>Raffle Close on: </Text>
           <Text style={styles.text__raffle_close_time}>
-            {new Date(selectedRaffleAuctionItem.endTime).getDate()}{' '}
-            {monthNames[new Date(selectedRaffleAuctionItem.endTime).getMonth()]}{' '}
-            at{' '}
-            {new Date(selectedRaffleAuctionItem.endTime).toLocaleString(
-              'en-US',
-              {
-                hour: 'numeric',
-                hour12: true,
-              },
-            )}
+            {new Date(selectedRaffleItem.endTime).getDate()}{' '}
+            {monthNames[new Date(selectedRaffleItem.endTime).getMonth()]} at{' '}
+            {new Date(selectedRaffleItem.endTime).toLocaleString('en-US', {
+              hour: 'numeric',
+              hour12: true,
+            })}
           </Text>
         </View>
         <RaffleAmount
@@ -49,7 +45,7 @@ const EnterRaffle = ({navigation}) => {
         />
         <View style={styles.container__price_per_ticket}>
           <Text style={styles.text__price}>
-            ${selectedRaffleAuctionItem.ticketPrice}{' '}
+            ${selectedRaffleItem.ticketPrice}{' '}
           </Text>
           <Text style={styles.text__price_per_ticket}>per ticket</Text>
         </View>
@@ -60,7 +56,7 @@ const EnterRaffle = ({navigation}) => {
         <RafflePayment
           visible={visible}
           hideModal={hideModal}
-          amount={selectedRaffleAuctionItem.ticketPrice * noOfTickets}
+          amount={selectedRaffleItem.ticketPrice * noOfTickets}
           noOfTickets={noOfTickets}
         />
       </View>

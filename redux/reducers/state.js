@@ -8,4 +8,5 @@ export const initialState = {
   },
   selectedRaffleAuctionItem: {},
   selectedStoreItem: {},
+  selectedRaffleItem: {},
 };

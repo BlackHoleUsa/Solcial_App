@@ -5,7 +5,11 @@ import {styles} from './Styles';
 import {Button} from 'react-native-paper';
 import Icons from 'react-native-vector-icons/Ionicons';
 import {useDispatch, useSelector} from 'react-redux';
-import {setSelectedAuctionRaffleItem} from '../../redux/actions/actions';
+
+import {
+  setSelectedAuctionRaffleItem,
+  setSelectedRaffleItem,
+} from '../../redux/actions/actions';
 const RaffleAuctionCard = ({
   navigation,
   buttonLabel,
@@ -18,12 +22,20 @@ const RaffleAuctionCard = ({
 
   const handleNavigation = () => {
     navigation.navigate(itemRoute);
-    dispatch(setSelectedAuctionRaffleItem(item));
+    if (itemRoute === 'Raffle Item') {
+      dispatch(setSelectedRaffleItem(item));
+    } else {
+      dispatch(setSelectedAuctionRaffleItem(item));
+    }
   };
 
   const handleEnterRaffle = () => {
-    dispatch(setSelectedAuctionRaffleItem(item));
     navigation.navigate(enteringAuctionOrRaffle);
+    if (itemRoute === 'Raffle Item') {
+      dispatch(setSelectedRaffleItem(item));
+    } else {
+      dispatch(setSelectedAuctionRaffleItem(item));
+    }
   };
 
   return (

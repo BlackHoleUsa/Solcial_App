@@ -3,6 +3,7 @@ import {
   AUTH,
   SELECTED_AUCTION_RAFFLE_ITEM,
   SELECTED_STORE_ITEM,
+  SELECTED_RAFFLE_ITEM,
 } from '../types/types';
 export const reducer = (state = initialState, action) => {
   const {type, payload} = action;
@@ -29,6 +30,11 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         selectedStoreItem: payload,
+      };
+    case SELECTED_RAFFLE_ITEM:
+      return {
+        ...state,
+        selectedRaffleItem: payload,
       };
     default:
       return state;
