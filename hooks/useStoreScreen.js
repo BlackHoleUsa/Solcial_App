@@ -2,11 +2,12 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {API_URL, apiRoutes} from '../utilities/apiRoutes';
 import {Alert} from 'react-native';
+import {useIsFocused} from '@react-navigation/native';
 const useStoreScreen = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState();
   const [listRefresh, setListRefresh] = useState(false);
-
+  const isFocused = useIsFocused();
   const getAllStoreItems = async () => {
     setIsLoading(true);
     try {
@@ -40,7 +41,7 @@ const useStoreScreen = () => {
 
   useEffect(() => {
     getAllStoreItems();
-  }, [listRefresh]);
+  }, [listRefresh, isFocused]);
 
   return {
     isLoading,

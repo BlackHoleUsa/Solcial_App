@@ -1,16 +1,15 @@
 import React from 'react';
 import {Text, View, Image, TouchableOpacity} from 'react-native';
 import {styles} from './Styles';
-import {Images} from '../../assets/images';
+
 import Icons from 'react-native-vector-icons/Ionicons';
-import {useDispatch} from 'react-redux';
-import {setSelectedStoreItem} from '../../redux/actions/actions';
+
+import useStoreCard from '../../hooks/useStoreCard';
 const StoreCard = ({navigation, item}) => {
-  const dispatch = useDispatch();
-  const handleNavigation = () => {
-    dispatch(setSelectedStoreItem(item));
-    navigation.navigate('Store Item');
-  };
+  const {cartIcon, addToCart, handleNavigation} = useStoreCard(
+    navigation,
+    item,
+  );
 
   return (
     <View style={styles.container__main}>
@@ -26,7 +25,12 @@ const StoreCard = ({navigation, item}) => {
       <Text style={styles.text__title}>{item.name}</Text>
       <View style={styles.container__priceAndCart}>
         <Text style={styles.text__price}>${item.price}</Text>
-        <Icons name="ios-cart-outline" size={20} color="black" />
+        <Icons
+          name={cartIcon}
+          size={20}
+          color="black"
+          onPress={() => addToCart()}
+        />
       </View>
     </View>
   );
