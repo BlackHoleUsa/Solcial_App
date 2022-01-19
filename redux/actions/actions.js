@@ -5,6 +5,8 @@ import {
   SELECTED_RAFFLE_ITEM,
   ADD_CART_ITEM,
   REMOVE_CART_ITEM,
+  ADD_QTY,
+  REMOVE_QTY,
 } from '../types/types';
 export const setAuth = data => ({
   type: AUTH,
@@ -28,5 +30,13 @@ export const setCartItem = data => ({
 });
 export const setRemoveCartItem = data => ({
   type: REMOVE_CART_ITEM,
+  payload: data,
+});
+export const setAddQty = data => ({
+  type: ADD_QTY,
+  payload: data,
+});
+export const setRemoveQty = data => ({
+  type: REMOVE_QTY,
   payload: data,
 });

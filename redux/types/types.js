@@ -4,3 +4,5 @@ export const SELECTED_STORE_ITEM = 'SELECTED_STORE_ITEM';
 export const SELECTED_RAFFLE_ITEM = 'SELECTED_RAFFLE_ITEM';
 export const ADD_CART_ITEM = 'ADD_CART_ITEM';
 export const REMOVE_CART_ITEM = 'REMOVE_CART_ITEM';
+export const ADD_QTY = 'ADD_QTY';
+export const REMOVE_QTY = 'REMOVE_QTY';

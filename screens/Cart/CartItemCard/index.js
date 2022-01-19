@@ -6,7 +6,7 @@ import {Images} from '../../../assets/images';
 import Icons from 'react-native-vector-icons/AntDesign';
 import useCartItem from '../../../hooks/useCartItem';
 const CartItemCard = ({navigation, item}) => {
-  const {removeCartItem} = useCartItem(navigation, item);
+  const {removeCartItem, addQty, removeQty} = useCartItem(navigation, item);
   return (
     <View style={styles.container__main}>
       <View style={styles.container__imageAndContent}>
@@ -23,13 +23,13 @@ const CartItemCard = ({navigation, item}) => {
             <View style={styles.container__buttons}>
               <TouchableOpacity
                 style={styles.quantity__button}
-                onPress={() => {}}>
+                onPress={() => removeQty()}>
                 <Icons name="minus" size={10} color="black" />
               </TouchableOpacity>
-              <Text style={styles.text__quantity}>1</Text>
+              <Text style={styles.text__quantity}>{item.qty}</Text>
               <TouchableOpacity
                 style={styles.quantity__button}
-                onPress={() => {}}>
+                onPress={() => addQty()}>
                 <Icons name="plus" size={10} color="black" />
               </TouchableOpacity>
             </View>

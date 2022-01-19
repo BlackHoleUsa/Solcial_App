@@ -1,6 +1,10 @@
 import React, {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {setRemoveCartItem} from '../redux/actions/actions';
+import {
+  setAddQty,
+  setRemoveCartItem,
+  setRemoveQty,
+} from '../redux/actions/actions';
 
 const useCartItem = (navigation, item) => {
   const cart = useSelector(state => state.cart);
@@ -9,9 +13,17 @@ const useCartItem = (navigation, item) => {
     dispatch(setRemoveCartItem(item));
   };
 
+  const addQty = () => {
+    dispatch(setAddQty(item));
+  };
+  const removeQty = () => {
+    dispatch(setRemoveQty(item));
+  };
   return {
     cart,
     removeCartItem,
+    addQty,
+    removeQty,
   };
 };
 

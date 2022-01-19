@@ -6,6 +6,8 @@ import {
   SELECTED_RAFFLE_ITEM,
   ADD_CART_ITEM,
   REMOVE_CART_ITEM,
+  ADD_QTY,
+  REMOVE_QTY,
 } from '../types/types';
 export const reducer = (state = initialState, action) => {
   const {type, payload} = action;
@@ -48,6 +50,32 @@ export const reducer = (state = initialState, action) => {
         ...state,
         cart: state.cart.filter(todo => todo._id !== action.payload._id),
       };
+    case ADD_QTY:
+      const index = state.cart.findIndex(
+        item => item._id === action.payload._id,
+      );
+      const newCart = [...state.cart];
+      newCart[index].qty = state.cart[index].qty + 1;
+      return {
+        ...state,
+        cart: newCart,
+      };
+    case REMOVE_QTY:
+      const removeIndex = state.cart.findIndex(
+        item => item._id === action.payload._id,
+      );
+      const removeCart = [...state.cart];
+      if (state.cart[removeIndex].qty < 2) {
+        removeCart[removeIndex].qty = 1;
+      } else {
+        removeCart[removeIndex].qty = state.cart[removeIndex].qty - 1;
+      }
+
+      return {
+        ...state,
+        cart: removeCart,
+      };
+
     default:
       return state;
   }
