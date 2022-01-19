@@ -34,7 +34,7 @@ const Carousel = ({images}) => {
               <Image
                 key={image}
                 resizeMode="contain"
-                source={image}
+                source={{uri: image}}
                 style={styles.image}
               />
             </View>
