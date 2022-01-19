@@ -4,6 +4,7 @@ import {
   SELECTED_AUCTION_ITEM,
   SELECTED_STORE_ITEM,
   SELECTED_RAFFLE_ITEM,
+  ADD_CART_ITEM,
 } from '../types/types';
 export const reducer = (state = initialState, action) => {
   const {type, payload} = action;
@@ -35,6 +36,11 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         selectedRaffleItem: payload,
+      };
+    case ADD_CART_ITEM:
+      return {
+        ...state,
+        cart: [...state.cart, payload],
       };
     default:
       return state;

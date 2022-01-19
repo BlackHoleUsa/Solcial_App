@@ -1,20 +1,14 @@
 import React from 'react';
-import {Image, ScrollView, Text, TouchableOpacity, View} from 'react-native';
+import {ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import {styles} from './Styles';
 
-import {Images} from '../../../assets/images';
 import Carousel from './Carousel';
 import {Button} from 'react-native-paper';
 import useStoreItemDetail from '../../../hooks/useStoreItemDetail';
 
-// const images = [
-//   `${Images.cardImage}`,
-//   `${Images.showImage}`,
-//   `${Images.websiteLogo}`,
-//   `${Images.large}`,
-// ];
 const StoreItemDetail = ({navigation}) => {
-  const {title, description, price, images} = useStoreItemDetail(navigation);
+  const {title, description, price, images, addToCart} =
+    useStoreItemDetail(navigation);
   return (
     <ScrollView contentContainerStyle={styles.container__main}>
       <Carousel images={images} />
@@ -38,10 +32,10 @@ const StoreItemDetail = ({navigation}) => {
         </View>
         <Button
           mode="contained"
-          onPress={() => {}}
+          onPress={() => addToCart()}
           style={styles.button__checkout}
           labelStyle={{color: 'white', fontFamily: 'Poppins-Regular'}}>
-          Checkout
+          Add To Cart
         </Button>
       </View>
     </ScrollView>

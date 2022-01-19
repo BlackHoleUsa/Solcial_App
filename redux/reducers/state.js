@@ -9,4 +9,5 @@ export const initialState = {
   selectedAuctionItem: {},
   selectedStoreItem: {},
   selectedRaffleItem: {},
+  cart: [],
 };
