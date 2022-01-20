@@ -7,8 +7,16 @@ import {Button} from 'react-native-paper';
 import useStoreItemDetail from '../../../hooks/useStoreItemDetail';
 
 const StoreItemDetail = ({navigation}) => {
-  const {title, description, sizes, price, images, addToCart} =
-    useStoreItemDetail(navigation);
+  const {
+    title,
+    description,
+    sizes,
+    price,
+    images,
+    addToCart,
+    sizeIndex,
+    setSizeIndex,
+  } = useStoreItemDetail(navigation);
   return (
     <ScrollView contentContainerStyle={styles.container__main}>
       <Carousel images={images} />
@@ -19,9 +27,28 @@ const StoreItemDetail = ({navigation}) => {
         <View style={styles.container__size}>
           <Text style={styles.text__size}>Size:</Text>
           {sizes.map((item, index) => (
-            <View key={index} style={styles.container__size__buttons}>
-              <TouchableOpacity onPress={() => {}}>
-                <Text style={styles.text__size__button}>{item}</Text>
+            <View
+              key={index}
+              style={[
+                styles.container__size__buttons,
+                {
+                  backgroundColor: sizeIndex === index ? 'black' : 'white',
+                },
+              ]}>
+              <TouchableOpacity
+                onPress={() => {
+                  console.log(index);
+                  setSizeIndex(index);
+                }}>
+                <Text
+                  style={[
+                    styles.text__size__button,
+                    {
+                      color: sizeIndex === index ? 'white' : 'black',
+                    },
+                  ]}>
+                  {item}
+                </Text>
               </TouchableOpacity>
             </View>
           ))}

@@ -5,6 +5,7 @@ const useStoreItemDetail = navigation => {
   const dispatch = useDispatch();
   const selectedStoreItem = useSelector(state => state.selectedStoreItem);
   const cart = useSelector(state => state.cart);
+  const [sizeIndex, setSizeIndex] = useState(0);
   const images = [
     selectedStoreItem.product_url[0],
     selectedStoreItem.product_url[1],
@@ -29,6 +30,8 @@ const useStoreItemDetail = navigation => {
     images,
     addToCart,
     sizes: selectedStoreItem.size,
+    sizeIndex,
+    setSizeIndex,
   };
 };
 
