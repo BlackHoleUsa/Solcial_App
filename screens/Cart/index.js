@@ -44,7 +44,7 @@ const Cart = () => {
         labelStyle={{color: 'white', fontFamily: 'Poppins-Regular'}}>
         Checkout
       </Button>
-      <StorePayment visible={visible} hideModal={hideModal} amount={20} />
+      <StorePayment visible={visible} hideModal={hideModal} amount={totalSum} />
     </View>
   );
 };

@@ -10,4 +10,5 @@ export const apiRoutes = {
   getAllAuctionListing: 'auction/getAuctionListing',
   placeBid: 'auction/placeBid',
   getAllStoreItems: 'store/getProductType?product_type=All&page=0&perPage=10',
+  cartCheckout: 'cart/checkout',
 };

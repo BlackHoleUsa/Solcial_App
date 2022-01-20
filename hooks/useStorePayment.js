@@ -7,31 +7,37 @@ import {Alert} from 'react-native';
 import {useSelector} from 'react-redux';
 
 const useStorePayment = amount => {
-  const selectedRaffleAuctionItem = useSelector(
-    state => state.selectedRaffleAuctionItem,
-  );
+  const cart = useSelector(state => state.cart);
 
   const userId = useSelector(state => state.userInfo.id);
   const [isLoading, setIsLoading] = useState(false);
   const cardValidationSchema = yup.object().shape({
-    cardNumber: yup.string().required('Required'),
-    cardExpMonth: yup.string().required('Required'),
-    cardExpYear: yup.string().required('Required'),
+    cardNumber: yup.number().typeError('Only number').required('Required'),
+    cardExpMonth: yup.number().typeError('Only number').required('Required'),
+    cardExpYear: yup.number().typeError('Only number').required('Required'),
 
-    cardCVC: yup.string().required('Required'),
+    cardCVC: yup.number().typeError('Only number').required('Required'),
   });
   // signup form submission
-
+  const products = cart.map(item => {
+    return {
+      productId: item._id,
+      quantity: item.qty,
+      price: item.price,
+    };
+  });
   const handlePayment = async values => {
     let newValues = {
       ...values,
       userId,
-      amount,
+      totalAmount: amount,
+      products,
     };
+
     try {
       setIsLoading(true);
       const response = await axios.post(
-        `${API_URL}${apiRoutes.rafflePayment}?raffleId=${selectedRaffleAuctionItem._id}`,
+        `${API_URL}${apiRoutes.cartCheckout}`,
         newValues,
       );
       if (response.status === 200) {
