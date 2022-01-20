@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {Alert} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {setCartItem} from '../redux/actions/actions';
 const useStoreItemDetail = navigation => {
@@ -15,6 +16,20 @@ const useStoreItemDetail = navigation => {
   const addToCart = () => {
     let obj = cart.find(o => o._id === selectedStoreItem._id);
     if (obj) {
+      Alert.alert(
+        'Error',
+        'Already Present in the Cart',
+        [
+          {
+            text: 'Cancel',
+            onPress: () => navigation.navigate('Store Screen'),
+            style: 'cancel',
+          },
+        ],
+        {
+          cancelable: true,
+        },
+      );
       console.log('already present');
     } else {
       console.log('not presetn');
@@ -23,6 +38,20 @@ const useStoreItemDetail = navigation => {
         selectedSize: selectedStoreItem.size[sizeIndex],
       });
       dispatch(setCartItem(modifiedItem));
+      Alert.alert(
+        'Sucess',
+        'Added To Cart',
+        [
+          {
+            text: 'Ok',
+            onPress: () => navigation.navigate('Store Screen'),
+            style: 'cancel',
+          },
+        ],
+        {
+          cancelable: true,
+        },
+      );
     }
   };
 
