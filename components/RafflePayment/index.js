@@ -46,94 +46,114 @@ export default function RafflePayment({
               isValid,
             }) => (
               <>
-                <InputField
-                  label="Card"
-                  icon="ios-card-outline"
-                  iconColorBlack
-                  textStyle={styles.text__card}
-                  inputstyle={styles.text__card}
-                  placeholder="424 424 424 424 424"
-                  placeholderColor="gray"
-                  onChangeText={handleChange('cardNumber')}
-                  onBlur={handleBlur('cardNumber')}
-                  value={values.cardNumber}
-                  errors={errors.cardNumber}
-                  keyboardType="number-pad"
-                />
-                <View style={styles.container__expiry_cvc}>
-                  <View style={styles.container__expiryDate}>
-                    <Text style={styles.text__input}>Expiry Date</Text>
-                    <View style={styles.container__expiryfields}>
-                      <View style={styles.input__fields}>
-                        <TextInput
-                          selectionColor="white"
-                          placeholderTextColor="gray"
-                          textBreakStrategy="highQuality"
-                          placeholder="12"
-                          style={styles.input__style}
-                          keyboardType="number-pad"
-                          onChangeText={handleChange('cardExpMonth')}
-                          onBlur={handleBlur('cardExpMonth')}
-                          value={values.cardExpMonth}
-                        />
-                        {errors.cardExpMonth ? (
-                          <Text style={styles.text__errors}>
-                            {errors.cardExpMonth}
-                          </Text>
-                        ) : null}
-                      </View>
-                      <View>
-                        <Icons name="slash-forward" size={25} color={'black'} />
-                      </View>
-                      <View style={styles.input__fields}>
-                        <TextInput
-                          selectionColor="white"
-                          placeholderTextColor="gray"
-                          textBreakStrategy="highQuality"
-                          placeholder="22"
-                          style={styles.input__style}
-                          keyboardType="number-pad"
-                          onChangeText={handleChange('cardExpYear')}
-                          onBlur={handleBlur('cardExpYear')}
-                          value={values.cardExpYear}
-                        />
-                        {errors.cardExpYear ? (
-                          <Text style={styles.text__errors}>
-                            {errors.cardExpYear}
-                          </Text>
-                        ) : null}
+                <>
+                  <View style={styles.container__errors}>
+                    {errors.cardExpMonth ||
+                    errors.cardExpYear ||
+                    errors.cardCVC ||
+                    errors.cardNumber ? (
+                      <Text style={styles.text__errors__2}>
+                        Please complete the highlighted fields
+                      </Text>
+                    ) : (
+                      // eslint-disable-next-line react/self-closing-comp
+                      <Text></Text>
+                    )}
+                  </View>
+                  <InputField
+                    label="Card"
+                    icon="ios-card-outline"
+                    iconColorBlack
+                    textStyle={styles.text__card}
+                    inputstyle={styles.text__card}
+                    placeholder="4242424242424242"
+                    placeholderColor="gray"
+                    onChangeText={handleChange('cardNumber')}
+                    onBlur={handleBlur('cardNumber')}
+                    value={values.cardNumber}
+                    errors={errors.cardNumber}
+                    keyboardType="number-pad"
+                  />
+                  <View style={styles.container__expiry_cvc}>
+                    <View style={styles.container__expiryDate}>
+                      <Text style={styles.text__input}>Expiry Date</Text>
+                      <View
+                        style={[
+                          styles.container__expiryfields,
+                          {
+                            borderColor:
+                              errors.cardExpMonth || errors.cardExpYear
+                                ? 'red'
+                                : 'black',
+                          },
+                        ]}>
+                        <View style={styles.input__fields}>
+                          <TextInput
+                            selectionColor="white"
+                            placeholderTextColor="gray"
+                            textBreakStrategy="highQuality"
+                            placeholder="12"
+                            style={styles.input__style}
+                            keyboardType="number-pad"
+                            onChangeText={handleChange('cardExpMonth')}
+                            onBlur={handleBlur('cardExpMonth')}
+                            value={values.cardExpMonth}
+                          />
+                        </View>
+                        <View>
+                          <Icons
+                            name="slash-forward"
+                            size={25}
+                            color={'black'}
+                          />
+                        </View>
+                        <View style={styles.input__fields}>
+                          <TextInput
+                            selectionColor="white"
+                            placeholderTextColor="gray"
+                            textBreakStrategy="highQuality"
+                            placeholder="22"
+                            style={styles.input__style}
+                            keyboardType="number-pad"
+                            onChangeText={handleChange('cardExpYear')}
+                            onBlur={handleBlur('cardExpYear')}
+                            value={values.cardExpYear}
+                          />
+                        </View>
                       </View>
                     </View>
+                    <View style={styles.container__cvc}>
+                      <Text style={styles.text__input}>CVC</Text>
+                      <TextInput
+                        selectionColor="white"
+                        placeholderTextColor="gray"
+                        textBreakStrategy="highQuality"
+                        placeholder="123"
+                        style={[
+                          styles.input__cvc,
+                          {
+                            borderColor: errors.cardCVC ? 'red' : 'black',
+                          },
+                        ]}
+                        keyboardType="number-pad"
+                        onChangeText={handleChange('cardCVC')}
+                        onBlur={handleBlur('cardCVC')}
+                        value={values.cardCVC}
+                      />
+                    </View>
                   </View>
-                  <View style={styles.container__cvc}>
-                    <Text style={styles.text__input}>CVC</Text>
-                    <TextInput
-                      selectionColor="white"
-                      placeholderTextColor="gray"
-                      textBreakStrategy="highQuality"
-                      placeholder="123"
-                      style={styles.input__cvc}
-                      keyboardType="number-pad"
-                      onChangeText={handleChange('cardCVC')}
-                      onBlur={handleBlur('cardCVC')}
-                      value={values.cardCVC}
-                    />
-                    {errors.cardCVC ? (
-                      <Text style={styles.text__errors}>{errors.cardCVC}</Text>
-                    ) : null}
-                  </View>
-                </View>
-                <Button
-                  loading={isLoading}
-                  mode="contained"
-                  style={styles.button__payment}
-                  labelStyle={{
-                    color: 'white',
-                    fontFamily: 'Poppins-Regular',
-                  }}
-                  onPress={handleSubmit}>
-                  Pay ${amount}
-                </Button>
+                  <Button
+                    loading={isLoading}
+                    mode="contained"
+                    style={styles.button__payment}
+                    labelStyle={{
+                      color: 'white',
+                      fontFamily: 'Poppins-Regular',
+                    }}
+                    onPress={handleSubmit}>
+                    Pay ${amount}
+                  </Button>
+                </>
               </>
             )}
           </Formik>

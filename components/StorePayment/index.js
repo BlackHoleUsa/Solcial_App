@@ -70,7 +70,7 @@ export default function StorePayment({visible, hideModal, amount, navigation}) {
                   iconColorBlack
                   textStyle={styles.text__card}
                   inputstyle={styles.text__card}
-                  placeholder="424 424 424 424 424"
+                  placeholder="4242424242424242"
                   placeholderColor="gray"
                   onChangeText={handleChange('cardNumber')}
                   onBlur={handleBlur('cardNumber')}

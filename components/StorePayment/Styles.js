@@ -36,7 +36,7 @@ export const styles = StyleSheet.create({
   container__expiryDate: {
     justifyContent: 'center',
     alignItems: 'flex-start',
-    width: '50%',
+    width: '40%',
   },
 
   container__expiryfields: {
@@ -48,10 +48,11 @@ export const styles = StyleSheet.create({
     width: '100%',
   },
   input__fields: {
-    textAlign: 'center',
-    width: '40%',
-    justifyContent: 'center',
-    alignItems: 'flex-start',
+    // textAlign: 'center',
+    // width: '40%',
+    // justifyContent: 'center',
+    // flexGrow: 1,
+    // alignItems: 'center',
   },
   text__input: {
     color: 'black',
@@ -60,7 +61,7 @@ export const styles = StyleSheet.create({
     fontWeight: Platform.OS === 'ios' ? '600' : 'normal',
   },
   container__cvc: {
-    justifyContent: 'flex-end',
+    justifyContent: 'center',
     alignItems: 'flex-start',
     width: '40%',
   },
