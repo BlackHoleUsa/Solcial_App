@@ -26,7 +26,7 @@ const StoreItemDetail = ({navigation}) => {
         <Text style={styles.text__price}>Price ${price}</Text>
         <View style={styles.container__size}>
           <Text style={styles.text__size}>Size:</Text>
-          {sizes.map((item, index) => (
+          {sizes?.map((item, index) => (
             <View
               key={index}
               style={[

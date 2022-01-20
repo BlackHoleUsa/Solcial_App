@@ -18,7 +18,10 @@ const useStoreItemDetail = navigation => {
       console.log('already present');
     } else {
       console.log('not presetn');
-      let modifiedItem = Object.assign(selectedStoreItem, {qty: 1});
+      let modifiedItem = Object.assign(selectedStoreItem, {
+        qty: 1,
+        selectedSize: selectedStoreItem.size[sizeIndex],
+      });
       dispatch(setCartItem(modifiedItem));
     }
   };
