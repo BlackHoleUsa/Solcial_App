@@ -50,6 +50,8 @@ export const styles = StyleSheet.create({
   input__fields: {
     textAlign: 'center',
     width: '40%',
+    justifyContent: 'center',
+    alignItems: 'flex-start',
   },
   text__input: {
     color: 'black',
@@ -82,5 +84,15 @@ export const styles = StyleSheet.create({
     fontSize: 12,
     fontFamily: 'Poppins-Regular',
     color: '#ff002d',
+  },
+  container__errros: {
+    width: '100%',
+    height: 100,
+    paddingVertical: 20,
+  },
+  text__errors__2: {
+    color: 'red',
+    fontSize: 12,
+    fontFamily: 'Poppins-Regular',
   },
 });

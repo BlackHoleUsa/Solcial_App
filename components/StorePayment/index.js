@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {
   View,
@@ -13,6 +14,8 @@ import useStorePayment from '../../hooks/useStorePayment';
 import {styles} from './Styles';
 import {Button} from 'react-native-paper';
 import InputField from '../InputFields';
+import {number} from 'yup/lib/locale';
+
 export default function StorePayment({visible, hideModal, amount, navigation}) {
   const {
     cardValidationSchema,
@@ -48,6 +51,19 @@ export default function StorePayment({visible, hideModal, amount, navigation}) {
               isValid,
             }) => (
               <>
+                <View style={styles.container__errors}>
+                  {errors.cardExpMonth ||
+                  errors.cardExpYear ||
+                  errors.cardCVC ||
+                  errors.cardNumber ? (
+                    <Text style={styles.text__errors__2}>
+                      Please complete the highlighted fields
+                    </Text>
+                  ) : (
+                    // eslint-disable-next-line react/self-closing-comp
+                    <Text></Text>
+                  )}
+                </View>
                 <InputField
                   label="Card"
                   icon="ios-card-outline"
@@ -65,7 +81,16 @@ export default function StorePayment({visible, hideModal, amount, navigation}) {
                 <View style={styles.container__expiry_cvc}>
                   <View style={styles.container__expiryDate}>
                     <Text style={styles.text__input}>Expiry Date</Text>
-                    <View style={styles.container__expiryfields}>
+                    <View
+                      style={[
+                        styles.container__expiryfields,
+                        {
+                          borderColor:
+                            errors.cardExpMonth || errors.cardExpYear
+                              ? 'red'
+                              : 'black',
+                        },
+                      ]}>
                       <View style={styles.input__fields}>
                         <TextInput
                           selectionColor="white"
@@ -78,11 +103,6 @@ export default function StorePayment({visible, hideModal, amount, navigation}) {
                           onBlur={handleBlur('cardExpMonth')}
                           value={values.cardExpMonth}
                         />
-                        {errors.cardExpMonth ? (
-                          <Text style={styles.text__errors}>
-                            {errors.cardExpMonth}
-                          </Text>
-                        ) : null}
                       </View>
                       <View>
                         <Icons name="slash-forward" size={25} color={'black'} />
@@ -99,11 +119,6 @@ export default function StorePayment({visible, hideModal, amount, navigation}) {
                           onBlur={handleBlur('cardExpYear')}
                           value={values.cardExpYear}
                         />
-                        {errors.cardExpYear ? (
-                          <Text style={styles.text__errors}>
-                            {errors.cardExpYear}
-                          </Text>
-                        ) : null}
                       </View>
                     </View>
                   </View>
@@ -114,15 +129,17 @@ export default function StorePayment({visible, hideModal, amount, navigation}) {
                       placeholderTextColor="gray"
                       textBreakStrategy="highQuality"
                       placeholder="123"
-                      style={styles.input__cvc}
+                      style={[
+                        styles.input__cvc,
+                        {
+                          borderColor: errors.cardCVC ? 'red' : 'black',
+                        },
+                      ]}
                       keyboardType="number-pad"
                       onChangeText={handleChange('cardCVC')}
                       onBlur={handleBlur('cardCVC')}
                       value={values.cardCVC}
                     />
-                    {errors.cardCVC ? (
-                      <Text style={styles.text__errors}>{errors.cardCVC}</Text>
-                    ) : null}
                   </View>
                 </View>
                 <Button
