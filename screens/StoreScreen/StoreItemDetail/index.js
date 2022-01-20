@@ -7,7 +7,7 @@ import {Button} from 'react-native-paper';
 import useStoreItemDetail from '../../../hooks/useStoreItemDetail';
 
 const StoreItemDetail = ({navigation}) => {
-  const {title, description, price, images, addToCart} =
+  const {title, description, sizes, price, images, addToCart} =
     useStoreItemDetail(navigation);
   return (
     <ScrollView contentContainerStyle={styles.container__main}>
@@ -18,17 +18,13 @@ const StoreItemDetail = ({navigation}) => {
         <Text style={styles.text__price}>Price ${price}</Text>
         <View style={styles.container__size}>
           <Text style={styles.text__size}>Size:</Text>
-          <View style={styles.container__size__buttons}>
-            <TouchableOpacity onPress={() => {}}>
-              <Text style={styles.text__size__button}>40</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => {}}>
-              <Text style={styles.text__size__button}>41</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => {}}>
-              <Text style={styles.text__size__button}>42</Text>
-            </TouchableOpacity>
-          </View>
+          {sizes.map((item, index) => (
+            <View key={index} style={styles.container__size__buttons}>
+              <TouchableOpacity onPress={() => {}}>
+                <Text style={styles.text__size__button}>{item}</Text>
+              </TouchableOpacity>
+            </View>
+          ))}
         </View>
         <Button
           mode="contained"

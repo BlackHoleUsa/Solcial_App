@@ -28,6 +28,7 @@ const useStoreItemDetail = navigation => {
     price: selectedStoreItem.price,
     images,
     addToCart,
+    sizes: selectedStoreItem.size,
   };
 };
 

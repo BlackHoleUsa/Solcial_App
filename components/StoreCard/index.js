@@ -25,12 +25,12 @@ const StoreCard = ({navigation, item}) => {
       <Text style={styles.text__title}>{item.name}</Text>
       <View style={styles.container__priceAndCart}>
         <Text style={styles.text__price}>${item.price}</Text>
-        <Icons
+        {/* <Icons
           name={cartIcon}
           size={20}
           color="black"
           onPress={() => addToCart()}
-        />
+        /> */}
       </View>
     </View>
   );

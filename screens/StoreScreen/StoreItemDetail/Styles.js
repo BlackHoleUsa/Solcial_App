@@ -4,6 +4,7 @@ export const styles = StyleSheet.create({
   container__main: {
     width: '100%',
     flex: 1,
+    backgroundColor: 'white',
   },
   container__content: {
     width: '100%',
@@ -46,7 +47,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text__size__button: {
-    marginHorizontal: 10,
+    marginHorizontal: 5,
     paddingVertical: 5,
     paddingHorizontal: 10,
     borderWidth: 1,
