@@ -4,11 +4,11 @@ import {API_URL} from '../utilities/apiRoutes';
 import {apiRoutes} from '../utilities/apiRoutes';
 import axios from 'axios';
 import {Alert} from 'react-native';
-import {useSelector} from 'react-redux';
-
-const useStorePayment = amount => {
+import {useSelector, useDispatch} from 'react-redux';
+import {setClearCart} from '../redux/actions/actions';
+const useStorePayment = (amount, navigation) => {
   const cart = useSelector(state => state.cart);
-
+  const dispatch = useDispatch();
   const userId = useSelector(state => state.userInfo.id);
   const [isLoading, setIsLoading] = useState(false);
   const cardValidationSchema = yup.object().shape({
@@ -42,7 +42,23 @@ const useStorePayment = amount => {
       );
       if (response.status === 200) {
         setIsLoading(false);
-        console.log(response);
+        Alert.alert(
+          'Congratulations',
+          `${response.data.message}`,
+          [
+            {
+              text: 'Cancel',
+              onPress: () => {
+                dispatch(setClearCart());
+                navigation.navigate('Store Screen');
+              },
+              style: 'cancel',
+            },
+          ],
+          {
+            cancelable: true,
+          },
+        );
       }
     } catch (error) {
       setIsLoading(false);

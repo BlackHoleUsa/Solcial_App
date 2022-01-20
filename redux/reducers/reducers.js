@@ -8,6 +8,7 @@ import {
   REMOVE_CART_ITEM,
   ADD_QTY,
   REMOVE_QTY,
+  CLEAR_CART,
 } from '../types/types';
 export const reducer = (state = initialState, action) => {
   const {type, payload} = action;
@@ -75,7 +76,11 @@ export const reducer = (state = initialState, action) => {
         ...state,
         cart: removeCart,
       };
-
+    case CLEAR_CART:
+      return {
+        ...state,
+        cart: [],
+      };
     default:
       return state;
   }

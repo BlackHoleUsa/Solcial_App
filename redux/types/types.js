@@ -6,3 +6,4 @@ export const ADD_CART_ITEM = 'ADD_CART_ITEM';
 export const REMOVE_CART_ITEM = 'REMOVE_CART_ITEM';
 export const ADD_QTY = 'ADD_QTY';
 export const REMOVE_QTY = 'REMOVE_QTY';
+export const CLEAR_CART = 'CLEAR_CART';

@@ -5,10 +5,14 @@ const useCart = navigation => {
   const [totalSum, setTotalSum] = useState();
   const cart = useSelector(state => state.cart);
   const cartSum = () => {
-    const qty = cart
-      .map(item => item.qty * item.price)
-      .reduce((prev, next) => prev + next);
-    setTotalSum(qty);
+    if (cart.length) {
+      const qty = cart
+        ?.map(item => item.qty * item.price)
+        ?.reduce((prev, next) => prev + next);
+      setTotalSum(qty);
+    } else {
+      return;
+    }
   };
 
   useEffect(() => {

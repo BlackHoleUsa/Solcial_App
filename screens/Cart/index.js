@@ -10,7 +10,8 @@ import StorePayment from '../../components/StorePayment';
 import useModal from '../../hooks/useModal';
 import useCart from '../../hooks/useCart';
 
-const Cart = () => {
+const Cart = ({navigation}) => {
+  console.log(navigation);
   const isFocused = useIsFocused();
   const {visible, hideModal, showModal} = useModal();
   const {cart, totalSum} = useCart();
@@ -44,7 +45,12 @@ const Cart = () => {
         labelStyle={{color: 'white', fontFamily: 'Poppins-Regular'}}>
         Checkout
       </Button>
-      <StorePayment visible={visible} hideModal={hideModal} amount={totalSum} />
+      <StorePayment
+        visible={visible}
+        hideModal={hideModal}
+        amount={totalSum}
+        navigation={navigation}
+      />
     </View>
   );
 };

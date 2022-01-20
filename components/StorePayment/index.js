@@ -13,7 +13,7 @@ import useStorePayment from '../../hooks/useStorePayment';
 import {styles} from './Styles';
 import {Button} from 'react-native-paper';
 import InputField from '../InputFields';
-export default function StorePayment({visible, hideModal, amount}) {
+export default function StorePayment({visible, hideModal, amount, navigation}) {
   const {
     cardValidationSchema,
 
@@ -21,7 +21,7 @@ export default function StorePayment({visible, hideModal, amount}) {
     isLoading,
 
     handlePayment,
-  } = useStorePayment(amount);
+  } = useStorePayment(amount, navigation);
 
   return (
     <CustomModal visible={visible} hideModal={hideModal}>

@@ -7,6 +7,7 @@ import {
   REMOVE_CART_ITEM,
   ADD_QTY,
   REMOVE_QTY,
+  CLEAR_CART,
 } from '../types/types';
 export const setAuth = data => ({
   type: AUTH,
@@ -39,4 +40,7 @@ export const setAddQty = data => ({
 export const setRemoveQty = data => ({
   type: REMOVE_QTY,
   payload: data,
+});
+export const setClearCart = data => ({
+  type: CLEAR_CART,
 });
