@@ -24,6 +24,7 @@ const useStorePayment = (amount, navigation) => {
       productId: item._id,
       quantity: item.qty,
       price: item.price,
+      size: item.selectedSize,
     };
   });
   const handlePayment = async values => {

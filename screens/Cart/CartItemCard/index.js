@@ -1,7 +1,6 @@
 import React from 'react';
 import {Text, View, Image, TouchableOpacity} from 'react-native';
 import {styles} from './Styles';
-import {Images} from '../../../assets/images';
 
 import Icons from 'react-native-vector-icons/AntDesign';
 import useCartItem from '../../../hooks/useCartItem';
@@ -11,12 +10,12 @@ const CartItemCard = ({navigation, item}) => {
     <View style={styles.container__main}>
       <View style={styles.container__imageAndContent}>
         <View style={styles.container__image}>
-          <Image source={Images.cardImage} style={styles.image} />
+          <Image source={{uri: item.product_url[0]}} style={styles.image} />
         </View>
         <View style={styles.container__content}>
           <View>
             <Text style={styles.text__itemTitle}>{item.name}</Text>
-            <Text style={styles.text__size}>Size : L</Text>
+            <Text style={styles.text__size}>Size : {item.selectedSize}</Text>
           </View>
           <View style={styles.container__priceAndButtons}>
             <Text style={styles.text__price}>${item.price}</Text>
