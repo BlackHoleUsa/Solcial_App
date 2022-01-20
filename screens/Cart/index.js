@@ -13,7 +13,7 @@ import useCart from '../../hooks/useCart';
 const Cart = () => {
   const isFocused = useIsFocused();
   const {visible, hideModal, showModal} = useModal();
-  const {cart} = useCart();
+  const {cart, totalSum} = useCart();
   return (
     <View style={styles.container__main}>
       {isFocused && (
@@ -33,7 +33,7 @@ const Cart = () => {
       </View>
       <View style={styles.container__totalAmount}>
         <Text style={styles.text__total}>Total:</Text>
-        <Text style={styles.text__totalAmount}>$123</Text>
+        <Text style={styles.text__totalAmount}>${totalSum}</Text>
       </View>
       <Button
         mode="contained"

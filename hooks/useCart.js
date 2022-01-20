@@ -1,11 +1,23 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 
 const useCart = navigation => {
+  const [totalSum, setTotalSum] = useState();
   const cart = useSelector(state => state.cart);
+  const cartSum = () => {
+    const qty = cart
+      .map(item => item.qty * item.price)
+      .reduce((prev, next) => prev + next);
+    setTotalSum(qty);
+  };
+
+  useEffect(() => {
+    cartSum();
+  }, [cart]);
 
   return {
     cart,
+    totalSum,
   };
 };
 
