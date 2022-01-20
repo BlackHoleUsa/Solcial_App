@@ -8,12 +8,13 @@ export const styles = StyleSheet.create({
   },
   container__image: {
     width: '100%',
+    backgroundColor: '#E6E6E6',
   },
   image: {
     width: '100%',
     height: 200,
   },
-  container__content: {padding: 10},
+  container__content: {padding: 10, backgroundColor: 'white'},
   text__title: {
     fontFamily: 'Poppins-SemiBold',
     color: 'black',

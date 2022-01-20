@@ -2,7 +2,7 @@ import {StyleSheet} from 'react-native';
 export const styles = StyleSheet.create({
   container__main: {
     width: '100%',
-    paddingHorizontal: 10,
+    backgroundColor: 'white',
   },
   container__loader: {
     width: '100%',
@@ -10,5 +10,9 @@ export const styles = StyleSheet.create({
 
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  container__search: {
+    width: '100%',
+    paddingHorizontal: 10,
   },
 });

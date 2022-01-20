@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     height: '100%',
     position: 'relative',
   },
-  container__image: {width: MAX_WIDTH, height: 250},
+  container__image: {width: MAX_WIDTH, height: 250, backgroundColor: '#E6E6E6'},
   container: {
     flexDirection: 'row',
   },

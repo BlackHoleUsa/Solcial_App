@@ -1,10 +1,11 @@
 import {Platform, StyleSheet} from 'react-native';
 import {fontWeights} from '../../assets/Data';
 export const styles = StyleSheet.create({
-  container__main: {marginBottom: 5, width: '100%'},
+  container__main: {marginBottom: 5, width: '100%', backgroundColor: 'white'},
   container__image: {
     width: '100%',
     height: 200,
+    backgroundColor: '#E6E6E6',
   },
   image: {
     width: '100%',

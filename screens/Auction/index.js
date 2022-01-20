@@ -11,7 +11,9 @@ const Auction = ({navigation}) => {
 
   return (
     <View style={styles.container__main}>
-      <Search />
+      <View style={styles.container__search}>
+        <Search />
+      </View>
       {isLoading ? (
         <View style={styles.container__loader}>
           <ActivityIndicator size="large" color="blue" />
