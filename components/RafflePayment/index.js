@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {
   View,
@@ -112,7 +113,7 @@ export default function RafflePayment({
                             selectionColor="white"
                             placeholderTextColor="gray"
                             textBreakStrategy="highQuality"
-                            placeholder="22"
+                            placeholder="2023"
                             style={styles.input__style}
                             keyboardType="number-pad"
                             onChangeText={handleChange('cardExpYear')}

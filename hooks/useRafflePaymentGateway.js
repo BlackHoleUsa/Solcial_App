@@ -10,15 +10,35 @@ const useRafflePaymentGateway = (amount, noOfTickets) => {
   const selectedRaffleAuctionItem = useSelector(
     state => state.selectedRaffleItem,
   );
-
+  const year = new Date().getFullYear();
   const userId = useSelector(state => state.userInfo.id);
   const [isLoading, setIsLoading] = useState(false);
   const cardValidationSchema = yup.object().shape({
-    cardNumber: yup.string().required('Required'),
-    cardExpMonth: yup.string().required('Required'),
-    cardExpYear: yup.string().required('Required'),
+    cardNumber: yup
+      .number()
+      .typeError('Only number')
+      .required('Required')
+      .min(1000000000000000, 'Correct card no required')
+      .max(9999999999999999, 'Correct card no required'),
+    cardExpMonth: yup
+      .number()
+      .typeError('Only number')
+      .required('Required')
+      .min(1)
+      .max(12),
+    cardExpYear: yup
+      .number()
+      .typeError('Only number')
+      .required('Required')
+      .min(year)
+      .max(3000),
 
-    cardCVC: yup.string().required('Required'),
+    cardCVC: yup
+      .number()
+      .typeError('Only number')
+      .required('Required')
+      .min(100)
+      .max(999),
   });
   // signup form submission
 

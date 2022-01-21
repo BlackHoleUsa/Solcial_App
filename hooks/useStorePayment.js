@@ -6,17 +6,38 @@ import axios from 'axios';
 import {Alert} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 import {setClearCart} from '../redux/actions/actions';
-const useStorePayment = (amount, navigation) => {
+const useStorePayment = (hideModal, amount, navigation) => {
   const cart = useSelector(state => state.cart);
   const dispatch = useDispatch();
   const userId = useSelector(state => state.userInfo.id);
   const [isLoading, setIsLoading] = useState(false);
+  const year = new Date().getFullYear();
   const cardValidationSchema = yup.object().shape({
-    cardNumber: yup.number().typeError('Only number').required('Required'),
-    cardExpMonth: yup.number().typeError('Only number').required('Required'),
-    cardExpYear: yup.number().typeError('Only number').required('Required'),
+    cardNumber: yup
+      .number()
+      .typeError('Only number')
+      .required('Required')
+      .min(1000000000000000, 'Correct card no required')
+      .max(9999999999999999, 'Correct card no required'),
+    cardExpMonth: yup
+      .number()
+      .typeError('Only number')
+      .required('Required')
+      .min(1)
+      .max(12),
+    cardExpYear: yup
+      .number()
+      .typeError('Only number')
+      .required('Required')
+      .min(year)
+      .max(3000),
 
-    cardCVC: yup.number().typeError('Only number').required('Required'),
+    cardCVC: yup
+      .number()
+      .typeError('Only number')
+      .required('Required')
+      .min(100)
+      .max(999),
   });
   // signup form submission
   const products = cart.map(item => {
@@ -48,9 +69,10 @@ const useStorePayment = (amount, navigation) => {
           `${response.data.message}`,
           [
             {
-              text: 'Cancel',
+              text: 'Ok',
               onPress: () => {
                 dispatch(setClearCart());
+                hideModal();
                 navigation.navigate('Store Screen');
               },
               style: 'cancel',

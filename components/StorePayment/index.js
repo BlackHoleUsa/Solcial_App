@@ -24,7 +24,7 @@ export default function StorePayment({visible, hideModal, amount, navigation}) {
     isLoading,
 
     handlePayment,
-  } = useStorePayment(amount, navigation);
+  } = useStorePayment(hideModal, amount, navigation);
 
   return (
     <CustomModal visible={visible} hideModal={hideModal}>
@@ -112,7 +112,7 @@ export default function StorePayment({visible, hideModal, amount, navigation}) {
                           selectionColor="white"
                           placeholderTextColor="gray"
                           textBreakStrategy="highQuality"
-                          placeholder="22"
+                          placeholder="2023"
                           style={styles.input__style}
                           keyboardType="number-pad"
                           onChangeText={handleChange('cardExpYear')}
