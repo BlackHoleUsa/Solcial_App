@@ -31,11 +31,8 @@ const EnterRaffle = ({navigation}) => {
           <Text style={styles.text__raffle_close_on}>Raffle Close on: </Text>
           <Text style={styles.text__raffle_close_time}>
             {new Date(selectedRaffleItem.endTime).getDate()}{' '}
-            {monthNames[new Date(selectedRaffleItem.endTime).getMonth()]} at{' '}
-            {new Date(selectedRaffleItem.endTime).toLocaleString('en-US', {
-              hour: 'numeric',
-              hour12: true,
-            })}
+            {monthNames[new Date(selectedRaffleItem.endTime).getMonth()]}{' '}
+            {new Date(selectedRaffleItem.endTime).getFullYear()}
           </Text>
         </View>
         <RaffleAmount
