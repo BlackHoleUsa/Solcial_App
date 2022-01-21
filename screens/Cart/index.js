@@ -11,7 +11,6 @@ import useModal from '../../hooks/useModal';
 import useCart from '../../hooks/useCart';
 
 const Cart = ({navigation}) => {
-  console.log(navigation);
   const isFocused = useIsFocused();
   const {visible, hideModal, showModal} = useModal();
   const {cart, totalSum} = useCart();

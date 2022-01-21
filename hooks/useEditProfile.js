@@ -51,7 +51,6 @@ const useEditProfile = navigation => {
   // login form submission
 
   const handleSignup = values => {
-    console.log(values);
     navigation.navigate('Main App');
   };
 

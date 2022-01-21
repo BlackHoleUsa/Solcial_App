@@ -37,7 +37,6 @@ const StoreItemDetail = ({navigation}) => {
               ]}>
               <TouchableOpacity
                 onPress={() => {
-                  console.log(index);
                   setSizeIndex(index);
                 }}>
                 <Text

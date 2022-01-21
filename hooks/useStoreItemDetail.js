@@ -30,9 +30,7 @@ const useStoreItemDetail = navigation => {
           cancelable: true,
         },
       );
-      console.log('already present');
     } else {
-      console.log('not presetn');
       let modifiedItem = Object.assign(selectedStoreItem, {
         qty: 1,
         selectedSize: selectedStoreItem.size[sizeIndex],

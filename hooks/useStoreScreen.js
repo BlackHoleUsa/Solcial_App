@@ -16,7 +16,6 @@ const useStoreScreen = () => {
         setIsLoading(false);
         setListRefresh(false);
         setData(response.data.data);
-        console.log(response.data.data);
       }
     } catch (error) {
       if (error) {

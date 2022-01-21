@@ -57,7 +57,7 @@ const useRafflePaymentGateway = (amount, noOfTickets) => {
       );
       if (response.status === 200) {
         setIsLoading(false);
-        console.log(response);
+
         Alert.alert(
           'Congratulations',
           'You have purchased the Raffle ticket',

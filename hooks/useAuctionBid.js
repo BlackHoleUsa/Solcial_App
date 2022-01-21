@@ -20,7 +20,6 @@ const useAuctionBid = (highestBid, navigation) => {
   });
 
   const handleAuctionBid = async values => {
-    console.log(values);
     try {
       setIsLoading(true);
       const response = await axios.post(
