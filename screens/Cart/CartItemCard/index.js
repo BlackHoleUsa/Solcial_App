@@ -10,7 +10,11 @@ const CartItemCard = ({navigation, item}) => {
     <View style={styles.container__main}>
       <View style={styles.container__imageAndContent}>
         <View style={styles.container__image}>
-          <Image source={{uri: item.product_url[0]}} style={styles.image} />
+          <Image
+            source={{uri: item.product_url[0]}}
+            style={styles.image}
+            resizeMode="contain"
+          />
         </View>
         <View style={styles.container__content}>
           <View>

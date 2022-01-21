@@ -8,7 +8,7 @@ import {useSelector} from 'react-redux';
 
 const useRafflePaymentGateway = (amount, noOfTickets) => {
   const selectedRaffleAuctionItem = useSelector(
-    state => state.selectedRaffleAuctionItem,
+    state => state.selectedRaffleItem,
   );
 
   const userId = useSelector(state => state.userInfo.id);
@@ -38,13 +38,27 @@ const useRafflePaymentGateway = (amount, noOfTickets) => {
       if (response.status === 200) {
         setIsLoading(false);
         console.log(response);
+        Alert.alert(
+          'Congratulations',
+          'You have purchased the Raffle ticket',
+          [
+            {
+              text: 'Ok',
+
+              style: 'cancel',
+            },
+          ],
+          {
+            cancelable: true,
+          },
+        );
       }
     } catch (error) {
       setIsLoading(false);
       if (error) {
         Alert.alert(
           'Error',
-          `${error.response.data.message}`,
+          'somethin went wring',
           [
             {
               text: 'Cancel',

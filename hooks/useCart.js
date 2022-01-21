@@ -11,7 +11,7 @@ const useCart = navigation => {
         ?.reduce((prev, next) => prev + next);
       setTotalSum(qty);
     } else {
-      return;
+      setTotalSum(0);
     }
   };
 
