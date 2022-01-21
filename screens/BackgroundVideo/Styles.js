@@ -4,11 +4,12 @@ const {height} = Dimensions.get('window');
 export const styles = StyleSheet.create({
   container__main: {
     width: '100%',
+    height: height,
     flex: 1,
   },
   container__video: {
     width: '100%',
-    height: height,
+
     position: 'absolute',
     top: 0,
     left: 0,
