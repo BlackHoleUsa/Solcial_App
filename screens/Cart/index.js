@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlatList, View} from 'react-native';
+import {Alert, FlatList, View} from 'react-native';
 import {Button, Text} from 'react-native-paper';
 import {useIsFocused} from '@react-navigation/native';
 import {styles} from './Styles';
@@ -39,7 +39,24 @@ const Cart = ({navigation}) => {
       <Button
         mode="contained"
         onPress={() => {
-          showModal();
+          if (totalSum === 0) {
+            Alert.alert(
+              'Error',
+              'No Item Present in the Cart',
+              [
+                {
+                  text: 'Cancel',
+
+                  style: 'cancel',
+                },
+              ],
+              {
+                cancelable: true,
+              },
+            );
+          } else {
+            showModal();
+          }
         }}
         style={styles.checkout__button}
         labelStyle={{color: 'white', fontFamily: 'Poppins-Regular'}}>
