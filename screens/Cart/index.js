@@ -59,6 +59,7 @@ const Cart = ({navigation}) => {
           }
         }}
         style={styles.checkout__button}
+        // eslint-disable-next-line react-native/no-inline-styles
         labelStyle={{color: 'white', fontFamily: 'Poppins-Regular'}}>
         Checkout
       </Button>
