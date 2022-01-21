@@ -1,11 +1,18 @@
-import React, {useState, useRef} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import * as yup from 'yup';
+import {useSelector} from 'react-redux';
+import axios from 'axios';
+import {API_URL, apiRoutes} from '../utilities/apiRoutes';
+import {Alert} from 'react-native';
+import {useIsFocused} from '@react-navigation/native';
 const useEditProfile = navigation => {
   const [countryCode, setCountryCode] = useState('FR');
   const [country, setCountry] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   const [passwordIcon, setPasswordIcon] = useState('eye-off');
+  const isFocused = useIsFocused();
   const passwordIconRef = useRef(false);
-
+  const userInfo = useSelector(state => state.userInfo);
   const changePasswordInputIcon = () => {
     passwordIconRef.current = passwordIcon;
     passwordIconRef.current === 'eye'
@@ -33,20 +40,15 @@ const useEditProfile = navigation => {
   const signupValidationSchema = yup.object().shape({
     firstName: yup.string().required('Required'),
     lastName: yup.string().required('Required'),
-    email: yup
-      .string()
-      .email('Please enter valid email')
-      .required('Email Address is Required'),
-    password: yup
-      .string()
-      .min(8, ({min}) => `Password must be at least ${min} characters`)
-      .required('Required'),
     address: yup.string().required('Required'),
     city: yup.string().required('Required'),
     state: yup.string().required('Required'),
     country: yup.string().required('Required'),
-    zipCode: yup.number().required('Required'),
-    mobileNumber: yup.number().required('Required'),
+    zipCode: yup.number().typeError('Number Required').required('Required'),
+    mobileNumber: yup
+      .number()
+      .typeError('Number Required')
+      .required('Required'),
   });
   // login form submission
 
@@ -57,8 +59,6 @@ const useEditProfile = navigation => {
   const initialValues = {
     firstName: '',
     lastName: '',
-    email: '',
-    password: '',
     address: '',
     city: '',
     state: '',
@@ -67,6 +67,45 @@ const useEditProfile = navigation => {
     mobileNumber: '',
   };
 
+  const handleGetUserData = async () => {
+    try {
+      setIsLoading(true);
+      const response = await axios.get(
+        `${API_URL}${apiRoutes.users}${userInfo.id}`,
+
+        {
+          headers: {Authorization: `Bearer ${userInfo.token}`},
+        },
+      );
+      if (response.status === 200) {
+        setIsLoading(false);
+        console.log(response);
+      }
+    } catch (error) {
+      setIsLoading(false);
+      if (error) {
+        Alert.alert(
+          'Error',
+          `${error.response.data.message}`,
+          [
+            {
+              text: 'Ok',
+
+              style: 'cancel',
+            },
+          ],
+          {
+            cancelable: true,
+          },
+        );
+      }
+    }
+  };
+
+  useEffect(() => {
+    handleGetUserData();
+  }, [isFocused]);
+
   return {
     passwordIcon,
     signupValidationSchema,
@@ -74,7 +113,7 @@ const useEditProfile = navigation => {
     countryCode,
     initialValues,
     onSelect,
-
+    isLoading,
     handleSignup,
     changePasswordInputIcon,
   };

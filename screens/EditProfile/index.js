@@ -71,29 +71,7 @@ const EditProfile = ({navigation}) => {
                     />
                   </View>
                 </View>
-                <InputField
-                  label="Email"
-                  onChangeText={handleChange('email')}
-                  onBlur={handleBlur('email')}
-                  value={values.email}
-                  errors={errors.email}
-                  keyboardType="email-address"
-                  inputstyle={styles.inputFields}
-                  textStyle={styles.textStyle}
-                />
-                <InputField
-                  label="Password"
-                  onChangeText={handleChange('password')}
-                  onBlur={handleBlur('password')}
-                  value={values.password}
-                  secureTextEntry={passwordIcon === 'eye' ? false : true}
-                  icon={passwordIcon}
-                  iconColorBlack
-                  iconChange={changePasswordInputIcon}
-                  errors={errors.password}
-                  textStyle={styles.textStyle}
-                  inputstyle={{color: 'black'}}
-                />
+
                 <InputField
                   label="Address"
                   onChangeText={handleChange('address')}
