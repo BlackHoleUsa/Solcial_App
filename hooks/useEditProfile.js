@@ -13,6 +13,7 @@ const useEditProfile = navigation => {
   const isFocused = useIsFocused();
   const passwordIconRef = useRef(false);
   const userInfo = useSelector(state => state.userInfo);
+  const [initialValue, setInitialValue] = useState();
   const changePasswordInputIcon = () => {
     passwordIconRef.current = passwordIcon;
     passwordIconRef.current === 'eye'
@@ -33,12 +34,13 @@ const useEditProfile = navigation => {
     itemHeight: 60,
   };
   const onSelect = country => {
+    console.log(country);
     setCountryCode(country.cca2);
     setCountry(country);
   };
 
   const signupValidationSchema = yup.object().shape({
-    firstName: yup.string().required('Required'),
+    firstName: yup.string().required('Required').default('ali'),
     lastName: yup.string().required('Required'),
     address: yup.string().required('Required'),
     city: yup.string().required('Required'),
@@ -52,7 +54,7 @@ const useEditProfile = navigation => {
   });
   // login form submission
 
-  const handleSignup = values => {
+  const handleEditProfile = values => {
     navigation.navigate('Main App');
   };
 
@@ -80,6 +82,16 @@ const useEditProfile = navigation => {
       if (response.status === 200) {
         setIsLoading(false);
         console.log(response);
+        setInitialValue({
+          firstName: response.data.user.firstname,
+          lastName: response.data.user.lastname,
+          address: response.data.user.address,
+          city: response.data.user.city,
+          state: response.data.user.state,
+          country: response.data.user.country,
+          zipCode: response.data.user.zipcode,
+          mobileNumber: response.data.user.mobilephone,
+        });
       }
     } catch (error) {
       setIsLoading(false);
@@ -114,8 +126,9 @@ const useEditProfile = navigation => {
     initialValues,
     onSelect,
     isLoading,
-    handleSignup,
+    handleEditProfile,
     changePasswordInputIcon,
+    initialValue,
   };
 };
 

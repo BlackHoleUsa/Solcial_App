@@ -10,6 +10,11 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  container__loader: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1,
+  },
   text__title: {
     fontFamily: 'Poppins-SemiBold',
     fontWeight: Platform.OS === 'ios' ? '600' : 'normal',
