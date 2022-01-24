@@ -1,15 +1,24 @@
 import React, {useState, useRef, useEffect} from 'react';
 import * as yup from 'yup';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 import axios from 'axios';
 import {API_URL, apiRoutes} from '../utilities/apiRoutes';
 import {Alert} from 'react-native';
 import {useIsFocused} from '@react-navigation/native';
+import {setAuth} from '../redux/actions/actions';
 const useEditProfile = navigation => {
   const [countryCode, setCountryCode] = useState('FR');
-  const [country, setCountry] = useState(null);
+  const [country, setCountry] = useState({
+    cca2: 'US',
+    currency: ['USD'],
+    callingCode: ['1'],
+    region: 'Americas',
+    subregion: 'North America',
+  });
+  const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(false);
   const [passwordIcon, setPasswordIcon] = useState('eye-off');
+  const [editProfileLoader, setEditProfileLoader] = useState(false);
   const isFocused = useIsFocused();
   const passwordIconRef = useRef(false);
   const userInfo = useSelector(state => state.userInfo);
@@ -34,13 +43,12 @@ const useEditProfile = navigation => {
     itemHeight: 60,
   };
   const onSelect = country => {
-    console.log(country);
     setCountryCode(country.cca2);
     setCountry(country);
   };
 
   const signupValidationSchema = yup.object().shape({
-    firstName: yup.string().required('Required').default('ali'),
+    firstName: yup.string().required('Required'),
     lastName: yup.string().required('Required'),
     address: yup.string().required('Required'),
     city: yup.string().required('Required'),
@@ -52,21 +60,71 @@ const useEditProfile = navigation => {
       .typeError('Number Required')
       .required('Required'),
   });
-  // login form submission
+  //  form submission
 
-  const handleEditProfile = values => {
-    navigation.navigate('Main App');
-  };
+  const handleEditProfile = async values => {
+    let newValues = {
+      ...values,
+      mobilephone: `+${country.callingCode[0]}${values.mobileNumber}`,
+    };
+    console.log(newValues);
+    try {
+      setEditProfileLoader(true);
+      const response = await axios.put(
+        `${API_URL}${apiRoutes.users}${userInfo.id}`,
+        {newValues},
+        {
+          headers: {Authorization: `Bearer ${userInfo.authToken}`},
+        },
+      );
+      if (response.status === 200) {
+        setEditProfileLoader(false);
+        console.log('api response', response);
+        dispatch(
+          setAuth({
+            authToken: userInfo.authToken,
+            firstName: response.data.firstname,
+            lastName: response.data.lastname,
+            email: response.data.email,
+            id: response.data.id,
+          }),
+        );
+        Alert.alert(
+          'Congratulations',
+          'Profile Updated Successfully',
+          [
+            {
+              text: 'Ok',
+              onPress: () => navigation.navigate('Store Screen'),
+              style: 'cancel',
+            },
+          ],
+          {
+            cancelable: true,
+          },
+        );
+      }
+    } catch (error) {
+      setEditProfileLoader(false);
+      if (error) {
+        Alert.alert(
+          'Error',
+          `${error.response.data.message}`,
+          [
+            {
+              text: 'Ok',
 
-  const initialValues = {
-    firstName: '',
-    lastName: '',
-    address: '',
-    city: '',
-    state: '',
-    country: '',
-    zipCode: '',
-    mobileNumber: '',
+              style: 'cancel',
+            },
+          ],
+          {
+            cancelable: true,
+          },
+        );
+      }
+    }
+
+    // navigation.navigate('Main App');
   };
 
   const handleGetUserData = async () => {
@@ -123,7 +181,7 @@ const useEditProfile = navigation => {
     signupValidationSchema,
     DEFAULT_THEME,
     countryCode,
-    initialValues,
+    editProfileLoader,
     onSelect,
     isLoading,
     handleEditProfile,

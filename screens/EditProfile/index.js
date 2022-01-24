@@ -22,7 +22,7 @@ const EditProfile = ({navigation}) => {
     signupValidationSchema,
     DEFAULT_THEME,
     countryCode,
-    initialValues,
+    editProfileLoader,
     onSelect,
     isLoading,
     initialValue,
@@ -175,6 +175,7 @@ const EditProfile = ({navigation}) => {
                   </View>
                   <Button
                     mode="contained"
+                    loading={editProfileLoader}
                     onPress={handleSubmit}
                     style={styles.button__editProfile}
                     // eslint-disable-next-line react-native/no-inline-styles
