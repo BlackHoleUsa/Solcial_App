@@ -3,7 +3,7 @@ import {ScrollView, Text, View, KeyboardAvoidingView} from 'react-native';
 import {useIsFocused} from '@react-navigation/native';
 import CustomStatusBar from '../../components/CustomStatusBar';
 import {styles} from './Styles';
-import {Button, TouchableRipple} from 'react-native-paper';
+import {Button} from 'react-native-paper';
 import InputField from '../../components/InputFields';
 import CountryPicker from 'react-native-country-picker-modal';
 
@@ -13,7 +13,6 @@ const EditProfile = ({navigation}) => {
   const isFocused = useIsFocused();
 
   const {
-    passwordIcon,
     signupValidationSchema,
     DEFAULT_THEME,
     countryCode,
@@ -21,7 +20,6 @@ const EditProfile = ({navigation}) => {
     onSelect,
 
     handleSignup,
-    changePasswordInputIcon,
   } = useEditProfile(navigation);
 
   return (
