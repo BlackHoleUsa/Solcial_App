@@ -8,8 +8,10 @@ import CustomStatusBar from '../../components/CustomStatusBar';
 import {styles} from './Styles';
 
 import ProfileLinks from './ProfileLinks';
+import {useSelector} from 'react-redux';
 const Profile = ({navigation}) => {
   const isFocused = useIsFocused();
+  const userInfo = useSelector(state => state.userInfo);
   return (
     <View style={styles.container__main}>
       {isFocused && (
@@ -21,15 +23,15 @@ const Profile = ({navigation}) => {
       <View style={styles.container__userEmail}>
         <View style={styles.container__background}></View>
         <View style={styles.container__icon}>
-          <Text style={styles.text__icon}>A</Text>
+          <Text style={styles.text__icon}>{userInfo.email.charAt(0)}</Text>
         </View>
-        <Text style={styles.text__email}>azm@gmail.com</Text>
+        <Text style={styles.text__email}>{userInfo.email}</Text>
       </View>
       <View style={styles.container__accordian}>
         <ProfileLinks navigation={navigation} title="Edit Profile" />
         <ProfileLinks navigation={navigation} title="Bid History" />
         <ProfileLinks navigation={navigation} title="Auction History" />
-        <ProfileLinks navigation={navigation} title="Auction History" />
+        <ProfileLinks navigation={navigation} title="Store History" />
       </View>
     </View>
   );

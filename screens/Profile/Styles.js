@@ -39,6 +39,7 @@ export const styles = StyleSheet.create({
     fontWeight: fontWeights.semibold,
     color: 'white',
     fontSize: 40,
+    textTransform: 'capitalize',
   },
   text__email: {
     fontFamily: 'Poppins-Medium',
