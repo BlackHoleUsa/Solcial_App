@@ -13,4 +13,5 @@ export const apiRoutes = {
   cartCheckout: 'cart/checkout',
   users: 'users/',
   getNotificationAndHistory: 'general/getNotifications/',
+  storeHistory: 'general/getUserCartHistroy/',
 };

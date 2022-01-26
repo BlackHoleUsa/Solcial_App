@@ -4,27 +4,22 @@ import {useIsFocused} from '@react-navigation/native';
 import {API_URL, apiRoutes} from '../utilities/apiRoutes';
 import axios from 'axios';
 import {Alert} from 'react-native';
-const useRaffleHistory = (navigation, item) => {
+const useBidHistory = (navigation, item) => {
   const user = useSelector(state => state.userInfo);
   const isFocused = useIsFocused();
   const [isLoading, setisLoading] = useState(false);
   const [data, setData] = useState();
-  const getAuctionHistory = async () => {
+  const getStoreHistory = async () => {
     try {
       setisLoading(true);
       const response = await axios.get(
-        `${API_URL}${apiRoutes.getNotificationAndHistory}${user.id}`,
+        `${API_URL}${apiRoutes.storeHistory}${user.id}`,
       );
       if (response.status === 200) {
         setisLoading(false);
-        console.log(
-          'api response',
-          response.data.data.filter(newItem => {
-            if (newItem.extraData.Raffle) {
-              return setData(response.data.data);
-            }
-          }),
-        );
+
+        console.log(response.data.data);
+        setData(response.data.data);
       }
     } catch (error) {
       setisLoading(false);
@@ -48,7 +43,7 @@ const useRaffleHistory = (navigation, item) => {
   };
 
   useEffect(() => {
-    getAuctionHistory();
+    getStoreHistory();
   }, [isFocused]);
 
   return {
@@ -58,4 +53,4 @@ const useRaffleHistory = (navigation, item) => {
   };
 };
 
-export default useRaffleHistory;
+export default useBidHistory;
