@@ -3,11 +3,9 @@ import {fontWeights} from '../../assets/Data';
 export const styles = StyleSheet.create({
   container__main: {
     flex: 1,
-    justifyContent: 'flex-start',
-    alignItems: 'center',
+    paddingHorizontal: 10,
     backgroundColor: 'white',
     width: '100%',
-    paddingHorizontal: 20,
   },
   heading__main: {
     marginTop: 20,
@@ -17,5 +15,11 @@ export const styles = StyleSheet.create({
   },
   container__notification: {
     marginTop: 100,
+    width: '100%',
+  },
+  container__loader: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });

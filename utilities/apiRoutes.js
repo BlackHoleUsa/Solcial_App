@@ -12,4 +12,5 @@ export const apiRoutes = {
   getAllStoreItems: 'store/getProductType?product_type=All&page=0&perPage=10',
   cartCheckout: 'cart/checkout',
   users: 'users/',
+  getNotificationAndHistory: 'general/getNotifications/',
 };
