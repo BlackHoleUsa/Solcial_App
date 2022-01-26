@@ -4,16 +4,24 @@ export const styles = StyleSheet.create({
   container__main: {
     width: '100%',
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     alignItems: 'center',
-    paddingHorizontal: 30,
     marginBottom: 10,
-    backgroundColor: 'yellow',
   },
   text__notification: {
     textTransform: 'capitalize',
     fontFamily: 'Poppins-Regular',
     fontWeight: Platform.OS === 'ios' ? fontWeights.regular : 'normal',
-    flexWrap: 'wrap',
+  },
+  container__icon: {
+    backgroundColor: 'white',
+  },
+  container__text: {
+    paddingHorizontal: 10,
+
+    width: '70%',
+
+    justifyContent: 'center',
+    alignItems: 'flex-start',
   },
 });

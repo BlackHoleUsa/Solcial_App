@@ -31,9 +31,7 @@ const Notifications = () => {
               keyExtractor={item => item._id}
               ListFooterComponent={<View></View>}
               ListFooterComponentStyle={{marginVertical: 50}}
-              renderItem={({item}) => (
-                <SingleNotification item={item.extraData} />
-              )}
+              renderItem={({item}) => <SingleNotification item={item} />}
             />
           </View>
         </>
