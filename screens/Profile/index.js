@@ -31,7 +31,7 @@ const Profile = ({navigation}) => {
         <ProfileLinks navigation={navigation} title="Edit Profile" />
         <ProfileLinks navigation={navigation} title="Bid History" />
         <ProfileLinks navigation={navigation} title="Auction History" />
-        <ProfileLinks navigation={navigation} title="Store History" />
+        <ProfileLinks navigation={navigation} title="Raffle History" />
       </View>
     </View>
   );
