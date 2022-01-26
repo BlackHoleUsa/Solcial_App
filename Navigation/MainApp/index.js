@@ -5,11 +5,19 @@ import Products from '../Products';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-import {View, Image, TouchableOpacity, StyleSheet} from 'react-native';
+import {
+  View,
+  Image,
+  TouchableOpacity,
+  StyleSheet,
+  Linking,
+  Alert,
+  Platform,
+} from 'react-native';
 import Icons from 'react-native-vector-icons/Ionicons';
 import Cart from '../../screens/Cart';
 import Notifications from '../../screens/Notifications';
-import Profile from '../../screens/Profile';
+
 import NftMarketplace from '../../screens/NftMarketplace';
 import {icons as customIcons} from '../../assets/icons/icons';
 import ProfileNavigator from '../ProfileNavigator';
@@ -17,8 +25,39 @@ import ProfileNavigator from '../ProfileNavigator';
 const Tab = createBottomTabNavigator();
 
 const CustomTabbarButtom = ({children, onPress}) => {
+  const handleOpenMetamask = async () => {
+    const url = 'https://metamask.app.link/dapp/solecialnft.app/';
+    const url2 = 'metamask://';
+
+    try {
+      if (await Linking.openURL(url2)) {
+        await Linking.openURL(url);
+      }
+    } catch (error) {
+      if (error) {
+        console.log(error);
+        Alert.alert(
+          'Error',
+          'Please install metamask',
+          [
+            {
+              text: 'Cancel',
+
+              style: 'cancel',
+            },
+          ],
+          {
+            cancelable: true,
+          },
+        );
+      }
+    }
+  };
+
   return (
-    <TouchableOpacity onPress={onPress} style={styles.customTabbarButtom}>
+    <TouchableOpacity
+      onPress={handleOpenMetamask}
+      style={styles.customTabbarButtom}>
       <View style={styles.view__customTabbarButtom}>{children}</View>
     </TouchableOpacity>
   );
