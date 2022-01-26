@@ -12,6 +12,7 @@ export const styles = StyleSheet.create({
     textTransform: 'capitalize',
     fontFamily: 'Poppins-Regular',
     fontWeight: Platform.OS === 'ios' ? fontWeights.regular : 'normal',
+    color: 'black',
   },
   container__icon: {
     backgroundColor: 'white',
