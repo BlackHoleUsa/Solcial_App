@@ -64,15 +64,21 @@ const useEditProfile = navigation => {
 
   const handleEditProfile = async values => {
     let newValues = {
-      ...values,
+      firstname: values.firstName,
+      lastname: values.lastName,
+      address: values.address,
+      city: values.city,
+      state: values.state,
+      country: values.country,
+      zipcode: values.zipCode,
       mobilephone: `+${country.callingCode[0]}${values.mobileNumber}`,
     };
-    console.log(newValues);
+
     try {
       setEditProfileLoader(true);
       const response = await axios.put(
         `${API_URL}${apiRoutes.users}${userInfo.id}`,
-        {newValues},
+        newValues,
         {
           headers: {Authorization: `Bearer ${userInfo.authToken}`},
         },
