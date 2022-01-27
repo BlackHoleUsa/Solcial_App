@@ -29,4 +29,9 @@ export const styles = StyleSheet.create({
   container__list: {
     width: '100%',
   },
+  container__loader: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
