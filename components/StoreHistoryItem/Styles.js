@@ -9,7 +9,6 @@ export const styles = StyleSheet.create({
     marginBottom: 10,
   },
   text__notification: {
-    textTransform: 'capitalize',
     fontFamily: 'Poppins-Regular',
     fontWeight: Platform.OS === 'ios' ? fontWeights.regular : 'normal',
     color: 'black',
