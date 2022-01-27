@@ -7,6 +7,7 @@ const useStoreScreen = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState();
   const [listRefresh, setListRefresh] = useState(false);
+  const [displayedData, setDisplayedData] = useState();
   const isFocused = useIsFocused();
   const getAllStoreItems = async () => {
     setIsLoading(true);
@@ -16,6 +17,7 @@ const useStoreScreen = () => {
         setIsLoading(false);
         setListRefresh(false);
         setData(response.data.data);
+        setDisplayedData(response.data.data);
       }
     } catch (error) {
       if (error) {
@@ -46,7 +48,9 @@ const useStoreScreen = () => {
     isLoading,
     data,
     listRefresh,
+    displayedData,
     setListRefresh,
+    setDisplayedData,
   };
 };
 

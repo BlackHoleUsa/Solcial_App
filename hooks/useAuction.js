@@ -8,6 +8,7 @@ const useAuction = navigation => {
   const [isLoading, setIsLoading] = useState(false);
   const [item, setItem] = useState();
   const [listRefresh, setListRefresh] = useState(false);
+  const [displayedData, setDisplayedData] = useState();
   const isFocused = useIsFocused();
   const getAllAuctions = async () => {
     setIsLoading(true);
@@ -19,6 +20,7 @@ const useAuction = navigation => {
         setIsLoading(false);
         setListRefresh(false);
         setItem(response.data.data);
+        setDisplayedData(response.data.data);
       }
     } catch (error) {
       if (error) {
@@ -49,7 +51,9 @@ const useAuction = navigation => {
     isLoading,
     data: item,
     listRefresh,
+    displayedData,
     setListRefresh,
+    setDisplayedData,
   };
 };
 

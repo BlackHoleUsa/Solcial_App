@@ -1,16 +1,27 @@
 import React from 'react';
-import {ScrollView, View, FlatList, ActivityIndicator} from 'react-native';
-import {Text} from 'react-native-paper';
+import {View, FlatList, ActivityIndicator} from 'react-native';
+
 import {styles} from './Styles';
 import Search from '../../components/Search';
 import StoreCard from '../../components/StoreCard';
-import {storeScreen} from '../../assets/Data';
+
 import useStoreScreen from '../../hooks/useStoreScreen';
 const StoreScreen = ({navigation}) => {
-  const {isLoading, data, listRefresh, setListRefresh} = useStoreScreen();
+  const {
+    isLoading,
+    data,
+    displayedData,
+    listRefresh,
+    setListRefresh,
+    setDisplayedData,
+  } = useStoreScreen();
   return (
     <View style={styles.container__main}>
-      <Search />
+      <Search
+        data={displayedData}
+        setData={setDisplayedData}
+        originalData={data}
+      />
 
       {isLoading ? (
         <View style={styles.container__loader}>
@@ -18,7 +29,7 @@ const StoreScreen = ({navigation}) => {
         </View>
       ) : (
         <FlatList
-          data={data}
+          data={displayedData}
           onRefresh={() => setListRefresh(true)}
           refreshing={listRefresh}
           horizontal={false}

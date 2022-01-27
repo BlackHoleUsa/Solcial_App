@@ -1,18 +1,29 @@
 import React from 'react';
-import {ActivityIndicator, FlatList, ScrollView, View} from 'react-native';
-import {Text} from 'react-native-paper';
+import {ActivityIndicator, FlatList, View} from 'react-native';
+
 import RaffleAuctionCard from '../../components/RaffleAuctionCard';
 import Search from '../../components/Search';
 import useAuction from '../../hooks/useAuction';
 import {styles} from './Styles';
 
 const Auction = ({navigation}) => {
-  const {isLoading, data, listRefresh, setListRefresh} = useAuction(navigation);
+  const {
+    isLoading,
+    data,
+    displayedData,
+    listRefresh,
+    setDisplayedData,
+    setListRefresh,
+  } = useAuction(navigation);
 
   return (
     <View style={styles.container__main}>
       <View style={styles.container__search}>
-        <Search />
+        <Search
+          data={displayedData}
+          setData={setDisplayedData}
+          originalData={data}
+        />
       </View>
       {isLoading ? (
         <View style={styles.container__loader}>
@@ -22,7 +33,7 @@ const Auction = ({navigation}) => {
         <FlatList
           onRefresh={() => setListRefresh(true)}
           refreshing={listRefresh}
-          data={data}
+          data={displayedData}
           horizontal={false}
           keyExtractor={item => item._id}
           ListFooterComponent={<View></View>}
