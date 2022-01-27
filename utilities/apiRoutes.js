@@ -14,4 +14,6 @@ export const apiRoutes = {
   users: 'users/',
   getNotificationAndHistory: 'general/getNotifications/',
   storeHistory: 'general/getUserCartHistroy/',
+  raffleHistory: 'general/getUserRaffle/',
+  auctionHistory: 'general/getUserAuction/',
 };

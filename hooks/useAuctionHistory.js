@@ -13,11 +13,11 @@ const useAuctionHistory = (navigation, item) => {
     try {
       setisLoading(true);
       const response = await axios.get(
-        `${API_URL}${apiRoutes.getNotificationAndHistory}${user.id}`,
+        `${API_URL}${apiRoutes.auctionHistory}${user.id}`,
       );
       if (response.status === 200) {
         setisLoading(false);
-        console.log('api response', response);
+        console.log('auction history', response);
         setData(response.data.data);
       }
     } catch (error) {

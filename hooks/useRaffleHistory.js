@@ -9,22 +9,15 @@ const useRaffleHistory = (navigation, item) => {
   const isFocused = useIsFocused();
   const [isLoading, setisLoading] = useState(false);
   const [data, setData] = useState();
-  const getAuctionHistory = async () => {
+  const getRaffleHistory = async () => {
     try {
       setisLoading(true);
       const response = await axios.get(
-        `${API_URL}${apiRoutes.getNotificationAndHistory}${user.id}`,
+        `${API_URL}${apiRoutes.raffleHistory}${user.id}`,
       );
       if (response.status === 200) {
         setisLoading(false);
-        console.log(
-          'api response',
-          response.data.data.filter(newItem => {
-            if (newItem.extraData.Raffle) {
-              return setData(response.data.data);
-            }
-          }),
-        );
+        setData(response.data.data);
       }
     } catch (error) {
       setisLoading(false);
@@ -48,7 +41,7 @@ const useRaffleHistory = (navigation, item) => {
   };
 
   useEffect(() => {
-    getAuctionHistory();
+    getRaffleHistory();
   }, [isFocused]);
 
   return {
