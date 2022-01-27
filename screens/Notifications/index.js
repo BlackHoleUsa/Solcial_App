@@ -10,8 +10,15 @@ import useNotifications from '../../hooks/useNotifications';
 import useModal from '../../hooks/useModal';
 import AuctionPayment from '../../components/AuctionPayment';
 const Notifications = () => {
-  const {isLoading, isFocused, listRefresh, data, setListRefresh} =
-    useNotifications();
+  const {
+    isLoading,
+    isFocused,
+    listRefresh,
+    data,
+    amount,
+    setAmount,
+    setListRefresh,
+  } = useNotifications();
   const {visible, showModal, hideModal} = useModal();
 
   return (
@@ -36,14 +43,22 @@ const Notifications = () => {
               ListFooterComponent={<View></View>}
               ListFooterComponentStyle={{marginVertical: 50}}
               renderItem={({item}) => (
-                <SingleNotification item={item} showModal={showModal} />
+                <SingleNotification
+                  item={item}
+                  showModal={showModal}
+                  setAmount={setAmount}
+                />
               )}
             />
           </View>
         </>
       )}
       {visible ? (
-        <AuctionPayment visible={visible} hideModal={hideModal} />
+        <AuctionPayment
+          visible={visible}
+          hideModal={hideModal}
+          amount={amount}
+        />
       ) : null}
     </View>
   );

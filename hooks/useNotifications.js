@@ -10,7 +10,7 @@ const useNotifications = navigation => {
   const user = useSelector(state => state.userInfo.id);
   const isFocused = useIsFocused();
   const [listRefresh, setListRefresh] = useState(false);
-
+  const [amount, setAmount] = useState();
   const getAllNotifications = async () => {
     try {
       setIsLoading(true);
@@ -50,7 +50,15 @@ const useNotifications = navigation => {
     getAllNotifications();
   }, [listRefresh, isFocused]);
 
-  return {isLoading, isFocused, listRefresh, data, setListRefresh};
+  return {
+    isLoading,
+    isFocused,
+    listRefresh,
+    data,
+    amount,
+    setAmount,
+    setListRefresh,
+  };
 };
 
 export default useNotifications;
