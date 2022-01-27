@@ -15,4 +15,8 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 5,
   },
+  input: {
+    width: '80%',
+    // textTransform: 'capitalize',
+  },
 });

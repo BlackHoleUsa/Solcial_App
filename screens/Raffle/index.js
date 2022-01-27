@@ -7,12 +7,24 @@ import Search from '../../components/Search';
 
 import useRaffle from '../../hooks/useRaffle';
 const Raffle = ({navigation}) => {
-  const {isLoading, listRefresh, data, setListRefresh} = useRaffle(navigation);
+  const {
+    isLoading,
+    listRefresh,
+    data,
+    setListRefresh,
+    setItem,
+    displayedData,
+    setDisplayedData,
+  } = useRaffle(navigation);
 
   return (
     <View style={styles.container__main}>
       <View style={styles.container__search}>
-        <Search />
+        <Search
+          data={displayedData}
+          setData={setDisplayedData}
+          originalData={data}
+        />
       </View>
       {isLoading ? (
         <View style={styles.container__loader}>
@@ -22,7 +34,7 @@ const Raffle = ({navigation}) => {
         <FlatList
           onRefresh={() => setListRefresh(true)}
           refreshing={listRefresh}
-          data={data}
+          data={displayedData}
           horizontal={false}
           keyExtractor={item => item._id}
           ListFooterComponent={<View></View>}

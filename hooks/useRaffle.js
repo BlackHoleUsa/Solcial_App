@@ -8,6 +8,7 @@ const useRaffle = navigation => {
   const [isLoading, setIsLoading] = useState(false);
   const [item, setItem] = useState();
   const [listRefresh, setListRefresh] = useState(false);
+  const [displayedData, setDisplayedData] = useState();
   const getAllRaffleItems = async () => {
     setIsLoading(true);
     try {
@@ -16,6 +17,7 @@ const useRaffle = navigation => {
         setIsLoading(false);
 
         setItem(response.data.allRaffles);
+        setDisplayedData(response.data.allRaffles);
         setListRefresh(false);
       }
     } catch (error) {
@@ -48,6 +50,9 @@ const useRaffle = navigation => {
     data: item,
     listRefresh,
     setListRefresh,
+    setItem,
+    displayedData,
+    setDisplayedData,
   };
 };
 
