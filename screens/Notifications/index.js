@@ -7,9 +7,13 @@ import {styles} from './Styles';
 
 import SingleNotification from './SingleNotification';
 import useNotifications from '../../hooks/useNotifications';
+import useModal from '../../hooks/useModal';
+import AuctionPayment from '../../components/AuctionPayment';
 const Notifications = () => {
   const {isLoading, isFocused, listRefresh, data, setListRefresh} =
     useNotifications();
+  const {visible, showModal, hideModal} = useModal();
+
   return (
     <View style={styles.container__main}>
       {isFocused && (
@@ -31,11 +35,16 @@ const Notifications = () => {
               keyExtractor={item => item._id}
               ListFooterComponent={<View></View>}
               ListFooterComponentStyle={{marginVertical: 50}}
-              renderItem={({item}) => <SingleNotification item={item} />}
+              renderItem={({item}) => (
+                <SingleNotification item={item} showModal={showModal} />
+              )}
             />
           </View>
         </>
       )}
+      {visible ? (
+        <AuctionPayment visible={visible} hideModal={hideModal} />
+      ) : null}
     </View>
   );
 };
