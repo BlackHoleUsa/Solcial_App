@@ -9,7 +9,7 @@ import SingleNotification from './SingleNotification';
 import useNotifications from '../../hooks/useNotifications';
 import useModal from '../../hooks/useModal';
 import AuctionPayment from '../../components/AuctionPayment';
-const Notifications = () => {
+const Notifications = ({navigation}) => {
   const {
     isLoading,
     isFocused,
@@ -62,6 +62,7 @@ const Notifications = () => {
           hideModal={hideModal}
           amount={amount}
           id={id}
+          navigation={navigation}
         />
       ) : null}
     </View>

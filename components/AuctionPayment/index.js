@@ -15,9 +15,15 @@ import InputField from '../InputFields';
 
 import {Formik} from 'formik';
 import useAuctionPayment from '../../hooks/useAuctionPayment';
-export default function AuctionPayment({visible, hideModal, amount, id}) {
+export default function AuctionPayment({
+  visible,
+  hideModal,
+  amount,
+  id,
+  navigation,
+}) {
   const {cardValidationSchema, initialValues, isLoading, handlePayment} =
-    useAuctionPayment(amount, id);
+    useAuctionPayment(amount, id, navigation);
   return (
     <CustomModal visible={visible} hideModal={hideModal}>
       <KeyboardAvoidingView>
@@ -28,7 +34,7 @@ export default function AuctionPayment({visible, hideModal, amount, id}) {
             <Icons name="close" color={'black'} size={25} />
           </TouchableOpacity>
           <View style={styles.container__title}>
-            <Text style={styles.text__title}>Raffle Payment</Text>
+            <Text style={styles.text__title}>Auction Payment</Text>
           </View>
           <Formik
             validationSchema={cardValidationSchema}

@@ -6,7 +6,7 @@ import axios from 'axios';
 import {Alert} from 'react-native';
 import {useSelector} from 'react-redux';
 
-const useAuctionPayment = (amount, id) => {
+const useAuctionPayment = (amount, id, navigation) => {
   const year = new Date().getFullYear();
   const userId = useSelector(state => state.userInfo.id);
   const [isLoading, setIsLoading] = useState(false);
@@ -49,7 +49,7 @@ const useAuctionPayment = (amount, id) => {
     try {
       setIsLoading(true);
       const response = await axios.post(
-        `${API_URL}${apiRoutes.rafflePayment}?`,
+        `${API_URL}${apiRoutes.auctionPayment}`,
         newValues,
       );
       if (response.status === 200) {
@@ -57,11 +57,11 @@ const useAuctionPayment = (amount, id) => {
 
         Alert.alert(
           'Congratulations',
-          'You have auction item is purchased',
+          'Your auction item has been purchased',
           [
             {
               text: 'Ok',
-
+              onPress: () => navigation.navigate('Auction Screen'),
               style: 'cancel',
             },
           ],
@@ -75,7 +75,7 @@ const useAuctionPayment = (amount, id) => {
       if (error) {
         Alert.alert(
           'Error',
-          'somethin went wring',
+          `${error.response.data.message}`,
           [
             {
               text: 'Cancel',
