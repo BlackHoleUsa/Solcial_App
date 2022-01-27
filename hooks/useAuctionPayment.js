@@ -6,7 +6,7 @@ import axios from 'axios';
 import {Alert} from 'react-native';
 import {useSelector} from 'react-redux';
 
-const useAuctionPayment = (amount, noOfTickets) => {
+const useAuctionPayment = (amount, id) => {
   const year = new Date().getFullYear();
   const userId = useSelector(state => state.userInfo.id);
   const [isLoading, setIsLoading] = useState(false);
@@ -44,7 +44,7 @@ const useAuctionPayment = (amount, noOfTickets) => {
       ...values,
       userId,
       amount,
-      noOfTickets,
+      auctionId: id,
     };
     try {
       setIsLoading(true);

@@ -15,9 +15,9 @@ import InputField from '../InputFields';
 
 import {Formik} from 'formik';
 import useAuctionPayment from '../../hooks/useAuctionPayment';
-export default function AuctionPayment({visible, hideModal, amount}) {
+export default function AuctionPayment({visible, hideModal, amount, id}) {
   const {cardValidationSchema, initialValues, isLoading, handlePayment} =
-    useAuctionPayment(amount);
+    useAuctionPayment(amount, id);
   return (
     <CustomModal visible={visible} hideModal={hideModal}>
       <KeyboardAvoidingView>

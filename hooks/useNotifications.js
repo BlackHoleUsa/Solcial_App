@@ -11,6 +11,7 @@ const useNotifications = navigation => {
   const isFocused = useIsFocused();
   const [listRefresh, setListRefresh] = useState(false);
   const [amount, setAmount] = useState();
+  const [id, setId] = useState();
   const getAllNotifications = async () => {
     try {
       setIsLoading(true);
@@ -56,6 +57,8 @@ const useNotifications = navigation => {
     listRefresh,
     data,
     amount,
+    id,
+    setId,
     setAmount,
     setListRefresh,
   };

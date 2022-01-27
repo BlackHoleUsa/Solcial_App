@@ -16,4 +16,5 @@ export const apiRoutes = {
   storeHistory: 'general/getUserCartHistroy/',
   raffleHistory: 'general/getUserRaffle/',
   auctionHistory: 'general/getUserAuction/',
+  auctionPayment: 'auction/checkout-auction',
 };

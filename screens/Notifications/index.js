@@ -16,6 +16,8 @@ const Notifications = () => {
     listRefresh,
     data,
     amount,
+    id,
+    setId,
     setAmount,
     setListRefresh,
   } = useNotifications();
@@ -47,6 +49,7 @@ const Notifications = () => {
                   item={item}
                   showModal={showModal}
                   setAmount={setAmount}
+                  setId={setId}
                 />
               )}
             />
@@ -58,6 +61,7 @@ const Notifications = () => {
           visible={visible}
           hideModal={hideModal}
           amount={amount}
+          id={id}
         />
       ) : null}
     </View>
