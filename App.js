@@ -6,15 +6,18 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, {useEffect} from 'react';
 
 import {StyleSheet} from 'react-native';
 import Startup from './Navigation/Startup';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import CustomStatusBar from './components/CustomStatusBar';
-import {Text} from 'react-native-paper';
+import SplashScreen from 'react-native-splash-screen';
 
 const App = () => {
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
+
   return (
     <SafeAreaProvider>
       <Startup />

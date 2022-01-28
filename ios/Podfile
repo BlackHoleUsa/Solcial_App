@@ -16,6 +16,8 @@ target 'Solcial' do
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
+  pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
+
   target 'SolcialTests' do
     inherit! :complete
     # Pods for testing
