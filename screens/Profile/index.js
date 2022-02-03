@@ -8,9 +8,11 @@ import Icons from 'react-native-vector-icons/MaterialIcons';
 import {styles} from './Styles';
 
 import ProfileLinks from './ProfileLinks';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
+import {setLogout} from '../../redux/actions/actions';
 const Profile = ({navigation}) => {
   const isFocused = useIsFocused();
+  const dispatch = useDispatch();
   const userInfo = useSelector(state => state.userInfo);
   return (
     <View style={styles.container__main}>
@@ -28,7 +30,7 @@ const Profile = ({navigation}) => {
         <Text style={styles.text__email}>{userInfo.email}</Text>
       </View>
       <View style={styles.container__logout}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => dispatch(setLogout())}>
           <View style={styles.container__button__logout}>
             <Icons name="logout" size={40} color={'black'} />
             <Text style={styles.text__logout}>Logout</Text>

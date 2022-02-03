@@ -9,6 +9,7 @@ import {
   ADD_QTY,
   REMOVE_QTY,
   CLEAR_CART,
+  LOG_OUT,
 } from '../types/types';
 export const reducer = (state = initialState, action) => {
   const {type, payload} = action;
@@ -80,6 +81,18 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         cart: [],
+      };
+    case LOG_OUT:
+      return {
+        ...state,
+        userInfo: {
+          ...state.userInfo,
+          firstName: '',
+          lastName: '',
+          email: '',
+          id: '',
+          authToken: '',
+        },
       };
     default:
       return state;

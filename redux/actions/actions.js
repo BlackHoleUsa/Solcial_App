@@ -8,6 +8,7 @@ import {
   ADD_QTY,
   REMOVE_QTY,
   CLEAR_CART,
+  LOG_OUT,
 } from '../types/types';
 export const setAuth = data => ({
   type: AUTH,
@@ -43,4 +44,7 @@ export const setRemoveQty = data => ({
 });
 export const setClearCart = data => ({
   type: CLEAR_CART,
+});
+export const setLogout = data => ({
+  type: LOG_OUT,
 });
