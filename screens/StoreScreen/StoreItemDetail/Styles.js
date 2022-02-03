@@ -3,13 +3,14 @@ import {fontWeights} from '../../../assets/Data';
 export const styles = StyleSheet.create({
   container__main: {
     width: '100%',
-    flex: 1,
+
     backgroundColor: 'white',
+    paddingBottom: 20,
   },
   container__content: {
     width: '100%',
     padding: 20,
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     flex: 1,
   },
   text__title: {
@@ -59,6 +60,6 @@ export const styles = StyleSheet.create({
   button__checkout: {
     backgroundColor: 'black',
     borderRadius: 0,
-    marginBottom: 10,
+    marginVertical: 40,
   },
 });

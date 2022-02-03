@@ -16,6 +16,9 @@ const StoreNavigator = () => {
         tabBarLabelStyle: {
           color: 'white',
         },
+        contentStyle: {
+          backgroundColor: '#FFFFFF',
+        },
         headerStyle: {
           backgroundColor: 'black',
         },

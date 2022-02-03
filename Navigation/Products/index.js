@@ -29,6 +29,9 @@ const Products = () => {
             fontWeight: Platform.OS === 'ios' ? fontWeights.medium : 'normal',
             fontSize: 16,
           },
+          contentStyle: {
+            backgroundColor: 'white',
+          },
         })}>
         <Tab.Screen
           name="Raffle"

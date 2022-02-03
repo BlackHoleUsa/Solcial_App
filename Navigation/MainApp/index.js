@@ -80,6 +80,9 @@ const MainApp = () => {
           tabBarLabelStyle: {
             color: 'white',
           },
+          contentStyle: {
+            backgroundColor: 'white',
+          },
           tabBarHideOnKeyboard: true,
           tabBarIcon: ({color, size}) => {
             const icons = {
