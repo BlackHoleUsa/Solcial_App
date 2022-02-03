@@ -59,11 +59,8 @@ const RaffleAuctionCard = ({
         />
       </TouchableOpacity>
       <View style={styles.container__content}>
-        <Text style={styles.text__title}>{item?.name}</Text>
         <View style={styles.container__detail}>
-          <View style={styles.text__details__container}>
-            <Text style={styles.text__details}>{item?.description}</Text>
-          </View>
+          <Text style={styles.text__title}>{item?.name}</Text>
           <Button
             mode="outlined"
             onPress={handleEnterRaffle}
