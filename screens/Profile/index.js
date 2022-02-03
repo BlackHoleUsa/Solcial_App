@@ -1,10 +1,10 @@
 import React from 'react';
-import {View} from 'react-native';
+import {View, TouchableOpacity} from 'react-native';
 import {Text} from 'react-native-paper';
 import {useIsFocused} from '@react-navigation/native';
 
 import CustomStatusBar from '../../components/CustomStatusBar';
-
+import Icons from 'react-native-vector-icons/MaterialIcons';
 import {styles} from './Styles';
 
 import ProfileLinks from './ProfileLinks';
@@ -26,6 +26,14 @@ const Profile = ({navigation}) => {
           <Text style={styles.text__icon}>{userInfo.email.charAt(0)}</Text>
         </View>
         <Text style={styles.text__email}>{userInfo.email}</Text>
+      </View>
+      <View style={styles.container__logout}>
+        <TouchableOpacity>
+          <View style={styles.container__button__logout}>
+            <Icons name="logout" size={40} color={'black'} />
+            <Text style={styles.text__logout}>Logout</Text>
+          </View>
+        </TouchableOpacity>
       </View>
       <View style={styles.container__accordian}>
         <ProfileLinks navigation={navigation} title="Edit Profile" />

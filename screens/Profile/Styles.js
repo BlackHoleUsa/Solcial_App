@@ -48,4 +48,20 @@ export const styles = StyleSheet.create({
     fontSize: 20,
     marginTop: 35,
   },
+  container__logout: {
+    width: '100%',
+    marginVertical: 20,
+    paddingHorizontal: 20,
+    justifyContent: 'center',
+    alignItems: 'flex-end',
+  },
+  container__button__logout: {
+    justifyContent: 'center',
+  },
+  text__logout: {
+    fontFamily: 'Poppins-Medium',
+    fontWeight: fontWeights.medium,
+    color: 'black',
+    fontSize: 15,
+  },
 });
