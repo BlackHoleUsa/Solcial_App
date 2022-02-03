@@ -27,29 +27,27 @@ const StoreItemDetail = ({navigation}) => {
         <View style={styles.container__size}>
           <Text style={styles.text__size}>Size:</Text>
           {sizes?.map((item, index) => (
-            <View
+            <TouchableOpacity
               key={index}
               style={[
                 styles.container__size__buttons,
                 {
                   backgroundColor: sizeIndex === index ? 'black' : 'white',
                 },
-              ]}>
-              <TouchableOpacity
-                onPress={() => {
-                  setSizeIndex(index);
-                }}>
-                <Text
-                  style={[
-                    styles.text__size__button,
-                    {
-                      color: sizeIndex === index ? 'white' : 'black',
-                    },
-                  ]}>
-                  {item}
-                </Text>
-              </TouchableOpacity>
-            </View>
+              ]}
+              onPress={() => {
+                setSizeIndex(index);
+              }}>
+              <Text
+                style={[
+                  styles.text__size__button,
+                  {
+                    color: sizeIndex === index ? 'white' : 'black',
+                  },
+                ]}>
+                {item}
+              </Text>
+            </TouchableOpacity>
           ))}
         </View>
         <Button

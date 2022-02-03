@@ -46,13 +46,15 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  text__size__button: {
+    width: 40,
+    height: 40,
     marginHorizontal: 5,
     paddingVertical: 5,
-    paddingHorizontal: 10,
+    paddingHorizontal: 5,
     borderWidth: 1,
     borderColor: 'black',
+  },
+  text__size__button: {
     fontFamily: 'Poppins-Medium',
     fontWeight: fontWeights.medium,
     color: 'black',
