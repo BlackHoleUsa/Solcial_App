@@ -18,22 +18,6 @@ const BackgroundVideo = ({children, video}) => {
         poster="https://images.unsplash.com/photo-1593572547344-d8c3d0ff7d12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cG9zdGVyJTIwYmFja2dyb3VuZHxlbnwwfHwwfHw%3D&w=1000&q=80"
         posterResizeMode="cover"
         style={styles.container__video}
-        onLoadStart={() =>
-          Alert.alert(
-            'Congratulations',
-            'loading started',
-            [
-              {
-                text: 'Ok',
-
-                style: 'cancel',
-              },
-            ],
-            {
-              cancelable: true,
-            },
-          )
-        }
       />
       {children}
     </View>
