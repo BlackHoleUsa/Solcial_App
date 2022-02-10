@@ -24,9 +24,10 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     width: '100%',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'flex-start',
 
     flexGrow: 2,
+    marginVertical: 10,
   },
   text__signup: {
     fontFamily: 'Poppins-Regular',
