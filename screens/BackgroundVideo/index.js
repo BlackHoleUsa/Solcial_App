@@ -3,11 +3,13 @@ import {Alert, View} from 'react-native';
 import Video from 'react-native-video';
 import {styles} from './Styles';
 const BackgroundVideo = ({children, video}) => {
+  console.log('video', video);
+  // 'http://www.exit109.com/~dnn/clips/RW20seconds_1.mp4'
   return (
     <View style={styles.container__main}>
       <Video
         source={{
-          uri: 'http://www.exit109.com/~dnn/clips/RW20seconds_1.mp4',
+          uri: 'https://solecialmobileapp.s3.us-west-1.amazonaws.com/proof.mp4',
         }}
         muted={true}
         repeat={true}

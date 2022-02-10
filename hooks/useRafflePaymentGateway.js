@@ -52,7 +52,7 @@ const useRafflePaymentGateway = (amount, noOfTickets) => {
     try {
       setIsLoading(true);
       const response = await axios.post(
-        `${API_URL}${apiRoutes.rafflePayment}?raffleId=${selectedRaffleAuctionItem._id}`,
+        `${API_URL}${apiRoutes.rafflePayment}?raffleId=${selectedRaffleAuctionItem.id}`,
         newValues,
       );
       if (response.status === 200) {

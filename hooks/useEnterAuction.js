@@ -10,8 +10,11 @@ const useEnterAuction = () => {
       let amount = selectedAuctionItem.bids.reduce((prev, current) =>
         prev.bid_amount > current.bid_amount ? prev : current,
       );
-
-      setHighestBid(amount?.bid_amount);
+      if (amount?.bid_amount < selectedAuctionItem.initialPrice) {
+        setHighestBid(selectedAuctionItem.initialPrice);
+      } else {
+        setHighestBid(amount?.bid_amount);
+      }
     } else {
       setHighestBid(selectedAuctionItem.initialPrice);
     }
