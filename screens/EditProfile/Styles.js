@@ -48,31 +48,17 @@ export const styles = StyleSheet.create({
   container__phoneNumber: {
     width: '100%',
 
-    justifyContent: 'space-between',
-    marginTop: 10,
+    // justifyContent: 'space-between',
+    // marginTop: 10,
   },
   text_mobilePhone: {
     fontFamily: 'Poppins-SemiBold',
     fontWeight: Platform.OS === 'ios' ? '600' : 'normal',
     color: 'black',
   },
+
   container__countryPicker: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
-  },
-  container__countryPicker__1: {
-    width: '35%',
-    borderWidth: 1,
-    borderColor: '#707070',
-    padding: 0,
-    height: 41,
-    marginTop: Platform.OS === 'ios' ? 30 : 34,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  container__countryPicker__2: {
-    width: '60%',
+    width: '100%',
   },
   field: {
     color: 'black',

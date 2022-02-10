@@ -6,15 +6,8 @@ import {API_URL, apiRoutes} from '../utilities/apiRoutes';
 import {Alert} from 'react-native';
 import {useIsFocused} from '@react-navigation/native';
 import {setAuth} from '../redux/actions/actions';
+
 const useEditProfile = navigation => {
-  const [countryCode, setCountryCode] = useState('FR');
-  const [country, setCountry] = useState({
-    cca2: 'US',
-    currency: ['USD'],
-    callingCode: ['1'],
-    region: 'Americas',
-    subregion: 'North America',
-  });
   const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(false);
   const [passwordIcon, setPasswordIcon] = useState('eye-off');
@@ -28,23 +21,6 @@ const useEditProfile = navigation => {
     passwordIconRef.current === 'eye'
       ? setPasswordIcon('eye-off')
       : setPasswordIcon('eye');
-  };
-
-  // theme for mobile code picker
-  const DEFAULT_THEME = {
-    primaryColor: '#ccc',
-    primaryColorVariant: '#eee',
-    backgroundColor: 'white',
-    onBackgroundTextColor: 'black',
-    fontSize: 16,
-    fontFamily: 'Poppins-Regular',
-    filterPlaceholderTextColor: '#aaa',
-    activeOpacity: 0.7,
-    itemHeight: 60,
-  };
-  const onSelect = country => {
-    setCountryCode(country.cca2);
-    setCountry(country);
   };
 
   const signupValidationSchema = yup.object().shape({
@@ -71,7 +47,7 @@ const useEditProfile = navigation => {
       state: values.state,
       country: values.country,
       zipcode: values.zipCode,
-      mobilephone: `+${country.callingCode[0]}${values.mobileNumber}`,
+      mobilephone: values.mobileNumber,
     };
 
     try {
@@ -145,7 +121,7 @@ const useEditProfile = navigation => {
       );
       if (response.status === 200) {
         setIsLoading(false);
-        console.log(response);
+
         setInitialValue({
           firstName: response.data.user.firstname,
           lastName: response.data.user.lastname,
@@ -185,10 +161,9 @@ const useEditProfile = navigation => {
   return {
     passwordIcon,
     signupValidationSchema,
-    DEFAULT_THEME,
-    countryCode,
+
     editProfileLoader,
-    onSelect,
+
     isLoading,
     handleEditProfile,
     changePasswordInputIcon,

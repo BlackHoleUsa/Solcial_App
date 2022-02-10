@@ -20,10 +20,9 @@ const EditProfile = ({navigation}) => {
 
   const {
     signupValidationSchema,
-    DEFAULT_THEME,
-    countryCode,
+
     editProfileLoader,
-    onSelect,
+
     isLoading,
     initialValue,
     handleEditProfile,
@@ -148,29 +147,16 @@ const EditProfile = ({navigation}) => {
                   </View>
                   {/* phone number */}
                   <View style={styles.container__phoneNumber}>
-                    <Text style={styles.text_mobilePhone}>Mobile Phone</Text>
                     <View style={styles.container__countryPicker}>
-                      <View style={styles.container__countryPicker__1}>
-                        <CountryPicker
-                          countryCode={countryCode}
-                          withFlag
-                          withCallingCode
-                          withCallingCodeButton
-                          onSelect={onSelect}
-                          containerButtonStyle={{}}
-                          theme={DEFAULT_THEME}
-                        />
-                      </View>
-                      <View style={styles.container__countryPicker__2}>
-                        <InputField
-                          onChangeText={handleChange('mobileNumber')}
-                          onBlur={handleBlur('mobileNumber')}
-                          value={values?.mobileNumber}
-                          errors={errors.mobileNumber}
-                          inputstyle={styles.inputFields}
-                          textStyle={styles.textStyle}
-                        />
-                      </View>
+                      <InputField
+                        onChangeText={handleChange('mobileNumber')}
+                        onBlur={handleBlur('mobileNumber')}
+                        value={values?.mobileNumber}
+                        errors={errors.mobileNumber}
+                        inputstyle={styles.inputFields}
+                        textStyle={styles.textStyle}
+                        label="Mobile Phone"
+                      />
                     </View>
                   </View>
                   <Button
