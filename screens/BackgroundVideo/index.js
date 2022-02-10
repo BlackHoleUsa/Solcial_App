@@ -9,7 +9,7 @@ const BackgroundVideo = ({children, video}) => {
     <View style={styles.container__main}>
       <Video
         source={{
-          uri: 'https://solecialmobileapp.s3.us-west-1.amazonaws.com/proof.mp4',
+          uri: video,
         }}
         muted={true}
         repeat={true}
