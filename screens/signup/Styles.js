@@ -48,23 +48,9 @@ export const styles = StyleSheet.create({
     fontWeight: Platform.OS === 'ios' ? '600' : 'normal',
     color: 'white',
   },
+
   container__countryPicker: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
-  },
-  container__countryPicker__1: {
-    width: '30%',
-    borderWidth: 1,
-    borderColor: '#707070',
-    padding: 5,
-    height: 41,
-    marginTop: Platform.OS === 'ios' ? 30 : 34,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  container__countryPicker__2: {
-    width: '65%',
+    width: '100%',
   },
   inputFields: {
     width: '100%',

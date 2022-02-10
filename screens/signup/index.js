@@ -5,17 +5,16 @@ import BackgroundGradient from '../../components/BackgroundGradient';
 import InputField from '../../components/InputFields';
 import {Formik} from 'formik';
 import {styles} from './Styles';
-import CountryPicker from 'react-native-country-picker-modal';
+
 import useSignup from '../../hooks/useSignup';
 const Signup = ({navigation}) => {
   const {
     passwordIcon,
     signupValidationSchema,
-    DEFAULT_THEME,
-    countryCode,
+
     initialValues,
     isLoading,
-    onSelect,
+
     moveToLoginScreen,
     handleSignup,
     changePasswordInputIcon,
@@ -137,29 +136,17 @@ const Signup = ({navigation}) => {
               </View>
               {/* phone number */}
               <View style={styles.container__phoneNumber}>
-                <Text style={styles.text_mobilePhone}>Mobile Phone</Text>
                 <View style={styles.container__countryPicker}>
-                  <View style={styles.container__countryPicker__1}>
-                    <CountryPicker
-                      countryCode={countryCode}
-                      withFlag
-                      withCallingCode
-                      withCallingCodeButton
-                      onSelect={onSelect}
-                      containerButtonStyle={{}}
-                      theme={DEFAULT_THEME}
-                    />
-                  </View>
-                  <View style={styles.container__countryPicker__2}>
-                    <InputField
-                      onChangeText={handleChange('mobileNumber')}
-                      onBlur={handleBlur('mobileNumber')}
-                      value={values.mobileNumber}
-                      errors={errors.mobileNumber}
-                      keyboardType="numeric"
-                      inputstyle={styles.inputFields}
-                    />
-                  </View>
+                  <InputField
+                    onChangeText={handleChange('mobileNumber')}
+                    onBlur={handleBlur('mobileNumber')}
+                    value={values.mobileNumber}
+                    errors={errors.mobileNumber}
+                    inputstyle={styles.inputFields}
+                    label="Mobile Phone"
+                    placeholder="+18454539249"
+                    placeholderColor="#9c8282"
+                  />
                 </View>
               </View>
               <Button

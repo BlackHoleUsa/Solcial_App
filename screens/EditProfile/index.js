@@ -28,10 +28,6 @@ const EditProfile = ({navigation}) => {
     handleEditProfile,
   } = useEditProfile(navigation);
 
-  if (!isLoading) {
-    console.log(initialValue);
-  }
-
   return (
     <ScrollView style={styles.container__main}>
       {isFocused && (
@@ -156,6 +152,8 @@ const EditProfile = ({navigation}) => {
                         inputstyle={styles.inputFields}
                         textStyle={styles.textStyle}
                         label="Mobile Phone"
+                        placeholder="+18454539249"
+                        placeholderColor="gray"
                       />
                     </View>
                   </View>

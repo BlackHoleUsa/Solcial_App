@@ -7,14 +7,6 @@ import {Alert} from 'react-native';
 import {useDispatch} from 'react-redux';
 import {setAuth} from '../redux/actions/actions';
 const useSignup = navigation => {
-  const [countryCode, setCountryCode] = useState('US');
-  const [country, setCountry] = useState({
-    cca2: 'US',
-    currency: ['USD'],
-    callingCode: ['1'],
-    region: 'Americas',
-    subregion: 'North America',
-  });
   const [passwordIcon, setPasswordIcon] = useState('eye-off');
   const [isLoading, setIsLoading] = useState(false);
   const passwordIconRef = useRef(false);
@@ -38,10 +30,7 @@ const useSignup = navigation => {
     activeOpacity: 0.7,
     itemHeight: 60,
   };
-  const onSelect = country => {
-    setCountryCode(country.cca2);
-    setCountry(country);
-  };
+
   const moveToLoginScreen = () => {
     navigation.navigate('Login');
   };
@@ -62,7 +51,10 @@ const useSignup = navigation => {
     state: yup.string().required('Required'),
     country: yup.string().required('Required'),
     zipCode: yup.number().required('Required'),
-    mobileNumber: yup.number().required('Required'),
+    mobileNumber: yup
+      .number()
+      .typeError('Number Required')
+      .required('Required'),
   });
   // signup form submission
 
@@ -70,7 +62,7 @@ const useSignup = navigation => {
     let newValues = {
       firstname: values.firstName,
       lastname: values.lastName,
-      mobilephone: `+${country.callingCode[0]}${values.mobileNumber}`,
+      mobilephone: values.mobileNumber,
       email: values.email,
       password: values.password,
       address: values.address,
@@ -137,10 +129,10 @@ const useSignup = navigation => {
     passwordIcon,
     signupValidationSchema,
     DEFAULT_THEME,
-    countryCode,
+
     initialValues,
     isLoading,
-    onSelect,
+
     moveToLoginScreen,
     handleSignup,
     changePasswordInputIcon,
