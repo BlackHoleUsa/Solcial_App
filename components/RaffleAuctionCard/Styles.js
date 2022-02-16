@@ -38,8 +38,9 @@ export const styles = StyleSheet.create({
     fontFamily: 'Poppins-Regular',
     fontSize: 10,
   },
-  text__details__container: {
-    width: '55%',
+  container__title: {
+    width: '50%',
+    flexWrap: 'wrap',
   },
   icon: {
     position: 'absolute',

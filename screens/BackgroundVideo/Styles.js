@@ -6,6 +6,7 @@ export const styles = StyleSheet.create({
     width: '100%',
     height: height,
     flex: 1,
+    backgroundColor: '#6C589F',
   },
   container__video: {
     width: '100%',

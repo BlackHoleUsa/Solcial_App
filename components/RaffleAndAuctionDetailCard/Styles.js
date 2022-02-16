@@ -18,6 +18,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     paddingTop: 10,
+    borderRadius: 10,
   },
   container__icon: {
     position: 'absolute',
@@ -44,6 +45,13 @@ export const styles = StyleSheet.create({
     width: '60%',
     paddingHorizontal: 10,
     justifyContent: 'space-between',
+    alignItems: 'flex-end',
+    // minHeight: '40%',
+  },
+  container__text: {
+    // flexWrap: 'wrap',
+
+    justifyContent: 'space-between',
     alignItems: 'stretch',
   },
   text__title: {
@@ -56,6 +64,7 @@ export const styles = StyleSheet.create({
     fontWeight: fontWeights.thin,
     fontSize: 12,
     color: 'black',
+    minHeight: '40%',
   },
   button: {
     width: '100%',
