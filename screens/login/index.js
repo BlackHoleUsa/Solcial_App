@@ -40,29 +40,32 @@ const Login = ({navigation}) => {
               isValid,
             }) => (
               <>
-                <InputField
-                  label="Email"
-                  selectionColor="white"
-                  onChangeText={handleChange('email')}
-                  onBlur={handleBlur('email')}
-                  value={values.email}
-                  keyboardType="email-address"
-                  placeholder="example@email.com      "
-                  errors={errors.email}
-                />
-
-                <InputField
-                  label="Password"
-                  onChangeText={handleChange('password')}
-                  onBlur={handleBlur('password')}
-                  value={values.password}
-                  placeholder="******       "
-                  selectionColor="white"
-                  secureTextEntry={passwordIcon === 'eye' ? false : true}
-                  icon={passwordIcon}
-                  iconChange={changePasswordInputIcon}
-                  errors={errors.password}
-                />
+                <View style={{marginTop: -15, width: '100%'}}>
+                  <InputField
+                    label="Email"
+                    selectionColor="white"
+                    onChangeText={handleChange('email')}
+                    onBlur={handleBlur('email')}
+                    value={values.email}
+                    keyboardType="email-address"
+                    placeholder="example@email.com      "
+                    errors={errors.email}
+                  />
+                </View>
+                <View style={{marginTop: -15, width: '100%'}}>
+                  <InputField
+                    label="Password"
+                    onChangeText={handleChange('password')}
+                    onBlur={handleBlur('password')}
+                    value={values.password}
+                    placeholder="******       "
+                    selectionColor="white"
+                    secureTextEntry={passwordIcon === 'eye' ? false : true}
+                    icon={passwordIcon}
+                    iconChange={changePasswordInputIcon}
+                    errors={errors.password}
+                  />
+                </View>
 
                 <Button
                   mode="contained"

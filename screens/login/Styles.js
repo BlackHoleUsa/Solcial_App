@@ -43,8 +43,9 @@ export const styles = StyleSheet.create({
     textDecorationStyle: 'solid',
   },
   secondary__container: {
-    width: 350,
+    width: '100%',
     justifyContent: 'flex-start',
     alignItems: 'center',
+    paddingHorizontal: 20,
   },
 });

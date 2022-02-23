@@ -25,7 +25,7 @@ export const styles = StyleSheet.create({
     width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: 20,
+    marginBottom: -10,
   },
   container__child_1: {
     width: '47%',

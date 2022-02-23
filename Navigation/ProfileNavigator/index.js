@@ -30,7 +30,7 @@ const ProfileNavigator = () => {
         options={{headerShown: false}}
       />
       <Stack.Screen
-        name="Edit Profile"
+        name="Update Profile"
         component={EditProfile}
         options={{headerShown: false}}
       />

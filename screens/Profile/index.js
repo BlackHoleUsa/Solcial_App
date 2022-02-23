@@ -38,7 +38,7 @@ const Profile = ({navigation}) => {
         </TouchableOpacity>
       </View>
       <View style={styles.container__accordian}>
-        <ProfileLinks navigation={navigation} title="Edit Profile" />
+        <ProfileLinks navigation={navigation} title="Update Profile" />
         <ProfileLinks navigation={navigation} title="Store History" />
         <ProfileLinks navigation={navigation} title="Auction History" />
         <ProfileLinks navigation={navigation} title="Raffle History" />

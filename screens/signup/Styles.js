@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: 20,
+    marginTop: -15,
   },
   container__child_1: {
     width: '47%',
@@ -42,6 +42,7 @@ export const styles = StyleSheet.create({
     width: '100%',
 
     justifyContent: 'space-between',
+    marginTop: -15,
   },
   text_mobilePhone: {
     fontFamily: 'Poppins-SemiBold',

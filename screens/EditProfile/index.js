@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {
   ScrollView,
@@ -11,7 +12,6 @@ import CustomStatusBar from '../../components/CustomStatusBar';
 import {styles} from './Styles';
 import {Button} from 'react-native-paper';
 import InputField from '../../components/InputFields';
-import CountryPicker from 'react-native-country-picker-modal';
 
 import {Formik} from 'formik';
 import useEditProfile from '../../hooks/useEditProfile';
@@ -84,16 +84,18 @@ const EditProfile = ({navigation}) => {
                     </View>
                   </View>
 
-                  <InputField
-                    label="Address"
-                    selectionColor="black"
-                    onChangeText={handleChange('address')}
-                    onBlur={handleBlur('address')}
-                    value={values?.address}
-                    errors={errors?.address}
-                    inputstyle={styles.inputFields}
-                    textStyle={styles.textStyle}
-                  />
+                  <View style={{marginTop: -15}}>
+                    <InputField
+                      label="Address"
+                      selectionColor="black"
+                      onChangeText={handleChange('address')}
+                      onBlur={handleBlur('address')}
+                      value={values?.address}
+                      errors={errors?.address}
+                      inputstyle={styles.inputFields}
+                      textStyle={styles.textStyle}
+                    />
+                  </View>
                   {/* state and city */}
                   <View style={styles.container__grid}>
                     <View style={styles.container__child_1}>
@@ -151,18 +153,20 @@ const EditProfile = ({navigation}) => {
                   {/* phone number */}
                   <View style={styles.container__phoneNumber}>
                     <View style={styles.container__countryPicker}>
-                      <InputField
-                        selectionColor="black"
-                        onChangeText={handleChange('mobileNumber')}
-                        onBlur={handleBlur('mobileNumber')}
-                        value={values?.mobileNumber}
-                        errors={errors.mobileNumber}
-                        inputstyle={styles.inputFields}
-                        textStyle={styles.textStyle}
-                        label="Mobile Phone"
-                        placeholder="+18454539249"
-                        placeholderColor="gray"
-                      />
+                      <View style={{marginTop: -15}}>
+                        <InputField
+                          selectionColor="black"
+                          onChangeText={handleChange('mobileNumber')}
+                          onBlur={handleBlur('mobileNumber')}
+                          value={values?.mobileNumber}
+                          errors={errors.mobileNumber}
+                          inputstyle={styles.inputFields}
+                          textStyle={styles.textStyle}
+                          label="Mobile Phone"
+                          placeholder="+18454539249"
+                          placeholderColor="gray"
+                        />
+                      </View>
                     </View>
                   </View>
                   <Button

@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {ScrollView, Text, View} from 'react-native';
 import {Button, TouchableRipple} from 'react-native-paper';
@@ -62,36 +63,42 @@ const Signup = ({navigation}) => {
                   />
                 </View>
               </View>
-              <InputField
-                label="Email"
-                selectionColor="white"
-                onChangeText={handleChange('email')}
-                onBlur={handleBlur('email')}
-                value={values.email}
-                errors={errors.email}
-                keyboardType="email-address"
-                inputstyle={styles.inputFields}
-              />
-              <InputField
-                label="Password"
-                selectionColor="white"
-                onChangeText={handleChange('password')}
-                onBlur={handleBlur('password')}
-                value={values.password}
-                secureTextEntry={passwordIcon === 'eye' ? false : true}
-                icon={passwordIcon}
-                iconChange={changePasswordInputIcon}
-                errors={errors.password}
-              />
-              <InputField
-                label="Address"
-                selectionColor="white"
-                onChangeText={handleChange('address')}
-                onBlur={handleBlur('address')}
-                value={values.address}
-                errors={errors.address}
-                inputstyle={styles.inputFields}
-              />
+              <View style={{marginTop: -15}}>
+                <InputField
+                  label="Email"
+                  selectionColor="white"
+                  onChangeText={handleChange('email')}
+                  onBlur={handleBlur('email')}
+                  value={values.email}
+                  errors={errors.email}
+                  keyboardType="email-address"
+                  inputstyle={styles.inputFields}
+                />
+              </View>
+              <View style={{marginTop: -15}}>
+                <InputField
+                  label="Password"
+                  selectionColor="white"
+                  onChangeText={handleChange('password')}
+                  onBlur={handleBlur('password')}
+                  value={values.password}
+                  secureTextEntry={passwordIcon === 'eye' ? false : true}
+                  icon={passwordIcon}
+                  iconChange={changePasswordInputIcon}
+                  errors={errors.password}
+                />
+              </View>
+              <View style={{marginTop: -15}}>
+                <InputField
+                  label="Address"
+                  selectionColor="white"
+                  onChangeText={handleChange('address')}
+                  onBlur={handleBlur('address')}
+                  value={values.address}
+                  errors={errors.address}
+                  inputstyle={styles.inputFields}
+                />
+              </View>
               {/* state and city */}
               <View style={styles.container__grid}>
                 <View style={styles.container__child_1}>
