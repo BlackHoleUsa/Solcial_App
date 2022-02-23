@@ -35,7 +35,7 @@ const ProfileNavigator = () => {
         options={{headerShown: false}}
       />
       <Stack.Screen
-        name="Bid History"
+        name="Store History"
         component={BidHistory}
         options={{headerShown: false}}
       />
