@@ -61,6 +61,7 @@ const EditProfile = ({navigation}) => {
                     <View style={styles.container__child_1}>
                       <InputField
                         label="First Name"
+                        selectionColor="black"
                         onChangeText={handleChange('firstName')}
                         onBlur={handleBlur('firstName')}
                         value={values?.firstName}
@@ -72,6 +73,7 @@ const EditProfile = ({navigation}) => {
                     <View style={styles.container__child_2}>
                       <InputField
                         label="Last Name"
+                        selectionColor="black"
                         onChangeText={handleChange('lastName')}
                         onBlur={handleBlur('lastName')}
                         value={values?.lastName}
@@ -84,6 +86,7 @@ const EditProfile = ({navigation}) => {
 
                   <InputField
                     label="Address"
+                    selectionColor="black"
                     onChangeText={handleChange('address')}
                     onBlur={handleBlur('address')}
                     value={values?.address}
@@ -96,6 +99,7 @@ const EditProfile = ({navigation}) => {
                     <View style={styles.container__child_1}>
                       <InputField
                         label="City"
+                        selectionColor="black"
                         onChangeText={handleChange('city')}
                         onBlur={handleBlur('city')}
                         value={values?.city}
@@ -107,6 +111,7 @@ const EditProfile = ({navigation}) => {
                     <View style={styles.container__child_2}>
                       <InputField
                         label="State"
+                        selectionColor="black"
                         onChangeText={handleChange('state')}
                         onBlur={handleBlur('state')}
                         value={values?.state}
@@ -121,6 +126,7 @@ const EditProfile = ({navigation}) => {
                     <View style={styles.container__child_1}>
                       <InputField
                         label="Country"
+                        selectionColor="black"
                         onChangeText={handleChange('country')}
                         onBlur={handleBlur('country')}
                         value={values?.country}
@@ -132,6 +138,7 @@ const EditProfile = ({navigation}) => {
                     <View style={styles.container__child_2}>
                       <InputField
                         label="Zip Code"
+                        selectionColor="black"
                         onChangeText={handleChange('zipCode')}
                         onBlur={handleBlur('zipCode')}
                         value={values?.zipCode}
@@ -145,6 +152,7 @@ const EditProfile = ({navigation}) => {
                   <View style={styles.container__phoneNumber}>
                     <View style={styles.container__countryPicker}>
                       <InputField
+                        selectionColor="black"
                         onChangeText={handleChange('mobileNumber')}
                         onBlur={handleBlur('mobileNumber')}
                         value={values?.mobileNumber}
@@ -167,7 +175,7 @@ const EditProfile = ({navigation}) => {
                       color: 'white',
                       fontFamily: 'Poppins-Regular',
                     }}>
-                    Edit Profile
+                    Update Profile
                   </Button>
                 </>
               )}

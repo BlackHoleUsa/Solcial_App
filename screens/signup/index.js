@@ -42,6 +42,7 @@ const Signup = ({navigation}) => {
                 <View style={styles.container__child_1}>
                   <InputField
                     label="First Name"
+                    selectionColor="white"
                     onChangeText={handleChange('firstName')}
                     onBlur={handleBlur('firstName')}
                     value={values.firstName}
@@ -52,6 +53,7 @@ const Signup = ({navigation}) => {
                 <View style={styles.container__child_2}>
                   <InputField
                     label="Last Name"
+                    selectionColor="white"
                     onChangeText={handleChange('lastName')}
                     onBlur={handleBlur('lastName')}
                     value={values.lastName}
@@ -62,6 +64,7 @@ const Signup = ({navigation}) => {
               </View>
               <InputField
                 label="Email"
+                selectionColor="white"
                 onChangeText={handleChange('email')}
                 onBlur={handleBlur('email')}
                 value={values.email}
@@ -71,6 +74,7 @@ const Signup = ({navigation}) => {
               />
               <InputField
                 label="Password"
+                selectionColor="white"
                 onChangeText={handleChange('password')}
                 onBlur={handleBlur('password')}
                 value={values.password}
@@ -81,6 +85,7 @@ const Signup = ({navigation}) => {
               />
               <InputField
                 label="Address"
+                selectionColor="white"
                 onChangeText={handleChange('address')}
                 onBlur={handleBlur('address')}
                 value={values.address}
@@ -92,6 +97,7 @@ const Signup = ({navigation}) => {
                 <View style={styles.container__child_1}>
                   <InputField
                     label="City"
+                    selectionColor="white"
                     onChangeText={handleChange('city')}
                     onBlur={handleBlur('city')}
                     value={values.city}
@@ -102,6 +108,7 @@ const Signup = ({navigation}) => {
                 <View style={styles.container__child_2}>
                   <InputField
                     label="State"
+                    selectionColor="white"
                     onChangeText={handleChange('state')}
                     onBlur={handleBlur('state')}
                     value={values.state}
@@ -115,6 +122,7 @@ const Signup = ({navigation}) => {
                 <View style={styles.container__child_1}>
                   <InputField
                     label="Country"
+                    selectionColor="white"
                     onChangeText={handleChange('country')}
                     onBlur={handleBlur('country')}
                     value={values.country}
@@ -125,6 +133,7 @@ const Signup = ({navigation}) => {
                 <View style={styles.container__child_2}>
                   <InputField
                     label="Zip Code"
+                    selectionColor="white"
                     onChangeText={handleChange('zipCode')}
                     onBlur={handleBlur('zipCode')}
                     value={values.zipCode}
@@ -138,6 +147,7 @@ const Signup = ({navigation}) => {
               <View style={styles.container__phoneNumber}>
                 <View style={styles.container__countryPicker}>
                   <InputField
+                    selectionColor="white"
                     onChangeText={handleChange('mobileNumber')}
                     onBlur={handleBlur('mobileNumber')}
                     value={values.mobileNumber}
