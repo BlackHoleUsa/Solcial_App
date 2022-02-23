@@ -32,7 +32,7 @@ const Profile = ({navigation}) => {
       <View style={styles.container__logout}>
         <TouchableOpacity onPress={() => dispatch(setLogout())}>
           <View style={styles.container__button__logout}>
-            <Icons name="logout" size={40} color={'black'} />
+            <Icons name="logout" size={30} color={'black'} />
             <Text style={styles.text__logout}>Logout</Text>
           </View>
         </TouchableOpacity>

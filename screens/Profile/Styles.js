@@ -1,4 +1,4 @@
-import {Platform, StyleSheet} from 'react-native';
+import {StyleSheet} from 'react-native';
 import {fontWeights} from '../../assets/Data';
 export const styles = StyleSheet.create({
   container__main: {
@@ -30,7 +30,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     position: 'absolute',
-    bottom: 40,
+    bottom: 30,
     backgroundColor: '#73529B',
     borderColor: '#73529B',
   },
@@ -38,14 +38,14 @@ export const styles = StyleSheet.create({
     fontFamily: 'Poppins-SemiBold',
     fontWeight: fontWeights.semibold,
     color: 'white',
-    fontSize: 40,
+    fontSize: 30,
     textTransform: 'capitalize',
   },
   text__email: {
     fontFamily: 'Poppins-Medium',
     fontWeight: fontWeights.medium,
     color: 'black',
-    fontSize: 20,
+    fontSize: 15,
     marginTop: 35,
   },
   container__logout: {
@@ -62,6 +62,6 @@ export const styles = StyleSheet.create({
     fontFamily: 'Poppins-Medium',
     fontWeight: fontWeights.medium,
     color: 'black',
-    fontSize: 15,
+    fontSize: 10,
   },
 });

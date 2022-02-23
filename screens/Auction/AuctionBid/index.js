@@ -42,6 +42,7 @@ export default function AuctionBid({
             <>
               <InputField
                 label="Auction Amount"
+                selectionColor="black"
                 textStyle={styles.text__lableStyle}
                 onChangeText={handleChange('bid')}
                 onBlur={handleBlur('bid')}
