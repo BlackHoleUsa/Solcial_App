@@ -22,7 +22,7 @@ const useNotifications = navigation => {
         setIsLoading(false);
 
         setData(response.data.data);
-        console.log(response.data.data);
+        // console.log(response.data.data);
         setListRefresh(false);
       }
     } catch (error) {

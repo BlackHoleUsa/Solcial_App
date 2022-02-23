@@ -15,7 +15,6 @@ const useAuctionBid = (highestBid, navigation) => {
       .number()
       .typeError('Must be a number')
       .required('Required')
-      .integer()
       .min(highestBid + 1, `Must be greater than ${highestBid}`),
   });
 

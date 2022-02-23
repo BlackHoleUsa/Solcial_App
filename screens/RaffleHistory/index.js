@@ -28,7 +28,7 @@ export default function RaffleHistory() {
               horizontal={false}
               keyExtractor={item => item._id}
               ListFooterComponent={<View></View>}
-              ListFooterComponentStyle={{marginVertical: 50}}
+              ListFooterComponentStyle={{marginVertical: 150}}
               renderItem={({item}) => <SingleNotification item={item} />}
             />
           </View>

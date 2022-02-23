@@ -3,21 +3,25 @@ import {Text, TouchableOpacity, View} from 'react-native';
 import {styles} from './Styles';
 import Icons from 'react-native-vector-icons/Entypo';
 const SingleNotification = ({item, showModal, setAmount, setId}) => {
-  if (item.type === 'auctionWin') {
-    // split the string by space
-    const data = item.message.split(' ');
+  const handleAmount = () => {
+    if (item.type === 'auctionWin') {
+      // split the string by space
+      const data = item.message.split(' ');
 
-    if (data.indexOf('amount') > 0) {
-      setAmount(data[data.indexOf('amount') + 1]);
-      setId(item.extraData.Auction._id);
+      if (data.indexOf('amount') > 0) {
+        setAmount(data[data.indexOf('amount') + 1].slice(0, -1));
+        setId(item.extraData.Auction._id);
+        showModal();
+      }
     }
-  }
+  };
+
   return (
     <TouchableOpacity
       style={styles.container__main}
       onPress={() => {
         if (item.type === 'auctionWin') {
-          showModal();
+          handleAmount();
         }
       }}>
       <View style={styles.container__icon}>
