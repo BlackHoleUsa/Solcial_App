@@ -6,10 +6,9 @@ const InputField = props => {
   return (
     <View style={[styles.container__main, props.style]}>
       <Text style={[styles.text__input, props.textStyle]}>{props.label}</Text>
-      <View style={styles.container__input}>
+      <View style={[styles.container__input, props.container]}>
         <TextInput
           style={[styles.input, props.inputstyle]}
-          selectionColor="white"
           placeholder={props.placeholder}
           placeholderTextColor={
             props.placeholderColor ? props.placeholderColor : 'white'

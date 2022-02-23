@@ -42,6 +42,7 @@ const Login = ({navigation}) => {
               <>
                 <InputField
                   label="Email"
+                  selectionColor="white"
                   onChangeText={handleChange('email')}
                   onBlur={handleBlur('email')}
                   value={values.email}
@@ -56,6 +57,7 @@ const Login = ({navigation}) => {
                   onBlur={handleBlur('password')}
                   value={values.password}
                   placeholder="******       "
+                  selectionColor="white"
                   secureTextEntry={passwordIcon === 'eye' ? false : true}
                   icon={passwordIcon}
                   iconChange={changePasswordInputIcon}

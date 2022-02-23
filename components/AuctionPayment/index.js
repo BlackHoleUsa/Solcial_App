@@ -71,6 +71,7 @@ export default function AuctionPayment({
                     inputstyle={styles.text__card}
                     placeholder="4242424242424242"
                     placeholderColor="gray"
+                    selectionColor="black"
                     onChangeText={handleChange('cardNumber')}
                     onBlur={handleBlur('cardNumber')}
                     value={values.cardNumber}
@@ -92,7 +93,7 @@ export default function AuctionPayment({
                         ]}>
                         <View style={styles.input__fields}>
                           <TextInput
-                            selectionColor="white"
+                            selectionColor="black"
                             placeholderTextColor="gray"
                             textBreakStrategy="highQuality"
                             placeholder="12"
@@ -112,7 +113,7 @@ export default function AuctionPayment({
                         </View>
                         <View style={styles.input__fields}>
                           <TextInput
-                            selectionColor="white"
+                            selectionColor="black"
                             placeholderTextColor="gray"
                             textBreakStrategy="highQuality"
                             placeholder="2023"
@@ -128,7 +129,7 @@ export default function AuctionPayment({
                     <View style={styles.container__cvc}>
                       <Text style={styles.text__input}>CVC</Text>
                       <TextInput
-                        selectionColor="white"
+                        selectionColor="black"
                         placeholderTextColor="gray"
                         textBreakStrategy="highQuality"
                         placeholder="123"

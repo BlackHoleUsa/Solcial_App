@@ -65,6 +65,7 @@ export default function RafflePayment({
                     label="Card"
                     icon="ios-card-outline"
                     iconColorBlack
+                    selectionColor="black"
                     textStyle={styles.text__card}
                     inputstyle={styles.text__card}
                     placeholder="4242424242424242"
@@ -90,7 +91,7 @@ export default function RafflePayment({
                         ]}>
                         <View style={styles.input__fields}>
                           <TextInput
-                            selectionColor="white"
+                            selectionColor="black"
                             placeholderTextColor="gray"
                             textBreakStrategy="highQuality"
                             placeholder="12"
@@ -110,7 +111,7 @@ export default function RafflePayment({
                         </View>
                         <View style={styles.input__fields}>
                           <TextInput
-                            selectionColor="white"
+                            selectionColor="black"
                             placeholderTextColor="gray"
                             textBreakStrategy="highQuality"
                             placeholder="2023"
@@ -126,7 +127,7 @@ export default function RafflePayment({
                     <View style={styles.container__cvc}>
                       <Text style={styles.text__input}>CVC</Text>
                       <TextInput
-                        selectionColor="white"
+                        selectionColor="black"
                         placeholderTextColor="gray"
                         textBreakStrategy="highQuality"
                         placeholder="123"

@@ -6,11 +6,13 @@ export const styles = StyleSheet.create({
     padding: 20,
     width: '100%',
     position: 'relative',
+    paddingTop: 40,
+    paddingHorizontal: 25,
   },
   container__cross: {
     position: 'absolute',
     top: 2,
-    right: 2,
+    right: 20,
   },
   text__card: {
     color: 'black',
@@ -71,10 +73,12 @@ export const styles = StyleSheet.create({
     borderColor: 'black',
     textAlign: 'center',
     flexGrow: 1,
+    color: 'black',
   },
   input__style: {
     width: '100%',
     textAlign: 'center',
+    color: 'black',
   },
   button__payment: {
     marginTop: 20,

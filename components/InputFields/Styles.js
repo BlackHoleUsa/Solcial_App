@@ -16,12 +16,13 @@ export const styles = StyleSheet.create({
   },
 
   input: {
-    height: 20,
-    margin: 10,
+    // height: 20,
+    // margin: 10,
 
     color: 'white',
-    padding: 10,
-    paddingVertical: 0,
+    // padding: 10,
+    paddingVertical: 8,
+    paddingHorizontal: 10,
     fontFamily: 'Poppins-Regular',
     textAlign: 'left',
     width: '80%',

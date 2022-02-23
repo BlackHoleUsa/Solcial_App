@@ -14,7 +14,6 @@ import useStorePayment from '../../hooks/useStorePayment';
 import {styles} from './Styles';
 import {Button} from 'react-native-paper';
 import InputField from '../InputFields';
-import {number} from 'yup/lib/locale';
 
 export default function StorePayment({visible, hideModal, amount, navigation}) {
   const {
@@ -68,6 +67,7 @@ export default function StorePayment({visible, hideModal, amount, navigation}) {
                   label="Card"
                   icon="ios-card-outline"
                   iconColorBlack
+                  selectionColor="black"
                   textStyle={styles.text__card}
                   inputstyle={styles.text__card}
                   placeholder="4242424242424242"
@@ -93,7 +93,7 @@ export default function StorePayment({visible, hideModal, amount, navigation}) {
                       ]}>
                       <View style={styles.input__fields}>
                         <TextInput
-                          selectionColor="white"
+                          selectionColor="black"
                           placeholderTextColor="gray"
                           textBreakStrategy="highQuality"
                           placeholder="12"
@@ -109,7 +109,7 @@ export default function StorePayment({visible, hideModal, amount, navigation}) {
                       </View>
                       <View style={styles.input__fields}>
                         <TextInput
-                          selectionColor="white"
+                          selectionColor="black"
                           placeholderTextColor="gray"
                           textBreakStrategy="highQuality"
                           placeholder="2023"
@@ -125,7 +125,7 @@ export default function StorePayment({visible, hideModal, amount, navigation}) {
                   <View style={styles.container__cvc}>
                     <Text style={styles.text__input}>CVC</Text>
                     <TextInput
-                      selectionColor="white"
+                      selectionColor="black"
                       placeholderTextColor="gray"
                       textBreakStrategy="highQuality"
                       placeholder="123"

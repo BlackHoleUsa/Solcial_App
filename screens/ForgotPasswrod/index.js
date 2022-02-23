@@ -43,6 +43,7 @@ const ForgotPassword = ({navigation}) => {
                   onBlur={handleBlur('user_email')}
                   value={values.user_email}
                   errors={errors.user_email}
+                  selectionColor="white"
                 />
                 <Button
                   mode="contained"
@@ -83,6 +84,7 @@ const ForgotPassword = ({navigation}) => {
                   onBlur={handleBlur('email')}
                   value={values.email}
                   errors={errors.email}
+                  selectionColor="white"
                 />
                 <Text style={styles.text__otp}>
                   Enter the OTP sent to your email
@@ -96,6 +98,7 @@ const ForgotPassword = ({navigation}) => {
                       value={values.otp1}
                       errors={errors.otp1}
                       keyboardType="numeric"
+                      selectionColor="white"
                     />
                   </View>
                   <View style={styles.input}>
@@ -106,6 +109,7 @@ const ForgotPassword = ({navigation}) => {
                       value={values.otp2}
                       errors={errors.otp2}
                       keyboardType="numeric"
+                      selectionColor="white"
                     />
                   </View>
                   <View style={styles.input}>
@@ -116,6 +120,7 @@ const ForgotPassword = ({navigation}) => {
                       value={values.otp3}
                       errors={errors.otp3}
                       keyboardType="numeric"
+                      selectionColor="white"
                     />
                   </View>
                   <View style={styles.input}>
@@ -126,6 +131,7 @@ const ForgotPassword = ({navigation}) => {
                       value={values.otp4}
                       errors={errors.otp4}
                       keyboardType="numeric"
+                      selectionColor="white"
                     />
                   </View>
                 </View>
@@ -139,6 +145,7 @@ const ForgotPassword = ({navigation}) => {
                   icon={passwordIcon}
                   iconChange={changePasswordInputIcon}
                   errors={errors.password}
+                  selectionColor="white"
                 />
                 <Button
                   mode="contained"
