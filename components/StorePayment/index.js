@@ -91,35 +91,34 @@ export default function StorePayment({visible, hideModal, amount, navigation}) {
                               : 'black',
                         },
                       ]}>
-                      <View style={styles.input__fields}>
-                        <TextInput
-                          selectionColor="black"
-                          placeholderTextColor="gray"
-                          textBreakStrategy="highQuality"
-                          placeholder="12"
-                          style={styles.input__style}
-                          keyboardType="number-pad"
-                          onChangeText={handleChange('cardExpMonth')}
-                          onBlur={handleBlur('cardExpMonth')}
-                          value={values.cardExpMonth}
-                        />
-                      </View>
+                      {/* <View style={styles.input__fields}></View> */}
+                      <TextInput
+                        selectionColor="black"
+                        placeholderTextColor="gray"
+                        textBreakStrategy="highQuality"
+                        placeholder="12"
+                        style={styles.input__style}
+                        keyboardType="number-pad"
+                        onChangeText={handleChange('cardExpMonth')}
+                        onBlur={handleBlur('cardExpMonth')}
+                        value={values.cardExpMonth}
+                      />
+
                       <View>
                         <Icons name="slash-forward" size={25} color={'black'} />
                       </View>
-                      <View style={styles.input__fields}>
-                        <TextInput
-                          selectionColor="black"
-                          placeholderTextColor="gray"
-                          textBreakStrategy="highQuality"
-                          placeholder="2023"
-                          style={styles.input__style}
-                          keyboardType="number-pad"
-                          onChangeText={handleChange('cardExpYear')}
-                          onBlur={handleBlur('cardExpYear')}
-                          value={values.cardExpYear}
-                        />
-                      </View>
+                      {/* <View style={styles.input__fields}></View> */}
+                      <TextInput
+                        selectionColor="black"
+                        placeholderTextColor="gray"
+                        textBreakStrategy="highQuality"
+                        placeholder="2023"
+                        style={styles.input__style}
+                        keyboardType="number-pad"
+                        onChangeText={handleChange('cardExpYear')}
+                        onBlur={handleBlur('cardExpYear')}
+                        value={values.cardExpYear}
+                      />
                     </View>
                   </View>
                   <View style={styles.container__cvc}>

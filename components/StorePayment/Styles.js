@@ -48,6 +48,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
+    padding: 5,
   },
   input__fields: {
     // textAlign: 'center',
@@ -65,7 +66,7 @@ export const styles = StyleSheet.create({
   container__cvc: {
     justifyContent: 'center',
     alignItems: 'flex-start',
-    width: '40%',
+    width: Platform.OS === 'ios' ? '30%' : '40%',
   },
   input__cvc: {
     width: '100%',
@@ -76,9 +77,10 @@ export const styles = StyleSheet.create({
     color: 'black',
   },
   input__style: {
-    width: '100%',
+    width: '40%',
     textAlign: 'center',
     color: 'black',
+    paddingVertical: Platform.OS === 'ios' ? 10 : 5,
   },
   button__payment: {
     marginTop: 20,

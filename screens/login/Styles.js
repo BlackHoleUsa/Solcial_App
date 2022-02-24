@@ -3,7 +3,7 @@ export const styles = StyleSheet.create({
   login__container: {
     flex: 1,
 
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     alignItems: 'center',
   },
   text: {
@@ -26,7 +26,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'flex-start',
 
-    flexGrow: 2,
+    flexGrow: 0,
     marginVertical: 10,
   },
   text__signup: {
@@ -44,7 +44,7 @@ export const styles = StyleSheet.create({
   },
   secondary__container: {
     width: '100%',
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 20,
   },

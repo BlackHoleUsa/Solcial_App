@@ -18,13 +18,14 @@ const InputField = props => {
           {...props}
         />
         {props.icon ? (
-          <Icons
-            name={props.icon}
-            size={25}
-            color={props.iconColorBlack ? 'black' : 'white'}
-            style={styles.icon}
-            onPress={props.iconChange}
-          />
+          <View style={styles.icon}>
+            <Icons
+              name={props.icon}
+              size={25}
+              color={props.iconColorBlack ? 'black' : 'white'}
+              onPress={props.iconChange}
+            />
+          </View>
         ) : null}
       </View>
       <View style={{height: 15}}>

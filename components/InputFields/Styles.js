@@ -35,7 +35,10 @@ export const styles = StyleSheet.create({
   },
   icon: {
     marginHorizontal: 5,
-    width: '10%',
+    width: '20%',
+
+    justifyContent: 'center',
+    alignItems: 'flex-end',
   },
   text__errors: {
     fontSize: 12,

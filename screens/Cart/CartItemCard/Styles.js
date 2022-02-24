@@ -52,13 +52,18 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     width: 100,
     borderColor: 'black',
-    paddingHorizontal: 10,
+    paddingHorizontal: 5,
     paddingVertical: 3,
   },
   quantity__button: {
-    padding: 2,
+    padding: 0,
     margin: 0,
     textAlign: 'center',
+
+    // height: '100%',
+    width: '40%',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   text__quantity: {
     fontFamily: 'Poppins-Medium',

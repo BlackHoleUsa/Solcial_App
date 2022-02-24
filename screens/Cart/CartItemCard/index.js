@@ -27,13 +27,13 @@ const CartItemCard = ({navigation, item}) => {
               <TouchableOpacity
                 style={styles.quantity__button}
                 onPress={() => removeQty()}>
-                <Icons name="minus" size={10} color="black" />
+                <Icons name="minus" size={15} color="black" />
               </TouchableOpacity>
               <Text style={styles.text__quantity}>{item.qty}</Text>
               <TouchableOpacity
                 style={styles.quantity__button}
                 onPress={() => addQty()}>
-                <Icons name="plus" size={10} color="black" />
+                <Icons name="plus" size={15} color="black" />
               </TouchableOpacity>
             </View>
           </View>

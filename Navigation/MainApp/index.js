@@ -27,12 +27,12 @@ const Tab = createBottomTabNavigator();
 const CustomTabbarButtom = ({children, onPress}) => {
   const handleOpenMetamask = async () => {
     const url = 'https://metamask.app.link/dapp/solecialnft.app/';
-    const url2 = 'metamask://';
+    // const url2 = 'metamask://';
 
     try {
-      if (await Linking.openURL(url2)) {
-        await Linking.openURL(url);
-      }
+      await Linking.openURL(url);
+      // if (await Linking.openURL(url2)) {
+      // }
     } catch (error) {
       if (error) {
         console.log(error);
