@@ -34,11 +34,12 @@ export const styles = StyleSheet.create({
     fontWeight: Platform.OS === 'ios' ? '600' : 'normal',
   },
   icon: {
-    marginHorizontal: 5,
+    marginHorizontal: 0,
     width: '20%',
 
     justifyContent: 'center',
     alignItems: 'flex-end',
+    paddingRight: 4,
   },
   text__errors: {
     fontSize: 12,

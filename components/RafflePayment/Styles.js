@@ -13,7 +13,6 @@ export const styles = StyleSheet.create({
     position: 'absolute',
     top: 2,
     right: 20,
-    backgroundColor: 'white',
   },
   text__card: {
     color: 'black',
@@ -49,14 +48,14 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
+    padding: 5,
   },
   input__fields: {
     // textAlign: 'center',
     // width: '40%',
-    // justifyContent: 'flex-start',
+    // justifyContent: 'center',
     // flexGrow: 1,
-    // alignItems: 'flex-start',
-    // backgroundColor: 'yellow',
+    // alignItems: 'center',
   },
   text__input: {
     color: 'black',
@@ -67,7 +66,7 @@ export const styles = StyleSheet.create({
   container__cvc: {
     justifyContent: 'center',
     alignItems: 'flex-start',
-    width: '40%',
+    width: Platform.OS === 'ios' ? '30%' : '40%',
   },
   input__cvc: {
     width: '100%',
@@ -78,10 +77,10 @@ export const styles = StyleSheet.create({
     color: 'black',
   },
   input__style: {
-    width: '100%',
+    width: '40%',
     textAlign: 'center',
-    flexGrow: 1,
     color: 'black',
+    paddingVertical: Platform.OS === 'ios' ? 10 : 5,
   },
   button__payment: {
     marginTop: 20,
@@ -93,8 +92,10 @@ export const styles = StyleSheet.create({
     fontFamily: 'Poppins-Regular',
     color: '#ff002d',
   },
-  container__errors: {
+  container__errros: {
     width: '100%',
+    height: 100,
+    paddingVertical: 20,
   },
   text__errors__2: {
     color: 'red',

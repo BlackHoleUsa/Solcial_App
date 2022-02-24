@@ -17,16 +17,16 @@ const InputField = props => {
           secureTextEntry={props.secureTextEntry}
           {...props}
         />
-        {props.icon ? (
-          <View style={styles.icon}>
+        <View style={styles.icon}>
+          {props.icon ? (
             <Icons
               name={props.icon}
               size={25}
               color={props.iconColorBlack ? 'black' : 'white'}
               onPress={props.iconChange}
             />
-          </View>
-        ) : null}
+          ) : null}
+        </View>
       </View>
       <View style={{height: 15}}>
         {props.errors ? (

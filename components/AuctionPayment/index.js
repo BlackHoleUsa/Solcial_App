@@ -67,11 +67,11 @@ export default function AuctionPayment({
                     label="Card"
                     icon="ios-card-outline"
                     iconColorBlack
+                    selectionColor="black"
                     textStyle={styles.text__card}
                     inputstyle={styles.text__card}
                     placeholder="4242424242424242"
                     placeholderColor="gray"
-                    selectionColor="black"
                     onChangeText={handleChange('cardNumber')}
                     onBlur={handleBlur('cardNumber')}
                     value={values.cardNumber}
@@ -91,19 +91,19 @@ export default function AuctionPayment({
                                 : 'black',
                           },
                         ]}>
-                        <View style={styles.input__fields}>
-                          <TextInput
-                            selectionColor="black"
-                            placeholderTextColor="gray"
-                            textBreakStrategy="highQuality"
-                            placeholder="12"
-                            style={styles.input__style}
-                            keyboardType="number-pad"
-                            onChangeText={handleChange('cardExpMonth')}
-                            onBlur={handleBlur('cardExpMonth')}
-                            value={values.cardExpMonth}
-                          />
-                        </View>
+                        {/* <View style={styles.input__fields}></View> */}
+                        <TextInput
+                          selectionColor="black"
+                          placeholderTextColor="gray"
+                          textBreakStrategy="highQuality"
+                          placeholder="12"
+                          style={styles.input__style}
+                          keyboardType="number-pad"
+                          onChangeText={handleChange('cardExpMonth')}
+                          onBlur={handleBlur('cardExpMonth')}
+                          value={values.cardExpMonth}
+                        />
+
                         <View>
                           <Icons
                             name="slash-forward"
@@ -111,19 +111,18 @@ export default function AuctionPayment({
                             color={'black'}
                           />
                         </View>
-                        <View style={styles.input__fields}>
-                          <TextInput
-                            selectionColor="black"
-                            placeholderTextColor="gray"
-                            textBreakStrategy="highQuality"
-                            placeholder="2023"
-                            style={styles.input__style}
-                            keyboardType="number-pad"
-                            onChangeText={handleChange('cardExpYear')}
-                            onBlur={handleBlur('cardExpYear')}
-                            value={values.cardExpYear}
-                          />
-                        </View>
+                        {/* <View style={styles.input__fields}></View> */}
+                        <TextInput
+                          selectionColor="black"
+                          placeholderTextColor="gray"
+                          textBreakStrategy="highQuality"
+                          placeholder="2023"
+                          style={styles.input__style}
+                          keyboardType="number-pad"
+                          onChangeText={handleChange('cardExpYear')}
+                          onBlur={handleBlur('cardExpYear')}
+                          value={values.cardExpYear}
+                        />
                       </View>
                     </View>
                     <View style={styles.container__cvc}>

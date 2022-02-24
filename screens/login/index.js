@@ -40,7 +40,7 @@ const Login = ({navigation}) => {
               isValid,
             }) => (
               <>
-                <View style={{marginTop: -15, width: '100%'}}>
+                <View style={{marginTop: -15}}>
                   <InputField
                     label="Email"
                     selectionColor="white"
@@ -52,7 +52,7 @@ const Login = ({navigation}) => {
                     errors={errors.email}
                   />
                 </View>
-                <View style={{marginTop: -15, width: '100%'}}>
+                <View style={{marginTop: -15}}>
                   <InputField
                     label="Password"
                     onChangeText={handleChange('password')}
