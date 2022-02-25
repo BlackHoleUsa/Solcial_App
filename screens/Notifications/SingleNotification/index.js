@@ -4,15 +4,16 @@ import {styles} from './Styles';
 import Icons from 'react-native-vector-icons/Entypo';
 const SingleNotification = ({item, showModal, setAmount, setId}) => {
   const handleAmount = () => {
-    if (item.type === 'auctionWin') {
-      // split the string by space
-      const data = item.message.split(' ');
+    if (!item.extraData.Auction.payable) {
+      showModal();
+    }
 
-      if (data.indexOf('amount') > 0) {
-        setAmount(data[data.indexOf('amount') + 1].slice(0, -1));
-        setId(item.extraData.Auction._id);
-        showModal();
-      }
+    // split the string by space
+    const data = item.message.split(' ');
+
+    if (data.indexOf('amount') > 0) {
+      setAmount(data[data.indexOf('amount') + 1].slice(0, -1));
+      setId(item.extraData.Auction._id);
     }
   };
 
@@ -28,7 +29,7 @@ const SingleNotification = ({item, showModal, setAmount, setId}) => {
         <Icons name="dot-single" size={50} color="blue" />
       </View>
       <View style={styles.container__text}>
-        <Text style={styles.text__notification}>{item.message}</Text>
+        <Text style={styles.text__notification}>{item?.message}</Text>
       </View>
     </TouchableOpacity>
   );

@@ -26,7 +26,7 @@ export default function BidHistory() {
             <FlatList
               data={data}
               horizontal={false}
-              keyExtractor={item => item._id}
+              keyExtractor={item => item.id}
               ListFooterComponent={<View></View>}
               ListFooterComponentStyle={{marginVertical: 50}}
               renderItem={({item}) => <StoreHistoryItem item={item} />}

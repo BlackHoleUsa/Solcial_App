@@ -11,7 +11,7 @@ const Stack = createNativeStackNavigator();
 const ProfileNavigator = () => {
   return (
     <Stack.Navigator
-      initialRouteName="Profile"
+      initialRouteName="Profile Screen"
       screenOptions={({route}) => ({
         tabBarStyle: {
           backgroundColor: 'black',

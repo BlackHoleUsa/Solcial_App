@@ -41,7 +41,7 @@ const Notifications = ({navigation}) => {
               refreshing={listRefresh}
               data={data}
               horizontal={false}
-              keyExtractor={item => item._id}
+              keyExtractor={item => item.id}
               ListFooterComponent={<View></View>}
               ListFooterComponentStyle={{marginVertical: 50}}
               renderItem={({item}) => (
