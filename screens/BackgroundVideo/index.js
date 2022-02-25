@@ -1,8 +1,9 @@
-import React from 'react';
-import {Alert, View} from 'react-native';
+import React, {useState} from 'react';
+import {Alert, View, ActivityIndicator} from 'react-native';
 import Video from 'react-native-video';
 import {styles} from './Styles';
 const BackgroundVideo = ({children, video}) => {
+  const [loading, setLoading] = useState(false);
   // console.log('video', video);
   // 'http://www.exit109.com/~dnn/clips/RW20seconds_1.mp4'
   return (
@@ -18,8 +19,15 @@ const BackgroundVideo = ({children, video}) => {
         ignoreSilentSwitch={'obey'}
         pictureInPicture={true}
         style={styles.container__video}
+        onLoadStart={() => setLoading(true)}
+        onReadyForDisplay={() => setLoading(false)}
       />
-      {children}
+      {loading ? (
+        <View style={styles.container__loader}>
+          <ActivityIndicator size="large" color="white" />
+        </View>
+      ) : null}
+      <>{children}</>
     </View>
   );
 };

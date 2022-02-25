@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
     height: height,
     flex: 1,
     backgroundColor: '#6C589F',
+    position: 'relative',
   },
   container__video: {
     width: '100%',
@@ -17,5 +18,15 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     bottom: 0,
     right: 0,
+  },
+  container__loader: {
+    width: '100%',
+    // height: '100%',
+
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
+    top: '50%',
+    // left: '50%',
   },
 });
