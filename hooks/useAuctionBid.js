@@ -9,7 +9,7 @@ const useAuctionBid = (highestBid, navigation) => {
   const [isLoading, setIsLoading] = useState(false);
   const bidder = useSelector(state => state.userInfo.id);
   const Token = useSelector(state => state.userInfo.authToken);
-  const auction = useSelector(state => state.selectedAuctionItem._id);
+  const auction = useSelector(state => state.selectedAuctionItem.id);
   const bidValidationSchema = yup.object().shape({
     bid: yup
       .number()
