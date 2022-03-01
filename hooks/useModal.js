@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 
 const useModal = () => {
-  const [visible, setVisible] = React.useState(false);
+  const [visible, setVisible] = useState(false);
 
   const showModal = () => setVisible(true);
   const hideModal = () => setVisible(false);

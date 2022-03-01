@@ -1,5 +1,5 @@
-import {Platform, StyleSheet, Dimensions} from 'react-native';
-import {fontWeights} from '../../assets/Data';
+import {StyleSheet} from 'react-native';
+
 export const styles = StyleSheet.create({
   container__main: {
     width: '100%',

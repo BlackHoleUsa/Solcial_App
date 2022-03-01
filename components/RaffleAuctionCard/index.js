@@ -4,7 +4,7 @@ import {styles} from './Styles';
 
 import {Button} from 'react-native-paper';
 import Icons from 'react-native-vector-icons/Ionicons';
-import {useDispatch, useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
 
 import {
   setSelectedAuctionItem,

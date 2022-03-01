@@ -12,7 +12,6 @@ import {
   StyleSheet,
   Linking,
   Alert,
-  Platform,
 } from 'react-native';
 import Icons from 'react-native-vector-icons/Ionicons';
 import Cart from '../../screens/Cart';

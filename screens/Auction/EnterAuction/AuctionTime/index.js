@@ -3,7 +3,7 @@ import {View, Text} from 'react-native';
 import {styles} from './Styles';
 import useAuctionTime from '../../../../hooks/useAuctionTime';
 const AuctionTime = ({endTime, setEndAuction}) => {
-  const {day, hour, min, sec} = useAuctionTime(endTime);
+  const {day, hour, min} = useAuctionTime(endTime);
   if (day < 0 || hour < 0 || min < 0) {
     setEndAuction(true);
   } else {

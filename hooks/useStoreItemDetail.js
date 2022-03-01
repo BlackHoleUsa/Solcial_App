@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {Alert} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {setCartItem} from '../redux/actions/actions';

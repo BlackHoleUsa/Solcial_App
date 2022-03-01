@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import {useState, useEffect} from 'react';
+import {useSelector} from 'react-redux';
 import {apiRoutes, API_URL} from '../utilities/apiRoutes';
 import axios from 'axios';
 import {Alert} from 'react-native';

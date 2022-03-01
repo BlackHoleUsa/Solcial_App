@@ -12,7 +12,7 @@ const Raffle = ({navigation}) => {
     listRefresh,
     data,
     setListRefresh,
-    setItem,
+
     displayedData,
     setDisplayedData,
   } = useRaffle(navigation);

@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import {useState, useEffect} from 'react';
+import {useSelector} from 'react-redux';
 import {useIsFocused} from '@react-navigation/native';
 import {API_URL, apiRoutes} from '../utilities/apiRoutes';
 import axios from 'axios';

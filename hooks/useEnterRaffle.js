@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {useSelector} from 'react-redux';
 const useEnterRaffle = () => {
   const selectedRaffleItem = useSelector(state => state.selectedRaffleItem);

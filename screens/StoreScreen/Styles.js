@@ -1,5 +1,5 @@
-import {Platform, StyleSheet} from 'react-native';
-import {fontWeights} from '../../assets/Data';
+import {StyleSheet} from 'react-native';
+
 export const styles = StyleSheet.create({
   container__main: {
     paddingHorizontal: 10,

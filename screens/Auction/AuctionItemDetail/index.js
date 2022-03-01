@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {View} from 'react-native';
 import BackgroundVideo from '../../BackgroundVideo';
 import {styles} from './Styles';
 import Icons from 'react-native-vector-icons/Ionicons';

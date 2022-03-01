@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import {useState, useRef} from 'react';
 import {Animated} from 'react-native';
 import {MAX_WIDTH} from '../screens/StoreScreen/StoreItemDetail/Carousel/Styles';
 const useCarousel = images => {

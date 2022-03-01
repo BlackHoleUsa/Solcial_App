@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Alert, View, ActivityIndicator} from 'react-native';
+import {View, ActivityIndicator} from 'react-native';
 import Video from 'react-native-video';
 import {styles} from './Styles';
 const BackgroundVideo = ({children, video}) => {

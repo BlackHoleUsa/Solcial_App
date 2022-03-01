@@ -2,14 +2,9 @@ import React from 'react';
 import {Text, View, Image, TouchableOpacity} from 'react-native';
 import {styles} from './Styles';
 
-import Icons from 'react-native-vector-icons/Ionicons';
-
 import useStoreCard from '../../hooks/useStoreCard';
 const StoreCard = ({navigation, item}) => {
-  const {cartIcon, addToCart, handleNavigation} = useStoreCard(
-    navigation,
-    item,
-  );
+  const {handleNavigation} = useStoreCard(navigation, item);
 
   return (
     <View style={styles.container__main}>

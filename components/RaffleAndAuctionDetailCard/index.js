@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Image, Text, TouchableOpacity, View, ScrollView} from 'react-native';
 import {styles} from './Styles';
-import {Images} from '../../assets/images';
+
 import Icons from 'react-native-vector-icons/Ionicons';
 
 const RaffleAndAuctionDetailCard = ({
