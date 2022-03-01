@@ -45,14 +45,12 @@ export const styles = StyleSheet.create({
     width: '60%',
     paddingHorizontal: 10,
     justifyContent: 'space-between',
-    alignItems: 'flex-end',
-    // minHeight: '40%',
+    alignItems: 'flex-start',
   },
   container__text: {
-    // flexWrap: 'wrap',
-
     justifyContent: 'space-between',
     alignItems: 'stretch',
+    // flex: 1,
   },
   text__title: {
     fontFamily: 'Poppins-Medium',
@@ -78,5 +76,8 @@ export const styles = StyleSheet.create({
   text__button: {
     color: 'white',
   },
-  container__text: {flex: 1},
+  container__description: {
+    maxHeight: 100,
+    marginBottom: 10,
+  },
 });

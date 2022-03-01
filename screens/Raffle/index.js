@@ -41,7 +41,7 @@ const Raffle = ({navigation}) => {
           ListFooterComponentStyle={{marginVertical: 50}}
           renderItem={({item}) => (
             <RaffleAuctionCard
-              buttonLabel="Enter Raffel"
+              buttonLabel="Enter Raffle"
               navigation={navigation}
               itemRoute="Raffle Item"
               enteringAuctionOrRaffle="Enter Raffle"

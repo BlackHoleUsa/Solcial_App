@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Image, Text, TouchableOpacity, View} from 'react-native';
+import {Image, Text, TouchableOpacity, View, ScrollView} from 'react-native';
 import {styles} from './Styles';
 import {Images} from '../../assets/images';
 import Icons from 'react-native-vector-icons/Ionicons';
@@ -44,7 +44,9 @@ const RaffleAndAuctionDetailCard = ({
             <View style={styles.container__content}>
               <View style={styles.container__text}>
                 <Text style={styles.text__title}>{title}</Text>
-                <Text style={styles.text__description}>{description}</Text>
+                <ScrollView style={styles.container__description}>
+                  <Text style={styles.text__description}>{description}</Text>
+                </ScrollView>
               </View>
               <TouchableOpacity
                 onPress={() => {
