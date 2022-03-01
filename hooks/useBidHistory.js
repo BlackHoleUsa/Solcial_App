@@ -18,7 +18,6 @@ const useBidHistory = (navigation, item) => {
       if (response.status === 200) {
         setisLoading(false);
 
-        console.log(response.data.data);
         setData(response?.data?.data);
       }
     } catch (error) {

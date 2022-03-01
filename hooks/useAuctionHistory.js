@@ -17,7 +17,7 @@ const useAuctionHistory = (navigation, item) => {
       );
       if (response.status === 200) {
         setisLoading(false);
-        console.log('auction history', response);
+
         setData(response.data.data);
       }
     } catch (error) {

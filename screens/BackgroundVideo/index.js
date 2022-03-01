@@ -4,7 +4,7 @@ import Video from 'react-native-video';
 import {styles} from './Styles';
 const BackgroundVideo = ({children, video}) => {
   const [loading, setLoading] = useState(false);
-  // console.log('video', video);
+
   // 'http://www.exit109.com/~dnn/clips/RW20seconds_1.mp4'
   return (
     <View style={styles.container__main}>

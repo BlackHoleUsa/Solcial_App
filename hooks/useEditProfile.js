@@ -61,7 +61,7 @@ const useEditProfile = navigation => {
       );
       if (response.status === 200) {
         setEditProfileLoader(false);
-        console.log('api response', response);
+
         dispatch(
           setAuth({
             authToken: userInfo.authToken,

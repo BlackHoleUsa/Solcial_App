@@ -34,7 +34,6 @@ const CustomTabbarButtom = ({children, onPress}) => {
       // }
     } catch (error) {
       if (error) {
-        console.log(error);
         Alert.alert(
           'Error',
           'Please install metamask',
