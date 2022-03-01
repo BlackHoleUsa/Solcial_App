@@ -21,9 +21,11 @@ export default function AuctionPayment({
   amount,
   id,
   navigation,
+  notificationId,
 }) {
   const {cardValidationSchema, initialValues, isLoading, handlePayment} =
-    useAuctionPayment(amount, id, navigation);
+    useAuctionPayment(amount, id, navigation, notificationId);
+
   return (
     <CustomModal visible={visible} hideModal={hideModal}>
       <KeyboardAvoidingView>

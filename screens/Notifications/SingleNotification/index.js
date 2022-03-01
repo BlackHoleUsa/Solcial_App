@@ -2,7 +2,13 @@ import React from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import {styles} from './Styles';
 import Icons from 'react-native-vector-icons/Entypo';
-const SingleNotification = ({item, showModal, setAmount, setId}) => {
+const SingleNotification = ({
+  item,
+  showModal,
+  setAmount,
+  setId,
+  setNotificationId,
+}) => {
   const handleAmount = () => {
     if (!item.extraData.Auction.payable) {
       showModal();
@@ -12,8 +18,9 @@ const SingleNotification = ({item, showModal, setAmount, setId}) => {
     const data = item.message.split(' ');
 
     if (data.indexOf('amount') > 0) {
-      setAmount(data[data.indexOf('amount') + 1].slice(0, -1));
+      setAmount(data[data.indexOf('amount') + 1].slice(0, -1).split('$')[1]);
       setId(item.extraData.Auction._id);
+      setNotificationId(item._id);
     }
   };
 

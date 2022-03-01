@@ -75,10 +75,11 @@ const useRafflePaymentGateway = (amount, noOfTickets) => {
       }
     } catch (error) {
       setIsLoading(false);
+
       if (error) {
         Alert.alert(
           'Error',
-          'Something went wrong',
+          `${error.response.data.message}`,
           [
             {
               text: 'Cancel',

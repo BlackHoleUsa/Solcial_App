@@ -22,7 +22,7 @@ const Notifications = ({navigation}) => {
     setListRefresh,
   } = useNotifications();
   const {visible, showModal, hideModal} = useModal();
-
+  const [notificationId, setNotificationId] = React.useState();
   return (
     <View style={styles.container__main}>
       {isFocused && (
@@ -41,7 +41,7 @@ const Notifications = ({navigation}) => {
               refreshing={listRefresh}
               data={data}
               horizontal={false}
-              keyExtractor={item => item.id}
+              keyExtractor={item => item._id}
               ListFooterComponent={<View></View>}
               ListFooterComponentStyle={{marginVertical: 50}}
               renderItem={({item}) => (
@@ -50,6 +50,7 @@ const Notifications = ({navigation}) => {
                   showModal={showModal}
                   setAmount={setAmount}
                   setId={setId}
+                  setNotificationId={setNotificationId}
                 />
               )}
             />
@@ -62,6 +63,7 @@ const Notifications = ({navigation}) => {
           hideModal={hideModal}
           amount={amount}
           id={id}
+          notificationId={notificationId}
           navigation={navigation}
         />
       ) : null}
