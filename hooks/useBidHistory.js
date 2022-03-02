@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import {useState, useEffect} from 'react';
 import {useSelector} from 'react-redux';
 import {useIsFocused} from '@react-navigation/native';
@@ -42,8 +43,14 @@ const useBidHistory = (navigation, item) => {
   };
 
   useEffect(() => {
-    getStoreHistory();
-  }, [isFocused]);
+    let isMounted = true;
+    if (isMounted) {
+      getStoreHistory();
+    }
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   return {
     isFocused,

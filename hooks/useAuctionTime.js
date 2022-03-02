@@ -43,6 +43,7 @@ const useAuctionTime = endTime => {
       setMin(minutes);
       setHour(days * 24);
       setDay(days);
+      clearInterval(timer);
     };
   }, []);
 

@@ -41,8 +41,14 @@ const useRaffleHistory = (navigation, item) => {
   };
 
   useEffect(() => {
-    getRaffleHistory();
-  }, [isFocused]);
+    let isMounted = true;
+    if (isMounted) {
+      getRaffleHistory();
+    }
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   return {
     isFocused,

@@ -42,8 +42,14 @@ const useAuctionHistory = (navigation, item) => {
   };
 
   useEffect(() => {
-    getAuctionHistory();
-  }, [isFocused]);
+    let isMounted = true;
+    if (isMounted) {
+      getAuctionHistory();
+    }
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   return {
     isFocused,

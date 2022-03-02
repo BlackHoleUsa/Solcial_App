@@ -139,7 +139,7 @@ const MainApp = () => {
         <Tab.Screen
           name="Profile"
           component={ProfileNavigator}
-          options={{headerShown: false, title: 'Profile'}}
+          options={{headerShown: false, title: 'Profile', unmountOnBlur: true}}
         />
       </Tab.Navigator>
     </React.Fragment>
