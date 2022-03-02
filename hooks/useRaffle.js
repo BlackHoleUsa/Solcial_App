@@ -3,12 +3,13 @@ import {apiRoutes} from '../utilities/apiRoutes';
 import {API_URL} from '../utilities/apiRoutes';
 import axios from 'axios';
 import {Alert} from 'react-native';
-
+import {useIsFocused} from '@react-navigation/native';
 const useRaffle = navigation => {
   const [isLoading, setIsLoading] = useState(false);
   const [item, setItem] = useState();
   const [listRefresh, setListRefresh] = useState(false);
   const [displayedData, setDisplayedData] = useState();
+  const isFocused = useIsFocused();
   const getAllRaffleItems = async () => {
     setIsLoading(true);
     try {
@@ -22,6 +23,7 @@ const useRaffle = navigation => {
       }
     } catch (error) {
       if (error) {
+        setIsLoading(false);
         setListRefresh(false);
         Alert.alert(
           'Error',
@@ -42,8 +44,10 @@ const useRaffle = navigation => {
   };
 
   useEffect(() => {
-    getAllRaffleItems();
-  }, [listRefresh]);
+    if (isFocused) {
+      getAllRaffleItems();
+    }
+  }, [listRefresh, isFocused]);
 
   return {
     isLoading,

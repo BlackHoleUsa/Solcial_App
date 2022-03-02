@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useCallback} from 'react';
 import {apiRoutes} from '../utilities/apiRoutes';
 import {API_URL} from '../utilities/apiRoutes';
 import axios from 'axios';
@@ -12,6 +12,7 @@ const useAuction = navigation => {
   const isFocused = useIsFocused();
   const getAllAuctions = async () => {
     setIsLoading(true);
+
     try {
       const response = await axios(
         `${API_URL}${apiRoutes.getAllAuctionListing}`,
@@ -44,7 +45,12 @@ const useAuction = navigation => {
   };
 
   useEffect(() => {
-    getAllAuctions();
+    if (isFocused || listRefresh) {
+      getAllAuctions();
+    }
+    return () => {
+      setListRefresh(false);
+    };
   }, [listRefresh, isFocused]);
 
   return {

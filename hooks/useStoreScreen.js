@@ -41,7 +41,12 @@ const useStoreScreen = () => {
   };
 
   useEffect(() => {
-    getAllStoreItems();
+    if (isFocused) {
+      getAllStoreItems();
+    }
+    return () => {
+      setListRefresh(false);
+    };
   }, [listRefresh, isFocused]);
 
   return {
