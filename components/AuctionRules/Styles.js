@@ -8,12 +8,13 @@ export const styles = StyleSheet.create({
     alignItems: 'flex-start',
     paddingHorizontal: 10,
     paddingBottom: 40,
+    marginVertical: 40,
   },
   container__cross: {
     width: '100%',
     justifyContent: 'center',
     alignItems: 'flex-end',
-    marginVertical: 20,
+    marginTop: 20,
   },
   container__rules: {
     width: '100%',

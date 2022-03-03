@@ -7,13 +7,14 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'flex-start',
     paddingHorizontal: 10,
-    paddingBottom: 40,
+    paddingBottom: 10,
+    marginVertical: 40,
   },
   container__cross: {
     width: '100%',
     justifyContent: 'center',
     alignItems: 'flex-end',
-    marginVertical: 20,
+    marginTop: 20,
   },
   text__rules: {
     color: 'black',
