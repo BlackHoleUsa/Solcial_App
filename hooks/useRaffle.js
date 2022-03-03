@@ -26,6 +26,7 @@ const useRaffle = navigation => {
       setListRefresh(false);
       if (error.response.status === 404) {
         setDisplayedData();
+        setItem([]);
       } else if (error) {
         Alert.alert(
           'Error',
