@@ -22,9 +22,11 @@ const useRaffle = navigation => {
         setListRefresh(false);
       }
     } catch (error) {
-      if (error) {
-        setIsLoading(false);
-        setListRefresh(false);
+      setIsLoading(false);
+      setListRefresh(false);
+      if (error.response.status === 404) {
+        setDisplayedData();
+      } else if (error) {
         Alert.alert(
           'Error',
           `${error.response.data.message}`,
@@ -47,6 +49,9 @@ const useRaffle = navigation => {
     if (isFocused) {
       getAllRaffleItems();
     }
+    return () => {
+      setListRefresh(false);
+    };
   }, [listRefresh, isFocused]);
 
   return {

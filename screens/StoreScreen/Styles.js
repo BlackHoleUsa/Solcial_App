@@ -6,4 +6,14 @@ export const styles = StyleSheet.create({
     backgroundColor: 'white',
     flex: 1,
   },
+  container__empty: {
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text__empty: {
+    color: 'black',
+    fontFamily: 'Poppins-SemiBold',
+    fontSize: 14,
+  },
 });

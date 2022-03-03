@@ -1,5 +1,7 @@
+/* eslint-disable react/self-closing-comp */
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {ActivityIndicator, FlatList, View} from 'react-native';
+import {ActivityIndicator, FlatList, View, Text} from 'react-native';
 
 import RaffleAuctionCard from '../../components/RaffleAuctionCard';
 import Search from '../../components/Search';
@@ -35,7 +37,13 @@ const Auction = ({navigation}) => {
           refreshing={listRefresh}
           data={displayedData}
           horizontal={false}
+          initialNumToRender={5}
           keyExtractor={item => item._id}
+          ListEmptyComponent={
+            <View style={styles.container__empty}>
+              <Text style={styles.text__empty}>No Item Found</Text>
+            </View>
+          }
           ListFooterComponent={<View></View>}
           ListFooterComponentStyle={{marginVertical: 50}}
           renderItem={({item}) => (

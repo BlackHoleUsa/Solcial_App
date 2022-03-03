@@ -1,5 +1,7 @@
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable react/self-closing-comp */
 import React from 'react';
-import {View, FlatList, ActivityIndicator} from 'react-native';
+import {View, FlatList, ActivityIndicator, Text} from 'react-native';
 
 import {styles} from './Styles';
 import Search from '../../components/Search';
@@ -34,7 +36,13 @@ const StoreScreen = ({navigation}) => {
           refreshing={listRefresh}
           horizontal={false}
           numColumns={2}
+          initialNumToRender={10}
           keyExtractor={item => item._id}
+          ListEmptyComponent={
+            <View style={styles.container__empty}>
+              <Text style={styles.text__empty}>No Item Found</Text>
+            </View>
+          }
           ListFooterComponent={<View></View>}
           ListFooterComponentStyle={{marginVertical: 50}}
           columnWrapperStyle={{justifyContent: 'space-around'}}

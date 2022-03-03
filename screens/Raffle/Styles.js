@@ -15,4 +15,14 @@ export const styles = StyleSheet.create({
     width: '100%',
     paddingHorizontal: 10,
   },
+  container__empty: {
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text__empty: {
+    color: 'black',
+    fontFamily: 'Poppins-SemiBold',
+    fontSize: 14,
+  },
 });

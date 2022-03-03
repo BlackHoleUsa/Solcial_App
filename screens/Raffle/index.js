@@ -1,5 +1,7 @@
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable react/self-closing-comp */
 import React from 'react';
-import {FlatList, View, ActivityIndicator} from 'react-native';
+import {FlatList, View, ActivityIndicator, Text} from 'react-native';
 
 import {styles} from './Styles';
 import RaffleAuctionCard from '../../components/RaffleAuctionCard';
@@ -37,6 +39,12 @@ const Raffle = ({navigation}) => {
           data={displayedData}
           horizontal={false}
           keyExtractor={item => item.id}
+          initialNumToRender={5}
+          ListEmptyComponent={
+            <View style={styles.container__empty}>
+              <Text style={styles.text__empty}>No Item Found</Text>
+            </View>
+          }
           ListFooterComponent={<View></View>}
           ListFooterComponentStyle={{marginVertical: 50}}
           renderItem={({item}) => (
