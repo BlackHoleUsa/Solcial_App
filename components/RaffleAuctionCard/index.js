@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Text, View, Image, TouchableOpacity, ScrollView} from 'react-native';
 import {styles} from './Styles';
 
@@ -10,6 +10,9 @@ import {
   setSelectedAuctionItem,
   setSelectedRaffleItem,
 } from '../../redux/actions/actions';
+import useModal from '../../hooks/useModal';
+import RaffleRules from '../RaffleRules/RaffleRules';
+import AuctionRules from '../AuctionRules/AuctionRules';
 const RaffleAuctionCard = ({
   navigation,
   buttonLabel,
@@ -19,7 +22,8 @@ const RaffleAuctionCard = ({
   item,
 }) => {
   const dispatch = useDispatch();
-
+  const {visible, showModal, hideModal} = useModal();
+  const [rulesModal, setRulesModal] = useState(false);
   const handleNavigation = () => {
     navigation.navigate(itemRoute);
     if (itemRoute === 'Raffle Item') {
@@ -38,14 +42,25 @@ const RaffleAuctionCard = ({
     }
   };
 
+  const handleDisplayRules = () => {
+    showModal();
+    if (itemRoute === 'Raffle Item') {
+      setRulesModal(true);
+    } else {
+      setRulesModal(false);
+    }
+  };
+
   return (
     <ScrollView contentContainerStyle={styles.container__main}>
       <View style={styles.icon}>
-        <Icons
-          name="ios-information-circle-outline"
-          size={30}
-          color={'black'}
-        />
+        <TouchableOpacity onPress={handleDisplayRules}>
+          <Icons
+            name="ios-information-circle-outline"
+            size={30}
+            color={'black'}
+          />
+        </TouchableOpacity>
       </View>
       <TouchableOpacity
         onPress={handleNavigation}
@@ -73,6 +88,11 @@ const RaffleAuctionCard = ({
           </Button>
         </View>
       </View>
+      {rulesModal ? (
+        <RaffleRules visible={visible} hideModal={hideModal} />
+      ) : (
+        <AuctionRules visible={visible} hideModal={hideModal} />
+      )}
     </ScrollView>
   );
 };
