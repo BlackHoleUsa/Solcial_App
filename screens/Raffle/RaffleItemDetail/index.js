@@ -5,9 +5,11 @@ import BackgroundVideo from '../../BackgroundVideo';
 import {styles} from './Styles';
 import Icons from 'react-native-vector-icons/Ionicons';
 import {useSelector} from 'react-redux';
+import useModal from '../../../hooks/useModal';
+import RaffleRules from '../../../components/RaffleRules/RaffleRules';
 const RaffleItemDetail = ({navigation}) => {
   const selectedRaffleItem = useSelector(state => state.selectedRaffleItem);
-
+  const {visible, showModal, hideModal} = useModal();
   return (
     <BackgroundVideo video={selectedRaffleItem.product_url[0]}>
       <View style={styles.container__main}>
@@ -18,7 +20,12 @@ const RaffleItemDetail = ({navigation}) => {
             color={'white'}
             onPress={() => navigation.goBack()}
           />
-          <Icons name="information-circle-outline" size={40} color={'white'} />
+          <Icons
+            name="information-circle-outline"
+            size={40}
+            color={'white'}
+            onPress={() => showModal()}
+          />
         </View>
         <RaffleAndAuctionDetailCard
           title={selectedRaffleItem.name}
@@ -28,6 +35,7 @@ const RaffleItemDetail = ({navigation}) => {
           enterRoute="Enter Raffle"
           label="Raffle"
         />
+        <RaffleRules visible={visible} hideModal={hideModal} />
       </View>
     </BackgroundVideo>
   );
