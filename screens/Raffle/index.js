@@ -18,7 +18,7 @@ const Raffle = ({navigation}) => {
     displayedData,
     setDisplayedData,
   } = useRaffle(navigation);
-  console.log('data', displayedData);
+
   return (
     <View style={styles.container__main}>
       <View style={styles.container__search}>

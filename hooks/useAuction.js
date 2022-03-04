@@ -1,4 +1,4 @@
-import {useState, useEffect, useCallback} from 'react';
+import {useState, useEffect} from 'react';
 import {apiRoutes} from '../utilities/apiRoutes';
 import {API_URL} from '../utilities/apiRoutes';
 import axios from 'axios';
