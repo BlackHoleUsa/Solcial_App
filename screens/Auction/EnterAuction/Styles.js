@@ -3,8 +3,9 @@ import {fontWeights} from '../../../assets/Data';
 export const styles = StyleSheet.create({
   container__main: {
     backgroundColor: 'white',
-    flex: 1,
+    // flex: 1,
     width: '100%',
+    marginBottom: 100,
   },
   container__content: {
     width: '100%',
@@ -50,6 +51,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 10,
     marginBottom: 40,
+    marginTop: 40,
   },
   text__button: {
     color: 'white',

@@ -21,6 +21,9 @@ const AuctionNavigator = () => {
         headerStyle: {
           backgroundColor: 'black',
         },
+        contentStyle: {
+          backgroundColor: 'white',
+        },
         headerTintColor: 'white',
       })}>
       <Stack.Screen
