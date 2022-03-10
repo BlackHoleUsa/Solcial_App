@@ -323,6 +323,23 @@ PODS:
     - React-RCTImage
   - RNVectorIcons (9.0.0):
     - React-Core
+  - Stripe (21.12.0):
+    - Stripe/Stripe3DS2 (= 21.12.0)
+    - StripeApplePay (= 21.12.0)
+    - StripeCore (= 21.12.0)
+    - StripeUICore (= 21.12.0)
+  - stripe-react-native (0.3.0):
+    - React-Core
+    - Stripe (~> 21.12.0)
+  - Stripe/Stripe3DS2 (21.12.0):
+    - StripeApplePay (= 21.12.0)
+    - StripeCore (= 21.12.0)
+    - StripeUICore (= 21.12.0)
+  - StripeApplePay (21.12.0):
+    - StripeCore (= 21.12.0)
+  - StripeCore (21.12.0)
+  - StripeUICore (21.12.0):
+    - StripeCore (= 21.12.0)
   - Yoga (1.14.0)
 
 DEPENDENCIES:
@@ -366,11 +383,16 @@ DEPENDENCIES:
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
+  - "stripe-react-native (from `../node_modules/@stripe/stripe-react-native`)"
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
   trunk:
     - fmt
+    - Stripe
+    - StripeApplePay
+    - StripeCore
+    - StripeUICore
 
 EXTERNAL SOURCES:
   boost:
@@ -449,6 +471,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-screens"
   RNVectorIcons:
     :path: "../node_modules/react-native-vector-icons"
+  stripe-react-native:
+    :path: "../node_modules/@stripe/stripe-react-native"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -492,6 +516,11 @@ SPEC CHECKSUMS:
   RNReanimated: 65583befd5706cc9c86ae9a081786181ced37b93
   RNScreens: 522705f2e5c9d27efb17f24aceb2bf8335bc7b8e
   RNVectorIcons: 4143ba35feebab8fdbe6bc43d1e776b393d47ac8
+  Stripe: c3692f360abcdfeef9751e3c240e7efbc68b921f
+  stripe-react-native: a8e376386d39d8668c399eec23ca9fee3f23f97f
+  StripeApplePay: 14db90fdf89abb2809ce41fc68bc6b1a86221408
+  StripeCore: 5e38cdea3dc176a32d8797ef312fe1ab41571272
+  StripeUICore: c28e371b385f968388ae38bedb93a2723c078442
   Yoga: e7dc4e71caba6472ff48ad7d234389b91dadc280
 
 PODFILE CHECKSUM: ce6bdad77efaffb97e6af4616badaee7eaeb1190
