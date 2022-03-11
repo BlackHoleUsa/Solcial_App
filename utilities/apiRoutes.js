@@ -18,4 +18,5 @@ export const apiRoutes = {
   raffleHistory: 'general/getUserRaffle/',
   auctionHistory: 'general/getUserAuction/',
   auctionPayment: 'auction/checkout-auction',
+  rafflePaymentIntent: 'raffle/paymentIntent',
 };

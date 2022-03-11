@@ -5,11 +5,14 @@ import {apiRoutes} from '../utilities/apiRoutes';
 import axios from 'axios';
 import {Alert} from 'react-native';
 import {useSelector} from 'react-redux';
-
+import {useConfirmPayment, useStripe} from '@stripe/stripe-react-native';
 const useRafflePaymentGateway = (amount, noOfTickets) => {
   const selectedRaffleAuctionItem = useSelector(
     state => state.selectedRaffleItem,
   );
+  const {confirmPayment} = useConfirmPayment();
+  const stripe = useStripe();
+
   const year = new Date().getFullYear();
   const userId = useSelector(state => state.userInfo.id);
   const [isLoading, setIsLoading] = useState(false);
@@ -43,6 +46,7 @@ const useRafflePaymentGateway = (amount, noOfTickets) => {
   // signup form submission
 
   const handlePayment = async values => {
+    console.log(values.cardNumber);
     let newValues = {
       ...values,
       userId,
@@ -51,47 +55,64 @@ const useRafflePaymentGateway = (amount, noOfTickets) => {
     };
     try {
       setIsLoading(true);
-      const response = await axios.post(
-        `${API_URL}${apiRoutes.rafflePayment}?raffleId=${selectedRaffleAuctionItem.id}`,
-        newValues,
-      );
-      if (response.status === 200) {
+
+      const intent = await getPaymentIntent(amount);
+
+      if (intent.status === 200) {
         setIsLoading(false);
-
-        Alert.alert(
-          'Congratulations',
-          'You have purchased the Raffle ticket',
-          [
-            {
-              text: 'Ok',
-
-              style: 'cancel',
-            },
-          ],
-          {
-            cancelable: true,
+        console.log(intent.data);
+        const payment = await confirmPayment(intent.data.client_secret, {
+          type: 'Card',
+          billingDetails: {
+            card: values.cardNumber,
           },
-        );
+        });
+        console.log(payment);
       }
+
+      // confirm payment
+
+      // const response = await axios.post(
+      //   `${API_URL}${apiRoutes.rafflePayment}?raffleId=${selectedRaffleAuctionItem.id}`,
+      //   newValues,
+      // );
+      // if (response.status === 200) {
+      //   setIsLoading(false);
+
+      //   Alert.alert(
+      //     'Congratulations',
+      //     'You have purchased the Raffle ticket',
+      //     [
+      //       {
+      //         text: 'Ok',
+
+      //         style: 'cancel',
+      //       },
+      //     ],
+      //     {
+      //       cancelable: true,
+      //     },
+      //   );
+      // }
     } catch (error) {
       setIsLoading(false);
+      console.log(error);
+      // if (error) {
+      //   Alert.alert(
+      //     'Error',
+      //     `${error.response.data.message}`,
+      //     [
+      //       {
+      //         text: 'Cancel',
 
-      if (error) {
-        Alert.alert(
-          'Error',
-          `${error.response.data.message}`,
-          [
-            {
-              text: 'Cancel',
-
-              style: 'cancel',
-            },
-          ],
-          {
-            cancelable: true,
-          },
-        );
-      }
+      //         style: 'cancel',
+      //       },
+      //     ],
+      //     {
+      //       cancelable: true,
+      //     },
+      //   );
+      // }
     }
   };
 
@@ -110,6 +131,13 @@ const useRafflePaymentGateway = (amount, noOfTickets) => {
 
     handlePayment,
   };
+};
+
+const getPaymentIntent = async amount => {
+  const response = axios.post(`${API_URL}${apiRoutes.rafflePaymentIntent}`, {
+    price: amount,
+  });
+  return response;
 };
 
 export default useRafflePaymentGateway;

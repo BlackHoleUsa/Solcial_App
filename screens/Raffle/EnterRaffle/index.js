@@ -5,8 +5,8 @@ import RaffleAmount from './RaffleAmount';
 import {styles} from './Styles';
 
 import useEnterRaffle from '../../../hooks/useEnterRaffle';
-import useModal from '../../../hooks/useModal';
-import RafflePayment from '../../../components/RafflePayment';
+import {Button} from 'react-native-paper';
+
 const EnterRaffle = ({navigation}) => {
   const {
     monthNames,
@@ -14,8 +14,10 @@ const EnterRaffle = ({navigation}) => {
     selectedRaffleItem,
     handleMinusTicket,
     handlePlusTicket,
+    initializePaymentSheet,
+    loading,
   } = useEnterRaffle();
-  const {visible, showModal, hideModal} = useModal();
+
   return (
     <ScrollView contentContainerStyle={styles.container__main}>
       <RaffleAuctionImage
@@ -46,16 +48,18 @@ const EnterRaffle = ({navigation}) => {
           </Text>
           <Text style={styles.text__price_per_ticket}>per ticket</Text>
         </View>
-
-        <TouchableOpacity onPress={() => showModal()} style={styles.button}>
-          <Text style={styles.text__button}>Enter Raffle</Text>
-        </TouchableOpacity>
-        <RafflePayment
-          visible={visible}
-          hideModal={hideModal}
-          amount={selectedRaffleItem.ticketPrice * noOfTickets}
-          noOfTickets={noOfTickets}
-        />
+        <Button
+          mode="contained"
+          loading={loading}
+          onPress={initializePaymentSheet}
+          style={styles.button}
+          // eslint-disable-next-line react-native/no-inline-styles
+          labelStyle={{
+            color: 'white',
+            fontFamily: 'Poppins-Regular',
+          }}>
+          Enter Raffle
+        </Button>
       </View>
     </ScrollView>
   );

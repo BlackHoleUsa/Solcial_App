@@ -19,7 +19,9 @@ const App = () => {
   }, []);
 
   return (
-    <StripeProvider publishableKey="pk_test_51JiCUhGno5HRfYG6g0ihC2STUzIBpqcCJ2sKghEYgr7NCuDncO1XAqahK6Czzv5ieGPqS141GGbCCOTxIKxY7R59005Vj2kcTd">
+    <StripeProvider
+      publishableKey="pk_test_51JiCUhGno5HRfYG6g0ihC2STUzIBpqcCJ2sKghEYgr7NCuDncO1XAqahK6Czzv5ieGPqS141GGbCCOTxIKxY7R59005Vj2kcTd"
+      merchantIdentifier="merchant.identifier">
       <SafeAreaProvider>
         <Startup />
       </SafeAreaProvider>

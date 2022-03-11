@@ -81,8 +81,9 @@ export const styles = StyleSheet.create({
     backgroundColor: 'black',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 10,
+    padding: 0,
     marginBottom: 100,
+    borderRadius: 0,
   },
   text__button: {
     color: 'white',
