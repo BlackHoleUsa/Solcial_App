@@ -6,6 +6,7 @@ import {
   View,
   KeyboardAvoidingView,
   ActivityIndicator,
+  Platform,
 } from 'react-native';
 import {useIsFocused} from '@react-navigation/native';
 import CustomStatusBar from '../../components/CustomStatusBar';
@@ -33,30 +34,31 @@ const EditProfile = ({navigation}) => {
       {isFocused && (
         <CustomStatusBar backgroundColor={'white'} barStyle={'dark-content'} />
       )}
-      <KeyboardAvoidingView>
-        {isLoading ? (
-          <View style={styles.container__loader}>
-            <ActivityIndicator size="large" color="blue" />
+
+      {isLoading ? (
+        <View style={styles.container__loader}>
+          <ActivityIndicator size="large" color="blue" />
+        </View>
+      ) : (
+        <ScrollView style={styles.container__main}>
+          <View style={styles.container__title}>
+            <Text style={styles.text__title}>Edit Profile</Text>
           </View>
-        ) : (
-          <ScrollView style={styles.container__main}>
-            <View style={styles.container__title}>
-              <Text style={styles.text__title}>Edit Profile</Text>
-            </View>
-            <Formik
-              validationSchema={signupValidationSchema}
-              initialValues={initialValue}
-              enableReinitialize={true}
-              onSubmit={values => handleEditProfile(values)}>
-              {({
-                handleChange,
-                handleBlur,
-                handleSubmit,
-                values,
-                errors,
-                isValid,
-              }) => (
-                <>
+          <Formik
+            validationSchema={signupValidationSchema}
+            initialValues={initialValue}
+            enableReinitialize={true}
+            onSubmit={values => handleEditProfile(values)}>
+            {({
+              handleChange,
+              handleBlur,
+              handleSubmit,
+              values,
+              errors,
+              isValid,
+            }) => (
+              <>
+                <KeyboardAvoidingView behavior={'padding'}>
                   <View style={styles.container__grid}>
                     <View style={styles.container__child_1}>
                       <InputField
@@ -181,12 +183,12 @@ const EditProfile = ({navigation}) => {
                     }}>
                     Update Profile
                   </Button>
-                </>
-              )}
-            </Formik>
-          </ScrollView>
-        )}
-      </KeyboardAvoidingView>
+                </KeyboardAvoidingView>
+              </>
+            )}
+          </Formik>
+        </ScrollView>
+      )}
     </ScrollView>
   );
 };

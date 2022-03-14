@@ -5,6 +5,7 @@ export const styles = StyleSheet.create({
     fontFamily: 'Poppins-SemiBold',
     color: 'white',
     fontSize: 20,
+    marginBottom: 20,
   },
   container__grid: {
     width: '100%',
