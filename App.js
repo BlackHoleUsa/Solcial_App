@@ -12,18 +12,16 @@ import {StyleSheet} from 'react-native';
 import Startup from './Navigation/Startup';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import SplashScreen from 'react-native-splash-screen';
-import {StripeProvider} from '@stripe/stripe-react-native';
+
 const App = () => {
   useEffect(() => {
     SplashScreen.hide();
   }, []);
 
   return (
-    <StripeProvider publishableKey="pk_test_51JiCUhGno5HRfYG6g0ihC2STUzIBpqcCJ2sKghEYgr7NCuDncO1XAqahK6Czzv5ieGPqS141GGbCCOTxIKxY7R59005Vj2kcTd">
-      <SafeAreaProvider>
-        <Startup />
-      </SafeAreaProvider>
-    </StripeProvider>
+    <SafeAreaProvider>
+      <Startup />
+    </SafeAreaProvider>
   );
 };
 
