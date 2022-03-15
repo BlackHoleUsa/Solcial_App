@@ -6,7 +6,7 @@ import axios from 'axios';
 import {Alert} from 'react-native';
 import {useSelector} from 'react-redux';
 
-const useRafflePaymentGateway = (amount, noOfTickets) => {
+const useRafflePaymentGateway = (amount, noOfTickets, navigation) => {
   const selectedRaffleAuctionItem = useSelector(
     state => state.selectedRaffleItem,
   );
@@ -64,6 +64,7 @@ const useRafflePaymentGateway = (amount, noOfTickets) => {
           [
             {
               text: 'Ok',
+              onPress: () => navigation.navigate('Raffle Screen'),
 
               style: 'cancel',
             },

@@ -19,9 +19,10 @@ export default function RafflePayment({
   hideModal,
   amount,
   noOfTickets,
+  navigation,
 }) {
   const {cardValidationSchema, initialValues, isLoading, handlePayment} =
-    useRafflePaymentGateway(amount, noOfTickets);
+    useRafflePaymentGateway(amount, noOfTickets, navigation);
   return (
     <CustomModal visible={visible} hideModal={hideModal}>
       <KeyboardAvoidingView>
