@@ -1,5 +1,5 @@
 // export const API_URL = 'http://get.api.solecial.app/v1/';
-export const API_URL = 'https://solecial-app.herokuapp.com/v1/';
+export const API_URL = 'https://solecial.live/v1/';
 
 export const apiRoutes = {
   login: 'auth/login',
