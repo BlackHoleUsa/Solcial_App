@@ -20,18 +20,15 @@ import Notifications from '../../screens/Notifications';
 import NftMarketplace from '../../screens/NftMarketplace';
 import {icons as customIcons} from '../../assets/icons/icons';
 import ProfileNavigator from '../ProfileNavigator';
-
+import {useSelector} from 'react-redux';
 const Tab = createBottomTabNavigator();
 
 const CustomTabbarButtom = ({children, onPress}) => {
   const handleOpenMetamask = async () => {
     const url = 'https://metamask.app.link/dapp/solecialnft.app/';
-    // const url2 = 'metamask://';
 
     try {
       await Linking.openURL(url);
-      // if (await Linking.openURL(url2)) {
-      // }
     } catch (error) {
       if (error) {
         Alert.alert(
@@ -62,6 +59,8 @@ const CustomTabbarButtom = ({children, onPress}) => {
 };
 
 const MainApp = () => {
+  const cart = useSelector(state => state.cart);
+
   return (
     <React.Fragment>
       <Tab.Navigator
@@ -102,7 +101,10 @@ const MainApp = () => {
         <Tab.Screen
           name="Cart"
           component={Cart}
-          options={{headerShown: false}}
+          options={{
+            headerShown: false,
+            tabBarBadge: cart.length ? cart.length : null,
+          }}
           style={{alignItems: 'center', justifyContent: 'center'}}
         />
         <Tab.Screen
