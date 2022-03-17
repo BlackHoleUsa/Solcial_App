@@ -61,7 +61,7 @@ export default function AuctionBid({
                   color: 'white',
                   fontFamily: 'Poppins-Regular',
                 }}>
-                Auction
+                Submit
               </Button>
             </>
           )}
