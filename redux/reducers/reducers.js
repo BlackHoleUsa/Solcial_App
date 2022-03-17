@@ -48,13 +48,16 @@ export const reducer = (state = initialState, action) => {
         cart: [...state.cart, payload],
       };
     case REMOVE_CART_ITEM:
+      console.log(action.payload);
       return {
         ...state,
-        cart: state.cart.filter(todo => todo._id !== action.payload._id),
+        cart: state.cart.filter(
+          todo => todo.selectedSize !== action.payload.selectedSize,
+        ),
       };
     case ADD_QTY:
       const index = state.cart.findIndex(
-        item => item._id === action.payload._id,
+        item => item.newId === action.payload.newId,
       );
       const newCart = [...state.cart];
       newCart[index].qty = state.cart[index].qty + 1;
@@ -64,7 +67,7 @@ export const reducer = (state = initialState, action) => {
       };
     case REMOVE_QTY:
       const removeIndex = state.cart.findIndex(
-        item => item._id === action.payload._id,
+        item => item.newId === action.payload.newId,
       );
       const removeCart = [...state.cart];
       if (state.cart[removeIndex].qty < 2) {

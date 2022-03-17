@@ -27,7 +27,7 @@ const Cart = ({navigation}) => {
           horizontal={false}
           ListFooterComponent={<View></View>}
           ListFooterComponentStyle={{marginVertical: 50}}
-          keyExtractor={item => item._id}
+          keyExtractor={item => item.newId}
           renderItem={({item}) => <CartItemCard item={item} />}
         />
       </View>

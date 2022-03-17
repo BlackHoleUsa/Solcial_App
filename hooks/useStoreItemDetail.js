@@ -1,7 +1,8 @@
 import {useState} from 'react';
 import {Alert} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
-import {setCartItem} from '../redux/actions/actions';
+import {setAddQty, setCartItem} from '../redux/actions/actions';
+import uuid from 'react-native-uuid';
 const useStoreItemDetail = navigation => {
   const dispatch = useDispatch();
   const selectedStoreItem = useSelector(state => state.selectedStoreItem);
@@ -15,13 +16,22 @@ const useStoreItemDetail = navigation => {
 
   const addToCart = () => {
     let obj = cart.find(o => o._id === selectedStoreItem._id);
-    if (obj) {
+
+    let cartObj = cart.filter(item => item._id === obj?._id);
+
+    let sizeFilter = cartObj?.filter(
+      item => item.selectedSize === selectedStoreItem.size[sizeIndex],
+    );
+
+    if (sizeFilter.length) {
+      dispatch(setAddQty(sizeFilter[0]));
+
       Alert.alert(
-        'Error',
-        'Already Present in the Cart',
+        'Success',
+        'Your Item Has Been Added To Your Cart',
         [
           {
-            text: 'Cancel',
+            text: 'Ok',
             onPress: () => navigation.navigate('Store Screen'),
             style: 'cancel',
           },
@@ -34,11 +44,12 @@ const useStoreItemDetail = navigation => {
       let modifiedItem = Object.assign(selectedStoreItem, {
         qty: 1,
         selectedSize: selectedStoreItem.size[sizeIndex],
+        newId: uuid.v4(),
       });
       dispatch(setCartItem(modifiedItem));
       Alert.alert(
-        'Sucess',
-        'Added To Cart',
+        'Success',
+        'Your Item Has Been Added To Your Cart',
         [
           {
             text: 'Ok',
