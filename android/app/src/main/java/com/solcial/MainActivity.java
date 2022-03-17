@@ -1,4 +1,4 @@
-package com.solcial;
+package com.solecial;
 
 import com.facebook.react.ReactActivity;
 import android.os.Bundle;
