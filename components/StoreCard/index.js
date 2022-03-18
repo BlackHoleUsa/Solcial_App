@@ -14,7 +14,7 @@ const StoreCard = ({navigation, item}) => {
         <Image
           source={{uri: item?.product_url[0]}}
           style={styles.image}
-          resizeMode="contain"
+          resizeMode="cover"
         />
       </TouchableOpacity>
       <Text style={styles.text__title}>{item.name}</Text>

@@ -27,8 +27,8 @@ const useStoreItemDetail = navigation => {
       dispatch(setAddQty(sizeFilter[0]));
 
       Alert.alert(
-        'Success',
-        'Your Item Has Been Added To Your Cart',
+        'Success!',
+        'Your Item Has Been Added To Your Cart.',
         [
           {
             text: 'Ok',
@@ -48,8 +48,8 @@ const useStoreItemDetail = navigation => {
       });
       dispatch(setCartItem(modifiedItem));
       Alert.alert(
-        'Success',
-        'Your Item Has Been Added To Your Cart',
+        'Success!',
+        'Your Item Has Been Added To Your Cart.',
         [
           {
             text: 'Ok',

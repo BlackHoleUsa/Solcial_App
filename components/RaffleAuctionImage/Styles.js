@@ -1,15 +1,16 @@
-import {StyleSheet} from 'react-native';
-
+import {StyleSheet, Dimensions} from 'react-native';
+const {width} = Dimensions.get('window');
 export const styles = StyleSheet.create({
   container__main: {
     width: '100%',
     position: 'relative',
-    height: 200,
+    // height: ,
   },
 
   image: {
-    width: '100%',
-    height: '100%',
+    width,
+    // height: '100%',
+    aspectRatio: 1 / 1,
   },
   container__icon: {
     position: 'absolute',

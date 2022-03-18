@@ -33,7 +33,7 @@ const Carousel = ({images}) => {
             <View style={styles.container__image} key={image}>
               <Image
                 key={image}
-                resizeMode="contain"
+                resizeMode="cover"
                 source={{uri: image}}
                 style={styles.image}
               />

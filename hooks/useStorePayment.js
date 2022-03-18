@@ -65,8 +65,8 @@ const useStorePayment = (hideModal, amount, navigation) => {
       if (response.status === 200) {
         setIsLoading(false);
         Alert.alert(
-          'Congratulations',
-          'Your purchase has been successfull',
+          'Congratulations!',
+          'Your purchase has been successfull.',
           [
             {
               text: 'Ok',

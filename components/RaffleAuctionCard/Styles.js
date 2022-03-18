@@ -1,18 +1,20 @@
-import {Platform, StyleSheet} from 'react-native';
+import {Platform, StyleSheet, Dimensions} from 'react-native';
 import {fontWeights} from '../../assets/Data';
-
+const {width} = Dimensions.get('window');
 export const styles = StyleSheet.create({
   container__main: {
     width: '100%',
     position: 'relative',
   },
   container__image: {
-    width: '100%',
+    width: width,
     backgroundColor: '#E6E6E6',
+    // height: 200,
   },
   image: {
     width: '100%',
-    height: 200,
+    // height: '100%',
+    aspectRatio: 1 / 1,
   },
   container__content: {padding: 10, backgroundColor: 'white'},
   text__title: {

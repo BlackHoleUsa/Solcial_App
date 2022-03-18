@@ -59,8 +59,10 @@ const useRafflePaymentGateway = (amount, noOfTickets, navigation) => {
         setIsLoading(false);
 
         Alert.alert(
-          'Congratulations',
-          'You have purchased the Raffle ticket',
+          "You'r In!",
+          `Your raffle ${
+            noOfTickets > 1 ? 'tickets ' : 'ticket entry '
+          }has been processed.`,
           [
             {
               text: 'Ok',

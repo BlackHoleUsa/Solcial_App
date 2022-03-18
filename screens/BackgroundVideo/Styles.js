@@ -18,6 +18,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     bottom: 0,
     right: 0,
+    aspectRatio: 1 / 1,
   },
   container__loader: {
     width: '100%',

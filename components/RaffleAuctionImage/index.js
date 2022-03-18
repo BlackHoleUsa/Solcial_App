@@ -6,7 +6,7 @@ import Icons from 'react-native-vector-icons/AntDesign';
 const RaffleAuctionImage = ({navigation, image}) => {
   return (
     <View style={styles.container__main}>
-      <Image style={styles.image} source={{uri: image}} resizeMode="contain" />
+      <Image style={styles.image} source={{uri: image}} resizeMode="cover" />
       <TouchableOpacity
         onPress={() => {
           navigation.goBack();

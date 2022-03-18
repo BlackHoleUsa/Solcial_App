@@ -70,7 +70,7 @@ const RaffleAuctionCard = ({
           source={{
             uri: item?.product_url[1],
           }}
-          resizeMode="contain"
+          resizeMode="cover"
         />
       </TouchableOpacity>
       <View style={styles.container__content}>

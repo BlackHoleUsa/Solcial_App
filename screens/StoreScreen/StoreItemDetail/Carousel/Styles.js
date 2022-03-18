@@ -4,10 +4,11 @@ export const MAX_WIDTH = Dimensions.get('window').width;
 export const styles = StyleSheet.create({
   image: {
     width: '100%',
-    height: '100%',
+    // height: '100%',
     position: 'relative',
+    aspectRatio: 1 / 1,
   },
-  container__image: {width: MAX_WIDTH, height: 250, backgroundColor: '#E6E6E6'},
+  container__image: {width: MAX_WIDTH, backgroundColor: '#E6E6E6'},
   container: {
     flexDirection: 'row',
   },

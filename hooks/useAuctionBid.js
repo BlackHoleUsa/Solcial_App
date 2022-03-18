@@ -34,7 +34,7 @@ const useAuctionBid = (highestBid, navigation) => {
       );
       if (response.status === 200) {
         setIsLoading(false);
-        Alert.alert('Congratulations', `${response.data.message}`, [
+        Alert.alert('Congratulations!', `${response.data.message}.`, [
           {
             text: 'Ok',
             onPress: () => navigation.navigate('Auction Screen'),
