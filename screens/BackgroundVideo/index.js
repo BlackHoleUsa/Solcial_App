@@ -14,7 +14,7 @@ const BackgroundVideo = ({children, video}) => {
         }}
         muted={true}
         repeat={true}
-        resizeMode={'cover'}
+        resizeMode={'stretch'}
         rate={1.0}
         ignoreSilentSwitch={'obey'}
         pictureInPicture={true}
