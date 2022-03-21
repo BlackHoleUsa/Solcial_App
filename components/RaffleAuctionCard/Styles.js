@@ -37,6 +37,7 @@ export const styles = StyleSheet.create({
     borderRadius: 0,
     margin: 0,
     padding: 0,
+    borderColor: 'black',
   },
   text__details: {
     color: 'black',
