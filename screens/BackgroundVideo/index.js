@@ -13,7 +13,7 @@ const BackgroundVideo = ({children, video, isFocused}) => {
           uri: video,
         }}
         repeat={true}
-        resizeMode={'stretch'}
+        resizeMode={'cover'}
         rate={1.0}
         ignoreSilentSwitch={'obey'}
         pictureInPicture={true}
