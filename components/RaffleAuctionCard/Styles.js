@@ -17,11 +17,15 @@ export const styles = StyleSheet.create({
     aspectRatio: 1 / 1,
   },
   container__content: {padding: 10, backgroundColor: 'white'},
+
   text__title: {
     fontFamily: 'Poppins-SemiBold',
     color: 'black',
     fontWeight: Platform.OS === 'ios' ? fontWeights.semibold : 'normal',
     fontSize: 16,
+    flexShrink: 1,
+    // flexWrap: 'wrap',
+    // flex: 1,
   },
   container__detail: {
     flexDirection: 'row',
@@ -41,8 +45,11 @@ export const styles = StyleSheet.create({
     fontSize: 10,
   },
   container__title: {
-    width: '50%',
-    flexWrap: 'wrap',
+    // flexWrap: 'wrap',
+    // backgroundColor: 'yellow',
+    width: 0,
+    flexGrow: 1,
+    flex: 1,
   },
   icon: {
     position: 'absolute',
