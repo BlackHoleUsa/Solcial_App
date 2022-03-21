@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {View, ActivityIndicator} from 'react-native';
 import Video from 'react-native-video';
 import {styles} from './Styles';
-const BackgroundVideo = ({children, video}) => {
+const BackgroundVideo = ({children, video, isFocused}) => {
   const [loading, setLoading] = useState(false);
 
   // 'http://www.exit109.com/~dnn/clips/RW20seconds_1.mp4'
@@ -12,7 +12,6 @@ const BackgroundVideo = ({children, video}) => {
         source={{
           uri: video,
         }}
-        muted={true}
         repeat={true}
         resizeMode={'stretch'}
         rate={1.0}
@@ -21,6 +20,7 @@ const BackgroundVideo = ({children, video}) => {
         style={styles.container__video}
         onLoadStart={() => setLoading(true)}
         onReadyForDisplay={() => setLoading(false)}
+        paused={isFocused ? false : true}
       />
       {loading ? (
         <View style={styles.container__loader}>

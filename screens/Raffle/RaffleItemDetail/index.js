@@ -7,11 +7,15 @@ import Icons from 'react-native-vector-icons/Ionicons';
 import {useSelector} from 'react-redux';
 import useModal from '../../../hooks/useModal';
 import RaffleRules from '../../../components/RaffleRules/RaffleRules';
+import {useIsFocused} from '@react-navigation/native';
 const RaffleItemDetail = ({navigation}) => {
+  const isFocused = useIsFocused();
   const selectedRaffleItem = useSelector(state => state.selectedRaffleItem);
   const {visible, showModal, hideModal} = useModal();
   return (
-    <BackgroundVideo video={selectedRaffleItem.product_url[0]}>
+    <BackgroundVideo
+      video={selectedRaffleItem.product_url[0]}
+      isFocused={isFocused}>
       <View style={styles.container__main}>
         <View style={styles.container__icon}>
           <Icons

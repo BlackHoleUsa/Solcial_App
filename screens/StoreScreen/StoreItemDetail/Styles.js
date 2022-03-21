@@ -31,7 +31,7 @@ export const styles = StyleSheet.create({
     marginVertical: 5,
   },
   container__size: {
-    width: '100%',
+    // width: '100%',
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
@@ -47,7 +47,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    width: 100,
+    width: 120,
     height: 40,
     margin: 5,
     paddingVertical: 5,
