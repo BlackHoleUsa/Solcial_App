@@ -27,7 +27,7 @@ const RaffleAndAuctionDetailCard = ({
           },
         ]}>
         <View
-          style={[styles.container__icon, {transform: [{translateX: -10}]}]}>
+          style={[styles.container__icon, {transform: [{translateX: -16}]}]}>
           <Icons
             name={showCard ? 'chevron-down' : 'chevron-up'}
             color={'black'}
