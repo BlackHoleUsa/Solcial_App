@@ -13,6 +13,7 @@ export const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: fontWeights.medium,
     marginTop: 20,
+    color: 'black',
   },
   container__flatList: {
     width: '100%',

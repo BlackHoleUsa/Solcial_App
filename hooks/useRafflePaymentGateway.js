@@ -59,10 +59,10 @@ const useRafflePaymentGateway = (amount, noOfTickets, navigation) => {
         setIsLoading(false);
 
         Alert.alert(
-          "You'r In!",
+          "You're In!",
           `Your raffle ${
-            noOfTickets > 1 ? 'tickets ' : 'ticket entry '
-          }has been processed.`,
+            noOfTickets > 1 ? 'tickets have' : 'ticket entry has'
+          } been processed.`,
           [
             {
               text: 'Ok',

@@ -25,6 +25,7 @@ const Notifications = ({navigation}) => {
   const [notificationId, setNotificationId] = React.useState();
   return (
     <View style={styles.container__main}>
+      <Text style={styles.heading__main}>Notifications </Text>
       {isFocused && (
         <CustomStatusBar backgroundColor={'white'} barStyle={'dark-content'} />
       )}
@@ -34,7 +35,6 @@ const Notifications = ({navigation}) => {
         </View>
       ) : (
         <>
-          <Text style={styles.heading__main}>Notifications </Text>
           <View style={styles.container__notification}>
             <FlatList
               onRefresh={() => setListRefresh(true)}

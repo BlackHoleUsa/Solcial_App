@@ -12,6 +12,7 @@ export const styles = StyleSheet.create({
     fontFamily: 'Poppins-Medium',
     fontWeight: Platform.OS === 'ios' ? fontWeights.medium : 'normal',
     fontSize: 20,
+    color: 'black',
   },
   container__notification: {
     marginTop: 100,
