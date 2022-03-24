@@ -28,36 +28,30 @@ const Raffle = ({navigation}) => {
           originalData={data}
         />
       </View>
-      {isLoading ? (
-        <View style={styles.container__loader}>
-          <ActivityIndicator size="large" color="blue" />
-        </View>
-      ) : (
-        <FlatList
-          onRefresh={() => setListRefresh(true)}
-          refreshing={listRefresh}
-          data={displayedData}
-          horizontal={false}
-          keyExtractor={item => item.id}
-          initialNumToRender={5}
-          ListEmptyComponent={
-            <View style={styles.container__empty}>
-              <Text style={styles.text__empty}>No Item Found</Text>
-            </View>
-          }
-          ListFooterComponent={<View></View>}
-          ListFooterComponentStyle={{marginVertical: 50}}
-          renderItem={({item}) => (
-            <RaffleAuctionCard
-              buttonLabel="Enter Raffle"
-              navigation={navigation}
-              itemRoute="Raffle Item"
-              enteringAuctionOrRaffle="Enter Raffle"
-              item={item}
-            />
-          )}
-        />
-      )}
+      <FlatList
+        onRefresh={() => setListRefresh(true)}
+        refreshing={listRefresh}
+        data={displayedData}
+        horizontal={false}
+        keyExtractor={item => item.id}
+        initialNumToRender={5}
+        ListEmptyComponent={
+          <View style={styles.container__loader}>
+            <ActivityIndicator size="large" color="blue" />
+          </View>
+        }
+        ListFooterComponent={<View></View>}
+        ListFooterComponentStyle={{marginVertical: 50}}
+        renderItem={({item}) => (
+          <RaffleAuctionCard
+            buttonLabel="Enter Raffle"
+            navigation={navigation}
+            itemRoute="Raffle Item"
+            enteringAuctionOrRaffle="Enter Raffle"
+            item={item}
+          />
+        )}
+      />
     </View>
   );
 };

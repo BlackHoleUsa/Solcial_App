@@ -6,6 +6,7 @@ const BackgroundVideo = ({children, video, isFocused}) => {
   const [loading, setLoading] = useState(false);
 
   // 'http://www.exit109.com/~dnn/clips/RW20seconds_1.mp4'
+
   return (
     <View style={styles.container__main}>
       <Video
@@ -21,6 +22,12 @@ const BackgroundVideo = ({children, video, isFocused}) => {
         onLoadStart={() => setLoading(true)}
         onReadyForDisplay={() => setLoading(false)}
         paused={isFocused ? false : true}
+        bufferConfig={{
+          minBufferMs: 15000,
+          maxBufferMs: 20000,
+          bufferForPlaybackMs: 2500,
+          bufferForPlaybackAfterRebufferMs: 5000,
+        }}
       />
       {loading ? (
         <View style={styles.container__loader}>

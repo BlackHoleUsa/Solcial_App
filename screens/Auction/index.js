@@ -27,36 +27,30 @@ const Auction = ({navigation}) => {
           originalData={data}
         />
       </View>
-      {isLoading ? (
-        <View style={styles.container__loader}>
-          <ActivityIndicator size="large" color="blue" />
-        </View>
-      ) : (
-        <FlatList
-          onRefresh={() => setListRefresh(true)}
-          refreshing={listRefresh}
-          data={displayedData}
-          horizontal={false}
-          initialNumToRender={5}
-          keyExtractor={item => item._id}
-          ListEmptyComponent={
-            <View style={styles.container__empty}>
-              <Text style={styles.text__empty}>No Item Found</Text>
-            </View>
-          }
-          ListFooterComponent={<View></View>}
-          ListFooterComponentStyle={{marginVertical: 50}}
-          renderItem={({item}) => (
-            <RaffleAuctionCard
-              buttonLabel="Enter Auction"
-              navigation={navigation}
-              itemRoute="Auction Item"
-              enteringAuctionOrRaffle="Enter Auction"
-              item={item}
-            />
-          )}
-        />
-      )}
+      <FlatList
+        onRefresh={() => setListRefresh(true)}
+        refreshing={listRefresh}
+        data={displayedData}
+        horizontal={false}
+        initialNumToRender={5}
+        keyExtractor={item => item._id}
+        ListEmptyComponent={
+          <View style={styles.container__loader}>
+            <ActivityIndicator size="large" color="blue" />
+          </View>
+        }
+        ListFooterComponent={<View></View>}
+        ListFooterComponentStyle={{marginVertical: 50}}
+        renderItem={({item}) => (
+          <RaffleAuctionCard
+            buttonLabel="Enter Auction"
+            navigation={navigation}
+            itemRoute="Auction Item"
+            enteringAuctionOrRaffle="Enter Auction"
+            item={item}
+          />
+        )}
+      />
     </View>
   );
 };

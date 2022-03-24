@@ -7,11 +7,15 @@ import RaffleAndAuctionDetailCard from '../../../components/RaffleAndAuctionDeta
 import {useSelector} from 'react-redux';
 import useModal from '../../../hooks/useModal';
 import AuctionRules from '../../../components/AuctionRules/AuctionRules';
+import {useIsFocused} from '@react-navigation/native';
 const AuctionItemDetail = ({navigation}) => {
   const selectedAuctionItem = useSelector(state => state.selectedAuctionItem);
   const {visible, showModal, hideModal} = useModal();
+  const isFocused = useIsFocused();
   return (
-    <BackgroundVideo video={selectedAuctionItem.product_url[0]}>
+    <BackgroundVideo
+      video={selectedAuctionItem.product_url[0]}
+      isFocused={isFocused}>
       <View style={styles.container__main}>
         <View style={styles.container__icon}>
           <Icons
