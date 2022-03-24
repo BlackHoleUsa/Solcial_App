@@ -1,3 +1,4 @@
+import {Platform} from 'react-native';
 export const rules = [
   {
     id: 1,
@@ -5,12 +6,15 @@ export const rules = [
   },
   {
     id: 2,
-    heading: 'APPLE IS NOT INVOLVED IN ANY WAY WITH SOLECIAL’S AUCTIONS.',
+    heading: `${
+      Platform.OS === 'ios' ? 'APPLE' : 'Google'
+    } IS NOT INVOLVED IN ANY WAY WITH SOLECIAL’S AUCTIONS.`,
   },
   {
     id: 3,
-    heading:
-      'APPLE IS ALSO NOT A SPONSOR AND YOU MUST BE 17 YEARS OR OLDER TO ENTER.',
+    heading: `${
+      Platform.OS === 'ios' ? 'APPLE' : 'Google'
+    } IS ALSO NOT A SPONSOR AND YOU MUST BE 17 YEARS OR OLDER TO ENTER.`,
   },
   {
     id: 4,
