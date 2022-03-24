@@ -25,8 +25,8 @@ const StoreItemDetail = ({navigation}) => {
         <Text style={styles.text__title}>{title}</Text>
         <Text style={styles.text__description}>{description}</Text>
         <Text style={styles.text__price}>Price ${price}</Text>
+        <Text style={styles.text__size}>Size:</Text>
         <View style={styles.container__size}>
-          <Text style={styles.text__size}>Size:</Text>
           {sizes?.map((item, index) => (
             <TouchableOpacity
               key={index}
