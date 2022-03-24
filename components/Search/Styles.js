@@ -19,5 +19,6 @@ export const styles = StyleSheet.create({
     width: '80%',
     // textTransform: 'capitalize',
     padding: 10,
+    color: 'black',
   },
 });

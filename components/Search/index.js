@@ -25,6 +25,7 @@ const Search = ({data, setData, originalData}) => {
           placeholder="Search"
           onChangeText={filterListData}
           value={text}
+          placeholderTextColor="#A9A9A9"
         />
       </View>
     </View>
