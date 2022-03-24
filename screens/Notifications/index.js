@@ -25,10 +25,10 @@ const Notifications = ({navigation}) => {
   const [notificationId, setNotificationId] = React.useState();
   return (
     <View style={styles.container__main}>
-      <Text style={styles.heading__main}>Notifications </Text>
       {isFocused && (
         <CustomStatusBar backgroundColor={'white'} barStyle={'dark-content'} />
       )}
+      <Text style={styles.heading__main}>Notifications </Text>
       {isLoading ? (
         <View style={styles.container__loader}>
           <ActivityIndicator size="large" color="blue" />
