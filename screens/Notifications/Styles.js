@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
     color: 'black',
   },
   container__notification: {
-    marginTop: 100,
+    marginTop: 50,
     width: '100%',
   },
   container__loader: {
