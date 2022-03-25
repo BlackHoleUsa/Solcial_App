@@ -12,8 +12,9 @@ export default function StoreHistoryItem({item}) {
           </View>
           <View style={styles.container__text}>
             <Text style={styles.text__notification}>
-              You have purchased {item?.name} of {item?.quantity * item?.price}.
-              Quantity : {item?.quantity}
+              You have purchased a {item?.name} at{' '}
+              {item?.quantity * item?.price} USD Per. Quantity :{' '}
+              {item?.quantity}
             </Text>
           </View>
         </View>

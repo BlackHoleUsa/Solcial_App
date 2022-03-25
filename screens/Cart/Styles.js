@@ -9,11 +9,10 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   text__title: {
-    fontFamily: 'Poppins-Medium',
-    fontSize: 25,
-    fontWeight: fontWeights.medium,
-    marginTop: 20,
+    fontFamily: 'Poppins-SemiBold',
+    fontWeight: 'bold',
     color: 'black',
+    fontSize: 30,
   },
   container__flatList: {
     width: '100%',

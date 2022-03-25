@@ -28,7 +28,9 @@ const Notifications = ({navigation}) => {
       {isFocused && (
         <CustomStatusBar backgroundColor={'white'} barStyle={'dark-content'} />
       )}
-      <Text style={styles.heading__main}>Notifications </Text>
+      <View style={styles.container__heading}>
+        <Text style={styles.heading__main}>Notifications </Text>
+      </View>
       {isLoading ? (
         <View style={styles.container__loader}>
           <ActivityIndicator size="large" color="blue" />

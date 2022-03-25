@@ -7,12 +7,19 @@ export const styles = StyleSheet.create({
     backgroundColor: 'white',
     width: '100%',
   },
+  container__heading: {
+    marginVertical: 40,
+    textAlign: 'center',
+    width: '100%',
+
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   heading__main: {
-    marginTop: 20,
-    fontFamily: 'Poppins-Medium',
-    fontWeight: Platform.OS === 'ios' ? fontWeights.medium : 'normal',
-    fontSize: 20,
+    fontFamily: 'Poppins-SemiBold',
+    fontWeight: 'bold',
     color: 'black',
+    fontSize: 30,
   },
   container__notification: {
     marginTop: 50,
