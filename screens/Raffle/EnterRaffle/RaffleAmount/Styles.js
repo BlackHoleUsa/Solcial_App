@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
     width: '80%',
     height: '100%',
     backgroundColor: '#F3F3F3',
-    justifyContent: 'space-between',
+
     alignItems: 'center',
     paddingVertical: 10,
   },

@@ -76,15 +76,20 @@ export const styles = StyleSheet.create({
     color: 'black',
   },
   button: {
+    marginTop: 10,
     width: '100%',
-    textAlign: 'center',
     backgroundColor: 'black',
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 10,
-    marginBottom: 100,
+    color: 'white',
+    textAlign: 'center',
+    borderRadius: 0,
   },
   text__button: {
     color: 'white',
+  },
+  free_raffle: {
+    fontFamily: 'Poppins-SemiBold',
+    fontWeight: fontWeights.semibold,
+    color: 'black',
+    marginVertical: 10,
   },
 });
