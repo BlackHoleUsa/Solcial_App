@@ -5,14 +5,7 @@ import Products from '../Products';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-import {
-  View,
-  Image,
-  TouchableOpacity,
-  StyleSheet,
-  Linking,
-  Alert,
-} from 'react-native';
+import {View, Image} from 'react-native';
 import Icons from 'react-native-vector-icons/Ionicons';
 import Cart from '../../screens/Cart';
 import Notifications from '../../screens/Notifications';
@@ -21,42 +14,8 @@ import NftMarketplace from '../../screens/NftMarketplace';
 import {icons as customIcons} from '../../assets/icons/icons';
 import ProfileNavigator from '../ProfileNavigator';
 import {useSelector} from 'react-redux';
+import CustomTabbarButtom from '../../components/CustomTabbarButton';
 const Tab = createBottomTabNavigator();
-
-const CustomTabbarButtom = ({children, onPress}) => {
-  const handleOpenMetamask = async () => {
-    const url = 'https://metamask.app.link/dapp/solecialnft.app/';
-
-    try {
-      await Linking.openURL(url);
-    } catch (error) {
-      if (error) {
-        Alert.alert(
-          'Error',
-          'Please install metamask',
-          [
-            {
-              text: 'Cancel',
-
-              style: 'cancel',
-            },
-          ],
-          {
-            cancelable: true,
-          },
-        );
-      }
-    }
-  };
-
-  return (
-    <TouchableOpacity
-      onPress={handleOpenMetamask}
-      style={styles.customTabbarButtom}>
-      <View style={styles.view__customTabbarButtom}>{children}</View>
-    </TouchableOpacity>
-  );
-};
 
 const MainApp = () => {
   const cart = useSelector(state => state.cart);
@@ -113,6 +72,7 @@ const MainApp = () => {
           options={{
             headerShown: false,
             tabBarHideOnKeyboard: true,
+
             tabBarIcon: ({focused}) => (
               <View
                 style={{
@@ -125,11 +85,12 @@ const MainApp = () => {
                   style={{
                     width: 50,
                     height: 50,
+                    top: -15,
                   }}
                 />
               </View>
             ),
-            tabBarButton: props => <CustomTabbarButtom {...props} />,
+            // tabBarButton: props => <CustomTabbarButtom {...props} />,
           }}
         />
         <Tab.Screen
@@ -147,19 +108,5 @@ const MainApp = () => {
     </React.Fragment>
   );
 };
-
-const styles = StyleSheet.create({
-  customTabbarButtom: {
-    top: -15,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  view__customTabbarButtom: {
-    width: 75,
-    height: 75,
-    borderRadius: 37,
-    marginHorizontal: 5,
-  },
-});
 
 export default MainApp;
