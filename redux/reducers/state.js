@@ -10,4 +10,5 @@ export const initialState = {
   selectedStoreItem: {},
   selectedRaffleItem: {},
   cart: [],
+  isModalOpen: false,
 };

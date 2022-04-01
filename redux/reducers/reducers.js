@@ -10,6 +10,7 @@ import {
   REMOVE_QTY,
   CLEAR_CART,
   LOG_OUT,
+  OPEN_MODAL,
 } from '../types/types';
 export const reducer = (state = initialState, action) => {
   const {type, payload} = action;
@@ -96,6 +97,11 @@ export const reducer = (state = initialState, action) => {
           id: '',
           authToken: '',
         },
+      };
+    case OPEN_MODAL:
+      return {
+        ...state,
+        isModalOpen: payload,
       };
     default:
       return state;

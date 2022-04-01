@@ -1,31 +1,12 @@
 import {TouchableOpacity, Linking, Alert, View, Text} from 'react-native';
 import React from 'react';
 import {styles} from './Styles';
-
+import {useDispatch} from 'react-redux';
+import {setModalOpen} from '../../redux/actions/actions';
 const CustomTabbarButtom = ({children, onPress}) => {
+  const dispatch = useDispatch();
   const handleOpenMetamask = async () => {
-    const url = 'https://metamask.app.link/dapp/solecialnft.app/';
-
-    try {
-      await Linking.openURL(url);
-    } catch (error) {
-      if (error) {
-        Alert.alert(
-          'Error',
-          'Please install metamask',
-          [
-            {
-              text: 'Cancel',
-
-              style: 'cancel',
-            },
-          ],
-          {
-            cancelable: true,
-          },
-        );
-      }
-    }
+    dispatch(setModalOpen(true));
   };
 
   return (

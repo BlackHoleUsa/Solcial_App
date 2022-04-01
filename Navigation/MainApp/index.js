@@ -85,12 +85,11 @@ const MainApp = () => {
                   style={{
                     width: 50,
                     height: 50,
-                    top: -15,
                   }}
                 />
               </View>
             ),
-            // tabBarButton: props => <CustomTabbarButtom {...props} />,
+            tabBarButton: props => <CustomTabbarButtom {...props} />,
           }}
         />
         <Tab.Screen

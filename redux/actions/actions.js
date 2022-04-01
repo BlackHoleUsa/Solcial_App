@@ -9,6 +9,7 @@ import {
   REMOVE_QTY,
   CLEAR_CART,
   LOG_OUT,
+  OPEN_MODAL,
 } from '../types/types';
 export const setAuth = data => ({
   type: AUTH,
@@ -47,4 +48,8 @@ export const setClearCart = data => ({
 });
 export const setLogout = data => ({
   type: LOG_OUT,
+});
+export const setModalOpen = data => ({
+  type: OPEN_MODAL,
+  payload: data,
 });

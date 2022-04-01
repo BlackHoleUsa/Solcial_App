@@ -8,3 +8,4 @@ export const ADD_QTY = 'ADD_QTY';
 export const REMOVE_QTY = 'REMOVE_QTY';
 export const CLEAR_CART = 'CLEAR_CART';
 export const LOG_OUT = 'LOG_OUT';
+export const OPEN_MODAL = 'OPEN_MODAL';
